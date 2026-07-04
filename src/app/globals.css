@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* AlmiKorean — sunrise palette (inherited from the AlmiJapanese fork): coral #FF7A6B / cream / ink #14110D. */
+@theme {
+  --color-almi-coral: #ff7a6b; /*        primary CTA + hero */
+  --color-almi-coral-deep: #f2624f; /*   hover/active */
+  --color-almi-sun: #f2a65a; /*          sunrise gold accent */
+  --color-almi-sun-deep: #dd8f3f;
+  --color-almi-teal: #0d9488; /*         checkmarks / "clear" */
+  --color-almi-ink: #14110d; /*          H1/H2 near-black */
+  --color-almi-text: #3b352d; /*         body text */
+  --color-almi-text-muted: #6b6156;
+  --color-almi-bg: #fffaf3; /*           soft cream page bg */
+  --color-almi-bg-peach: #ffe9d8; /*     peach accent panels */
+  --color-almi-paper: #ffffff; /*        cards */
+  --color-almi-on-dark: #fbf6ef; /*      text on dark hero */
+  --color-almi-line: #ece3d6; /*         hairline borders */
+
+  --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-allura), "Allura", "Dancing Script", cursive;
+}
+
+html {
+  background: var(--color-almi-bg);
+  color: var(--color-almi-text);
+  -webkit-font-smoothing: antialiased;
+}

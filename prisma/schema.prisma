@@ -1,0 +1,152 @@
+// AlmiKorean — Prisma schema (TOPIK). Forked from the AlmiWorld network pattern.
+// TOPIK has two separate test tracks: TOPIK I (Listening + Reading) and TOPIK II
+// (Listening + Writing + Reading). Item buckets = {track × section}. Levels (1–6) are
+// COMPUTED by the engine from the total — there is no per-level item bucket and NO
+// sectional minimum anywhere. (specs §1–§3)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") //          pooled (pgbouncer=true) for runtime
+  directUrl = env("DATABASE_URL_UNPOOLED") // direct for migrations
+}
+
+// The two separate registrations. Candidates may sit TOPIK II without ever taking TOPIK I.
+enum TopikTrack {
+  TOPIK_I
+  TOPIK_II
+}
+
+// Scored section types. Writing exists in TOPIK II only.
+enum TopikSkill {
+  LISTENING
+  READING
+  WRITING
+}
+
+enum TopikTaskType {
+  MCQ
+  MATCHING
+  ORDERING
+  CLOZE
+  WRITING
+}
+
+enum TopikDifficulty {
+  FOUNDATION
+  CORE
+  STRETCH
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  SUBMITTED
+  SCORED
+}
+
+enum SessionMode {
+  PRACTICE_SET
+  MOCK
+}
+
+model User {
+  id                           String      @id @default(cuid())
+  email                        String      @unique
+  passwordHash                 String
+  name                         String?
+  locale                       String      @default("en")
+  targetTrack                  TopikTrack?
+  emailVerifiedAt              DateTime?
+  stripeCustomerId             String?
+  stripeSubscriptionId         String?
+  subscriptionStatus           String? //  Stripe status: trialing | active | canceled | ...
+  subscriptionCurrentPeriodEnd DateTime?
+  compProUntil                 DateTime? // admin-granted comp Pro window (bypasses billing)
+  createdAt                    DateTime    @default(now())
+  updatedAt                    DateTime    @updatedAt
+
+  attempts     KoreanAttempt[]
+  sessions     KoreanSession[]
+  authSessions AuthSession[]
+}
+
+// Server-side auth sessions (canonical AlmiWorld pattern: hashed token in a cookie).
+model AuthSession {
+  id        String   @id @default(cuid())
+  userId    String
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// The item bank, keyed by (track, section).
+model KoreanItem {
+  id           String          @id @default(cuid())
+  track        TopikTrack
+  section      TopikSkill
+  taskType     TopikTaskType
+  difficulty   TopikDifficulty @default(CORE)
+  title        String
+  prompt       String?
+  topicTag     String?
+  guidanceNote String?
+  // payload shape by section:
+  //  listening: { audioScript, speakers:[{role,voice}], questions:[{id, stem, options:[{id,text}], answer}] }
+  //  reading:   { passages:[{id, body}], questions:[...] }
+  //  writing:   { writing:{ taskNumber(51–54), prompt, charMin?, charMax?, guidance? } }
+  payload      Json
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  attempts KoreanAttempt[]
+
+  @@unique([track, section, title])
+  @@index([track, section])
+}
+
+model KoreanAttempt {
+  id        String        @id @default(cuid())
+  userId    String
+  itemId    String
+  track     TopikTrack
+  section   TopikSkill
+  status    AttemptStatus @default(IN_PROGRESS)
+  sessionId String?
+  // response: { answers: { [questionId]: string } } (objective) or { text: string } (writing)
+  response  Json?
+  // scored read-out per scoring.ts (raw section score / practice estimate; NEVER an official score)
+  result    Json?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item    KoreanItem     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  session KoreanSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+
+  @@index([userId, track])
+}
+
+model KoreanSession {
+  id                String          @id @default(cuid())
+  userId            String
+  mode              SessionMode
+  track             TopikTrack
+  section           TopikSkill? //  set for PRACTICE_SET, null for MOCK (all sections)
+  currentDifficulty TopikDifficulty @default(CORE)
+  // aggregate practice result for a MOCK (per-section + total + level estimate), per scoring.ts
+  result            Json?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  user     User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attempts KoreanAttempt[]
+
+  @@index([userId, mode])
+}

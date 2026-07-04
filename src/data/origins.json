@@ -1,0 +1,4240 @@
+[
+{
+"slug": "afghanistan",
+"name": "Afghanistan",
+"iso2": "AF",
+"region": "Southern Asia",
+"lang": "fa",
+"langLabel": "Persian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "albania",
+"name": "Albania",
+"iso2": "AL",
+"region": "Southern Europe",
+"lang": "sq",
+"langLabel": "Albanian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "algeria",
+"name": "Algeria",
+"iso2": "DZ",
+"region": "Northern Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Algiers",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "andorra",
+"name": "Andorra",
+"iso2": "AD",
+"region": "Southern Europe",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "angola",
+"name": "Angola",
+"iso2": "AO",
+"region": "Sub-Saharan Africa",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "antigua-and-barbuda",
+"name": "Antigua and Barbuda",
+"iso2": "AG",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "argentina",
+"name": "Argentina",
+"iso2": "AR",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Buenos Aires",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "armenia",
+"name": "Armenia",
+"iso2": "AM",
+"region": "Western Asia",
+"lang": "hy",
+"langLabel": "Armenian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Yerevan",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "australia",
+"name": "Australia",
+"iso2": "AU",
+"region": "Australia and New Zealand",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Canberra",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Gold Coast ※Test site has been changed from Brisbane to Gold Coast since 2024 July Test.",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Perth",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Sydney",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Melbourne",
+"july": "N",
+"december": "TBD"
+},
+{
+"city": "Adelaide",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "austria",
+"name": "Austria",
+"iso2": "AT",
+"region": "Western Europe",
+"lang": "de",
+"langLabel": "German",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Vienna",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "azerbaijan",
+"name": "Azerbaijan",
+"iso2": "AZ",
+"region": "Western Asia",
+"lang": "az",
+"langLabel": "Azerbaijani",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Baku",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "bahamas",
+"name": "Bahamas",
+"iso2": "BS",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "bahrain",
+"name": "Bahrain",
+"iso2": "BH",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "bangladesh",
+"name": "Bangladesh",
+"iso2": "BD",
+"region": "Southern Asia",
+"lang": "bn",
+"langLabel": "Bengali",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Dhaka",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "barbados",
+"name": "Barbados",
+"iso2": "BB",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "belarus",
+"name": "Belarus",
+"iso2": "BY",
+"region": "Eastern Europe",
+"lang": "ru",
+"langLabel": "Russian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Minsk",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "belgium",
+"name": "Belgium",
+"iso2": "BE",
+"region": "Western Europe",
+"lang": "nl",
+"langLabel": "Dutch",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Leuven*Next test in Leuven will be in July 2026. Leuven will not hold the test in 2027.",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Ghent*Ghent will not hold the test in 2026. Next test in Ghent will be in December 2027.",
+"july": "N",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "belize",
+"name": "Belize",
+"iso2": "BZ",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "benin",
+"name": "Benin",
+"iso2": "BJ",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Cotonou",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "bhutan",
+"name": "Bhutan",
+"iso2": "BT",
+"region": "Southern Asia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Thimphu",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "bolivia",
+"name": "Bolivia",
+"iso2": "BO",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Santa Cruz",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "La Paz",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "bonaire",
+"name": "Bonaire",
+"iso2": "BQ",
+"region": "Latin America and the Caribbean",
+"lang": "nl",
+"langLabel": "Dutch",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "bosnia-and-herzegovina",
+"name": "Bosnia and Herzegovina",
+"iso2": "BA",
+"region": "Southern Europe",
+"lang": "bs",
+"langLabel": "Bosnian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Sarajevo",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "botswana",
+"name": "Botswana",
+"iso2": "BW",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "brazil",
+"name": "Brazil",
+"iso2": "BR",
+"region": "Latin America and the Caribbean",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Sao Paulo",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Londrina",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Belem",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Rio de Janeiro",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Porto Alegre",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Brasilia",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Salvador",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Manaus",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Curitiba",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Florianopolis",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "brunei",
+"name": "Brunei",
+"iso2": "BN",
+"region": "South-eastern Asia",
+"lang": "ms",
+"langLabel": "Malay",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Bandar Seri Begawan",
+"july": "",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "bulgaria",
+"name": "Bulgaria",
+"iso2": "BG",
+"region": "Eastern Europe",
+"lang": "bg",
+"langLabel": "Bulgarian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Sofia",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "burkina-faso",
+"name": "Burkina Faso",
+"iso2": "BF",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "burundi",
+"name": "Burundi",
+"iso2": "BI",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "cambodia",
+"name": "Cambodia",
+"iso2": "KH",
+"region": "South-eastern Asia",
+"lang": "km",
+"langLabel": "Khmer",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Phnom Penh",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Siem Reap",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "cameroon",
+"name": "Cameroon",
+"iso2": "CM",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "canada",
+"name": "Canada",
+"iso2": "CA",
+"region": "Northern America",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Vancouver",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Toronto",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Edmonton",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Ottawa",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "London",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Montreal",
+"july": "N",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "cape-verde",
+"name": "Cape Verde",
+"iso2": "CV",
+"region": "Sub-Saharan Africa",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "central-african-republic",
+"name": "Central African Republic",
+"iso2": "CF",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "chad",
+"name": "Chad",
+"iso2": "TD",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "chile",
+"name": "Chile",
+"iso2": "CL",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Santiago",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "china",
+"name": "China",
+"iso2": "CN",
+"region": "Eastern Asia",
+"lang": "zh",
+"langLabel": "Chinese",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": true,
+"cities": [
+{
+"city": "Shanghai",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Changchun",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Dalian",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Guangzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Shenyang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Tianjin",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Haerbin",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Xian",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Chongqing",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Jinan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Wuhan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Xiamen",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Hangzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Suzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Qingdao",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Changsha",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Chengdu",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Nanjing",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Hefei",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Shenzhen",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Nanchang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Shijiazhuang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Taiyuan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Ningbo",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Wuxi",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Guiyang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Wulumuqi",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Nanning",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Weifang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Yangzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Kunmin",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Haikou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Yanji",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Lanzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Baoding",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Nantong",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Fuzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Weihai",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Shaoxing",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Zhengzhou",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Xinyang and Nanyang.",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Hong Kong",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Macau",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "colombia",
+"name": "Colombia",
+"iso2": "CO",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Bogota",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Cali",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "comoros",
+"name": "Comoros",
+"iso2": "KM",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "congo",
+"name": "Congo",
+"iso2": "CG",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Kinshasa",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "costa-rica",
+"name": "Costa Rica",
+"iso2": "CR",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "San Jose",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "cote-divoire",
+"name": "Côte d'Ivoire",
+"iso2": "CI",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Abidjan",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "croatia",
+"name": "Croatia",
+"iso2": "HR",
+"region": "Southern Europe",
+"lang": "hr",
+"langLabel": "Croatian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "cuba",
+"name": "Cuba",
+"iso2": "CU",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "cyprus",
+"name": "Cyprus",
+"iso2": "CY",
+"region": "Western Asia",
+"lang": "el",
+"langLabel": "Greek",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "czechia",
+"name": "Czechia",
+"iso2": "CZ",
+"region": "Eastern Europe",
+"lang": "cs",
+"langLabel": "Czech",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Brno",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "denmark",
+"name": "Denmark",
+"iso2": "DK",
+"region": "Northern Europe",
+"lang": "da",
+"langLabel": "Danish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Copenhagen",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "djibouti",
+"name": "Djibouti",
+"iso2": "DJ",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "dominica",
+"name": "Dominica",
+"iso2": "DM",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "dominican-republic",
+"name": "Dominican Republic",
+"iso2": "DO",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Santo domingo",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "dr-congo",
+"name": "DR Congo",
+"iso2": "CD",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "ecuador",
+"name": "Ecuador",
+"iso2": "EC",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Quito",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "egypt",
+"name": "Egypt",
+"iso2": "EG",
+"region": "Northern Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Cairo",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "New Borg El-Arab",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "el-salvador",
+"name": "El Salvador",
+"iso2": "SV",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "San Salvador",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "equatorial-guinea",
+"name": "Equatorial Guinea",
+"iso2": "GQ",
+"region": "Sub-Saharan Africa",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "eritrea",
+"name": "Eritrea",
+"iso2": "ER",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "estonia",
+"name": "Estonia",
+"iso2": "EE",
+"region": "Northern Europe",
+"lang": "et",
+"langLabel": "Estonian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "eswatini",
+"name": "Eswatini",
+"iso2": "SZ",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "ethiopia",
+"name": "Ethiopia",
+"iso2": "ET",
+"region": "Sub-Saharan Africa",
+"lang": "am",
+"langLabel": "Amharic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "fiji",
+"name": "Fiji",
+"iso2": "FJ",
+"region": "Melanesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Nadi",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "finland",
+"name": "Finland",
+"iso2": "FI",
+"region": "Northern Europe",
+"lang": "fi",
+"langLabel": "Finnish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Helsinki",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "france",
+"name": "France",
+"iso2": "FR",
+"region": "Western Europe",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Paris",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Lyon",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Bordeaux",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Strasbourg",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Nantes",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "gabon",
+"name": "Gabon",
+"iso2": "GA",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "gambia",
+"name": "Gambia",
+"iso2": "GM",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "georgia",
+"name": "Georgia",
+"iso2": "GE",
+"region": "Western Asia",
+"lang": "ka",
+"langLabel": "Georgian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Tbilisi",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "germany",
+"name": "Germany",
+"iso2": "DE",
+"region": "Western Europe",
+"lang": "de",
+"langLabel": "German",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Duesseldorf",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Stuttgart",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Hamburg",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Berlin",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "ghana",
+"name": "Ghana",
+"iso2": "GH",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Accra",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "greece",
+"name": "Greece",
+"iso2": "GR",
+"region": "Southern Europe",
+"lang": "el",
+"langLabel": "Greek",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Athens",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "grenada",
+"name": "Grenada",
+"iso2": "GD",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "guatemala",
+"name": "Guatemala",
+"iso2": "GT",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "guinea",
+"name": "Guinea",
+"iso2": "GN",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "guinea-bissau",
+"name": "Guinea-Bissau",
+"iso2": "GW",
+"region": "Sub-Saharan Africa",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "guyana",
+"name": "Guyana",
+"iso2": "GY",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "haiti",
+"name": "Haiti",
+"iso2": "HT",
+"region": "Latin America and the Caribbean",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "honduras",
+"name": "Honduras",
+"iso2": "HN",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "hong-kong",
+"name": "Hong Kong",
+"iso2": "HK",
+"region": "Eastern Asia",
+"lang": "zh",
+"langLabel": "Chinese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "hungary",
+"name": "Hungary",
+"iso2": "HU",
+"region": "Eastern Europe",
+"lang": "hu",
+"langLabel": "Hungarian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Budapest",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "iceland",
+"name": "Iceland",
+"iso2": "IS",
+"region": "Northern Europe",
+"lang": "is",
+"langLabel": "Icelandic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "india",
+"name": "India",
+"iso2": "IN",
+"region": "Southern Asia",
+"lang": "hi",
+"langLabel": "Hindi",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "New Delhi",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Pune",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Kolkata",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Chennai",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Bengaluru",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Mumbai",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Santiniketan",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Karur",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "indonesia",
+"name": "Indonesia",
+"iso2": "ID",
+"region": "South-eastern Asia",
+"lang": "id",
+"langLabel": "Indonesian",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Jakarta",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Bandung",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Surabaya",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Medan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Yogyakarta",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Padang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Denpasar",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Manado",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Malang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Semarang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Makassar",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Palembang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Cirebon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Bogor",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Tangerang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Samarinda",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "iran",
+"name": "Iran",
+"iso2": "IR",
+"region": "Southern Asia",
+"lang": "fa",
+"langLabel": "Persian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Tehran",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "iraq",
+"name": "Iraq",
+"iso2": "IQ",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "ireland",
+"name": "Ireland",
+"iso2": "IE",
+"region": "Northern Europe",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Dublin",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "israel",
+"name": "Israel",
+"iso2": "IL",
+"region": "Western Asia",
+"lang": "he",
+"langLabel": "Hebrew",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "One city out of Jerusalem",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Haifa",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Tel Aviv",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "italy",
+"name": "Italy",
+"iso2": "IT",
+"region": "Southern Europe",
+"lang": "it",
+"langLabel": "Italian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Rome",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Milan",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Venice",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "jamaica",
+"name": "Jamaica",
+"iso2": "JM",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "jordan",
+"name": "Jordan",
+"iso2": "JO",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Amman",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "kazakhstan",
+"name": "Kazakhstan",
+"iso2": "KZ",
+"region": "Central Asia",
+"lang": "kk",
+"langLabel": "Kazakh",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Almaty",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Astana",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "kenya",
+"name": "Kenya",
+"iso2": "KE",
+"region": "Sub-Saharan Africa",
+"lang": "sw",
+"langLabel": "Swahili",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Nairobi",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "kiribati",
+"name": "Kiribati",
+"iso2": "KI",
+"region": "Micronesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "kuwait",
+"name": "Kuwait",
+"iso2": "KW",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "kyrgyzstan",
+"name": "Kyrgyzstan",
+"iso2": "KG",
+"region": "Central Asia",
+"lang": "ky",
+"langLabel": "Kyrgyz",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Bishkek",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "laos",
+"name": "Laos",
+"iso2": "LA",
+"region": "South-eastern Asia",
+"lang": "lo",
+"langLabel": "Lao",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Vientiane",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "latvia",
+"name": "Latvia",
+"iso2": "LV",
+"region": "Northern Europe",
+"lang": "lv",
+"langLabel": "Latvian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "lebanon",
+"name": "Lebanon",
+"iso2": "LB",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "lesotho",
+"name": "Lesotho",
+"iso2": "LS",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "liberia",
+"name": "Liberia",
+"iso2": "LR",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "libya",
+"name": "Libya",
+"iso2": "LY",
+"region": "Northern Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "liechtenstein",
+"name": "Liechtenstein",
+"iso2": "LI",
+"region": "Western Europe",
+"lang": "de",
+"langLabel": "German",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "lithuania",
+"name": "Lithuania",
+"iso2": "LT",
+"region": "Northern Europe",
+"lang": "lt",
+"langLabel": "Lithuanian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Vilnius",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "luxembourg",
+"name": "Luxembourg",
+"iso2": "LU",
+"region": "Western Europe",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "madagascar",
+"name": "Madagascar",
+"iso2": "MG",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Antananarivo",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "malawi",
+"name": "Malawi",
+"iso2": "MW",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "malaysia",
+"name": "Malaysia",
+"iso2": "MY",
+"region": "South-eastern Asia",
+"lang": "ms",
+"langLabel": "Malay",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Kuala Lumpur",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Penang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Ipoh",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Kota Kinabalu",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Johor Bahru",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "maldives",
+"name": "Maldives",
+"iso2": "MV",
+"region": "Southern Asia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "MALE",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "mali",
+"name": "Mali",
+"iso2": "ML",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "malta",
+"name": "Malta",
+"iso2": "MT",
+"region": "Southern Europe",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "marshall-islands",
+"name": "Marshall Islands",
+"iso2": "MH",
+"region": "Micronesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Majuro",
+"july": "N",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "mauritania",
+"name": "Mauritania",
+"iso2": "MR",
+"region": "Sub-Saharan Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "mauritius",
+"name": "Mauritius",
+"iso2": "MU",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "mexico",
+"name": "Mexico",
+"iso2": "MX",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Mexico City",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Monterrey",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Mérida",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Aguascalientes",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "micronesia",
+"name": "Micronesia",
+"iso2": "FM",
+"region": "Micronesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "moldova",
+"name": "Moldova",
+"iso2": "MD",
+"region": "Eastern Europe",
+"lang": "ro",
+"langLabel": "Romanian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Chisinau",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "monaco",
+"name": "Monaco",
+"iso2": "MC",
+"region": "Western Europe",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "mongolia",
+"name": "Mongolia",
+"iso2": "MN",
+"region": "Eastern Asia",
+"lang": "mn",
+"langLabel": "Mongolian",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Ulaanbaatar",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Arvaikheer",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Darkhan",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "montenegro",
+"name": "Montenegro",
+"iso2": "ME",
+"region": "Southern Europe",
+"lang": "sr",
+"langLabel": "Serbian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "morocco",
+"name": "Morocco",
+"iso2": "MA",
+"region": "Northern Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Rabat",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "mozambique",
+"name": "Mozambique",
+"iso2": "MZ",
+"region": "Sub-Saharan Africa",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "myanmar",
+"name": "Myanmar",
+"iso2": "MM",
+"region": "South-eastern Asia",
+"lang": "my",
+"langLabel": "Burmese",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Yangon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Mandalay",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "namibia",
+"name": "Namibia",
+"iso2": "NA",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "nauru",
+"name": "Nauru",
+"iso2": "NR",
+"region": "Micronesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "nepal",
+"name": "Nepal",
+"iso2": "NP",
+"region": "Southern Asia",
+"lang": "ne",
+"langLabel": "Nepali",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Kathmandu",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "netherlands",
+"name": "Netherlands",
+"iso2": "NL",
+"region": "Western Europe",
+"lang": "nl",
+"langLabel": "Dutch",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Leiden",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "new-zealand",
+"name": "New Zealand",
+"iso2": "NZ",
+"region": "Australia and New Zealand",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Auckland",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Christchurch",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Palmerston North",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "nicaragua",
+"name": "Nicaragua",
+"iso2": "NI",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "niger",
+"name": "Niger",
+"iso2": "NE",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "nigeria",
+"name": "Nigeria",
+"iso2": "NG",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "north-korea",
+"name": "North Korea",
+"iso2": "KP",
+"region": "Eastern Asia",
+"lang": "ko",
+"langLabel": "Korean",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "north-macedonia",
+"name": "North Macedonia",
+"iso2": "MK",
+"region": "Southern Europe",
+"lang": "mk",
+"langLabel": "Macedonian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "norway",
+"name": "Norway",
+"iso2": "NO",
+"region": "Northern Europe",
+"lang": "no",
+"langLabel": "Norwegian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Kongsvinger",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "oman",
+"name": "Oman",
+"iso2": "OM",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "pakistan",
+"name": "Pakistan",
+"iso2": "PK",
+"region": "Southern Asia",
+"lang": "ur",
+"langLabel": "Urdu",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Islamabad",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Karachi",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "palau",
+"name": "Palau",
+"iso2": "PW",
+"region": "Micronesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "palestine",
+"name": "Palestine",
+"iso2": "PS",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "panama",
+"name": "Panama",
+"iso2": "PA",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Panama City",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "papua-new-guinea",
+"name": "Papua New Guinea",
+"iso2": "PG",
+"region": "Melanesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Port Moresby",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "paraguay",
+"name": "Paraguay",
+"iso2": "PY",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Asuncion",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Amambay",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Yguazu",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Encarnacion",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Pirapo",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "peru",
+"name": "Peru",
+"iso2": "PE",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Lima",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "philippines",
+"name": "Philippines",
+"iso2": "PH",
+"region": "South-eastern Asia",
+"lang": "tl",
+"langLabel": "Filipino",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Manila",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Cebu",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Davao",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Cagayan de Oro",
+"july": "N",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "poland",
+"name": "Poland",
+"iso2": "PL",
+"region": "Eastern Europe",
+"lang": "pl",
+"langLabel": "Polish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Warsaw",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Gdansk",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "portugal",
+"name": "Portugal",
+"iso2": "PT",
+"region": "Southern Europe",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "qatar",
+"name": "Qatar",
+"iso2": "QA",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Doha",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "romania",
+"name": "Romania",
+"iso2": "RO",
+"region": "Eastern Europe",
+"lang": "ro",
+"langLabel": "Romanian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Bucharest",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "russia",
+"name": "Russia",
+"iso2": "RU",
+"region": "Eastern Europe",
+"lang": "ru",
+"langLabel": "Russian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Moscow",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Vladivostok",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Novosibirsk",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Khabarovsk",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Yuzhno-Sakhalinsk",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Irkutsk",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Saint-Petersburg",
+"july": "Y",
+"december": "TBD"
+},
+{
+"city": "Perm",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Astrakhan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Yakutsk",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Kazan",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Petropavlovsk-Kamchatsky",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Yekaterinburg",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Nizhny Novgorod",
+"july": "N",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "rwanda",
+"name": "Rwanda",
+"iso2": "RW",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "saint-kitts-and-nevis",
+"name": "Saint Kitts and Nevis",
+"iso2": "KN",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "saint-lucia",
+"name": "Saint Lucia",
+"iso2": "LC",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "saint-vincent-and-the-grenadines",
+"name": "Saint Vincent and the Grenadines",
+"iso2": "VC",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "samoa",
+"name": "Samoa",
+"iso2": "WS",
+"region": "Polynesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "san-marino",
+"name": "San Marino",
+"iso2": "SM",
+"region": "Southern Europe",
+"lang": "it",
+"langLabel": "Italian",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "sao-tome-and-principe",
+"name": "Sao Tome and Principe",
+"iso2": "ST",
+"region": "Sub-Saharan Africa",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "saudi-arabia",
+"name": "Saudi Arabia",
+"iso2": "SA",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Riyadh",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Jeddah",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "senegal",
+"name": "Senegal",
+"iso2": "SN",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Dakar",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "serbia",
+"name": "Serbia",
+"iso2": "RS",
+"region": "Southern Europe",
+"lang": "sr",
+"langLabel": "Serbian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Belgrade",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "seychelles",
+"name": "Seychelles",
+"iso2": "SC",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "sierra-leone",
+"name": "Sierra Leone",
+"iso2": "SL",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "singapore",
+"name": "Singapore",
+"iso2": "SG",
+"region": "South-eastern Asia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Singapore",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "slovakia",
+"name": "Slovakia",
+"iso2": "SK",
+"region": "Eastern Europe",
+"lang": "sk",
+"langLabel": "Slovak",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "slovenia",
+"name": "Slovenia",
+"iso2": "SI",
+"region": "Southern Europe",
+"lang": "sl",
+"langLabel": "Slovenian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Ljubljana",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "solomon-islands",
+"name": "Solomon Islands",
+"iso2": "SB",
+"region": "Melanesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "somalia",
+"name": "Somalia",
+"iso2": "SO",
+"region": "Sub-Saharan Africa",
+"lang": "so",
+"langLabel": "Somali",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "south-africa",
+"name": "South Africa",
+"iso2": "ZA",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Stelienbosch",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Johannesburg",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "south-korea",
+"name": "South Korea",
+"iso2": "KR",
+"region": "Eastern Asia",
+"lang": "ko",
+"langLabel": "Korean",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Seoul",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Incheon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Suwon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Seongnam",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Anyang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Cheonan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Cheongju",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Daejeon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Jeonju",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Gwangju",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Chuncheon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Goyang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Bucheon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Wonju",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Busan",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Gimhae",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Daegu",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Gumi",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Changwon",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Jinju",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Gyeongju",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Jeju",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "south-sudan",
+"name": "South Sudan",
+"iso2": "SS",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "spain",
+"name": "Spain",
+"iso2": "ES",
+"region": "Southern Europe",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Barcelona",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Madrid",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Madrid",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Granada",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Valencia",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Las Palmas",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "sri-lanka",
+"name": "Sri Lanka",
+"iso2": "LK",
+"region": "Southern Asia",
+"lang": "si",
+"langLabel": "Sinhala",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Colombo",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "sudan",
+"name": "Sudan",
+"iso2": "SD",
+"region": "Northern Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Khartoum",
+"july": "N",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "suriname",
+"name": "Suriname",
+"iso2": "SR",
+"region": "Latin America and the Caribbean",
+"lang": "nl",
+"langLabel": "Dutch",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "sweden",
+"name": "Sweden",
+"iso2": "SE",
+"region": "Northern Europe",
+"lang": "sv",
+"langLabel": "Swedish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Stockholm",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "switzerland",
+"name": "Switzerland",
+"iso2": "CH",
+"region": "Western Europe",
+"lang": "de",
+"langLabel": "German",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Zurich",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "syria",
+"name": "Syria",
+"iso2": "SY",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "taiwan",
+"name": "Taiwan",
+"iso2": "TW",
+"region": "Other",
+"lang": "zh",
+"langLabel": "Chinese",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Taipei",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Kaohsiung",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Taichung",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Taoyuan",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "tajikistan",
+"name": "Tajikistan",
+"iso2": "TJ",
+"region": "Central Asia",
+"lang": "tg",
+"langLabel": "Tajik",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Dushanbe",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "tanzania",
+"name": "Tanzania",
+"iso2": "TZ",
+"region": "Sub-Saharan Africa",
+"lang": "sw",
+"langLabel": "Swahili",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "thailand",
+"name": "Thailand",
+"iso2": "TH",
+"region": "South-eastern Asia",
+"lang": "th",
+"langLabel": "Thai",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Bangkok",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Chiang Mai",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Songkhla",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Khon Kaen",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Ubon Ratchathani",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "timor-leste",
+"name": "Timor-Leste",
+"iso2": "TL",
+"region": "South-eastern Asia",
+"lang": "pt",
+"langLabel": "Portuguese",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "togo",
+"name": "Togo",
+"iso2": "TG",
+"region": "Sub-Saharan Africa",
+"lang": "fr",
+"langLabel": "French",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "tonga",
+"name": "Tonga",
+"iso2": "TO",
+"region": "Polynesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "trinidad-and-tobago",
+"name": "Trinidad and Tobago",
+"iso2": "TT",
+"region": "Latin America and the Caribbean",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "St. Augustine",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "tunisia",
+"name": "Tunisia",
+"iso2": "TN",
+"region": "Northern Africa",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Tunis",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "turkey",
+"name": "Türkiye",
+"iso2": "TR",
+"region": "Western Asia",
+"lang": "tr",
+"langLabel": "Turkish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Ankara",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "turkmenistan",
+"name": "Turkmenistan",
+"iso2": "TM",
+"region": "Central Asia",
+"lang": "tk",
+"langLabel": "Turkmen",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Ashgabat",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "tuvalu",
+"name": "Tuvalu",
+"iso2": "TV",
+"region": "Polynesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "uganda",
+"name": "Uganda",
+"iso2": "UG",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "ukraine",
+"name": "Ukraine",
+"iso2": "UA",
+"region": "Eastern Europe",
+"lang": "uk",
+"langLabel": "Ukrainian",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Kyiv",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "united-arab-emirates",
+"name": "United Arab Emirates",
+"iso2": "AE",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Abu Dhabi",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "united-kingdom",
+"name": "United Kingdom",
+"iso2": "GB",
+"region": "Northern Europe",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "London 1",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "London 2",
+"july": "Y",
+"december": "N"
+},
+{
+"city": "Edinburgh",
+"july": "N",
+"december": "Y"
+},
+{
+"city": "Cardiff(Temporarily Suspended)",
+"july": "N",
+"december": "N"
+},
+{
+"city": "Leicester",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "united-states",
+"name": "United States",
+"iso2": "US",
+"region": "Northern America",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": true,
+"cities": []
+}
+},
+{
+"slug": "uruguay",
+"name": "Uruguay",
+"iso2": "UY",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Montevideo",
+"july": "N",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "uzbekistan",
+"name": "Uzbekistan",
+"iso2": "UZ",
+"region": "Central Asia",
+"lang": "uz",
+"langLabel": "Uzbek",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Tashkent",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "vanuatu",
+"name": "Vanuatu",
+"iso2": "VU",
+"region": "Melanesia",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "venezuela",
+"name": "Venezuela",
+"iso2": "VE",
+"region": "Latin America and the Caribbean",
+"lang": "es",
+"langLabel": "Spanish",
+"isMOC": false,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Caracas",
+"july": "Y",
+"december": "N"
+}
+]
+}
+},
+{
+"slug": "vietnam",
+"name": "Vietnam",
+"iso2": "VN",
+"region": "South-eastern Asia",
+"lang": "vi",
+"langLabel": "Vietnamese",
+"isMOC": true,
+"jlpt": {
+"hasSite": true,
+"delegated": false,
+"cities": [
+{
+"city": "Hanoi1(N1",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "N2)",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Hanoi2(N3",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "N4",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "N5)",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Ho Chi Minh",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Da Nang",
+"july": "Y",
+"december": "Y"
+},
+{
+"city": "Hue",
+"july": "Y",
+"december": "Y"
+}
+]
+}
+},
+{
+"slug": "yemen",
+"name": "Yemen",
+"iso2": "YE",
+"region": "Western Asia",
+"lang": "ar",
+"langLabel": "Arabic",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "zambia",
+"name": "Zambia",
+"iso2": "ZM",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+},
+{
+"slug": "zimbabwe",
+"name": "Zimbabwe",
+"iso2": "ZW",
+"region": "Sub-Saharan Africa",
+"lang": "en",
+"langLabel": "English",
+"isMOC": false,
+"jlpt": {
+"hasSite": false,
+"delegated": false,
+"cities": []
+}
+}
+]

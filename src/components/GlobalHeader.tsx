@@ -25,6 +25,7 @@ export const FAMILY_NAV = [
 
 const PRODUCT_NAV = [
   { label: "Practice", href: "/practice" },
+  { label: "Mock test", href: "/mock" },
   { label: "Log in", href: "/login" },
 ];
 

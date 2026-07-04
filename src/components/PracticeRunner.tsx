@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ListeningAudio } from "@/components/ListeningAudio";
 import type { BankItem } from "@/lib/items";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -24,6 +25,9 @@ export function PracticeRunner({ items, track, section }: { items: BankItem[]; t
     <div className="space-y-6">
       {items.map((it, i) => (
         <div key={i} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
+          {it.payload.audioScript && (
+            <div className="mb-3"><ListeningAudio script={it.payload.audioScript} rate={track === "TOPIK_I" ? 0.85 : 0.95} /></div>
+          )}
           {it.payload.passages?.map((p) => (
             <p key={p.id} className="mb-3 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{p.body}</p>
           ))}

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { scoreTopik, type TopikTrack, type TopikSection } from "@/lib/topik/scoring";
+import { ListeningAudio } from "@/components/ListeningAudio";
 import type { BankItem } from "@/lib/items";
 
 const SECTION_LABEL: Record<TopikSection, string> = { LISTENING: "Listening", READING: "Reading", WRITING: "Writing" };
@@ -184,9 +185,8 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
           {(bank[section] ?? []).map((it, i) => (
             <div key={i} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
               {it.payload.audioScript && (
-                <div className="mb-3 rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">
-                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-almi-text-muted">Transcript (audio generation arrives later)</p>
-                  <p className="whitespace-pre-line">{it.payload.audioScript}</p>
+                <div className="mb-3">
+                  <ListeningAudio script={it.payload.audioScript} playOnce rate={track === "TOPIK_I" ? 0.85 : 0.95} />
                 </div>
               )}
               {it.payload.passages?.map((p) => (

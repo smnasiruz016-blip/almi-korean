@@ -20,6 +20,7 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
   const [writingText, setWritingText] = useState("");
   const [writingEstimate, setWritingEstimate] = useState<number>(0);
   const [writingEstimated, setWritingEstimated] = useState(false);
+  const [showReview, setShowReview] = useState(false);
 
   const writingItem = bank.WRITING?.find((w) => w.payload.writing?.taskNumber === 54) ?? bank.WRITING?.[0];
 
@@ -78,7 +79,68 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
         {track === "TOPIK_II" && !writingEstimated && (
           <p className="text-xs text-almi-text-muted">Your Writing wasn&apos;t self-estimated, so it counted as 0 toward the total. Real Writing is graded on official criteria — treat this level as a floor.</p>
         )}
-        <button onClick={() => { setStep(0); setAnswers({}); setWritingText(""); setWritingEstimate(0); setWritingEstimated(false); }} className="rounded-full border border-almi-line px-6 py-2.5 text-sm font-medium text-almi-ink hover:border-almi-coral">
+
+        <button onClick={() => setShowReview((v) => !v)} className="text-sm font-medium text-almi-coral hover:underline">
+          {showReview ? "Hide answer review" : "Show answer review"}
+        </button>
+
+        {showReview && (
+          <div className="space-y-6">
+            {sections.map((sec) =>
+              sec === "WRITING" ? (
+                <div key={sec} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Writing review</p>
+                  {writingItem?.payload.writing && <p className="mt-2 whitespace-pre-line text-sm text-almi-text">{writingItem.payload.writing.prompt}</p>}
+                  <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-almi-text-muted">Your response ({Array.from(writingText.trim()).length} 자)</p>
+                  <p className="mt-1 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{writingText || "—"}</p>
+                  <p className="mt-2 text-xs text-almi-text-muted">Writing isn&apos;t auto-marked — compare your response against the official criteria: content &amp; task fulfilment, organisation, and language use.</p>
+                </div>
+              ) : (
+                <div key={sec} className="space-y-4">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">{SECTION_LABEL[sec]} review</p>
+                  {(bank[sec] ?? []).map((it, i) => (
+                    <div key={i} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
+                      {it.payload.audioScript && (
+                        <div className="mb-3 rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">
+                          <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-almi-text-muted">Transcript</p>
+                          <p className="whitespace-pre-line">{it.payload.audioScript}</p>
+                        </div>
+                      )}
+                      {it.payload.passages?.map((p) => (
+                        <p key={p.id} className="mb-3 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{p.body}</p>
+                      ))}
+                      {(it.payload.questions ?? []).map((q) => {
+                        const key = `${sec}:${i}:${q.id}`;
+                        return (
+                          <fieldset key={q.id} className="mb-3">
+                            <legend className="text-sm font-medium text-almi-ink">{q.stem}</legend>
+                            <div className="mt-2 grid gap-1.5">
+                              {q.options.map((o) => {
+                                const chosen = answers[key] === o.id;
+                                const isAnswer = o.id === q.answer;
+                                const wrongChosen = chosen && !isAnswer;
+                                return (
+                                  <div key={o.id} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm ${isAnswer ? "border-almi-teal bg-almi-teal/10" : wrongChosen ? "border-almi-coral-deep bg-almi-coral/10" : "border-almi-line"}`}>
+                                    <span className="text-almi-text">{o.text}</span>
+                                    {isAnswer && <span className="ml-auto shrink-0 text-xs font-semibold text-almi-teal">correct</span>}
+                                    {wrongChosen && <span className="ml-auto shrink-0 text-xs font-semibold text-almi-coral-deep">your answer</span>}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                            {it.guidanceNote && <p className="mt-1 text-xs text-almi-text-muted">Coach: {it.guidanceNote}</p>}
+                          </fieldset>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+              )
+            )}
+          </div>
+        )}
+
+        <button onClick={() => { setStep(0); setAnswers({}); setWritingText(""); setWritingEstimate(0); setWritingEstimated(false); setShowReview(false); }} className="rounded-full border border-almi-line px-6 py-2.5 text-sm font-medium text-almi-ink hover:border-almi-coral">
           Restart mock
         </button>
       </div>

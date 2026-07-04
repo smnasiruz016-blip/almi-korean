@@ -1,0 +1,528 @@
+[
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-01-notice-library",
+    "topicTag": "workplace-document",
+    "guidanceNote": "Main idea / purpose. Read the informational notice and identify what it is primarily announcing.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "우리 도서관은 다음 달부터 이용 시간을 조정합니다. 평일에는 오전 9시부터 밤 10시까지 문을 열지만, 주말에는 오후 6시에 문을 닫습니다. 또한 매월 첫째 주 월요일은 자료 정리를 위해 하루 종일 문을 닫으니 이용에 참고하시기 바랍니다. 자세한 내용은 도서관 누리집에서 확인하실 수 있습니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글은 무엇에 대한 안내입니까?",
+          "options": [
+            { "id": "a", "text": "도서관에서 새로 산 책의 목록" },
+            { "id": "b", "text": "바뀐 도서관 이용 시간" },
+            { "id": "c", "text": "도서관에서 열리는 행사 일정" },
+            { "id": "d", "text": "도서 대출 방법의 변경" }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-02-email-meeting",
+    "topicTag": "workplace-document",
+    "guidanceNote": "Detail comprehension. Locate the specific instruction the sender gives the recipient.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "안녕하세요, 김 대리님. 다음 주 화요일에 예정된 신제품 회의 관련하여 안내드립니다. 회의 장소가 3층 회의실에서 5층 대회의실로 변경되었습니다. 시간은 오후 2시로 동일합니다. 회의 전에 각자 맡은 부분의 발표 자료를 월요일 오후까지 저에게 이메일로 보내 주시면 제가 하나로 정리하겠습니다. 협조 부탁드립니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글을 받은 사람이 월요일까지 해야 하는 일은 무엇입니까?",
+          "options": [
+            { "id": "a", "text": "회의 장소를 5층으로 예약한다." },
+            { "id": "b", "text": "발표 자료를 하나로 정리한다." },
+            { "id": "c", "text": "자신이 맡은 발표 자료를 이메일로 보낸다." },
+            { "id": "d", "text": "회의 시간을 오후 2시로 바꾼다." }
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-03-article-recycling",
+    "topicTag": "informational",
+    "guidanceNote": "Main idea. Identify the central message of a short informational article.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "요즘 많은 사람들이 물건을 쉽게 사고 쉽게 버린다. 그러나 우리가 버리는 쓰레기의 상당 부분은 다시 쓸 수 있는 자원이다. 예를 들어 깨끗이 씻은 플라스틱 병이나 종이 상자는 분리해서 버리면 새로운 제품으로 다시 태어난다. 작은 습관이지만 이런 실천이 모이면 자원을 아끼고 환경을 지키는 데 큰 힘이 된다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 중심 생각으로 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "물건을 살 때는 값을 잘 비교해야 한다." },
+            { "id": "b", "text": "올바른 분리배출 습관이 자원과 환경을 지킨다." },
+            { "id": "c", "text": "플라스틱 병은 여러 번 사용하는 것이 좋다." },
+            { "id": "d", "text": "쓰레기를 줄이려면 물건을 적게 사야 한다." }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-04-cloze-exercise-habit",
+    "topicTag": "essay",
+    "guidanceNote": "Blank-fill. Choose the connective/expression that fits the logical flow of the paragraph.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "나는 몇 년 전부터 매일 아침 30분씩 걷기 시작했다. 처음에는 아침에 일어나는 것이 힘들어서 며칠 만에 포기할 뻔했다. ( ) 한 달쯤 지나자 몸이 가벼워지고 기분도 좋아지는 것을 느낄 수 있었다. 지금은 걷지 않으면 오히려 하루가 허전하게 느껴진다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "( )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "그래서" },
+            { "id": "b", "text": "하지만" },
+            { "id": "c", "text": "따라서" },
+            { "id": "d", "text": "예를 들어" }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-05-column-technology",
+    "topicTag": "opinion",
+    "guidanceNote": "Main idea of an opinion column. Distinguish the author's central claim from supporting details.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "스마트폰은 우리 생활을 편리하게 만들었다. 길을 찾을 때도, 물건을 살 때도, 사람을 만날 약속을 정할 때도 손안의 작은 기계 하나면 충분하다. 그러나 편리함의 이면에는 놓치기 쉬운 문제가 있다. 사람들은 걸으면서도, 밥을 먹으면서도, 심지어 가족과 마주 앉아 있을 때조차 화면에서 눈을 떼지 못한다. 기술이 사람 사이의 거리를 좁혀 준다고 하지만, 정작 바로 옆에 있는 사람과의 대화는 점점 줄어들고 있다. 진정으로 중요한 것은 기술을 얼마나 많이 사용하느냐가 아니라, 그것을 언제 내려놓아야 하는지를 아는 것이다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글에서 필자가 말하고자 하는 바로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "스마트폰은 길을 찾는 데 매우 유용하다." },
+            { "id": "b", "text": "기술을 적절히 내려놓을 줄 아는 태도가 중요하다." },
+            { "id": "c", "text": "스마트폰 사용 시간을 정확히 기록해야 한다." },
+            { "id": "d", "text": "가족과의 약속은 반드시 직접 만나 정해야 한다." }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-06-inference-review-cafe",
+    "topicTag": "opinion",
+    "guidanceNote": "Inference. Deduce the writer's attitude/feeling that is implied but not stated directly.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "친구의 소개로 새로 문을 연 카페를 찾아갔다. 인터넷에서 사진을 보고 기대가 컸던 곳이었다. 실내 장식은 사진에서 본 것처럼 예뻤지만, 자리에 앉은 지 20분이 지나도 주문한 음료가 나오지 않았다. 직원에게 물어보니 그제야 주문이 빠졌다며 미안하다고 했다. 결국 음료는 맛있었지만, 다시 그곳을 찾게 될지는 잘 모르겠다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "밑줄 친 부분에 나타난 글쓴이의 심정으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "카페의 장식이 사진과 달라 실망스러웠다." },
+            { "id": "b", "text": "음료 맛이 없어서 화가 났다." },
+            { "id": "c", "text": "서비스 때문에 다시 방문할 마음이 줄어들었다." },
+            { "id": "d", "text": "친구의 소개가 정확해서 만족스러웠다." }
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-07-article-sleep",
+    "topicTag": "informational",
+    "guidanceNote": "Detail comprehension. Identify which statement agrees with the informational text.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "충분한 잠은 건강한 생활의 기본이다. 전문가들은 성인의 경우 하루 7시간에서 8시간 정도 자는 것이 좋다고 말한다. 잠이 부족하면 집중력이 떨어지고 감정 조절이 어려워질 뿐 아니라, 오랫동안 이런 상태가 이어지면 여러 질병의 원인이 되기도 한다. 반대로 지나치게 오래 자는 것 역시 몸에 좋지 않다는 연구 결과가 있다. 따라서 자신에게 맞는 적절한 수면 시간을 지키는 것이 중요하다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 내용과 같은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "잠을 오래 잘수록 건강에 좋다." },
+            { "id": "b", "text": "성인은 하루에 5시간만 자도 충분하다." },
+            { "id": "c", "text": "잠이 부족하면 집중력이 떨어질 수 있다." },
+            { "id": "d", "text": "수면 시간은 건강과 관련이 없다." }
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "CORE",
+    "title": "TII-R-08-cloze-volunteer",
+    "topicTag": "essay",
+    "guidanceNote": "Blank-fill. Select the phrase whose meaning best completes the writer's reflection.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "지난 주말에 처음으로 봉사 활동에 참여했다. 나는 다른 사람을 돕기 위해 그곳에 갔다고 생각했다. 그런데 하루를 보내고 나니 오히려 내가 더 많은 것을 얻었다는 생각이 들었다. 함께 웃고 이야기를 나누는 동안, 그동안 잊고 지냈던 따뜻한 마음이 되살아났기 때문이다. 봉사는 ( ) 활동이라는 것을 그날 깨달았다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "( )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "돈을 많이 벌 수 있는" },
+            { "id": "b", "text": "주는 사람도 함께 얻게 되는" },
+            { "id": "c", "text": "혼자서 조용히 해야 하는" },
+            { "id": "d", "text": "누구나 쉽게 포기하는" }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "CORE",
+    "title": "TII-R-09-ordering-coffee-history",
+    "topicTag": "informational",
+    "guidanceNote": "Sentence ordering. Arrange the four sentences into a coherent paragraph; look for the topic sentence and connective cues.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 그 후 커피는 여러 나라로 퍼져 나가 세계적인 음료가 되었다.\n(나) 커피는 오늘날 전 세계에서 가장 사랑받는 음료 중 하나이다.\n(다) 처음에 커피는 특정 지역에서만 마시던 음료였다.\n(라) 그러나 상인들이 커피를 다른 지역으로 실어 나르기 시작했다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "(나)-(다)-(라)-(가)" },
+            { "id": "b", "text": "(다)-(가)-(나)-(라)" },
+            { "id": "c", "text": "(나)-(라)-(다)-(가)" },
+            { "id": "d", "text": "(다)-(나)-(라)-(가)" }
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "CORE",
+    "title": "TII-R-10-ordering-plant-care",
+    "topicTag": "informational",
+    "guidanceNote": "Sentence ordering. Use logical connectives and the natural cause-result sequence to order the sentences.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 나는 이유를 몰라 인터넷에서 정보를 찾아보았다.\n(나) 작년에 처음으로 화분에 꽃을 심어 키우기 시작했다.\n(다) 알고 보니 물을 너무 자주 준 것이 원인이었다.\n(라) 그런데 얼마 지나지 않아 잎이 노랗게 변하기 시작했다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "(나)-(라)-(가)-(다)" },
+            { "id": "b", "text": "(나)-(가)-(라)-(다)" },
+            { "id": "c", "text": "(라)-(나)-(가)-(다)" },
+            { "id": "d", "text": "(나)-(라)-(다)-(가)" }
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-11-workplace-policy-remote",
+    "topicTag": "workplace-document",
+    "guidanceNote": "Detail comprehension of a workplace policy notice. Match the condition to the correct rule.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "재택근무 운영 안내\n\n우리 회사는 다음 달부터 재택근무 제도를 시행합니다. 직원은 주 5일 중 최대 2일까지 재택근무를 신청할 수 있습니다. 재택근무를 원하는 직원은 최소 3일 전에 부서장에게 신청서를 제출해야 하며, 부서장의 승인을 받은 후에만 이용할 수 있습니다. 다만 중요한 회의나 고객 방문이 있는 날에는 사무실 출근을 원칙으로 합니다. 자세한 사항은 인사팀에 문의해 주시기 바랍니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내의 내용과 같은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "직원은 원하는 날 언제든지 재택근무를 할 수 있다." },
+            { "id": "b", "text": "재택근무는 부서장의 승인을 받아야 이용할 수 있다." },
+            { "id": "c", "text": "재택근무는 일주일에 5일까지 신청할 수 있다." },
+            { "id": "d", "text": "고객 방문이 있는 날에도 재택근무가 가능하다." }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-R-12-column-city-green-space",
+    "topicTag": "opinion",
+    "guidanceNote": "STRETCH main-idea + inference. Two questions on one passage: identify the argument and infer an implied conclusion.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "도시가 커질수록 사람들은 더 많은 건물과 도로를 원한다. 한정된 땅 위에서 개발이 이루어지다 보니, 공원이나 나무가 심어진 공간은 흔히 가장 먼저 사라지는 대상이 된다. 그러나 최근의 여러 연구는 도시의 녹지가 단순한 장식이 아님을 보여 준다. 나무가 우거진 지역은 여름철 기온을 눈에 띄게 낮추고, 미세먼지를 줄이며, 그곳을 찾는 시민들의 스트레스를 완화한다. 즉 녹지에 대한 투자는 비용이 아니라 도시의 건강을 지키기 위한 투자인 셈이다. 눈앞의 경제적 이익만을 좇아 녹지를 줄이는 결정은, 결국 더 큰 대가를 치르게 할지도 모른다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 주제로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "도시의 녹지는 도시의 건강을 위한 중요한 투자이다." },
+            { "id": "b", "text": "도시가 커지면 건물과 도로가 늘어난다." },
+            { "id": "c", "text": "여름철 기온을 낮추려면 에어컨을 많이 써야 한다." },
+            { "id": "d", "text": "공원은 도시의 아름다운 장식 역할을 한다." }
+          ],
+          "answer": "a"
+        },
+        {
+          "id": "q2",
+          "stem": "밑줄 친 '더 큰 대가'가 의미하는 바로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "건물을 짓는 데 드는 높은 비용" },
+            { "id": "b", "text": "녹지 부족으로 생기는 환경과 건강 문제" },
+            { "id": "c", "text": "공원을 관리하는 데 필요한 인력" },
+            { "id": "d", "text": "도로를 넓히는 데 걸리는 시간" }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-R-13-essay-literature-window",
+    "topicTag": "literature",
+    "guidanceNote": "STRETCH literature-style inference. Grasp the narrator's underlying emotion and the symbolic meaning of a detail.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "오래된 집을 떠나던 날, 나는 마지막으로 이층 방의 창가에 섰다. 그 창은 내가 어릴 적부터 계절이 바뀌는 모습을 지켜보던 자리였다. 봄이면 담장 너머 벚나무가 하얗게 피었고, 겨울이면 눈이 소리 없이 마당을 덮었다. 이삿짐을 실은 트럭이 골목을 빠져나갈 때, 나는 뒤를 돌아보지 않으려 애썼다. 그러나 창밖으로 스치는 낯익은 풍경들이 자꾸만 눈에 밟혔다. 새로운 곳에서의 삶이 기다리고 있었지만, 마음 한구석은 여전히 그 창가에 남아 있는 듯했다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글에 나타난 '나'의 심정으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "새집으로 이사 가는 것이 무척 설레고 기쁘다." },
+            { "id": "b", "text": "오래된 집을 떠나는 것이 아쉽고 서운하다." },
+            { "id": "c", "text": "낡은 집을 벗어나게 되어 후련하고 시원하다." },
+            { "id": "d", "text": "이사 준비가 힘들어서 몹시 지치고 짜증이 난다." }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-R-14-academic-language-change",
+    "topicTag": "academic",
+    "guidanceNote": "STRETCH academic reading with two questions. Test main idea and a detail requiring integration across sentences.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "언어는 고정된 것이 아니라 끊임없이 변화하는 살아 있는 체계이다. 새로운 사물과 개념이 생겨나면 그것을 표현할 낱말이 만들어지고, 반대로 더 이상 쓰이지 않는 말은 서서히 사라진다. 특히 오늘날에는 인터넷과 사회 관계망 서비스를 통해 언어 변화의 속도가 과거보다 훨씬 빨라졌다. 한편 이러한 변화를 두고 언어가 오염된다고 걱정하는 목소리도 있다. 그러나 언어학자들은 변화 자체를 옳고 그름의 문제로 볼 수 없다고 지적한다. 어떤 표현이 살아남고 어떤 표현이 사라지는지는 결국 그 언어를 사용하는 사람들의 선택에 달려 있기 때문이다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "인터넷은 언어를 오염시키는 주된 원인이다." },
+            { "id": "b", "text": "언어는 사용자에 의해 끊임없이 변화하는 체계이다." },
+            { "id": "c", "text": "새로운 낱말은 만들지 않는 것이 바람직하다." },
+            { "id": "d", "text": "언어학자들은 언어 변화를 막아야 한다고 본다." }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "언어학자들의 견해로 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "언어 변화는 옳고 그름으로 판단하기 어렵다." },
+            { "id": "b", "text": "사라지는 표현은 반드시 되살려야 한다." },
+            { "id": "c", "text": "언어 변화는 전문가만이 결정할 수 있다." },
+            { "id": "d", "text": "인터넷 언어는 표준어로 인정해야 한다." }
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "STRETCH",
+    "title": "TII-R-15-cloze-economy-consumption",
+    "topicTag": "academic",
+    "guidanceNote": "STRETCH blank-fill in an abstract academic paragraph. The filler must match a nuanced logical relationship.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "사람들은 흔히 소득이 늘어나면 소비도 그만큼 늘어난다고 생각한다. 그러나 실제 소비 행동은 그렇게 단순하지 않다. 미래에 대한 불안이 클 때 사람들은 소득이 늘어도 지갑을 쉽게 열지 않는다. 언제 어떤 어려움이 닥칠지 모른다는 생각에 오히려 저축을 늘리기 때문이다. ( ) 소비를 살리기 위해서는 단순히 소득을 높이는 것뿐만 아니라, 사람들이 미래를 안심할 수 있도록 하는 정책이 함께 필요하다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "( )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "이처럼 소비 심리가 미래에 대한 불안과 관련되어 있으므로" },
+            { "id": "b", "text": "소득과 소비는 아무런 관계가 없기 때문에" },
+            { "id": "c", "text": "저축을 줄이는 것이 무엇보다 중요하므로" },
+            { "id": "d", "text": "사람들은 언제나 소득만큼 소비하기 때문에" }
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "STRETCH",
+    "title": "TII-R-16-ordering-scientific-method",
+    "topicTag": "academic",
+    "guidanceNote": "STRETCH sentence ordering in an academic register. Track abstract discourse markers to reconstruct the argument.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 이렇게 세운 가설이 옳은지 확인하기 위해 실험을 설계한다.\n(나) 과학적 탐구는 대개 하나의 질문에서 출발한다.\n(다) 실험 결과가 가설과 다르면 처음으로 돌아가 다시 생각한다.\n(라) 그 질문에 대한 잠정적인 답, 즉 가설을 세우는 것이 다음 단계이다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "(나)-(라)-(가)-(다)" },
+            { "id": "b", "text": "(나)-(가)-(라)-(다)" },
+            { "id": "c", "text": "(라)-(나)-(가)-(다)" },
+            { "id": "d", "text": "(나)-(라)-(다)-(가)" }
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MATCHING",
+    "difficulty": "STRETCH",
+    "title": "TII-R-17-matching-column-title",
+    "topicTag": "opinion",
+    "guidanceNote": "STRETCH matching. Choose the headline that best captures the columnist's overall argument (title-matching task).",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "실패를 두려워하지 말라는 말을 우리는 자주 듣는다. 그러나 이 말이 실패가 아무런 문제가 되지 않는다는 뜻은 아니다. 중요한 것은 실패를 겪은 뒤의 태도이다. 어떤 사람은 실패에 좌절하여 그 자리에 주저앉지만, 어떤 사람은 무엇이 잘못되었는지 차분히 살펴보고 다음을 준비한다. 실패 그 자체가 사람을 성장시키는 것이 아니라, 실패에서 배우려는 자세가 사람을 성장시킨다. 결국 실패는 성장의 재료일 뿐, 성장을 자동으로 보장해 주지는 않는다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 제목으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            { "id": "a", "text": "실패는 무조건 피해야 할 대상이다" },
+            { "id": "b", "text": "실패에서 배우는 태도가 성장을 만든다" },
+            { "id": "c", "text": "성공한 사람은 실패를 겪지 않는다" },
+            { "id": "d", "text": "좌절은 누구도 피할 수 없는 감정이다" }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MATCHING",
+    "difficulty": "CORE",
+    "title": "TII-R-18-matching-ad-purpose",
+    "topicTag": "informational",
+    "guidanceNote": "Matching. Identify what product or service the short advertisement is describing (purpose-matching task).",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "무거운 짐도 가볍게, 계단도 문제없이! 한 번 충전으로 하루 종일 사용할 수 있습니다. 접으면 가방처럼 작아져 버스나 지하철에서도 편하게 들고 탈 수 있습니다. 도시에서의 짧은 이동, 이제 걷지 말고 편하게 타 보세요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "무엇에 대한 광고입니까?",
+          "options": [
+            { "id": "a", "text": "여행용 가방" },
+            { "id": "b", "text": "휴대용 전동 이동 수단" },
+            { "id": "c", "text": "충전용 배터리" },
+            { "id": "d", "text": "지하철 정기권" }
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  }
+]

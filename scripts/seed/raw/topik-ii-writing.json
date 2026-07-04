@@ -1,0 +1,302 @@
+[
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-01-email-request",
+    "topicTag": "email",
+    "guidanceNote": "Task 51 email. Blank (ㄱ) must be a polite request matching the reason given; blank (ㄴ) must offer a concrete alternative. Grade on register (하십시오체/요체 consistency) and connective fit.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "받는 사람: 김민수 선생님\n제목: 상담 시간 문의\n\n안녕하세요, 선생님. 저는 한국어 수업을 듣는 응웬입니다.\n다음 주 화요일에 선생님과 상담을 하고 싶습니다. 그런데 그날 오후에는 다른 수업이 있어서 ( ㉠ ).\n혹시 괜찮으시면 오전에 뵙고 싶은데, ( ㉡ )?\n답장 기다리겠습니다. 감사합니다.",
+        "guidance": "㉠에는 오후에 만나기 어렵다는 이유를 정중하게, ㉡에는 오전 시간이 가능한지 묻는 표현을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-02-community-notice",
+    "topicTag": "notice",
+    "guidanceNote": "Task 51 apartment notice. Blank (ㄱ) states what residents must NOT do; blank (ㄴ) gives the reason or the period. Focus on formal notice register and noun-phrase endings.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[안내문]\n\n행복아파트 주민 여러분께\n\n다음 주 월요일부터 수요일까지 아파트 지하 주차장 바닥 공사를 합니다.\n공사 기간에는 지하 주차장을 사용할 수 없으니 ( ㉠ ).\n불편하시겠지만 안전을 위한 공사이므로 ( ㉡ ).\n\n관리사무소 드림",
+        "guidance": "㉠에는 차를 어디에 세워야 하는지, ㉡에는 주민들에게 부탁하는 말을 안내문에 맞는 문체로 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-03-club-recruit",
+    "topicTag": "club",
+    "guidanceNote": "Task 51 club recruitment message. Blank (ㄱ) explains who can join; blank (ㄴ) tells how to sign up. Check imperative/invitation forms and parallelism.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[동아리 모집 글]\n\n안녕하세요, 사진 동아리 '한 컷'입니다.\n저희 동아리는 새 학기를 맞아 함께 활동할 회원을 모집합니다.\n사진을 잘 찍지 못해도 괜찮습니다. 사진에 관심이 있는 사람이면 ( ㉠ ).\n가입을 원하시는 분은 이번 주 금요일까지 학생회관 3층 사무실로 ( ㉡ ).\n많은 신청 바랍니다.",
+        "guidance": "㉠에는 누구나 가입할 수 있다는 내용을, ㉡에는 신청 방법을 알리는 표현을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-04-borrow-text",
+    "topicTag": "message",
+    "guidanceNote": "Task 51 friend text message. Blank (ㄱ) makes the request (borrow item); blank (ㄴ) proposes when to return/meet. Casual 요체 acceptable; check politeness to a senior classmate.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[문자 메시지]\n\n선배님, 안녕하세요. 저 후배 지훈이에요.\n다음 주에 발표가 있는데 참고할 책이 필요해서요.\n혹시 선배님이 가지고 계신 '한국 사회의 이해' 책을 ( ㉠ )?\n제가 수업이 끝나고 도서관 앞으로 갈 수 있으니까 편하신 시간을 ( ㉡ ).\n감사합니다!",
+        "guidance": "㉠에는 책을 빌려 달라는 부탁을, ㉡에는 시간을 알려 달라는 표현을 정중하게 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-05-lost-and-found",
+    "topicTag": "notice",
+    "guidanceNote": "Task 51 lost-item notice. Blank (ㄱ) describes what to do if found; blank (ㄴ) gives contact detail. Check conditional (으면) and formal request endings.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[게시판 안내]\n\n지갑을 찾습니다\n\n어제 오후 2시쯤 도서관 1층 열람실에서 검은색 지갑을 잃어버렸습니다.\n지갑 안에는 학생증과 교통 카드가 들어 있습니다.\n혹시 이 지갑을 ( ㉠ ) 연락해 주시기 바랍니다.\n제 연락처는 아래에 적어 두었으니 ( ㉡ ).\n\n감사합니다.",
+        "guidance": "㉠에는 지갑을 본 경우를 나타내는 표현을, ㉡에는 연락 방법에 대한 내용을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-01-sleep-health",
+    "topicTag": "health",
+    "guidanceNote": "Task 52 expository. Blank (ㄱ) completes a cause statement; blank (ㄴ) states the recommended action. Grade on logical connectives (그래서/따라서) and formal 문어체.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "사람은 잠을 자는 동안 몸과 마음의 피로를 푼다. 그런데 잠이 부족하면 다음 날 집중력이 떨어지고 쉽게 피곤해진다. 즉, 건강을 지키기 위해서는 무엇보다 ( ㉠ ). 특히 자기 전에 휴대 전화를 오래 보면 잠이 잘 오지 않는다. 그러므로 깊은 잠을 자고 싶다면 자기 전에는 ( ㉡ ).",
+        "guidance": "㉠과 ㉡에는 앞뒤 내용에 어울리는 한 문장을 격식체로 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-02-reading-benefit",
+    "topicTag": "reading",
+    "guidanceNote": "Task 52 expository on reading. Blank (ㄱ) supplies a contrast benefit; blank (ㄴ) draws the conclusion. Focus on 뿐만 아니라 / 반면에 style cohesion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "책을 읽으면 새로운 지식을 얻을 수 있다. 그런데 독서의 장점은 지식을 얻는 것만이 아니다. 책을 읽으면 다른 사람의 생각을 이해하게 되어 ( ㉠ ). 또한 어려운 문제를 만났을 때 책에서 배운 내용이 도움이 되기도 한다. 이처럼 독서는 우리에게 여러 가지 이익을 주기 때문에 ( ㉡ ).",
+        "guidance": "㉠에는 독서의 또 다른 장점을, ㉡에는 앞의 내용을 정리하는 결론을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-03-plant-water",
+    "topicTag": "science",
+    "guidanceNote": "Task 52 mini-science explanation. Blank (ㄱ) completes a general fact; blank (ㄴ) states a caution/exception. Check 그러나 / 반대로 logic and impersonal statement style.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "식물이 자라기 위해서는 물이 꼭 필요하다. 그래서 사람들은 식물에 물을 자주 주면 더 잘 자란다고 생각한다. 그러나 물을 너무 많이 주면 오히려 뿌리가 상해서 ( ㉠ ). 따라서 식물을 건강하게 키우려면 종류에 따라 ( ㉡ ). 물의 양을 잘 맞추는 것이 무엇보다 중요하다.",
+        "guidance": "㉠에는 물을 많이 주었을 때의 결과를, ㉡에는 올바른 물 주기 방법에 대한 내용을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-52-04-habit-change",
+    "topicTag": "psychology",
+    "guidanceNote": "Task 52 slightly harder. Blank (ㄱ) defines why habits are hard to change; blank (ㄴ) gives the practical method. Grade abstract-noun handling and 왜냐하면 ~ 때문이다 structure.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "많은 사람들이 나쁜 습관을 고치고 싶어 하지만 그것은 쉬운 일이 아니다. 습관을 바꾸기 어려운 이유는 오랫동안 반복해 온 행동이 이미 몸에 ( ㉠ ). 그렇다면 습관을 어떻게 바꿀 수 있을까? 전문가들은 한 번에 큰 변화를 시도하기보다는 ( ㉡ ) 것이 효과적이라고 말한다. 작은 성공이 쌓이면 큰 변화로 이어지기 때문이다.",
+        "guidance": "㉠과 ㉡에는 문맥에 맞는 표현을 넣어 문장을 완성하십시오. ㉡에는 '-는' 형태로 이어지는 표현을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-05-city-tree",
+    "topicTag": "environment",
+    "guidanceNote": "Task 52 environment topic. Blank (ㄱ) completes a benefit-of-trees clause; blank (ㄴ) states the resulting recommendation. Check 뿐만 아니라 and passive/benefit expressions.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "도시에 나무가 많으면 여러 가지 좋은 점이 있다. 나무는 더운 여름에 그늘을 만들어 주어 사람들이 ( ㉠ ). 뿐만 아니라 나무는 공기 중의 먼지를 줄여 도시의 공기를 깨끗하게 해 준다. 이러한 이유로 최근 많은 도시들이 ( ㉡ ). 나무를 심는 일은 결국 사람의 건강을 지키는 일이기도 하다.",
+        "guidance": "㉠에는 나무 그늘이 주는 이점을, ㉡에는 도시들이 하는 노력을 나타내는 표현을 쓰십시오."
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-01-smartphone-usage",
+    "topicTag": "chart-survey",
+    "guidanceNote": "Task 53 data description, 200-300 chars. Writer must state survey topic, compare two groups, and give the top reason. Grade on chart-description vocabulary (차지하다, 비해, 나타나다) and objective 문어체.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '스마트폰 사용 시간'에 대해 20대와 50대 성인 남녀 500명을 대상으로 조사한 결과이다. 이 내용을 200~300자로 쓰십시오.\n\n[조사 기관] 한국생활문화연구소\n[조사 대상] 20대와 50대 성인 남녀 500명\n\n[하루 평균 스마트폰 사용 시간]\n- 20대: 2018년 3시간 → 2023년 5시간\n- 50대: 2018년 1시간 → 2023년 3시간\n\n[스마트폰을 주로 사용하는 이유 (20대)]\n1위 영상 시청 45%\n2위 친구와 연락 30%\n3위 정보 검색 25%",
+        "guidance": "조사 개요, 두 집단의 변화 비교, 20대의 사용 이유 순위를 모두 포함하여 객관적으로 서술하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-02-library-visitors",
+    "topicTag": "chart-trend",
+    "guidanceNote": "Task 53 trend + reason. Writer describes a 5-year increase and lists two causes. Focus on growth expressions (증가하다, 늘어나다) and cause linking (그 이유로).",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음 자료를 보고 도서관 이용자 수의 변화와 그 이유를 200~300자로 쓰십시오.\n\n[자료 1] ○○시 공공 도서관 연간 이용자 수\n- 2019년: 30만 명\n- 2021년: 45만 명\n- 2023년: 60만 명\n\n[자료 2] 이용자가 늘어난 이유\n- 집 근처에 새 도서관이 많이 생김\n- 책뿐만 아니라 영화, 강연 등 다양한 프로그램이 늘어남",
+        "guidance": "이용자 수가 어떻게 변했는지 구체적인 수치와 함께 설명하고, 두 가지 이유를 자연스럽게 연결하여 쓰십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-03-online-shopping",
+    "topicTag": "chart-comparison",
+    "guidanceNote": "Task 53 comparison of two age groups with pie-style shares. Writer compares preferences and notes a contrast. Grade on 비율 comparison phrasing and balanced coverage.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '물건을 살 때 주로 이용하는 방법'에 대한 조사 결과이다. 이 자료를 보고 200~300자로 쓰십시오.\n\n[조사 대상] 성인 남녀 1,000명\n\n[온라인 구매를 선택한 비율]\n- 30대 이하: 70%\n- 40대 이상: 40%\n\n[온라인 구매를 선호하는 이유]\n- 시간과 장소에 상관없이 살 수 있어서\n- 가격을 쉽게 비교할 수 있어서\n\n[매장 구매를 선호하는 이유]\n- 물건을 직접 보고 확인할 수 있어서",
+        "guidance": "두 연령대의 온라인 구매 비율을 비교하고, 온라인과 매장 구매를 선호하는 이유를 각각 정리하여 서술하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-04-exercise-participation",
+    "topicTag": "chart-survey",
+    "guidanceNote": "Task 53 survey with change + reasons. Writer reports a rise in regular exercise and two motivations. Check percentage phrasing and neutral summarizing conclusion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '규칙적으로 운동을 하는 사람의 비율'에 대한 조사 결과이다. 이 내용을 200~300자로 쓰십시오.\n\n[조사 기관] 국민건강조사원\n[조사 대상] 성인 남녀 2,000명\n\n[규칙적으로 운동하는 사람의 비율]\n- 2013년: 35%\n- 2023년: 58%\n\n[운동을 시작한 이유]\n1위 건강을 지키기 위해서 52%\n2위 스트레스를 풀기 위해서 28%\n3위 다른 사람과 어울리기 위해서 20%",
+        "guidance": "10년 동안의 변화를 수치와 함께 설명하고, 사람들이 운동을 시작한 이유를 순위대로 서술한 뒤 간단히 마무리하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-05-cafe-preference",
+    "topicTag": "chart-reason",
+    "guidanceNote": "Task 53 reason-ranking chart with a gender split. Writer must present overall reasons and one notable difference between men and women. Grade on 반면 contrast and objective tone.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '카페를 자주 찾는 이유'에 대해 성인 남녀 800명을 조사한 결과이다. 이 자료를 200~300자로 쓰십시오.\n\n[전체 응답 순위]\n1위 조용히 쉬기 위해서 40%\n2위 사람을 만나기 위해서 35%\n3위 일이나 공부를 하기 위해서 25%\n\n[남녀 차이]\n- 남성: '일이나 공부를 하기 위해서'라는 응답이 가장 많음\n- 여성: '사람을 만나기 위해서'라는 응답이 가장 많음",
+        "guidance": "전체 응답 순위를 설명한 뒤, 남성과 여성의 응답에서 나타난 차이를 대조하여 객관적으로 서술하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-01-success-meaning",
+    "topicTag": "values",
+    "guidanceNote": "Task 54 argumentative essay, 600-700 chars. Writer defines success, discusses what shapes it, and takes a position. Grade on thesis, three-part structure, and formal essay register (-ㄴ다 declaratives).",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "사람들은 누구나 성공적인 삶을 살고 싶어 한다. 그러나 성공이 무엇인지에 대한 생각은 사람마다 다르다. 아래의 내용을 중심으로 '성공적인 삶이란 무엇인가'에 대한 자신의 생각을 600~700자로 쓰십시오.\n\n· 성공적인 삶이란 어떤 삶이라고 생각하는가?\n· 그렇게 생각하는 이유는 무엇인가?\n· 성공적인 삶을 살기 위해 어떤 노력이 필요한가?",
+        "guidance": "서론-본론-결론의 구성을 갖추고, 자신의 주장을 분명히 밝히며 격식적인 문어체로 쓰십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-02-competition-cooperation",
+    "topicTag": "society",
+    "guidanceNote": "Task 54 essay weighing competition vs cooperation. Writer must present both sides and argue a stance. Grade on balanced argument, concession (물론 ~ 그러나), and cohesive conclusion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "현대 사회에서는 경쟁을 통해 개인과 사회가 발전한다고 말하기도 하고, 협력이 더 중요하다고 말하기도 한다. 아래의 내용을 중심으로 '경쟁과 협력'에 대한 자신의 생각을 600~700자로 쓰십시오.\n\n· 경쟁이 개인과 사회에 주는 긍정적인 영향과 부정적인 영향은 무엇인가?\n· 협력이 필요한 이유는 무엇인가?\n· 경쟁과 협력 중 무엇이 더 중요하다고 생각하는가? 그 이유는 무엇인가?",
+        "guidance": "경쟁과 협력의 양면을 균형 있게 다룬 뒤 자신의 입장을 논리적인 근거와 함께 제시하십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-03-technology-communication",
+    "topicTag": "technology",
+    "guidanceNote": "Task 54 essay on technology's effect on human relationships. Writer weighs pros/cons and proposes healthy use. Grade on abstract vocabulary control and clear position statement.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "스마트폰과 인터넷의 발달로 사람들은 언제 어디서나 쉽게 연락을 주고받을 수 있게 되었다. 그러나 이러한 변화가 사람 사이의 관계에 어떤 영향을 주는지에 대해서는 의견이 나뉜다. 아래의 내용을 중심으로 자신의 생각을 600~700자로 쓰십시오.\n\n· 기술의 발달이 사람들의 관계에 준 긍정적인 변화는 무엇인가?\n· 반대로 어떤 문제가 생길 수 있는가?\n· 기술을 올바르게 사용하기 위해서는 어떤 태도가 필요한가?",
+        "guidance": "긍정적 측면과 부정적 측면을 모두 서술하고, 바람직한 태도에 대한 자신의 견해로 마무리하십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-04-failure-value",
+    "topicTag": "values",
+    "guidanceNote": "Task 54 essay on the value of failure. Writer argues why failure matters and how to face it. Grade on argument development, examples in the abstract, and 결론 that restates thesis.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "많은 사람들이 실패를 두려워하여 새로운 일에 도전하기를 망설인다. 그러나 실패가 반드시 나쁜 것만은 아니라는 의견도 있다. 아래의 내용을 중심으로 '실패의 가치'에 대한 자신의 생각을 600~700자로 쓰십시오.\n\n· 사람들이 실패를 두려워하는 이유는 무엇인가?\n· 실패가 우리에게 주는 긍정적인 점은 무엇인가?\n· 실패를 대하는 바람직한 태도는 무엇인가?",
+        "guidance": "실패에 대한 일반적인 생각을 제시한 뒤, 실패의 긍정적 가치와 바람직한 태도를 논리적으로 서술하십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    }
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-05-environment-responsibility",
+    "topicTag": "environment",
+    "guidanceNote": "Task 54 essay on individual vs collective responsibility for the environment. Writer must argue where responsibility lies and propose action. Grade on thesis clarity and formal argumentative cohesion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "환경 문제가 점점 심각해지면서 이를 해결하기 위한 노력이 필요하다는 목소리가 커지고 있다. 그러나 그 책임이 개인에게 있는지, 국가와 기업에 있는지에 대해서는 생각이 다르다. 아래의 내용을 중심으로 자신의 생각을 600~700자로 쓰십시오.\n\n· 환경 문제를 해결하기 위한 개인의 노력에는 어떤 것이 있는가?\n· 국가나 기업이 해야 할 일은 무엇인가?\n· 환경 문제 해결의 책임은 누구에게 더 있다고 생각하는가? 그 이유는 무엇인가?",
+        "guidance": "개인과 국가·기업의 역할을 모두 서술한 뒤, 책임의 주체에 대한 자신의 입장을 근거와 함께 분명히 밝히십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    }
+  }
+]

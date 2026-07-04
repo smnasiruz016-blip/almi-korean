@@ -1,0 +1,259 @@
+[
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-01-announcement-library-hours",
+    "topicTag": "announcement",
+    "guidanceNote": "Public announcement. Listen for the specific change being announced and the reason given.",
+    "payload": {
+      "audioScript": "여자: 도서관 이용객 여러분께 안내 말씀 드립니다. 다음 주 월요일부터 도서관 운영 시간이 바뀝니다. 그동안 저녁 아홉 시까지 운영했지만, 시험 기간을 맞아 밤 열두 시까지 문을 엽니다. 다만 열람실만 연장 운영되며, 자료 대출과 반납은 기존처럼 저녁 여섯 시까지만 가능하니 이 점 유의해 주시기 바랍니다.",
+      "speakers": [{"role": "안내원", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "이 안내의 중심 내용으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "도서관이 다음 주부터 문을 닫는다."}, {"id": "b", "text": "시험 기간에 열람실 운영 시간이 늘어난다."}, {"id": "c", "text": "자료 대출 시간이 밤 열두 시까지 연장된다."}, {"id": "d", "text": "도서관 이용 요금이 새로 생긴다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-02-dialogue-lost-item",
+    "topicTag": "daily-conversation",
+    "guidanceNote": "Everyday service conversation. Identify what the man is looking for and what the woman suggests he do.",
+    "payload": {
+      "audioScript": "남자: 저기요, 혹시 여기 지하철에서 우산 하나 못 보셨나요? 조금 전에 두고 내린 것 같아서요.\n여자: 아, 유실물은 저희 역무실에서 바로 처리하지 않고요, 다음 날에 유실물 센터로 모두 모아서 보냅니다.\n남자: 그럼 오늘은 확인이 어려운가요?\n여자: 네, 죄송하지만 내일 오후에 유실물 센터로 전화해 보시는 게 가장 빠릅니다. 여기 센터 번호 적어 드릴게요.",
+      "speakers": [{"role": "승객", "voice": "male"}, {"role": "역무원", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "여자가 남자에게 권한 방법으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "지금 바로 역무실에서 우산을 찾는다."}, {"id": "b", "text": "다음 날 유실물 센터에 전화를 한다."}, {"id": "c", "text": "새 우산을 역에서 구입한다."}, {"id": "d", "text": "지하철 안에서 직접 우산을 찾아본다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-03-weather-forecast",
+    "topicTag": "news",
+    "guidanceNote": "Weather report. Listen for the main forecast and the advice given to listeners.",
+    "payload": {
+      "audioScript": "여자: 오늘의 날씨입니다. 현재 전국이 대체로 맑지만, 오후 늦게부터 중부 지방을 중심으로 구름이 많아지겠습니다. 특히 내일 새벽부터는 강한 비와 함께 바람도 거세게 불겠으니, 야외 활동을 계획하신 분들은 일정을 조정하시는 것이 좋겠습니다. 낮과 밤의 기온 차이가 크니 건강 관리에도 유의하시기 바랍니다.",
+      "speakers": [{"role": "기상 캐스터", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "이 일기 예보의 내용과 같은 것을 고르십시오.", "options": [{"id": "a", "text": "오늘 아침부터 전국에 비가 내린다."}, {"id": "b", "text": "내일 새벽부터 비와 바람이 강해진다."}, {"id": "c", "text": "이번 주 내내 맑은 날씨가 이어진다."}, {"id": "d", "text": "낮과 밤의 기온 차이가 거의 없다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-04-workplace-meeting-schedule",
+    "topicTag": "workplace",
+    "guidanceNote": "Office conversation. Listen for what the two agree to change about the meeting.",
+    "payload": {
+      "audioScript": "남자: 과장님, 다음 주 화요일 회의 말인데요, 그날 오전에 외부 손님이 오셔서 회의실 사용이 어려울 것 같습니다.\n여자: 아, 그래요? 그럼 오후로 옮기는 건 어때요? 두 시쯤이면 다들 시간이 될 것 같은데요.\n남자: 네, 좋습니다. 그런데 회의 자료는 미리 이메일로 공유해 두면 회의 시간을 줄일 수 있을 것 같습니다.\n여자: 좋은 생각이에요. 그럼 자료는 월요일까지 정리해서 보내 주세요.",
+      "speakers": [{"role": "직원", "voice": "male"}, {"role": "과장", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "두 사람이 결정한 내용으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "회의를 다음 주 화요일 오후로 옮긴다."}, {"id": "b", "text": "회의를 취소하기로 한다."}, {"id": "c", "text": "외부 손님을 회의에 초대한다."}, {"id": "d", "text": "회의 자료를 회의 당일에 나눠 준다."}], "answer": "a"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-05-interview-volunteer",
+    "topicTag": "interview",
+    "guidanceNote": "Short interview. Listen for the man's reason for starting his activity.",
+    "payload": {
+      "audioScript": "여자: 벌써 십 년째 지역 아이들에게 무료로 그림을 가르치고 계신데요, 처음 시작하신 계기가 궁금합니다.\n남자: 사실 특별한 이유는 없었어요. 제가 어릴 때 형편이 어려워서 배우고 싶은 걸 마음껏 배우지 못했거든요. 그때의 아쉬움이 오래 남아서, 저처럼 기회가 부족한 아이들에게 뭔가 해 주고 싶었습니다. 아이들이 즐거워하는 모습을 보면 제가 더 큰 힘을 얻어요.",
+      "speakers": [{"role": "진행자", "voice": "female"}, {"role": "봉사자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자가 봉사를 시작한 이유로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "그림 실력을 인정받고 싶어서"}, {"id": "b", "text": "어릴 때 배우지 못한 아쉬움 때문에"}, {"id": "c", "text": "돈을 벌기 위해서"}, {"id": "d", "text": "다른 사람의 권유를 받아서"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-06-radio-interview-farmer",
+    "topicTag": "interview",
+    "guidanceNote": "Radio interview with a young farmer. Listen for the main challenge he mentions and his overall attitude.",
+    "payload": {
+      "audioScript": "여자: 도시 생활을 접고 시골로 내려와 농사를 지으신 지 삼 년째라고 들었습니다. 가장 힘들었던 점은 무엇이었나요?\n남자: 처음에는 날씨나 기술이 제일 어려울 줄 알았어요. 그런데 막상 해 보니 사람들과의 관계가 가장 큰 벽이더라고요. 오랫동안 이 마을에서 사신 분들에게 저는 갑자기 나타난 외지인이었으니까요. 그래서 저는 농사보다 먼저 마을 일에 적극적으로 참여했습니다. 함께 밥을 먹고 궂은일을 돕다 보니, 이제는 가족처럼 지내게 됐어요.",
+      "speakers": [{"role": "진행자", "voice": "female"}, {"role": "청년 농부", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자가 겪은 가장 큰 어려움으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "농사 기술을 익히는 일"}, {"id": "b", "text": "변덕스러운 날씨"}, {"id": "c", "text": "마을 사람들과 관계를 맺는 일"}, {"id": "d", "text": "농산물을 판매하는 일"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-07-lecture-sleep-health",
+    "topicTag": "lecture",
+    "guidanceNote": "Short health lecture. Listen for the central claim about sleep, not just the supporting details.",
+    "payload": {
+      "audioScript": "남자: 많은 분들이 잠은 그저 몸을 쉬게 하는 시간이라고 생각하십니다. 하지만 최근 연구에 따르면 우리가 자는 동안 뇌는 오히려 매우 활발하게 움직입니다. 낮에 받아들인 수많은 정보 중에서 중요한 것은 장기 기억으로 남기고, 필요 없는 것은 지워 내는 정리 작업이 이때 이루어지지요. 다시 말해, 충분히 자지 못하면 아무리 열심히 공부해도 그 내용이 제대로 저장되지 않는다는 뜻입니다.",
+      "speakers": [{"role": "강연자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "이 강연의 중심 생각으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "잠은 몸의 피로만 풀어 주는 시간이다."}, {"id": "b", "text": "잠은 기억을 정리하고 저장하는 데 중요한 역할을 한다."}, {"id": "c", "text": "공부를 오래 할수록 성적이 오른다."}, {"id": "d", "text": "뇌는 잠자는 동안 완전히 멈춘다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-08-discussion-remote-work",
+    "topicTag": "discussion",
+    "guidanceNote": "Two colleagues debating remote work. Identify the woman's position and what she proposes as a compromise.",
+    "payload": {
+      "audioScript": "남자: 저는 재택근무가 결국 회사 전체의 협업을 어렵게 만든다고 봐요. 얼굴을 마주 보고 이야기해야 나오는 아이디어가 분명히 있거든요.\n여자: 그 말씀도 일리는 있어요. 하지만 매일 출근하느라 버리는 시간과 에너지도 무시할 수 없잖아요. 저는 완전한 재택도, 완전한 출근도 답이 아니라고 생각해요. 예를 들어 일주일에 이삼 일만 출근하고 나머지는 집에서 일한다면, 협업도 하고 개인의 효율도 지킬 수 있지 않을까요?\n남자: 음, 그렇게 절충하는 방식이라면 저도 반대하지 않겠네요.",
+      "speakers": [{"role": "직원 A", "voice": "male"}, {"role": "직원 B", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "여자의 의견으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "모든 직원이 매일 출근해야 한다."}, {"id": "b", "text": "재택근무를 완전히 없애야 한다."}, {"id": "c", "text": "출근과 재택을 적절히 섞는 방식이 좋다."}, {"id": "d", "text": "협업보다 개인의 효율이 항상 더 중요하다."}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-09-news-recycling-policy",
+    "topicTag": "news",
+    "guidanceNote": "News report on a new city policy. Listen for what actually changes for residents.",
+    "payload": {
+      "audioScript": "여자: 다음 소식입니다. 시는 다음 달부터 투명 페트병을 다른 플라스틱과 따로 분리해서 배출하도록 하는 제도를 전면 시행한다고 밝혔습니다. 지금까지는 모든 플라스틱을 한데 모아 버렸지만, 앞으로는 라벨을 제거한 투명 페트병만 따로 모아야 합니다. 시는 이렇게 모은 페트병이 옷이나 가방을 만드는 고급 재료로 재활용될 수 있다고 설명했습니다. 시행 초기에는 계도 기간을 두어 과태료 대신 안내를 우선한다는 방침입니다.",
+      "speakers": [{"role": "기자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "이 뉴스의 내용과 같은 것을 고르십시오.", "options": [{"id": "a", "text": "모든 플라스틱을 계속 함께 버리면 된다."}, {"id": "b", "text": "투명 페트병은 라벨을 떼고 따로 배출해야 한다."}, {"id": "c", "text": "제도를 어기면 시행 첫날부터 과태료를 낸다."}, {"id": "d", "text": "페트병은 재활용되지 않고 모두 소각된다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-10-conversation-complaint-refund",
+    "topicTag": "daily-conversation",
+    "guidanceNote": "Customer service call. Listen for the resolution the two parties reach.",
+    "payload": {
+      "audioScript": "여자: 안녕하세요, 지난주에 주문한 의자가 오늘 도착했는데 다리 한쪽이 흔들려서요. 조립을 잘못한 건 아닌 것 같고 부품 자체가 휘어 있는 것 같아요.\n남자: 불편을 드려 정말 죄송합니다. 사진을 보내 주시면 확인 후 처리해 드리겠습니다. 전체 교환과 부품만 교체하는 방법 중에 어떤 걸 원하시나요?\n여자: 다시 조립하기는 번거로워서요. 그냥 새 제품으로 바꿔 주시면 좋겠어요.\n남자: 알겠습니다. 그럼 오늘 바로 교환 접수를 해 드리고, 기존 제품은 택배 기사님이 수거해 가실 겁니다.",
+      "speakers": [{"role": "고객", "voice": "female"}, {"role": "상담원", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "두 사람이 합의한 처리 방법으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "고객이 직접 부품을 사서 교체한다."}, {"id": "b", "text": "제품 전체를 새것으로 교환한다."}, {"id": "c", "text": "환불만 받고 제품은 그대로 둔다."}, {"id": "d", "text": "흔들리는 다리를 고객이 수리한다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-11-documentary-traditional-market",
+    "topicTag": "documentary",
+    "guidanceNote": "Documentary narration about a traditional market. Listen for the main reason the market has survived.",
+    "payload": {
+      "audioScript": "남자: 백 년 넘게 한자리를 지켜 온 이 시장은 대형 마트가 들어선 뒤에도 여전히 사람들로 붐빕니다. 그 비결은 단순히 값이 싸기 때문만은 아닙니다. 상인들은 손님의 이름을 기억하고, 오늘 들어온 재료 중 무엇이 가장 좋은지 스스럼없이 알려 줍니다. 이런 정이 오가는 관계가 시장을 단순한 거래의 공간이 아니라 사람과 사람이 만나는 장소로 만들어 온 것입니다.",
+      "speakers": [{"role": "내레이터", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "이 시장이 오래 유지되어 온 가장 큰 이유로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "물건 값이 마트보다 항상 싸기 때문에"}, {"id": "b", "text": "상인과 손님 사이의 정이 담긴 관계 때문에"}, {"id": "c", "text": "시장이 관광지로 지정되었기 때문에"}, {"id": "d", "text": "대형 마트가 근처에 없기 때문에"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-12-announcement-construction",
+    "topicTag": "announcement",
+    "guidanceNote": "Building management announcement. Listen for what residents are asked to do and when.",
+    "payload": {
+      "audioScript": "여자: 입주민 여러분께 공사 관련 안내를 드립니다. 오는 토요일 오전 아홉 시부터 오후 다섯 시까지 아파트 전체 수도관 교체 공사가 진행됩니다. 공사 시간 동안에는 단수가 되므로, 미리 생활에 필요한 물을 받아 두시기 바랍니다. 아울러 공사 소음이 발생할 수 있으니 양해 부탁드립니다. 부득이하게 공사가 길어질 경우, 관리 사무소 방송을 통해 다시 안내해 드리겠습니다.",
+      "speakers": [{"role": "관리 사무소 직원", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "입주민이 미리 준비해야 할 일로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "토요일에 외출한다."}, {"id": "b", "text": "생활에 필요한 물을 미리 받아 둔다."}, {"id": "c", "text": "수도관을 직접 교체한다."}, {"id": "d", "text": "관리 사무소에 미리 전화한다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-13-lecture-behavioral-economics",
+    "topicTag": "lecture",
+    "guidanceNote": "Academic lecture on behavioral economics. Item 1 = main idea; item 2 = speaker's attitude toward traditional economics.",
+    "payload": {
+      "audioScript": "여자: 전통적인 경제학은 인간을 언제나 이익과 손해를 냉정하게 계산하는 합리적인 존재로 가정해 왔습니다. 그러나 우리의 실제 선택을 들여다보면 이야기가 달라집니다. 예를 들어, 만 원을 잃었을 때 느끼는 고통은 같은 만 원을 얻었을 때의 기쁨보다 훨씬 크게 다가옵니다. 그래서 사람들은 이익을 얻기보다 손해를 피하는 쪽으로 움직이는 경우가 많습니다. 저는 이런 인간의 비합리성을 결함으로만 보는 시각에는 동의하지 않습니다. 오히려 이러한 특성을 정확히 이해할 때, 우리는 더 나은 정책과 제도를 설계할 수 있습니다. 전통 경제학의 틀만으로는 결코 설명할 수 없는 부분이지요.",
+      "speakers": [{"role": "교수", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "이 강연의 중심 내용으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "인간은 언제나 합리적으로 이익을 계산한다."}, {"id": "b", "text": "사람들은 이익보다 손해를 더 크게 느끼며 손해를 피하려 한다."}, {"id": "c", "text": "경제학은 인간의 감정을 다룰 수 없다."}, {"id": "d", "text": "만 원을 잃는 것과 얻는 것은 똑같이 느껴진다."}], "answer": "b"},
+        {"id": "q2", "stem": "전통 경제학에 대한 여자의 태도로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "인간의 비합리성까지 완벽하게 설명한다고 본다."}, {"id": "b", "text": "인간 행동을 설명하는 데 한계가 있다고 본다."}, {"id": "c", "text": "더 이상 배울 필요가 없는 학문이라고 본다."}, {"id": "d", "text": "인간의 감정을 무시하는 태도를 높이 평가한다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-14-debate-ai-art",
+    "topicTag": "discussion",
+    "guidanceNote": "Panel debate on AI-generated art. Item 1 = the man's core argument; item 2 = his attitude toward human artists.",
+    "payload": {
+      "audioScript": "여자: 요즘 인공지능이 그림을 그리고 음악까지 만드는 시대인데요, 이제 예술가라는 직업이 사라질 거라는 우려도 나옵니다.\n남자: 저는 그 우려에 어느 정도는 공감하면서도, 결론은 조금 다르게 봅니다. 인공지능은 수많은 기존 작품을 학습해 그럴듯한 결과물을 빠르게 만들어 냅니다. 기술적인 완성도만 놓고 보면 사람을 앞설 수도 있지요. 하지만 예술의 본질은 완성도가 아니라 '왜 이것을 만들었는가'라는 질문에 있다고 생각합니다. 자신의 경험과 상처, 시대에 대한 고민을 담아내는 일은 여전히 인간만이 할 수 있습니다. 그래서 저는 예술가가 사라지는 것이 아니라, 도구를 다루는 방식이 달라질 뿐이라고 봅니다.",
+      "speakers": [{"role": "진행자", "voice": "female"}, {"role": "패널", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자의 핵심 주장으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "인공지능이 곧 인간 예술가를 완전히 대체할 것이다."}, {"id": "b", "text": "예술의 본질은 기술적 완성도에 있다."}, {"id": "c", "text": "예술가는 사라지지 않고 도구를 다루는 방식이 바뀔 것이다."}, {"id": "d", "text": "인공지능은 예술 작품을 만들 수 없다."}], "answer": "c"},
+        {"id": "q2", "stem": "인간 예술가에 대한 남자의 태도로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "인간만이 할 수 있는 고유한 가치가 있다고 본다."}, {"id": "b", "text": "인공지능보다 열등한 존재라고 본다."}, {"id": "c", "text": "이제 필요 없는 직업이라고 본다."}, {"id": "d", "text": "기술을 배우지 못하면 무의미하다고 본다."}], "answer": "a"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-15-interview-architect-urban",
+    "topicTag": "interview",
+    "guidanceNote": "In-depth interview with an urban architect. Item 1 = her design philosophy; item 2 = what she criticizes about past city planning.",
+    "payload": {
+      "audioScript": "남자: 선생님이 설계하신 공원들은 하나같이 '느리게 걷게 만드는 공간'이라는 평을 듣습니다. 의도하신 건가요?\n여자: 네, 분명한 의도입니다. 지난 수십 년간 우리 도시는 무엇이든 빠르게, 효율적으로 움직이는 데만 초점을 맞춰 왔습니다. 넓은 도로를 내고 건물을 높이 올리면서, 정작 사람이 잠시 멈춰 숨을 고르는 공간은 계속 밀려났지요. 저는 그 점이 늘 아쉬웠습니다. 그래서 저는 일부러 길을 구불구불하게 내고, 곳곳에 앉을 자리를 둡니다. 사람들이 목적지로 서둘러 가기보다, 걷는 과정 자체를 즐기게 하고 싶었어요. 도시는 결국 사람을 위한 곳이어야 하니까요.",
+      "speakers": [{"role": "기자", "voice": "male"}, {"role": "건축가", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "여자의 설계 철학으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "가능한 한 빠르게 이동할 수 있게 길을 곧게 낸다."}, {"id": "b", "text": "사람들이 걷는 과정 자체를 즐기며 머물게 한다."}, {"id": "c", "text": "건물을 최대한 높이 올려 공간을 절약한다."}, {"id": "d", "text": "공원보다 도로를 넓히는 것을 우선한다."}], "answer": "b"},
+        {"id": "q2", "stem": "여자가 과거의 도시 계획에 대해 아쉬워하는 점으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "도로를 너무 좁게 만든 점"}, {"id": "b", "text": "건물의 높이를 제한한 점"}, {"id": "c", "text": "효율만 강조하며 사람이 쉴 공간을 밀어낸 점"}, {"id": "d", "text": "공원을 지나치게 많이 만든 점"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-16-lecture-language-extinction",
+    "topicTag": "lecture",
+    "guidanceNote": "Advanced linguistics lecture. Listen for the main argument about why language loss matters beyond communication.",
+    "payload": {
+      "audioScript": "남자: 오늘날 전 세계에서 두 주에 하나꼴로 언어가 사라지고 있습니다. 흔히 언어가 없어져도 다른 언어로 소통하면 그만 아니냐고들 말합니다. 하지만 하나의 언어에는 그 언어를 써 온 사람들이 세상을 바라보고 나누어 온 고유한 방식이 담겨 있습니다. 어떤 언어에는 눈의 상태를 수십 가지로 구별하는 단어가 있고, 또 어떤 언어에는 우리가 아예 개념조차 갖지 못한 감정을 표현하는 말이 있습니다. 언어가 사라진다는 것은 단어 목록 하나가 지워지는 일이 아니라, 인류가 쌓아 온 사고방식 하나가 통째로 사라지는 일입니다. 그래서 언어의 소멸은 곧 지식과 문화의 소멸이라고 할 수 있습니다.",
+      "speakers": [{"role": "교수", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "이 강연에서 말하고자 하는 중심 내용으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "소통만 되면 언어가 사라져도 문제가 없다."}, {"id": "b", "text": "언어의 소멸은 고유한 사고방식과 문화의 소멸을 뜻한다."}, {"id": "c", "text": "모든 사람이 하나의 언어만 쓰는 것이 바람직하다."}, {"id": "d", "text": "언어는 단어의 목록에 지나지 않는다."}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-17-discussion-basic-income",
+    "topicTag": "discussion",
+    "guidanceNote": "Policy discussion on basic income. Item 1 = the woman's main concern; item 2 = the point on which both speakers agree.",
+    "payload": {
+      "audioScript": "남자: 저는 모든 국민에게 조건 없이 일정한 돈을 지급하는 기본 소득이 앞으로 반드시 필요하다고 봅니다. 기술 발전으로 일자리가 줄어드는 시대에, 최소한의 생활을 보장해 주는 안전망이 있어야 하니까요.\n여자: 취지에는 저도 공감합니다. 다만 저는 재원을 어떻게 마련할 것인가가 늘 걸립니다. 막대한 예산을 세금으로 충당하려면 결국 누군가는 더 큰 부담을 지게 되는데, 그 합의가 쉽지 않을 겁니다. 저는 전 국민에게 똑같이 주기보다, 정말 도움이 절실한 계층에 더 두텁게 지원하는 편이 현실적이라고 생각해요.\n남자: 방식에 대한 이견은 있지만, 변화에 대비한 사회 안전망이 필요하다는 데에는 저도 전적으로 동의합니다.",
+      "speakers": [{"role": "찬성 측", "voice": "male"}, {"role": "신중 측", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "기본 소득에 대한 여자의 주된 우려로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "돈을 마련할 재원 문제와 부담의 합의가 어렵다는 점"}, {"id": "b", "text": "기술 발전이 일자리를 늘린다는 점"}, {"id": "c", "text": "안전망이 전혀 필요 없다는 점"}, {"id": "d", "text": "부유층에게만 돈을 주게 된다는 점"}], "answer": "a"},
+        {"id": "q2", "stem": "두 사람이 공통으로 동의하는 내용으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "모든 국민에게 똑같은 금액을 주어야 한다."}, {"id": "b", "text": "사회 안전망 자체가 필요하다는 점"}, {"id": "c", "text": "세금을 지금보다 줄여야 한다는 점"}, {"id": "d", "text": "기본 소득을 즉시 시행해야 한다는 점"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-18-news-analysis-population",
+    "topicTag": "news",
+    "guidanceNote": "News analysis segment on rural depopulation. Item 1 = the core problem described; item 2 = the expert's proposed direction.",
+    "payload": {
+      "audioScript": "여자: 최근 지방 소도시들이 겪는 인구 감소 문제, 오늘은 전문가와 함께 짚어 보겠습니다. 교수님, 상황이 어느 정도로 심각한가요?\n남자: 단순히 사람이 줄어드는 정도가 아닙니다. 젊은 사람들이 일자리를 찾아 대도시로 떠나면, 남은 지역은 학교와 병원, 상점이 차례로 문을 닫습니다. 그러면 생활이 더 불편해져서 남아 있던 사람들마저 떠나게 되는, 이른바 악순환에 빠지는 것이지요. 저는 이 문제를 단지 사람을 붙잡아 두는 방식으로 풀 수는 없다고 봅니다. 오히려 그 지역만이 가진 자연이나 문화를 살려 새로운 일자리를 만들고, 굳이 대도시에 살지 않아도 되는 환경을 갖추는 것이 근본적인 해법입니다.",
+      "speakers": [{"role": "진행자", "voice": "female"}, {"role": "전문가", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자가 설명한 지방 인구 감소 문제의 핵심으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "대도시에 인구가 너무 적다는 점"}, {"id": "b", "text": "인구 감소가 시설 축소를 부르고 다시 인구 유출로 이어지는 악순환"}, {"id": "c", "text": "지방에 자연과 문화가 전혀 없다는 점"}, {"id": "d", "text": "젊은 사람들이 지방으로만 몰린다는 점"}], "answer": "b"},
+        {"id": "q2", "stem": "전문가가 제시한 해결 방향으로 알맞은 것을 고르십시오.", "options": [{"id": "a", "text": "사람들이 떠나지 못하도록 이동을 제한한다."}, {"id": "b", "text": "지역의 자연과 문화를 살려 새로운 일자리를 만든다."}, {"id": "c", "text": "모든 시설을 대도시로 옮긴다."}, {"id": "d", "text": "지방의 학교와 병원을 모두 없앤다."}], "answer": "b"}
+      ]
+    }
+  }
+]

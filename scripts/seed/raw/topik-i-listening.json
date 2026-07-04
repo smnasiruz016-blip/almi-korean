@@ -1,0 +1,259 @@
+[
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-01-greeting-morning",
+    "topicTag": "greetings",
+    "guidanceNote": "Listen for the time-of-day greeting. '안녕히 주무세요' is used at night; the correct reply matches a morning greeting.",
+    "payload": {
+      "audioScript": "남자: 안녕하세요? 잘 잤어요?\n여자: 네, 잘 잤어요. 좋은 아침이에요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "언제 하는 인사입니까?", "options": [{"id": "a", "text": "아침"}, {"id": "b", "text": "점심"}, {"id": "c", "text": "저녁"}, {"id": "d", "text": "밤"}], "answer": "a"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-02-cafe-order",
+    "topicTag": "cafe",
+    "guidanceNote": "Listen for the drink the customer orders. The keyword is '커피'.",
+    "payload": {
+      "audioScript": "여자: 뭐 드릴까요?\n남자: 커피 한 잔 주세요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자는 무엇을 주문했습니까?", "options": [{"id": "a", "text": "물"}, {"id": "b", "text": "커피"}, {"id": "c", "text": "우유"}, {"id": "d", "text": "주스"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-03-family-count",
+    "topicTag": "family",
+    "guidanceNote": "Listen for the number of family members. The answer '네 명' means four people.",
+    "payload": {
+      "audioScript": "남자: 가족이 몇 명이에요?\n여자: 네 명이에요. 아버지, 어머니, 저, 그리고 동생이요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "여자의 가족은 몇 명입니까?", "options": [{"id": "a", "text": "두 명"}, {"id": "b", "text": "세 명"}, {"id": "c", "text": "네 명"}, {"id": "d", "text": "다섯 명"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-04-time-meeting",
+    "topicTag": "time",
+    "guidanceNote": "Listen for the time they agree to meet. The keyword is '세 시' (three o'clock).",
+    "payload": {
+      "audioScript": "여자: 우리 몇 시에 만날까요?\n남자: 세 시에 만나요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "두 사람은 몇 시에 만납니까?", "options": [{"id": "a", "text": "두 시"}, {"id": "b", "text": "세 시"}, {"id": "c", "text": "네 시"}, {"id": "d", "text": "다섯 시"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-05-weather-today",
+    "topicTag": "weather",
+    "guidanceNote": "Listen for the weather word. '비가 와요' means it is raining.",
+    "payload": {
+      "audioScript": "남자: 오늘 날씨가 어때요?\n여자: 비가 와요. 우산을 가지고 가세요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "오늘 날씨는 어떻습니까?", "options": [{"id": "a", "text": "맑아요"}, {"id": "b", "text": "비가 와요"}, {"id": "c", "text": "눈이 와요"}, {"id": "d", "text": "바람이 불어요"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-06-shopping-fruit",
+    "topicTag": "shopping",
+    "guidanceNote": "Listen for the fruit the customer buys. The keyword is '사과' (apple).",
+    "payload": {
+      "audioScript": "여자: 어서 오세요. 뭐 찾으세요?\n남자: 사과 세 개 주세요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자는 무엇을 삽니까?", "options": [{"id": "a", "text": "사과"}, {"id": "b", "text": "바나나"}, {"id": "c", "text": "포도"}, {"id": "d", "text": "딸기"}], "answer": "a"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-07-introduction-job",
+    "topicTag": "introductions",
+    "guidanceNote": "Listen for the person's job. '학생' means student.",
+    "payload": {
+      "audioScript": "남자: 무슨 일을 하세요?\n여자: 저는 학생이에요. 대학교에 다녀요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "여자의 직업은 무엇입니까?", "options": [{"id": "a", "text": "의사"}, {"id": "b", "text": "선생님"}, {"id": "c", "text": "학생"}, {"id": "d", "text": "회사원"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-08-restaurant-order",
+    "topicTag": "restaurant",
+    "guidanceNote": "Listen through the whole dialogue. The man decides on 비빔밥, not what he first considered.",
+    "payload": {
+      "audioScript": "여자: 여기 메뉴 있어요. 뭐 드시겠어요?\n남자: 음, 김치찌개 먹을까요? 아니요, 비빔밥으로 할게요.\n여자: 네, 비빔밥 하나요. 저는 냉면 먹을게요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자는 무엇을 먹습니까?", "options": [{"id": "a", "text": "김치찌개"}, {"id": "b", "text": "비빔밥"}, {"id": "c", "text": "냉면"}, {"id": "d", "text": "불고기"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-09-directions-bank",
+    "topicTag": "directions",
+    "guidanceNote": "Listen for the location of the bank. It is next to the pharmacy '약국 옆'.",
+    "payload": {
+      "audioScript": "남자: 실례합니다. 은행이 어디에 있어요?\n여자: 저기 약국 보이죠? 은행은 약국 옆에 있어요.\n남자: 아, 약국 옆이요? 감사합니다.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "은행은 어디에 있습니까?", "options": [{"id": "a", "text": "약국 앞"}, {"id": "b", "text": "약국 뒤"}, {"id": "c", "text": "약국 옆"}, {"id": "d", "text": "약국 안"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-10-transport-subway",
+    "topicTag": "transport",
+    "guidanceNote": "Listen for how the woman goes to work. She takes the subway '지하철'.",
+    "payload": {
+      "audioScript": "남자: 회사에 어떻게 가요?\n여자: 보통 지하철을 타고 가요. 버스는 너무 오래 걸려요.\n남자: 그렇군요. 저는 자전거를 타요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "여자는 회사에 어떻게 갑니까?", "options": [{"id": "a", "text": "버스"}, {"id": "b", "text": "지하철"}, {"id": "c", "text": "자전거"}, {"id": "d", "text": "택시"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-11-hobby-weekend",
+    "topicTag": "hobbies",
+    "guidanceNote": "Listen for the man's weekend activity. He plays soccer '축구' on weekends.",
+    "payload": {
+      "audioScript": "여자: 주말에 보통 뭐 해요?\n남자: 저는 주말마다 친구들하고 축구를 해요.\n여자: 재미있겠어요. 저는 집에서 책을 읽어요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "남자는 주말에 무엇을 합니까?", "options": [{"id": "a", "text": "책을 읽어요"}, {"id": "b", "text": "축구를 해요"}, {"id": "c", "text": "영화를 봐요"}, {"id": "d", "text": "요리를 해요"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-12-shopping-price",
+    "topicTag": "shopping",
+    "guidanceNote": "Listen for the total price. The final total is '오천 원' (5,000 won).",
+    "payload": {
+      "audioScript": "남자: 이 빵 얼마예요?\n여자: 한 개에 이천오백 원이에요.\n남자: 그럼 두 개 주세요.\n여자: 네, 모두 오천 원입니다.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "남자는 모두 얼마를 냅니까?", "options": [{"id": "a", "text": "이천오백 원"}, {"id": "b", "text": "삼천 원"}, {"id": "c", "text": "오천 원"}, {"id": "d", "text": "만 원"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-13-phone-appointment",
+    "topicTag": "daily-life",
+    "guidanceNote": "Listen for the day they agree to meet. They change from 금요일 to 토요일.",
+    "payload": {
+      "audioScript": "여자: 여보세요? 우리 금요일에 만날까요?\n남자: 금요일은 좀 바빠요. 토요일은 어때요?\n여자: 좋아요. 그럼 토요일에 봐요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "두 사람은 무슨 요일에 만납니까?", "options": [{"id": "a", "text": "목요일"}, {"id": "b", "text": "금요일"}, {"id": "c", "text": "토요일"}, {"id": "d", "text": "일요일"}], "answer": "c"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-14-weather-plan-change",
+    "topicTag": "weather",
+    "guidanceNote": "Inference: because of the rain, they decide NOT to go to the park and instead watch a movie indoors. Listen for the reason and the new plan.",
+    "payload": {
+      "audioScript": "남자: 오후에 공원에 갈까요?\n여자: 밖에 비가 많이 와요. 공원은 좀 그래요.\n남자: 그럼 우리 영화관에 갈까요?\n여자: 네, 좋아요. 영화를 봐요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "두 사람은 오후에 무엇을 합니까?", "options": [{"id": "a", "text": "공원에 가요"}, {"id": "b", "text": "영화를 봐요"}, {"id": "c", "text": "집에서 자요"}, {"id": "d", "text": "산책을 해요"}], "answer": "b"},
+        {"id": "q2", "stem": "왜 공원에 안 갑니까?", "options": [{"id": "a", "text": "날씨가 더워서"}, {"id": "b", "text": "비가 와서"}, {"id": "c", "text": "시간이 없어서"}, {"id": "d", "text": "공원이 멀어서"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-15-birthday-gift",
+    "topicTag": "daily-life",
+    "guidanceNote": "Inference: the woman is buying a gift for her friend's birthday. Listen for who the gift is for and what she chooses.",
+    "payload": {
+      "audioScript": "여자: 내일이 친구 생일이에요. 그래서 선물을 사러 왔어요.\n남자: 무엇을 살 거예요?\n여자: 친구가 꽃을 좋아해요. 그래서 꽃을 살 거예요.\n남자: 좋은 생각이에요. 친구가 기뻐할 거예요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "여자는 왜 선물을 삽니까?", "options": [{"id": "a", "text": "친구 생일이라서"}, {"id": "b", "text": "친구가 아파서"}, {"id": "c", "text": "친구가 이사해서"}, {"id": "d", "text": "친구가 취직해서"}], "answer": "a"},
+        {"id": "q2", "stem": "여자는 무슨 선물을 삽니까?", "options": [{"id": "a", "text": "책"}, {"id": "b", "text": "꽃"}, {"id": "c", "text": "케이크"}, {"id": "d", "text": "옷"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-16-lost-umbrella",
+    "topicTag": "daily-life",
+    "guidanceNote": "Inference: the man left his umbrella at the cafe yesterday. Listen for where the item was left and when.",
+    "payload": {
+      "audioScript": "남자: 저기요, 어제 여기에 우산을 놓고 갔어요.\n여자: 아, 파란색 우산이요? 여기 있어요.\n남자: 네, 맞아요. 정말 감사합니다.\n여자: 다음부터는 조심하세요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "남자는 무엇을 놓고 갔습니까?", "options": [{"id": "a", "text": "가방"}, {"id": "b", "text": "우산"}, {"id": "c", "text": "지갑"}, {"id": "d", "text": "휴대폰"}], "answer": "b"},
+        {"id": "q2", "stem": "남자는 언제 그것을 놓고 갔습니까?", "options": [{"id": "a", "text": "오늘 아침"}, {"id": "b", "text": "어제"}, {"id": "c", "text": "지난주"}, {"id": "d", "text": "그저께"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-17-hospital-reservation",
+    "topicTag": "daily-life",
+    "guidanceNote": "Inference: the woman calls to make a doctor's appointment and settles on Monday at 10 a.m. Listen for the final agreed time.",
+    "payload": {
+      "audioScript": "여자: 여보세요? 진료를 예약하고 싶어요.\n남자: 네, 언제 오시겠어요?\n여자: 월요일 오전에 갈 수 있어요?\n남자: 월요일 오전 열 시 괜찮으세요?\n여자: 네, 열 시 좋아요.",
+      "speakers": [{"role": "여자", "voice": "female"}, {"role": "남자", "voice": "male"}],
+      "questions": [
+        {"id": "q1", "stem": "여자는 무슨 요일에 병원에 갑니까?", "options": [{"id": "a", "text": "월요일"}, {"id": "b", "text": "화요일"}, {"id": "c", "text": "수요일"}, {"id": "d", "text": "목요일"}], "answer": "a"},
+        {"id": "q2", "stem": "여자는 몇 시에 병원에 갑니까?", "options": [{"id": "a", "text": "아홉 시"}, {"id": "b", "text": "열 시"}, {"id": "c", "text": "열한 시"}, {"id": "d", "text": "열두 시"}], "answer": "b"}
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-18-restaurant-wait",
+    "topicTag": "restaurant",
+    "guidanceNote": "Inference: the restaurant is full, so they decide to wait rather than leave. Listen for the situation and their decision.",
+    "payload": {
+      "audioScript": "남자: 지금 자리가 있어요?\n여자: 죄송합니다. 지금은 자리가 없어요. 삼십 분 기다리셔야 해요.\n남자: 음, 그럼 우리 기다릴까요?\n여자: 네, 여기 앉아서 기다리세요. 곧 자리가 나요.",
+      "speakers": [{"role": "남자", "voice": "male"}, {"role": "여자", "voice": "female"}],
+      "questions": [
+        {"id": "q1", "stem": "식당은 지금 어떻습니까?", "options": [{"id": "a", "text": "자리가 많아요"}, {"id": "b", "text": "자리가 없어요"}, {"id": "c", "text": "문을 닫았어요"}, {"id": "d", "text": "청소 중이에요"}], "answer": "b"},
+        {"id": "q2", "stem": "두 사람은 어떻게 합니까?", "options": [{"id": "a", "text": "다른 식당에 가요"}, {"id": "b", "text": "기다려요"}, {"id": "c", "text": "집에 가요"}, {"id": "d", "text": "음식을 포장해요"}], "answer": "b"}
+      ]
+    }
+  }
+]

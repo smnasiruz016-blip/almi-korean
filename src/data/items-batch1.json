@@ -1,1 +1,3813 @@
-[]
+[
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-01-greeting-morning",
+    "topicTag": "greetings",
+    "guidanceNote": "Listen for the time-of-day greeting. '안녕히 주무세요' is used at night; the correct reply matches a morning greeting.",
+    "payload": {
+      "audioScript": "남자: 안녕하세요? 잘 잤어요?\n여자: 네, 잘 잤어요. 좋은 아침이에요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "언제 하는 인사입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "아침"
+            },
+            {
+              "id": "b",
+              "text": "점심"
+            },
+            {
+              "id": "c",
+              "text": "저녁"
+            },
+            {
+              "id": "d",
+              "text": "밤"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-02-cafe-order",
+    "topicTag": "cafe",
+    "guidanceNote": "Listen for the drink the customer orders. The keyword is '커피'.",
+    "payload": {
+      "audioScript": "여자: 뭐 드릴까요?\n남자: 커피 한 잔 주세요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자는 무엇을 주문했습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "물"
+            },
+            {
+              "id": "b",
+              "text": "커피"
+            },
+            {
+              "id": "c",
+              "text": "우유"
+            },
+            {
+              "id": "d",
+              "text": "주스"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-03-family-count",
+    "topicTag": "family",
+    "guidanceNote": "Listen for the number of family members. The answer '네 명' means four people.",
+    "payload": {
+      "audioScript": "남자: 가족이 몇 명이에요?\n여자: 네 명이에요. 아버지, 어머니, 저, 그리고 동생이요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자의 가족은 몇 명입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "두 명"
+            },
+            {
+              "id": "b",
+              "text": "세 명"
+            },
+            {
+              "id": "c",
+              "text": "네 명"
+            },
+            {
+              "id": "d",
+              "text": "다섯 명"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-04-time-meeting",
+    "topicTag": "time",
+    "guidanceNote": "Listen for the time they agree to meet. The keyword is '세 시' (three o'clock).",
+    "payload": {
+      "audioScript": "여자: 우리 몇 시에 만날까요?\n남자: 세 시에 만나요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "두 사람은 몇 시에 만납니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "두 시"
+            },
+            {
+              "id": "b",
+              "text": "세 시"
+            },
+            {
+              "id": "c",
+              "text": "네 시"
+            },
+            {
+              "id": "d",
+              "text": "다섯 시"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-05-weather-today",
+    "topicTag": "weather",
+    "guidanceNote": "Listen for the weather word. '비가 와요' means it is raining.",
+    "payload": {
+      "audioScript": "남자: 오늘 날씨가 어때요?\n여자: 비가 와요. 우산을 가지고 가세요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "오늘 날씨는 어떻습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "맑아요"
+            },
+            {
+              "id": "b",
+              "text": "비가 와요"
+            },
+            {
+              "id": "c",
+              "text": "눈이 와요"
+            },
+            {
+              "id": "d",
+              "text": "바람이 불어요"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-06-shopping-fruit",
+    "topicTag": "shopping",
+    "guidanceNote": "Listen for the fruit the customer buys. The keyword is '사과' (apple).",
+    "payload": {
+      "audioScript": "여자: 어서 오세요. 뭐 찾으세요?\n남자: 사과 세 개 주세요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자는 무엇을 삽니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "사과"
+            },
+            {
+              "id": "b",
+              "text": "바나나"
+            },
+            {
+              "id": "c",
+              "text": "포도"
+            },
+            {
+              "id": "d",
+              "text": "딸기"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-L-07-introduction-job",
+    "topicTag": "introductions",
+    "guidanceNote": "Listen for the person's job. '학생' means student.",
+    "payload": {
+      "audioScript": "남자: 무슨 일을 하세요?\n여자: 저는 학생이에요. 대학교에 다녀요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자의 직업은 무엇입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "의사"
+            },
+            {
+              "id": "b",
+              "text": "선생님"
+            },
+            {
+              "id": "c",
+              "text": "학생"
+            },
+            {
+              "id": "d",
+              "text": "회사원"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-08-restaurant-order",
+    "topicTag": "restaurant",
+    "guidanceNote": "Listen through the whole dialogue. The man decides on 비빔밥, not what he first considered.",
+    "payload": {
+      "audioScript": "여자: 여기 메뉴 있어요. 뭐 드시겠어요?\n남자: 음, 김치찌개 먹을까요? 아니요, 비빔밥으로 할게요.\n여자: 네, 비빔밥 하나요. 저는 냉면 먹을게요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자는 무엇을 먹습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "김치찌개"
+            },
+            {
+              "id": "b",
+              "text": "비빔밥"
+            },
+            {
+              "id": "c",
+              "text": "냉면"
+            },
+            {
+              "id": "d",
+              "text": "불고기"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-09-directions-bank",
+    "topicTag": "directions",
+    "guidanceNote": "Listen for the location of the bank. It is next to the pharmacy '약국 옆'.",
+    "payload": {
+      "audioScript": "남자: 실례합니다. 은행이 어디에 있어요?\n여자: 저기 약국 보이죠? 은행은 약국 옆에 있어요.\n남자: 아, 약국 옆이요? 감사합니다.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "은행은 어디에 있습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "약국 앞"
+            },
+            {
+              "id": "b",
+              "text": "약국 뒤"
+            },
+            {
+              "id": "c",
+              "text": "약국 옆"
+            },
+            {
+              "id": "d",
+              "text": "약국 안"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-10-transport-subway",
+    "topicTag": "transport",
+    "guidanceNote": "Listen for how the woman goes to work. She takes the subway '지하철'.",
+    "payload": {
+      "audioScript": "남자: 회사에 어떻게 가요?\n여자: 보통 지하철을 타고 가요. 버스는 너무 오래 걸려요.\n남자: 그렇군요. 저는 자전거를 타요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자는 회사에 어떻게 갑니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "버스"
+            },
+            {
+              "id": "b",
+              "text": "지하철"
+            },
+            {
+              "id": "c",
+              "text": "자전거"
+            },
+            {
+              "id": "d",
+              "text": "택시"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-11-hobby-weekend",
+    "topicTag": "hobbies",
+    "guidanceNote": "Listen for the man's weekend activity. He plays soccer '축구' on weekends.",
+    "payload": {
+      "audioScript": "여자: 주말에 보통 뭐 해요?\n남자: 저는 주말마다 친구들하고 축구를 해요.\n여자: 재미있겠어요. 저는 집에서 책을 읽어요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자는 주말에 무엇을 합니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "책을 읽어요"
+            },
+            {
+              "id": "b",
+              "text": "축구를 해요"
+            },
+            {
+              "id": "c",
+              "text": "영화를 봐요"
+            },
+            {
+              "id": "d",
+              "text": "요리를 해요"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-12-shopping-price",
+    "topicTag": "shopping",
+    "guidanceNote": "Listen for the total price. The final total is '오천 원' (5,000 won).",
+    "payload": {
+      "audioScript": "남자: 이 빵 얼마예요?\n여자: 한 개에 이천오백 원이에요.\n남자: 그럼 두 개 주세요.\n여자: 네, 모두 오천 원입니다.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자는 모두 얼마를 냅니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "이천오백 원"
+            },
+            {
+              "id": "b",
+              "text": "삼천 원"
+            },
+            {
+              "id": "c",
+              "text": "오천 원"
+            },
+            {
+              "id": "d",
+              "text": "만 원"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-L-13-phone-appointment",
+    "topicTag": "daily-life",
+    "guidanceNote": "Listen for the day they agree to meet. They change from 금요일 to 토요일.",
+    "payload": {
+      "audioScript": "여자: 여보세요? 우리 금요일에 만날까요?\n남자: 금요일은 좀 바빠요. 토요일은 어때요?\n여자: 좋아요. 그럼 토요일에 봐요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "두 사람은 무슨 요일에 만납니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "목요일"
+            },
+            {
+              "id": "b",
+              "text": "금요일"
+            },
+            {
+              "id": "c",
+              "text": "토요일"
+            },
+            {
+              "id": "d",
+              "text": "일요일"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-14-weather-plan-change",
+    "topicTag": "weather",
+    "guidanceNote": "Inference: because of the rain, they decide NOT to go to the park and instead watch a movie indoors. Listen for the reason and the new plan.",
+    "payload": {
+      "audioScript": "남자: 오후에 공원에 갈까요?\n여자: 밖에 비가 많이 와요. 공원은 좀 그래요.\n남자: 그럼 우리 영화관에 갈까요?\n여자: 네, 좋아요. 영화를 봐요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "두 사람은 오후에 무엇을 합니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "공원에 가요"
+            },
+            {
+              "id": "b",
+              "text": "영화를 봐요"
+            },
+            {
+              "id": "c",
+              "text": "집에서 자요"
+            },
+            {
+              "id": "d",
+              "text": "산책을 해요"
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "왜 공원에 안 갑니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "날씨가 더워서"
+            },
+            {
+              "id": "b",
+              "text": "비가 와서"
+            },
+            {
+              "id": "c",
+              "text": "시간이 없어서"
+            },
+            {
+              "id": "d",
+              "text": "공원이 멀어서"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-15-birthday-gift",
+    "topicTag": "daily-life",
+    "guidanceNote": "Inference: the woman is buying a gift for her friend's birthday. Listen for who the gift is for and what she chooses.",
+    "payload": {
+      "audioScript": "여자: 내일이 친구 생일이에요. 그래서 선물을 사러 왔어요.\n남자: 무엇을 살 거예요?\n여자: 친구가 꽃을 좋아해요. 그래서 꽃을 살 거예요.\n남자: 좋은 생각이에요. 친구가 기뻐할 거예요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자는 왜 선물을 삽니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "친구 생일이라서"
+            },
+            {
+              "id": "b",
+              "text": "친구가 아파서"
+            },
+            {
+              "id": "c",
+              "text": "친구가 이사해서"
+            },
+            {
+              "id": "d",
+              "text": "친구가 취직해서"
+            }
+          ],
+          "answer": "a"
+        },
+        {
+          "id": "q2",
+          "stem": "여자는 무슨 선물을 삽니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "책"
+            },
+            {
+              "id": "b",
+              "text": "꽃"
+            },
+            {
+              "id": "c",
+              "text": "케이크"
+            },
+            {
+              "id": "d",
+              "text": "옷"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-16-lost-umbrella",
+    "topicTag": "daily-life",
+    "guidanceNote": "Inference: the man left his umbrella at the cafe yesterday. Listen for where the item was left and when.",
+    "payload": {
+      "audioScript": "남자: 저기요, 어제 여기에 우산을 놓고 갔어요.\n여자: 아, 파란색 우산이요? 여기 있어요.\n남자: 네, 맞아요. 정말 감사합니다.\n여자: 다음부터는 조심하세요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자는 무엇을 놓고 갔습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "가방"
+            },
+            {
+              "id": "b",
+              "text": "우산"
+            },
+            {
+              "id": "c",
+              "text": "지갑"
+            },
+            {
+              "id": "d",
+              "text": "휴대폰"
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "남자는 언제 그것을 놓고 갔습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "오늘 아침"
+            },
+            {
+              "id": "b",
+              "text": "어제"
+            },
+            {
+              "id": "c",
+              "text": "지난주"
+            },
+            {
+              "id": "d",
+              "text": "그저께"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-17-hospital-reservation",
+    "topicTag": "daily-life",
+    "guidanceNote": "Inference: the woman calls to make a doctor's appointment and settles on Monday at 10 a.m. Listen for the final agreed time.",
+    "payload": {
+      "audioScript": "여자: 여보세요? 진료를 예약하고 싶어요.\n남자: 네, 언제 오시겠어요?\n여자: 월요일 오전에 갈 수 있어요?\n남자: 월요일 오전 열 시 괜찮으세요?\n여자: 네, 열 시 좋아요.",
+      "speakers": [
+        {
+          "role": "여자",
+          "voice": "female"
+        },
+        {
+          "role": "남자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자는 무슨 요일에 병원에 갑니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "월요일"
+            },
+            {
+              "id": "b",
+              "text": "화요일"
+            },
+            {
+              "id": "c",
+              "text": "수요일"
+            },
+            {
+              "id": "d",
+              "text": "목요일"
+            }
+          ],
+          "answer": "a"
+        },
+        {
+          "id": "q2",
+          "stem": "여자는 몇 시에 병원에 갑니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "아홉 시"
+            },
+            {
+              "id": "b",
+              "text": "열 시"
+            },
+            {
+              "id": "c",
+              "text": "열한 시"
+            },
+            {
+              "id": "d",
+              "text": "열두 시"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-L-18-restaurant-wait",
+    "topicTag": "restaurant",
+    "guidanceNote": "Inference: the restaurant is full, so they decide to wait rather than leave. Listen for the situation and their decision.",
+    "payload": {
+      "audioScript": "남자: 지금 자리가 있어요?\n여자: 죄송합니다. 지금은 자리가 없어요. 삼십 분 기다리셔야 해요.\n남자: 음, 그럼 우리 기다릴까요?\n여자: 네, 여기 앉아서 기다리세요. 곧 자리가 나요.",
+      "speakers": [
+        {
+          "role": "남자",
+          "voice": "male"
+        },
+        {
+          "role": "여자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "식당은 지금 어떻습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "자리가 많아요"
+            },
+            {
+              "id": "b",
+              "text": "자리가 없어요"
+            },
+            {
+              "id": "c",
+              "text": "문을 닫았어요"
+            },
+            {
+              "id": "d",
+              "text": "청소 중이에요"
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "두 사람은 어떻게 합니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "다른 식당에 가요"
+            },
+            {
+              "id": "b",
+              "text": "기다려요"
+            },
+            {
+              "id": "c",
+              "text": "집에 가요"
+            },
+            {
+              "id": "d",
+              "text": "음식을 포장해요"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-01-sign-library-hours",
+    "topicTag": "notices",
+    "guidanceNote": "Foundation sign-reading. Learners scan for the opening/closing times and the closed day. Teach them to look for 시 (hour) and 휴관 (closed).",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "행복 도서관\n이용 시간: 오전 9시 ~ 오후 6시\n쉬는 날: 매주 월요일"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 도서관에 대한 설명으로 맞는 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "월요일에 문을 엽니다."
+            },
+            {
+              "id": "b",
+              "text": "오후 여섯 시에 문을 닫습니다."
+            },
+            {
+              "id": "c",
+              "text": "밤에도 이용할 수 있습니다."
+            },
+            {
+              "id": "d",
+              "text": "일요일에 쉽니다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-02-message-late",
+    "topicTag": "messages",
+    "guidanceNote": "Foundation short message. The key is 미안해 (sorry) plus 늦어 (late). Learners identify the writer's situation.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "수미 씨, 미안해요. 버스가 안 와서 조금 늦어요. 십 분만 기다려 주세요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 왜 이 글을 썼습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "약속을 취소하려고"
+            },
+            {
+              "id": "b",
+              "text": "늦는다고 말하려고"
+            },
+            {
+              "id": "c",
+              "text": "버스표를 사려고"
+            },
+            {
+              "id": "d",
+              "text": "밥을 먹으려고"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-03-sign-no-photo",
+    "topicTag": "notices",
+    "guidanceNote": "Foundation prohibition sign. 금지 = forbidden. Learners match the picture-free rule to the correct behavior.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "미술관 안에서는 사진을 찍지 마세요. 사진 촬영 금지."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이곳에서 하면 안 되는 것은 무엇입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "그림 보기"
+            },
+            {
+              "id": "b",
+              "text": "천천히 걷기"
+            },
+            {
+              "id": "c",
+              "text": "사진 찍기"
+            },
+            {
+              "id": "d",
+              "text": "조용히 하기"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-04-cloze-weather-cold",
+    "topicTag": "daily-life",
+    "guidanceNote": "Foundation cloze. Context 겨울 + 눈 signals cold. The blank needs the adjective 춥다. Teach weather adjectives.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "오늘은 겨울이에요. 밖에 눈이 와요. 날씨가 아주 (          )."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "빈칸에 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "더워요"
+            },
+            {
+              "id": "b",
+              "text": "추워요"
+            },
+            {
+              "id": "c",
+              "text": "맛있어요"
+            },
+            {
+              "id": "d",
+              "text": "바빠요"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-05-cloze-place-hospital",
+    "topicTag": "daily-life",
+    "guidanceNote": "Foundation cloze on place vocabulary. 아파요 + 의사 point to 병원 (hospital). Learners choose the location.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "머리가 아파요. 그래서 (          )에 가요. 의사 선생님을 만나요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "빈칸에 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "학교"
+            },
+            {
+              "id": "b",
+              "text": "은행"
+            },
+            {
+              "id": "c",
+              "text": "병원"
+            },
+            {
+              "id": "d",
+              "text": "시장"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-06-ad-coffee-sale",
+    "topicTag": "advertisements",
+    "guidanceNote": "Foundation ad reading. Learners find the discounted item and its price. Watch numbers and 원.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "행복 카페\n오늘만 커피 한 잔 1,500원!\n아침 8시부터 10시까지."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 광고의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "커피가 오천 원입니다."
+            },
+            {
+              "id": "b",
+              "text": "아침에만 싸게 팝니다."
+            },
+            {
+              "id": "c",
+              "text": "저녁에 문을 엽니다."
+            },
+            {
+              "id": "d",
+              "text": "차를 팝니다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-07-para-weekend-plan",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core short paragraph about a weekend. Learners track who does what and when. Distractors swap the day or activity.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "저는 주말에 보통 집에서 쉬어요. 하지만 이번 토요일에는 친구하고 영화를 봐요. 일요일에는 도서관에서 책을 읽어요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 일요일에 무엇을 합니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "영화를 봅니다."
+            },
+            {
+              "id": "b",
+              "text": "집에서 잡니다."
+            },
+            {
+              "id": "c",
+              "text": "책을 읽습니다."
+            },
+            {
+              "id": "d",
+              "text": "친구를 만납니다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-08-para-family-intro",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core family-introduction paragraph. Count family members and match jobs. Distractors change the number or profession.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "우리 가족은 네 명이에요. 아버지, 어머니, 여동생, 그리고 저예요. 아버지는 회사원이에요. 어머니는 요리사예요. 여동생은 학생이에요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "가족은 모두 세 명입니다."
+            },
+            {
+              "id": "b",
+              "text": "어머니는 요리사입니다."
+            },
+            {
+              "id": "c",
+              "text": "아버지는 선생님입니다."
+            },
+            {
+              "id": "d",
+              "text": "여동생은 회사원입니다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-09-notice-elevator",
+    "topicTag": "notices",
+    "guidanceNote": "Core building notice about a broken elevator. Learners infer that they must use the stairs during repair dates.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "안내문\n엘리베이터를 고칩니다.\n7월 5일부터 7월 7일까지 사용할 수 없습니다.\n계단을 이용해 주세요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내문의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "삼 일 동안 엘리베이터를 못 탑니다."
+            },
+            {
+              "id": "b",
+              "text": "계단을 사용하면 안 됩니다."
+            },
+            {
+              "id": "c",
+              "text": "엘리베이터가 새 것입니다."
+            },
+            {
+              "id": "d",
+              "text": "칠월 팔일까지 못 씁니다."
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "CORE",
+    "title": "TI-R-10-cloze-connective-but",
+    "topicTag": "grammar-in-context",
+    "guidanceNote": "Core cloze testing a contrast connective. The two clauses oppose (wanted to go / rained), so 그렇지만 fits. Teach connective adverbs.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "어제 공원에 가고 싶었어요. (          ) 비가 많이 왔어요. 그래서 집에 있었어요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "빈칸에 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "그리고"
+            },
+            {
+              "id": "b",
+              "text": "그렇지만"
+            },
+            {
+              "id": "c",
+              "text": "그래서"
+            },
+            {
+              "id": "d",
+              "text": "그러면"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-11-schedule-class",
+    "topicTag": "schedules",
+    "guidanceNote": "Core schedule reading. Learners cross-reference day and subject. Distractors mismatch the day-subject pair.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "한국어 수업 시간표\n월요일: 말하기\n수요일: 읽기\n금요일: 쓰기\n수업은 모두 오후 2시에 시작해요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 시간표의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "수요일에 쓰기를 배웁니다."
+            },
+            {
+              "id": "b",
+              "text": "수업은 오전에 시작합니다."
+            },
+            {
+              "id": "c",
+              "text": "금요일에 쓰기를 배웁니다."
+            },
+            {
+              "id": "d",
+              "text": "월요일에 읽기를 배웁니다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-12-email-invite",
+    "topicTag": "messages",
+    "guidanceNote": "Core invitation message. Learners extract the event, date, and requested action (reply). Distractors alter the date or place.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "민수 씨,\n이번 주 토요일 저녁 6시에 우리 집에서 생일 파티를 해요. 시간이 있으면 오세요. 올 수 있는지 답장을 보내 주세요.\n지영 드림"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "지영 씨가 민수 씨에게 부탁한 것은 무엇입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "선물을 사는 것"
+            },
+            {
+              "id": "b",
+              "text": "답장을 보내는 것"
+            },
+            {
+              "id": "c",
+              "text": "음식을 만드는 것"
+            },
+            {
+              "id": "d",
+              "text": "집을 청소하는 것"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "CORE",
+    "title": "TI-R-13-ordering-morning",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core ordering. Learners arrange a simple morning routine using time clues (일어나다 → 씻다 → 먹다 → 가다). Options list possible orders.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음 문장을 자연스러운 순서로 놓으십시오.\n(가) 아침에 일어나요.\n(나) 세수를 하고 밥을 먹어요.\n(다) 가방을 메고 학교에 가요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이야기의 순서로 맞는 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "(가) - (나) - (다)"
+            },
+            {
+              "id": "b",
+              "text": "(나) - (가) - (다)"
+            },
+            {
+              "id": "c",
+              "text": "(다) - (나) - (가)"
+            },
+            {
+              "id": "d",
+              "text": "(가) - (다) - (나)"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MATCHING",
+    "difficulty": "CORE",
+    "title": "TI-R-14-matching-place-action",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core matching of place to activity. Learners pick the option where every place-action pair is correct. Distractors swap one pair.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "장소와 하는 일을 알맞게 연결한 것을 고르십시오.\n식당 / 우체국 / 서점\n밥을 먹다 · 편지를 보내다 · 책을 사다"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "장소와 하는 일이 모두 맞는 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "식당 - 편지를 보내다"
+            },
+            {
+              "id": "b",
+              "text": "서점 - 책을 사다"
+            },
+            {
+              "id": "c",
+              "text": "우체국 - 밥을 먹다"
+            },
+            {
+              "id": "d",
+              "text": "서점 - 편지를 보내다"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-15-para-new-city-inference",
+    "topicTag": "inference",
+    "guidanceNote": "Stretch inference. The writer never says 'lonely' directly; learners infer feelings from 친구가 없어요 and 가족이 보고 싶어요. Push past literal lines.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "저는 두 달 전에 부산에서 서울로 왔어요. 서울은 크고 재미있어요. 하지만 아직 친구가 없어요. 그리고 부산에 있는 가족이 자주 보고 싶어요. 그래서 주말에는 조금 심심해요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람의 지금 기분으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "서울에서 아주 신나고 바쁩니다."
+            },
+            {
+              "id": "b",
+              "text": "친구가 많아서 즐겁습니다."
+            },
+            {
+              "id": "c",
+              "text": "혼자여서 외롭고 심심합니다."
+            },
+            {
+              "id": "d",
+              "text": "부산으로 다시 가고 싶지 않습니다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-16-para-cooking-two-questions",
+    "topicTag": "daily-life",
+    "guidanceNote": "Stretch longer paragraph with two questions. Learners must hold multiple details: what was learned, from whom, and the plan. Tests sustained comprehension.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "지난 토요일에 저는 한국 요리 교실에 갔어요. 선생님이 김밥 만드는 방법을 가르쳐 주셨어요. 처음에는 조금 어려웠지만 아주 재미있었어요. 다음 주에는 어머니에게 김밥을 만들어 드리고 싶어요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 요리 교실에서 무엇을 배웠습니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "김치 만드는 방법"
+            },
+            {
+              "id": "b",
+              "text": "김밥 만드는 방법"
+            },
+            {
+              "id": "c",
+              "text": "빵 만드는 방법"
+            },
+            {
+              "id": "d",
+              "text": "국 만드는 방법"
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "이 사람은 다음 주에 무엇을 하려고 합니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "어머니에게 김밥을 만들어 주려고 합니다."
+            },
+            {
+              "id": "b",
+              "text": "요리 교실을 그만두려고 합니다."
+            },
+            {
+              "id": "c",
+              "text": "식당에서 김밥을 사려고 합니다."
+            },
+            {
+              "id": "d",
+              "text": "선생님을 집에 초대하려고 합니다."
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-17-notice-lost-item",
+    "topicTag": "notices",
+    "guidanceNote": "Stretch lost-and-found notice with inference. Learners must work out who should call and why, plus the deadline. Longer text, multiple details.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "분실물 안내\n어제 3층 화장실 앞에서 검은색 우산을 찾았습니다. 우산에 작은 곰 그림이 있습니다. 우산 주인은 1층 사무실로 오세요. 이번 주 금요일까지 아무도 안 오면 우산을 버립니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내문을 보고 사무실에 가야 하는 사람은 누구입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "검은색 우산을 잃어버린 사람"
+            },
+            {
+              "id": "b",
+              "text": "새 우산을 사고 싶은 사람"
+            },
+            {
+              "id": "c",
+              "text": "3층 화장실을 청소하는 사람"
+            },
+            {
+              "id": "d",
+              "text": "곰 그림을 그리고 싶은 사람"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-18-para-part-time-inference",
+    "topicTag": "inference",
+    "guidanceNote": "Stretch inference on the writer's opinion. The text lists both a downside (tiring) and upside (kind people, money for books); learners infer the overall attitude is positive.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "저는 한 달 전부터 편의점에서 아르바이트를 해요. 저녁 6시부터 밤 10시까지 일해요. 조금 힘들고 다리가 아파요. 그렇지만 같이 일하는 사람들이 친절해요. 그리고 번 돈으로 읽고 싶은 책을 살 수 있어서 좋아요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 아르바이트를 어떻게 생각합니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "너무 힘들어서 그만두고 싶어 합니다."
+            },
+            {
+              "id": "b",
+              "text": "힘들지만 좋은 점이 있다고 생각합니다."
+            },
+            {
+              "id": "c",
+              "text": "돈을 못 벌어서 싫어합니다."
+            },
+            {
+              "id": "d",
+              "text": "같이 일하는 사람들이 불친절해서 불편해합니다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_I",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-01-announcement-library-hours",
+    "topicTag": "announcement",
+    "guidanceNote": "Public announcement. Listen for the specific change being announced and the reason given.",
+    "payload": {
+      "audioScript": "여자: 도서관 이용객 여러분께 안내 말씀 드립니다. 다음 주 월요일부터 도서관 운영 시간이 바뀝니다. 그동안 저녁 아홉 시까지 운영했지만, 시험 기간을 맞아 밤 열두 시까지 문을 엽니다. 다만 열람실만 연장 운영되며, 자료 대출과 반납은 기존처럼 저녁 여섯 시까지만 가능하니 이 점 유의해 주시기 바랍니다.",
+      "speakers": [
+        {
+          "role": "안내원",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내의 중심 내용으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "도서관이 다음 주부터 문을 닫는다."
+            },
+            {
+              "id": "b",
+              "text": "시험 기간에 열람실 운영 시간이 늘어난다."
+            },
+            {
+              "id": "c",
+              "text": "자료 대출 시간이 밤 열두 시까지 연장된다."
+            },
+            {
+              "id": "d",
+              "text": "도서관 이용 요금이 새로 생긴다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-02-dialogue-lost-item",
+    "topicTag": "daily-conversation",
+    "guidanceNote": "Everyday service conversation. Identify what the man is looking for and what the woman suggests he do.",
+    "payload": {
+      "audioScript": "남자: 저기요, 혹시 여기 지하철에서 우산 하나 못 보셨나요? 조금 전에 두고 내린 것 같아서요.\n여자: 아, 유실물은 저희 역무실에서 바로 처리하지 않고요, 다음 날에 유실물 센터로 모두 모아서 보냅니다.\n남자: 그럼 오늘은 확인이 어려운가요?\n여자: 네, 죄송하지만 내일 오후에 유실물 센터로 전화해 보시는 게 가장 빠릅니다. 여기 센터 번호 적어 드릴게요.",
+      "speakers": [
+        {
+          "role": "승객",
+          "voice": "male"
+        },
+        {
+          "role": "역무원",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자가 남자에게 권한 방법으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "지금 바로 역무실에서 우산을 찾는다."
+            },
+            {
+              "id": "b",
+              "text": "다음 날 유실물 센터에 전화를 한다."
+            },
+            {
+              "id": "c",
+              "text": "새 우산을 역에서 구입한다."
+            },
+            {
+              "id": "d",
+              "text": "지하철 안에서 직접 우산을 찾아본다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-03-weather-forecast",
+    "topicTag": "news",
+    "guidanceNote": "Weather report. Listen for the main forecast and the advice given to listeners.",
+    "payload": {
+      "audioScript": "여자: 오늘의 날씨입니다. 현재 전국이 대체로 맑지만, 오후 늦게부터 중부 지방을 중심으로 구름이 많아지겠습니다. 특히 내일 새벽부터는 강한 비와 함께 바람도 거세게 불겠으니, 야외 활동을 계획하신 분들은 일정을 조정하시는 것이 좋겠습니다. 낮과 밤의 기온 차이가 크니 건강 관리에도 유의하시기 바랍니다.",
+      "speakers": [
+        {
+          "role": "기상 캐스터",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 일기 예보의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "오늘 아침부터 전국에 비가 내린다."
+            },
+            {
+              "id": "b",
+              "text": "내일 새벽부터 비와 바람이 강해진다."
+            },
+            {
+              "id": "c",
+              "text": "이번 주 내내 맑은 날씨가 이어진다."
+            },
+            {
+              "id": "d",
+              "text": "낮과 밤의 기온 차이가 거의 없다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-04-workplace-meeting-schedule",
+    "topicTag": "workplace",
+    "guidanceNote": "Office conversation. Listen for what the two agree to change about the meeting.",
+    "payload": {
+      "audioScript": "남자: 과장님, 다음 주 화요일 회의 말인데요, 그날 오전에 외부 손님이 오셔서 회의실 사용이 어려울 것 같습니다.\n여자: 아, 그래요? 그럼 오후로 옮기는 건 어때요? 두 시쯤이면 다들 시간이 될 것 같은데요.\n남자: 네, 좋습니다. 그런데 회의 자료는 미리 이메일로 공유해 두면 회의 시간을 줄일 수 있을 것 같습니다.\n여자: 좋은 생각이에요. 그럼 자료는 월요일까지 정리해서 보내 주세요.",
+      "speakers": [
+        {
+          "role": "직원",
+          "voice": "male"
+        },
+        {
+          "role": "과장",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "두 사람이 결정한 내용으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "회의를 다음 주 화요일 오후로 옮긴다."
+            },
+            {
+              "id": "b",
+              "text": "회의를 취소하기로 한다."
+            },
+            {
+              "id": "c",
+              "text": "외부 손님을 회의에 초대한다."
+            },
+            {
+              "id": "d",
+              "text": "회의 자료를 회의 당일에 나눠 준다."
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-L-05-interview-volunteer",
+    "topicTag": "interview",
+    "guidanceNote": "Short interview. Listen for the man's reason for starting his activity.",
+    "payload": {
+      "audioScript": "여자: 벌써 십 년째 지역 아이들에게 무료로 그림을 가르치고 계신데요, 처음 시작하신 계기가 궁금합니다.\n남자: 사실 특별한 이유는 없었어요. 제가 어릴 때 형편이 어려워서 배우고 싶은 걸 마음껏 배우지 못했거든요. 그때의 아쉬움이 오래 남아서, 저처럼 기회가 부족한 아이들에게 뭔가 해 주고 싶었습니다. 아이들이 즐거워하는 모습을 보면 제가 더 큰 힘을 얻어요.",
+      "speakers": [
+        {
+          "role": "진행자",
+          "voice": "female"
+        },
+        {
+          "role": "봉사자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자가 봉사를 시작한 이유로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "그림 실력을 인정받고 싶어서"
+            },
+            {
+              "id": "b",
+              "text": "어릴 때 배우지 못한 아쉬움 때문에"
+            },
+            {
+              "id": "c",
+              "text": "돈을 벌기 위해서"
+            },
+            {
+              "id": "d",
+              "text": "다른 사람의 권유를 받아서"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-06-radio-interview-farmer",
+    "topicTag": "interview",
+    "guidanceNote": "Radio interview with a young farmer. Listen for the main challenge he mentions and his overall attitude.",
+    "payload": {
+      "audioScript": "여자: 도시 생활을 접고 시골로 내려와 농사를 지으신 지 삼 년째라고 들었습니다. 가장 힘들었던 점은 무엇이었나요?\n남자: 처음에는 날씨나 기술이 제일 어려울 줄 알았어요. 그런데 막상 해 보니 사람들과의 관계가 가장 큰 벽이더라고요. 오랫동안 이 마을에서 사신 분들에게 저는 갑자기 나타난 외지인이었으니까요. 그래서 저는 농사보다 먼저 마을 일에 적극적으로 참여했습니다. 함께 밥을 먹고 궂은일을 돕다 보니, 이제는 가족처럼 지내게 됐어요.",
+      "speakers": [
+        {
+          "role": "진행자",
+          "voice": "female"
+        },
+        {
+          "role": "청년 농부",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자가 겪은 가장 큰 어려움으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "농사 기술을 익히는 일"
+            },
+            {
+              "id": "b",
+              "text": "변덕스러운 날씨"
+            },
+            {
+              "id": "c",
+              "text": "마을 사람들과 관계를 맺는 일"
+            },
+            {
+              "id": "d",
+              "text": "농산물을 판매하는 일"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-07-lecture-sleep-health",
+    "topicTag": "lecture",
+    "guidanceNote": "Short health lecture. Listen for the central claim about sleep, not just the supporting details.",
+    "payload": {
+      "audioScript": "남자: 많은 분들이 잠은 그저 몸을 쉬게 하는 시간이라고 생각하십니다. 하지만 최근 연구에 따르면 우리가 자는 동안 뇌는 오히려 매우 활발하게 움직입니다. 낮에 받아들인 수많은 정보 중에서 중요한 것은 장기 기억으로 남기고, 필요 없는 것은 지워 내는 정리 작업이 이때 이루어지지요. 다시 말해, 충분히 자지 못하면 아무리 열심히 공부해도 그 내용이 제대로 저장되지 않는다는 뜻입니다.",
+      "speakers": [
+        {
+          "role": "강연자",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 강연의 중심 생각으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "잠은 몸의 피로만 풀어 주는 시간이다."
+            },
+            {
+              "id": "b",
+              "text": "잠은 기억을 정리하고 저장하는 데 중요한 역할을 한다."
+            },
+            {
+              "id": "c",
+              "text": "공부를 오래 할수록 성적이 오른다."
+            },
+            {
+              "id": "d",
+              "text": "뇌는 잠자는 동안 완전히 멈춘다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-08-discussion-remote-work",
+    "topicTag": "discussion",
+    "guidanceNote": "Two colleagues debating remote work. Identify the woman's position and what she proposes as a compromise.",
+    "payload": {
+      "audioScript": "남자: 저는 재택근무가 결국 회사 전체의 협업을 어렵게 만든다고 봐요. 얼굴을 마주 보고 이야기해야 나오는 아이디어가 분명히 있거든요.\n여자: 그 말씀도 일리는 있어요. 하지만 매일 출근하느라 버리는 시간과 에너지도 무시할 수 없잖아요. 저는 완전한 재택도, 완전한 출근도 답이 아니라고 생각해요. 예를 들어 일주일에 이삼 일만 출근하고 나머지는 집에서 일한다면, 협업도 하고 개인의 효율도 지킬 수 있지 않을까요?\n남자: 음, 그렇게 절충하는 방식이라면 저도 반대하지 않겠네요.",
+      "speakers": [
+        {
+          "role": "직원 A",
+          "voice": "male"
+        },
+        {
+          "role": "직원 B",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자의 의견으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "모든 직원이 매일 출근해야 한다."
+            },
+            {
+              "id": "b",
+              "text": "재택근무를 완전히 없애야 한다."
+            },
+            {
+              "id": "c",
+              "text": "출근과 재택을 적절히 섞는 방식이 좋다."
+            },
+            {
+              "id": "d",
+              "text": "협업보다 개인의 효율이 항상 더 중요하다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-09-news-recycling-policy",
+    "topicTag": "news",
+    "guidanceNote": "News report on a new city policy. Listen for what actually changes for residents.",
+    "payload": {
+      "audioScript": "여자: 다음 소식입니다. 시는 다음 달부터 투명 페트병을 다른 플라스틱과 따로 분리해서 배출하도록 하는 제도를 전면 시행한다고 밝혔습니다. 지금까지는 모든 플라스틱을 한데 모아 버렸지만, 앞으로는 라벨을 제거한 투명 페트병만 따로 모아야 합니다. 시는 이렇게 모은 페트병이 옷이나 가방을 만드는 고급 재료로 재활용될 수 있다고 설명했습니다. 시행 초기에는 계도 기간을 두어 과태료 대신 안내를 우선한다는 방침입니다.",
+      "speakers": [
+        {
+          "role": "기자",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 뉴스의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "모든 플라스틱을 계속 함께 버리면 된다."
+            },
+            {
+              "id": "b",
+              "text": "투명 페트병은 라벨을 떼고 따로 배출해야 한다."
+            },
+            {
+              "id": "c",
+              "text": "제도를 어기면 시행 첫날부터 과태료를 낸다."
+            },
+            {
+              "id": "d",
+              "text": "페트병은 재활용되지 않고 모두 소각된다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-10-conversation-complaint-refund",
+    "topicTag": "daily-conversation",
+    "guidanceNote": "Customer service call. Listen for the resolution the two parties reach.",
+    "payload": {
+      "audioScript": "여자: 안녕하세요, 지난주에 주문한 의자가 오늘 도착했는데 다리 한쪽이 흔들려서요. 조립을 잘못한 건 아닌 것 같고 부품 자체가 휘어 있는 것 같아요.\n남자: 불편을 드려 정말 죄송합니다. 사진을 보내 주시면 확인 후 처리해 드리겠습니다. 전체 교환과 부품만 교체하는 방법 중에 어떤 걸 원하시나요?\n여자: 다시 조립하기는 번거로워서요. 그냥 새 제품으로 바꿔 주시면 좋겠어요.\n남자: 알겠습니다. 그럼 오늘 바로 교환 접수를 해 드리고, 기존 제품은 택배 기사님이 수거해 가실 겁니다.",
+      "speakers": [
+        {
+          "role": "고객",
+          "voice": "female"
+        },
+        {
+          "role": "상담원",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "두 사람이 합의한 처리 방법으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "고객이 직접 부품을 사서 교체한다."
+            },
+            {
+              "id": "b",
+              "text": "제품 전체를 새것으로 교환한다."
+            },
+            {
+              "id": "c",
+              "text": "환불만 받고 제품은 그대로 둔다."
+            },
+            {
+              "id": "d",
+              "text": "흔들리는 다리를 고객이 수리한다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-11-documentary-traditional-market",
+    "topicTag": "documentary",
+    "guidanceNote": "Documentary narration about a traditional market. Listen for the main reason the market has survived.",
+    "payload": {
+      "audioScript": "남자: 백 년 넘게 한자리를 지켜 온 이 시장은 대형 마트가 들어선 뒤에도 여전히 사람들로 붐빕니다. 그 비결은 단순히 값이 싸기 때문만은 아닙니다. 상인들은 손님의 이름을 기억하고, 오늘 들어온 재료 중 무엇이 가장 좋은지 스스럼없이 알려 줍니다. 이런 정이 오가는 관계가 시장을 단순한 거래의 공간이 아니라 사람과 사람이 만나는 장소로 만들어 온 것입니다.",
+      "speakers": [
+        {
+          "role": "내레이터",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 시장이 오래 유지되어 온 가장 큰 이유로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "물건 값이 마트보다 항상 싸기 때문에"
+            },
+            {
+              "id": "b",
+              "text": "상인과 손님 사이의 정이 담긴 관계 때문에"
+            },
+            {
+              "id": "c",
+              "text": "시장이 관광지로 지정되었기 때문에"
+            },
+            {
+              "id": "d",
+              "text": "대형 마트가 근처에 없기 때문에"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-L-12-announcement-construction",
+    "topicTag": "announcement",
+    "guidanceNote": "Building management announcement. Listen for what residents are asked to do and when.",
+    "payload": {
+      "audioScript": "여자: 입주민 여러분께 공사 관련 안내를 드립니다. 오는 토요일 오전 아홉 시부터 오후 다섯 시까지 아파트 전체 수도관 교체 공사가 진행됩니다. 공사 시간 동안에는 단수가 되므로, 미리 생활에 필요한 물을 받아 두시기 바랍니다. 아울러 공사 소음이 발생할 수 있으니 양해 부탁드립니다. 부득이하게 공사가 길어질 경우, 관리 사무소 방송을 통해 다시 안내해 드리겠습니다.",
+      "speakers": [
+        {
+          "role": "관리 사무소 직원",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "입주민이 미리 준비해야 할 일로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "토요일에 외출한다."
+            },
+            {
+              "id": "b",
+              "text": "생활에 필요한 물을 미리 받아 둔다."
+            },
+            {
+              "id": "c",
+              "text": "수도관을 직접 교체한다."
+            },
+            {
+              "id": "d",
+              "text": "관리 사무소에 미리 전화한다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-13-lecture-behavioral-economics",
+    "topicTag": "lecture",
+    "guidanceNote": "Academic lecture on behavioral economics. Item 1 = main idea; item 2 = speaker's attitude toward traditional economics.",
+    "payload": {
+      "audioScript": "여자: 전통적인 경제학은 인간을 언제나 이익과 손해를 냉정하게 계산하는 합리적인 존재로 가정해 왔습니다. 그러나 우리의 실제 선택을 들여다보면 이야기가 달라집니다. 예를 들어, 만 원을 잃었을 때 느끼는 고통은 같은 만 원을 얻었을 때의 기쁨보다 훨씬 크게 다가옵니다. 그래서 사람들은 이익을 얻기보다 손해를 피하는 쪽으로 움직이는 경우가 많습니다. 저는 이런 인간의 비합리성을 결함으로만 보는 시각에는 동의하지 않습니다. 오히려 이러한 특성을 정확히 이해할 때, 우리는 더 나은 정책과 제도를 설계할 수 있습니다. 전통 경제학의 틀만으로는 결코 설명할 수 없는 부분이지요.",
+      "speakers": [
+        {
+          "role": "교수",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 강연의 중심 내용으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "인간은 언제나 합리적으로 이익을 계산한다."
+            },
+            {
+              "id": "b",
+              "text": "사람들은 이익보다 손해를 더 크게 느끼며 손해를 피하려 한다."
+            },
+            {
+              "id": "c",
+              "text": "경제학은 인간의 감정을 다룰 수 없다."
+            },
+            {
+              "id": "d",
+              "text": "만 원을 잃는 것과 얻는 것은 똑같이 느껴진다."
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "전통 경제학에 대한 여자의 태도로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "인간의 비합리성까지 완벽하게 설명한다고 본다."
+            },
+            {
+              "id": "b",
+              "text": "인간 행동을 설명하는 데 한계가 있다고 본다."
+            },
+            {
+              "id": "c",
+              "text": "더 이상 배울 필요가 없는 학문이라고 본다."
+            },
+            {
+              "id": "d",
+              "text": "인간의 감정을 무시하는 태도를 높이 평가한다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-14-debate-ai-art",
+    "topicTag": "discussion",
+    "guidanceNote": "Panel debate on AI-generated art. Item 1 = the man's core argument; item 2 = his attitude toward human artists.",
+    "payload": {
+      "audioScript": "여자: 요즘 인공지능이 그림을 그리고 음악까지 만드는 시대인데요, 이제 예술가라는 직업이 사라질 거라는 우려도 나옵니다.\n남자: 저는 그 우려에 어느 정도는 공감하면서도, 결론은 조금 다르게 봅니다. 인공지능은 수많은 기존 작품을 학습해 그럴듯한 결과물을 빠르게 만들어 냅니다. 기술적인 완성도만 놓고 보면 사람을 앞설 수도 있지요. 하지만 예술의 본질은 완성도가 아니라 '왜 이것을 만들었는가'라는 질문에 있다고 생각합니다. 자신의 경험과 상처, 시대에 대한 고민을 담아내는 일은 여전히 인간만이 할 수 있습니다. 그래서 저는 예술가가 사라지는 것이 아니라, 도구를 다루는 방식이 달라질 뿐이라고 봅니다.",
+      "speakers": [
+        {
+          "role": "진행자",
+          "voice": "female"
+        },
+        {
+          "role": "패널",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자의 핵심 주장으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "인공지능이 곧 인간 예술가를 완전히 대체할 것이다."
+            },
+            {
+              "id": "b",
+              "text": "예술의 본질은 기술적 완성도에 있다."
+            },
+            {
+              "id": "c",
+              "text": "예술가는 사라지지 않고 도구를 다루는 방식이 바뀔 것이다."
+            },
+            {
+              "id": "d",
+              "text": "인공지능은 예술 작품을 만들 수 없다."
+            }
+          ],
+          "answer": "c"
+        },
+        {
+          "id": "q2",
+          "stem": "인간 예술가에 대한 남자의 태도로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "인간만이 할 수 있는 고유한 가치가 있다고 본다."
+            },
+            {
+              "id": "b",
+              "text": "인공지능보다 열등한 존재라고 본다."
+            },
+            {
+              "id": "c",
+              "text": "이제 필요 없는 직업이라고 본다."
+            },
+            {
+              "id": "d",
+              "text": "기술을 배우지 못하면 무의미하다고 본다."
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-15-interview-architect-urban",
+    "topicTag": "interview",
+    "guidanceNote": "In-depth interview with an urban architect. Item 1 = her design philosophy; item 2 = what she criticizes about past city planning.",
+    "payload": {
+      "audioScript": "남자: 선생님이 설계하신 공원들은 하나같이 '느리게 걷게 만드는 공간'이라는 평을 듣습니다. 의도하신 건가요?\n여자: 네, 분명한 의도입니다. 지난 수십 년간 우리 도시는 무엇이든 빠르게, 효율적으로 움직이는 데만 초점을 맞춰 왔습니다. 넓은 도로를 내고 건물을 높이 올리면서, 정작 사람이 잠시 멈춰 숨을 고르는 공간은 계속 밀려났지요. 저는 그 점이 늘 아쉬웠습니다. 그래서 저는 일부러 길을 구불구불하게 내고, 곳곳에 앉을 자리를 둡니다. 사람들이 목적지로 서둘러 가기보다, 걷는 과정 자체를 즐기게 하고 싶었어요. 도시는 결국 사람을 위한 곳이어야 하니까요.",
+      "speakers": [
+        {
+          "role": "기자",
+          "voice": "male"
+        },
+        {
+          "role": "건축가",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "여자의 설계 철학으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "가능한 한 빠르게 이동할 수 있게 길을 곧게 낸다."
+            },
+            {
+              "id": "b",
+              "text": "사람들이 걷는 과정 자체를 즐기며 머물게 한다."
+            },
+            {
+              "id": "c",
+              "text": "건물을 최대한 높이 올려 공간을 절약한다."
+            },
+            {
+              "id": "d",
+              "text": "공원보다 도로를 넓히는 것을 우선한다."
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "여자가 과거의 도시 계획에 대해 아쉬워하는 점으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "도로를 너무 좁게 만든 점"
+            },
+            {
+              "id": "b",
+              "text": "건물의 높이를 제한한 점"
+            },
+            {
+              "id": "c",
+              "text": "효율만 강조하며 사람이 쉴 공간을 밀어낸 점"
+            },
+            {
+              "id": "d",
+              "text": "공원을 지나치게 많이 만든 점"
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-16-lecture-language-extinction",
+    "topicTag": "lecture",
+    "guidanceNote": "Advanced linguistics lecture. Listen for the main argument about why language loss matters beyond communication.",
+    "payload": {
+      "audioScript": "남자: 오늘날 전 세계에서 두 주에 하나꼴로 언어가 사라지고 있습니다. 흔히 언어가 없어져도 다른 언어로 소통하면 그만 아니냐고들 말합니다. 하지만 하나의 언어에는 그 언어를 써 온 사람들이 세상을 바라보고 나누어 온 고유한 방식이 담겨 있습니다. 어떤 언어에는 눈의 상태를 수십 가지로 구별하는 단어가 있고, 또 어떤 언어에는 우리가 아예 개념조차 갖지 못한 감정을 표현하는 말이 있습니다. 언어가 사라진다는 것은 단어 목록 하나가 지워지는 일이 아니라, 인류가 쌓아 온 사고방식 하나가 통째로 사라지는 일입니다. 그래서 언어의 소멸은 곧 지식과 문화의 소멸이라고 할 수 있습니다.",
+      "speakers": [
+        {
+          "role": "교수",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 강연에서 말하고자 하는 중심 내용으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "소통만 되면 언어가 사라져도 문제가 없다."
+            },
+            {
+              "id": "b",
+              "text": "언어의 소멸은 고유한 사고방식과 문화의 소멸을 뜻한다."
+            },
+            {
+              "id": "c",
+              "text": "모든 사람이 하나의 언어만 쓰는 것이 바람직하다."
+            },
+            {
+              "id": "d",
+              "text": "언어는 단어의 목록에 지나지 않는다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-17-discussion-basic-income",
+    "topicTag": "discussion",
+    "guidanceNote": "Policy discussion on basic income. Item 1 = the woman's main concern; item 2 = the point on which both speakers agree.",
+    "payload": {
+      "audioScript": "남자: 저는 모든 국민에게 조건 없이 일정한 돈을 지급하는 기본 소득이 앞으로 반드시 필요하다고 봅니다. 기술 발전으로 일자리가 줄어드는 시대에, 최소한의 생활을 보장해 주는 안전망이 있어야 하니까요.\n여자: 취지에는 저도 공감합니다. 다만 저는 재원을 어떻게 마련할 것인가가 늘 걸립니다. 막대한 예산을 세금으로 충당하려면 결국 누군가는 더 큰 부담을 지게 되는데, 그 합의가 쉽지 않을 겁니다. 저는 전 국민에게 똑같이 주기보다, 정말 도움이 절실한 계층에 더 두텁게 지원하는 편이 현실적이라고 생각해요.\n남자: 방식에 대한 이견은 있지만, 변화에 대비한 사회 안전망이 필요하다는 데에는 저도 전적으로 동의합니다.",
+      "speakers": [
+        {
+          "role": "찬성 측",
+          "voice": "male"
+        },
+        {
+          "role": "신중 측",
+          "voice": "female"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "기본 소득에 대한 여자의 주된 우려로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "돈을 마련할 재원 문제와 부담의 합의가 어렵다는 점"
+            },
+            {
+              "id": "b",
+              "text": "기술 발전이 일자리를 늘린다는 점"
+            },
+            {
+              "id": "c",
+              "text": "안전망이 전혀 필요 없다는 점"
+            },
+            {
+              "id": "d",
+              "text": "부유층에게만 돈을 주게 된다는 점"
+            }
+          ],
+          "answer": "a"
+        },
+        {
+          "id": "q2",
+          "stem": "두 사람이 공통으로 동의하는 내용으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "모든 국민에게 똑같은 금액을 주어야 한다."
+            },
+            {
+              "id": "b",
+              "text": "사회 안전망 자체가 필요하다는 점"
+            },
+            {
+              "id": "c",
+              "text": "세금을 지금보다 줄여야 한다는 점"
+            },
+            {
+              "id": "d",
+              "text": "기본 소득을 즉시 시행해야 한다는 점"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-L-18-news-analysis-population",
+    "topicTag": "news",
+    "guidanceNote": "News analysis segment on rural depopulation. Item 1 = the core problem described; item 2 = the expert's proposed direction.",
+    "payload": {
+      "audioScript": "여자: 최근 지방 소도시들이 겪는 인구 감소 문제, 오늘은 전문가와 함께 짚어 보겠습니다. 교수님, 상황이 어느 정도로 심각한가요?\n남자: 단순히 사람이 줄어드는 정도가 아닙니다. 젊은 사람들이 일자리를 찾아 대도시로 떠나면, 남은 지역은 학교와 병원, 상점이 차례로 문을 닫습니다. 그러면 생활이 더 불편해져서 남아 있던 사람들마저 떠나게 되는, 이른바 악순환에 빠지는 것이지요. 저는 이 문제를 단지 사람을 붙잡아 두는 방식으로 풀 수는 없다고 봅니다. 오히려 그 지역만이 가진 자연이나 문화를 살려 새로운 일자리를 만들고, 굳이 대도시에 살지 않아도 되는 환경을 갖추는 것이 근본적인 해법입니다.",
+      "speakers": [
+        {
+          "role": "진행자",
+          "voice": "female"
+        },
+        {
+          "role": "전문가",
+          "voice": "male"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "남자가 설명한 지방 인구 감소 문제의 핵심으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "대도시에 인구가 너무 적다는 점"
+            },
+            {
+              "id": "b",
+              "text": "인구 감소가 시설 축소를 부르고 다시 인구 유출로 이어지는 악순환"
+            },
+            {
+              "id": "c",
+              "text": "지방에 자연과 문화가 전혀 없다는 점"
+            },
+            {
+              "id": "d",
+              "text": "젊은 사람들이 지방으로만 몰린다는 점"
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "전문가가 제시한 해결 방향으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "사람들이 떠나지 못하도록 이동을 제한한다."
+            },
+            {
+              "id": "b",
+              "text": "지역의 자연과 문화를 살려 새로운 일자리를 만든다."
+            },
+            {
+              "id": "c",
+              "text": "모든 시설을 대도시로 옮긴다."
+            },
+            {
+              "id": "d",
+              "text": "지방의 학교와 병원을 모두 없앤다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "LISTENING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-01-notice-library",
+    "topicTag": "workplace-document",
+    "guidanceNote": "Main idea / purpose. Read the informational notice and identify what it is primarily announcing.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "우리 도서관은 다음 달부터 이용 시간을 조정합니다. 평일에는 오전 9시부터 밤 10시까지 문을 열지만, 주말에는 오후 6시에 문을 닫습니다. 또한 매월 첫째 주 월요일은 자료 정리를 위해 하루 종일 문을 닫으니 이용에 참고하시기 바랍니다. 자세한 내용은 도서관 누리집에서 확인하실 수 있습니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글은 무엇에 대한 안내입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "도서관에서 새로 산 책의 목록"
+            },
+            {
+              "id": "b",
+              "text": "바뀐 도서관 이용 시간"
+            },
+            {
+              "id": "c",
+              "text": "도서관에서 열리는 행사 일정"
+            },
+            {
+              "id": "d",
+              "text": "도서 대출 방법의 변경"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-02-email-meeting",
+    "topicTag": "workplace-document",
+    "guidanceNote": "Detail comprehension. Locate the specific instruction the sender gives the recipient.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "안녕하세요, 김 대리님. 다음 주 화요일에 예정된 신제품 회의 관련하여 안내드립니다. 회의 장소가 3층 회의실에서 5층 대회의실로 변경되었습니다. 시간은 오후 2시로 동일합니다. 회의 전에 각자 맡은 부분의 발표 자료를 월요일 오후까지 저에게 이메일로 보내 주시면 제가 하나로 정리하겠습니다. 협조 부탁드립니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글을 받은 사람이 월요일까지 해야 하는 일은 무엇입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "회의 장소를 5층으로 예약한다."
+            },
+            {
+              "id": "b",
+              "text": "발표 자료를 하나로 정리한다."
+            },
+            {
+              "id": "c",
+              "text": "자신이 맡은 발표 자료를 이메일로 보낸다."
+            },
+            {
+              "id": "d",
+              "text": "회의 시간을 오후 2시로 바꾼다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-03-article-recycling",
+    "topicTag": "informational",
+    "guidanceNote": "Main idea. Identify the central message of a short informational article.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "요즘 많은 사람들이 물건을 쉽게 사고 쉽게 버린다. 그러나 우리가 버리는 쓰레기의 상당 부분은 다시 쓸 수 있는 자원이다. 예를 들어 깨끗이 씻은 플라스틱 병이나 종이 상자는 분리해서 버리면 새로운 제품으로 다시 태어난다. 작은 습관이지만 이런 실천이 모이면 자원을 아끼고 환경을 지키는 데 큰 힘이 된다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 중심 생각으로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "물건을 살 때는 값을 잘 비교해야 한다."
+            },
+            {
+              "id": "b",
+              "text": "올바른 분리배출 습관이 자원과 환경을 지킨다."
+            },
+            {
+              "id": "c",
+              "text": "플라스틱 병은 여러 번 사용하는 것이 좋다."
+            },
+            {
+              "id": "d",
+              "text": "쓰레기를 줄이려면 물건을 적게 사야 한다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "FOUNDATION",
+    "title": "TII-R-04-cloze-exercise-habit",
+    "topicTag": "essay",
+    "guidanceNote": "Blank-fill. Choose the connective/expression that fits the logical flow of the paragraph.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "나는 몇 년 전부터 매일 아침 30분씩 걷기 시작했다. 처음에는 아침에 일어나는 것이 힘들어서 며칠 만에 포기할 뻔했다. ( ) 한 달쯤 지나자 몸이 가벼워지고 기분도 좋아지는 것을 느낄 수 있었다. 지금은 걷지 않으면 오히려 하루가 허전하게 느껴진다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "( )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "그래서"
+            },
+            {
+              "id": "b",
+              "text": "하지만"
+            },
+            {
+              "id": "c",
+              "text": "따라서"
+            },
+            {
+              "id": "d",
+              "text": "예를 들어"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-05-column-technology",
+    "topicTag": "opinion",
+    "guidanceNote": "Main idea of an opinion column. Distinguish the author's central claim from supporting details.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "스마트폰은 우리 생활을 편리하게 만들었다. 길을 찾을 때도, 물건을 살 때도, 사람을 만날 약속을 정할 때도 손안의 작은 기계 하나면 충분하다. 그러나 편리함의 이면에는 놓치기 쉬운 문제가 있다. 사람들은 걸으면서도, 밥을 먹으면서도, 심지어 가족과 마주 앉아 있을 때조차 화면에서 눈을 떼지 못한다. 기술이 사람 사이의 거리를 좁혀 준다고 하지만, 정작 바로 옆에 있는 사람과의 대화는 점점 줄어들고 있다. 진정으로 중요한 것은 기술을 얼마나 많이 사용하느냐가 아니라, 그것을 언제 내려놓아야 하는지를 아는 것이다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글에서 필자가 말하고자 하는 바로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "스마트폰은 길을 찾는 데 매우 유용하다."
+            },
+            {
+              "id": "b",
+              "text": "기술을 적절히 내려놓을 줄 아는 태도가 중요하다."
+            },
+            {
+              "id": "c",
+              "text": "스마트폰 사용 시간을 정확히 기록해야 한다."
+            },
+            {
+              "id": "d",
+              "text": "가족과의 약속은 반드시 직접 만나 정해야 한다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-06-inference-review-cafe",
+    "topicTag": "opinion",
+    "guidanceNote": "Inference. Deduce the writer's attitude/feeling that is implied but not stated directly.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "친구의 소개로 새로 문을 연 카페를 찾아갔다. 인터넷에서 사진을 보고 기대가 컸던 곳이었다. 실내 장식은 사진에서 본 것처럼 예뻤지만, 자리에 앉은 지 20분이 지나도 주문한 음료가 나오지 않았다. 직원에게 물어보니 그제야 주문이 빠졌다며 미안하다고 했다. 결국 음료는 맛있었지만, 다시 그곳을 찾게 될지는 잘 모르겠다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "밑줄 친 부분에 나타난 글쓴이의 심정으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "카페의 장식이 사진과 달라 실망스러웠다."
+            },
+            {
+              "id": "b",
+              "text": "음료 맛이 없어서 화가 났다."
+            },
+            {
+              "id": "c",
+              "text": "서비스 때문에 다시 방문할 마음이 줄어들었다."
+            },
+            {
+              "id": "d",
+              "text": "친구의 소개가 정확해서 만족스러웠다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-07-article-sleep",
+    "topicTag": "informational",
+    "guidanceNote": "Detail comprehension. Identify which statement agrees with the informational text.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "충분한 잠은 건강한 생활의 기본이다. 전문가들은 성인의 경우 하루 7시간에서 8시간 정도 자는 것이 좋다고 말한다. 잠이 부족하면 집중력이 떨어지고 감정 조절이 어려워질 뿐 아니라, 오랫동안 이런 상태가 이어지면 여러 질병의 원인이 되기도 한다. 반대로 지나치게 오래 자는 것 역시 몸에 좋지 않다는 연구 결과가 있다. 따라서 자신에게 맞는 적절한 수면 시간을 지키는 것이 중요하다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "잠을 오래 잘수록 건강에 좋다."
+            },
+            {
+              "id": "b",
+              "text": "성인은 하루에 5시간만 자도 충분하다."
+            },
+            {
+              "id": "c",
+              "text": "잠이 부족하면 집중력이 떨어질 수 있다."
+            },
+            {
+              "id": "d",
+              "text": "수면 시간은 건강과 관련이 없다."
+            }
+          ],
+          "answer": "c"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "CORE",
+    "title": "TII-R-08-cloze-volunteer",
+    "topicTag": "essay",
+    "guidanceNote": "Blank-fill. Select the phrase whose meaning best completes the writer's reflection.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "지난 주말에 처음으로 봉사 활동에 참여했다. 나는 다른 사람을 돕기 위해 그곳에 갔다고 생각했다. 그런데 하루를 보내고 나니 오히려 내가 더 많은 것을 얻었다는 생각이 들었다. 함께 웃고 이야기를 나누는 동안, 그동안 잊고 지냈던 따뜻한 마음이 되살아났기 때문이다. 봉사는 ( ) 활동이라는 것을 그날 깨달았다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "( )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "돈을 많이 벌 수 있는"
+            },
+            {
+              "id": "b",
+              "text": "주는 사람도 함께 얻게 되는"
+            },
+            {
+              "id": "c",
+              "text": "혼자서 조용히 해야 하는"
+            },
+            {
+              "id": "d",
+              "text": "누구나 쉽게 포기하는"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "CORE",
+    "title": "TII-R-09-ordering-coffee-history",
+    "topicTag": "informational",
+    "guidanceNote": "Sentence ordering. Arrange the four sentences into a coherent paragraph; look for the topic sentence and connective cues.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 그 후 커피는 여러 나라로 퍼져 나가 세계적인 음료가 되었다.\n(나) 커피는 오늘날 전 세계에서 가장 사랑받는 음료 중 하나이다.\n(다) 처음에 커피는 특정 지역에서만 마시던 음료였다.\n(라) 그러나 상인들이 커피를 다른 지역으로 실어 나르기 시작했다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "(나)-(다)-(라)-(가)"
+            },
+            {
+              "id": "b",
+              "text": "(다)-(가)-(나)-(라)"
+            },
+            {
+              "id": "c",
+              "text": "(나)-(라)-(다)-(가)"
+            },
+            {
+              "id": "d",
+              "text": "(다)-(나)-(라)-(가)"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "CORE",
+    "title": "TII-R-10-ordering-plant-care",
+    "topicTag": "informational",
+    "guidanceNote": "Sentence ordering. Use logical connectives and the natural cause-result sequence to order the sentences.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 나는 이유를 몰라 인터넷에서 정보를 찾아보았다.\n(나) 작년에 처음으로 화분에 꽃을 심어 키우기 시작했다.\n(다) 알고 보니 물을 너무 자주 준 것이 원인이었다.\n(라) 그런데 얼마 지나지 않아 잎이 노랗게 변하기 시작했다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "(나)-(라)-(가)-(다)"
+            },
+            {
+              "id": "b",
+              "text": "(나)-(가)-(라)-(다)"
+            },
+            {
+              "id": "c",
+              "text": "(라)-(나)-(가)-(다)"
+            },
+            {
+              "id": "d",
+              "text": "(나)-(라)-(다)-(가)"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TII-R-11-workplace-policy-remote",
+    "topicTag": "workplace-document",
+    "guidanceNote": "Detail comprehension of a workplace policy notice. Match the condition to the correct rule.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "재택근무 운영 안내\n\n우리 회사는 다음 달부터 재택근무 제도를 시행합니다. 직원은 주 5일 중 최대 2일까지 재택근무를 신청할 수 있습니다. 재택근무를 원하는 직원은 최소 3일 전에 부서장에게 신청서를 제출해야 하며, 부서장의 승인을 받은 후에만 이용할 수 있습니다. 다만 중요한 회의나 고객 방문이 있는 날에는 사무실 출근을 원칙으로 합니다. 자세한 사항은 인사팀에 문의해 주시기 바랍니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "직원은 원하는 날 언제든지 재택근무를 할 수 있다."
+            },
+            {
+              "id": "b",
+              "text": "재택근무는 부서장의 승인을 받아야 이용할 수 있다."
+            },
+            {
+              "id": "c",
+              "text": "재택근무는 일주일에 5일까지 신청할 수 있다."
+            },
+            {
+              "id": "d",
+              "text": "고객 방문이 있는 날에도 재택근무가 가능하다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-R-12-column-city-green-space",
+    "topicTag": "opinion",
+    "guidanceNote": "STRETCH main-idea + inference. Two questions on one passage: identify the argument and infer an implied conclusion.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "도시가 커질수록 사람들은 더 많은 건물과 도로를 원한다. 한정된 땅 위에서 개발이 이루어지다 보니, 공원이나 나무가 심어진 공간은 흔히 가장 먼저 사라지는 대상이 된다. 그러나 최근의 여러 연구는 도시의 녹지가 단순한 장식이 아님을 보여 준다. 나무가 우거진 지역은 여름철 기온을 눈에 띄게 낮추고, 미세먼지를 줄이며, 그곳을 찾는 시민들의 스트레스를 완화한다. 즉 녹지에 대한 투자는 비용이 아니라 도시의 건강을 지키기 위한 투자인 셈이다. 눈앞의 경제적 이익만을 좇아 녹지를 줄이는 결정은, 결국 더 큰 대가를 치르게 할지도 모른다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 주제로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "도시의 녹지는 도시의 건강을 위한 중요한 투자이다."
+            },
+            {
+              "id": "b",
+              "text": "도시가 커지면 건물과 도로가 늘어난다."
+            },
+            {
+              "id": "c",
+              "text": "여름철 기온을 낮추려면 에어컨을 많이 써야 한다."
+            },
+            {
+              "id": "d",
+              "text": "공원은 도시의 아름다운 장식 역할을 한다."
+            }
+          ],
+          "answer": "a"
+        },
+        {
+          "id": "q2",
+          "stem": "밑줄 친 '더 큰 대가'가 의미하는 바로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "건물을 짓는 데 드는 높은 비용"
+            },
+            {
+              "id": "b",
+              "text": "녹지 부족으로 생기는 환경과 건강 문제"
+            },
+            {
+              "id": "c",
+              "text": "공원을 관리하는 데 필요한 인력"
+            },
+            {
+              "id": "d",
+              "text": "도로를 넓히는 데 걸리는 시간"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-R-13-essay-literature-window",
+    "topicTag": "literature",
+    "guidanceNote": "STRETCH literature-style inference. Grasp the narrator's underlying emotion and the symbolic meaning of a detail.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "오래된 집을 떠나던 날, 나는 마지막으로 이층 방의 창가에 섰다. 그 창은 내가 어릴 적부터 계절이 바뀌는 모습을 지켜보던 자리였다. 봄이면 담장 너머 벚나무가 하얗게 피었고, 겨울이면 눈이 소리 없이 마당을 덮었다. 이삿짐을 실은 트럭이 골목을 빠져나갈 때, 나는 뒤를 돌아보지 않으려 애썼다. 그러나 창밖으로 스치는 낯익은 풍경들이 자꾸만 눈에 밟혔다. 새로운 곳에서의 삶이 기다리고 있었지만, 마음 한구석은 여전히 그 창가에 남아 있는 듯했다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글에 나타난 '나'의 심정으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "새집으로 이사 가는 것이 무척 설레고 기쁘다."
+            },
+            {
+              "id": "b",
+              "text": "오래된 집을 떠나는 것이 아쉽고 서운하다."
+            },
+            {
+              "id": "c",
+              "text": "낡은 집을 벗어나게 되어 후련하고 시원하다."
+            },
+            {
+              "id": "d",
+              "text": "이사 준비가 힘들어서 몹시 지치고 짜증이 난다."
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TII-R-14-academic-language-change",
+    "topicTag": "academic",
+    "guidanceNote": "STRETCH academic reading with two questions. Test main idea and a detail requiring integration across sentences.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "언어는 고정된 것이 아니라 끊임없이 변화하는 살아 있는 체계이다. 새로운 사물과 개념이 생겨나면 그것을 표현할 낱말이 만들어지고, 반대로 더 이상 쓰이지 않는 말은 서서히 사라진다. 특히 오늘날에는 인터넷과 사회 관계망 서비스를 통해 언어 변화의 속도가 과거보다 훨씬 빨라졌다. 한편 이러한 변화를 두고 언어가 오염된다고 걱정하는 목소리도 있다. 그러나 언어학자들은 변화 자체를 옳고 그름의 문제로 볼 수 없다고 지적한다. 어떤 표현이 살아남고 어떤 표현이 사라지는지는 결국 그 언어를 사용하는 사람들의 선택에 달려 있기 때문이다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "인터넷은 언어를 오염시키는 주된 원인이다."
+            },
+            {
+              "id": "b",
+              "text": "언어는 사용자에 의해 끊임없이 변화하는 체계이다."
+            },
+            {
+              "id": "c",
+              "text": "새로운 낱말은 만들지 않는 것이 바람직하다."
+            },
+            {
+              "id": "d",
+              "text": "언어학자들은 언어 변화를 막아야 한다고 본다."
+            }
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "언어학자들의 견해로 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "언어 변화는 옳고 그름으로 판단하기 어렵다."
+            },
+            {
+              "id": "b",
+              "text": "사라지는 표현은 반드시 되살려야 한다."
+            },
+            {
+              "id": "c",
+              "text": "언어 변화는 전문가만이 결정할 수 있다."
+            },
+            {
+              "id": "d",
+              "text": "인터넷 언어는 표준어로 인정해야 한다."
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "STRETCH",
+    "title": "TII-R-15-cloze-economy-consumption",
+    "topicTag": "academic",
+    "guidanceNote": "STRETCH blank-fill in an abstract academic paragraph. The filler must match a nuanced logical relationship.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "사람들은 흔히 소득이 늘어나면 소비도 그만큼 늘어난다고 생각한다. 그러나 실제 소비 행동은 그렇게 단순하지 않다. 미래에 대한 불안이 클 때 사람들은 소득이 늘어도 지갑을 쉽게 열지 않는다. 언제 어떤 어려움이 닥칠지 모른다는 생각에 오히려 저축을 늘리기 때문이다. ( ) 소비를 살리기 위해서는 단순히 소득을 높이는 것뿐만 아니라, 사람들이 미래를 안심할 수 있도록 하는 정책이 함께 필요하다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "( )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "이처럼 소비 심리가 미래에 대한 불안과 관련되어 있으므로"
+            },
+            {
+              "id": "b",
+              "text": "소득과 소비는 아무런 관계가 없기 때문에"
+            },
+            {
+              "id": "c",
+              "text": "저축을 줄이는 것이 무엇보다 중요하므로"
+            },
+            {
+              "id": "d",
+              "text": "사람들은 언제나 소득만큼 소비하기 때문에"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "STRETCH",
+    "title": "TII-R-16-ordering-scientific-method",
+    "topicTag": "academic",
+    "guidanceNote": "STRETCH sentence ordering in an academic register. Track abstract discourse markers to reconstruct the argument.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 이렇게 세운 가설이 옳은지 확인하기 위해 실험을 설계한다.\n(나) 과학적 탐구는 대개 하나의 질문에서 출발한다.\n(다) 실험 결과가 가설과 다르면 처음으로 돌아가 다시 생각한다.\n(라) 그 질문에 대한 잠정적인 답, 즉 가설을 세우는 것이 다음 단계이다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "(나)-(라)-(가)-(다)"
+            },
+            {
+              "id": "b",
+              "text": "(나)-(가)-(라)-(다)"
+            },
+            {
+              "id": "c",
+              "text": "(라)-(나)-(가)-(다)"
+            },
+            {
+              "id": "d",
+              "text": "(나)-(라)-(다)-(가)"
+            }
+          ],
+          "answer": "a"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MATCHING",
+    "difficulty": "STRETCH",
+    "title": "TII-R-17-matching-column-title",
+    "topicTag": "opinion",
+    "guidanceNote": "STRETCH matching. Choose the headline that best captures the columnist's overall argument (title-matching task).",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "실패를 두려워하지 말라는 말을 우리는 자주 듣는다. 그러나 이 말이 실패가 아무런 문제가 되지 않는다는 뜻은 아니다. 중요한 것은 실패를 겪은 뒤의 태도이다. 어떤 사람은 실패에 좌절하여 그 자리에 주저앉지만, 어떤 사람은 무엇이 잘못되었는지 차분히 살펴보고 다음을 준비한다. 실패 그 자체가 사람을 성장시키는 것이 아니라, 실패에서 배우려는 자세가 사람을 성장시킨다. 결국 실패는 성장의 재료일 뿐, 성장을 자동으로 보장해 주지는 않는다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 제목으로 가장 알맞은 것을 고르십시오.",
+          "options": [
+            {
+              "id": "a",
+              "text": "실패는 무조건 피해야 할 대상이다"
+            },
+            {
+              "id": "b",
+              "text": "실패에서 배우는 태도가 성장을 만든다"
+            },
+            {
+              "id": "c",
+              "text": "성공한 사람은 실패를 겪지 않는다"
+            },
+            {
+              "id": "d",
+              "text": "좌절은 누구도 피할 수 없는 감정이다"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "MATCHING",
+    "difficulty": "CORE",
+    "title": "TII-R-18-matching-ad-purpose",
+    "topicTag": "informational",
+    "guidanceNote": "Matching. Identify what product or service the short advertisement is describing (purpose-matching task).",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "무거운 짐도 가볍게, 계단도 문제없이! 한 번 충전으로 하루 종일 사용할 수 있습니다. 접으면 가방처럼 작아져 버스나 지하철에서도 편하게 들고 탈 수 있습니다. 도시에서의 짧은 이동, 이제 걷지 말고 편하게 타 보세요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "무엇에 대한 광고입니까?",
+          "options": [
+            {
+              "id": "a",
+              "text": "여행용 가방"
+            },
+            {
+              "id": "b",
+              "text": "휴대용 전동 이동 수단"
+            },
+            {
+              "id": "c",
+              "text": "충전용 배터리"
+            },
+            {
+              "id": "d",
+              "text": "지하철 정기권"
+            }
+          ],
+          "answer": "b"
+        }
+      ]
+    },
+    "track": "TOPIK_II",
+    "section": "READING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-01-email-request",
+    "topicTag": "email",
+    "guidanceNote": "Task 51 email. Blank (ㄱ) must be a polite request matching the reason given; blank (ㄴ) must offer a concrete alternative. Grade on register (하십시오체/요체 consistency) and connective fit.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "받는 사람: 김민수 선생님\n제목: 상담 시간 문의\n\n안녕하세요, 선생님. 저는 한국어 수업을 듣는 응웬입니다.\n다음 주 화요일에 선생님과 상담을 하고 싶습니다. 그런데 그날 오후에는 다른 수업이 있어서 ( ㉠ ).\n혹시 괜찮으시면 오전에 뵙고 싶은데, ( ㉡ )?\n답장 기다리겠습니다. 감사합니다.",
+        "guidance": "㉠에는 오후에 만나기 어렵다는 이유를 정중하게, ㉡에는 오전 시간이 가능한지 묻는 표현을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-02-community-notice",
+    "topicTag": "notice",
+    "guidanceNote": "Task 51 apartment notice. Blank (ㄱ) states what residents must NOT do; blank (ㄴ) gives the reason or the period. Focus on formal notice register and noun-phrase endings.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[안내문]\n\n행복아파트 주민 여러분께\n\n다음 주 월요일부터 수요일까지 아파트 지하 주차장 바닥 공사를 합니다.\n공사 기간에는 지하 주차장을 사용할 수 없으니 ( ㉠ ).\n불편하시겠지만 안전을 위한 공사이므로 ( ㉡ ).\n\n관리사무소 드림",
+        "guidance": "㉠에는 차를 어디에 세워야 하는지, ㉡에는 주민들에게 부탁하는 말을 안내문에 맞는 문체로 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-03-club-recruit",
+    "topicTag": "club",
+    "guidanceNote": "Task 51 club recruitment message. Blank (ㄱ) explains who can join; blank (ㄴ) tells how to sign up. Check imperative/invitation forms and parallelism.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[동아리 모집 글]\n\n안녕하세요, 사진 동아리 '한 컷'입니다.\n저희 동아리는 새 학기를 맞아 함께 활동할 회원을 모집합니다.\n사진을 잘 찍지 못해도 괜찮습니다. 사진에 관심이 있는 사람이면 ( ㉠ ).\n가입을 원하시는 분은 이번 주 금요일까지 학생회관 3층 사무실로 ( ㉡ ).\n많은 신청 바랍니다.",
+        "guidance": "㉠에는 누구나 가입할 수 있다는 내용을, ㉡에는 신청 방법을 알리는 표현을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-04-borrow-text",
+    "topicTag": "message",
+    "guidanceNote": "Task 51 friend text message. Blank (ㄱ) makes the request (borrow item); blank (ㄴ) proposes when to return/meet. Casual 요체 acceptable; check politeness to a senior classmate.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[문자 메시지]\n\n선배님, 안녕하세요. 저 후배 지훈이에요.\n다음 주에 발표가 있는데 참고할 책이 필요해서요.\n혹시 선배님이 가지고 계신 '한국 사회의 이해' 책을 ( ㉠ )?\n제가 수업이 끝나고 도서관 앞으로 갈 수 있으니까 편하신 시간을 ( ㉡ ).\n감사합니다!",
+        "guidance": "㉠에는 책을 빌려 달라는 부탁을, ㉡에는 시간을 알려 달라는 표현을 정중하게 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-51-05-lost-and-found",
+    "topicTag": "notice",
+    "guidanceNote": "Task 51 lost-item notice. Blank (ㄱ) describes what to do if found; blank (ㄴ) gives contact detail. Check conditional (으면) and formal request endings.",
+    "payload": {
+      "writing": {
+        "taskNumber": 51,
+        "prompt": "[게시판 안내]\n\n지갑을 찾습니다\n\n어제 오후 2시쯤 도서관 1층 열람실에서 검은색 지갑을 잃어버렸습니다.\n지갑 안에는 학생증과 교통 카드가 들어 있습니다.\n혹시 이 지갑을 ( ㉠ ) 연락해 주시기 바랍니다.\n제 연락처는 아래에 적어 두었으니 ( ㉡ ).\n\n감사합니다.",
+        "guidance": "㉠에는 지갑을 본 경우를 나타내는 표현을, ㉡에는 연락 방법에 대한 내용을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-01-sleep-health",
+    "topicTag": "health",
+    "guidanceNote": "Task 52 expository. Blank (ㄱ) completes a cause statement; blank (ㄴ) states the recommended action. Grade on logical connectives (그래서/따라서) and formal 문어체.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "사람은 잠을 자는 동안 몸과 마음의 피로를 푼다. 그런데 잠이 부족하면 다음 날 집중력이 떨어지고 쉽게 피곤해진다. 즉, 건강을 지키기 위해서는 무엇보다 ( ㉠ ). 특히 자기 전에 휴대 전화를 오래 보면 잠이 잘 오지 않는다. 그러므로 깊은 잠을 자고 싶다면 자기 전에는 ( ㉡ ).",
+        "guidance": "㉠과 ㉡에는 앞뒤 내용에 어울리는 한 문장을 격식체로 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-02-reading-benefit",
+    "topicTag": "reading",
+    "guidanceNote": "Task 52 expository on reading. Blank (ㄱ) supplies a contrast benefit; blank (ㄴ) draws the conclusion. Focus on 뿐만 아니라 / 반면에 style cohesion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "책을 읽으면 새로운 지식을 얻을 수 있다. 그런데 독서의 장점은 지식을 얻는 것만이 아니다. 책을 읽으면 다른 사람의 생각을 이해하게 되어 ( ㉠ ). 또한 어려운 문제를 만났을 때 책에서 배운 내용이 도움이 되기도 한다. 이처럼 독서는 우리에게 여러 가지 이익을 주기 때문에 ( ㉡ ).",
+        "guidance": "㉠에는 독서의 또 다른 장점을, ㉡에는 앞의 내용을 정리하는 결론을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-03-plant-water",
+    "topicTag": "science",
+    "guidanceNote": "Task 52 mini-science explanation. Blank (ㄱ) completes a general fact; blank (ㄴ) states a caution/exception. Check 그러나 / 반대로 logic and impersonal statement style.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "식물이 자라기 위해서는 물이 꼭 필요하다. 그래서 사람들은 식물에 물을 자주 주면 더 잘 자란다고 생각한다. 그러나 물을 너무 많이 주면 오히려 뿌리가 상해서 ( ㉠ ). 따라서 식물을 건강하게 키우려면 종류에 따라 ( ㉡ ). 물의 양을 잘 맞추는 것이 무엇보다 중요하다.",
+        "guidance": "㉠에는 물을 많이 주었을 때의 결과를, ㉡에는 올바른 물 주기 방법에 대한 내용을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-52-04-habit-change",
+    "topicTag": "psychology",
+    "guidanceNote": "Task 52 slightly harder. Blank (ㄱ) defines why habits are hard to change; blank (ㄴ) gives the practical method. Grade abstract-noun handling and 왜냐하면 ~ 때문이다 structure.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "많은 사람들이 나쁜 습관을 고치고 싶어 하지만 그것은 쉬운 일이 아니다. 습관을 바꾸기 어려운 이유는 오랫동안 반복해 온 행동이 이미 몸에 ( ㉠ ). 그렇다면 습관을 어떻게 바꿀 수 있을까? 전문가들은 한 번에 큰 변화를 시도하기보다는 ( ㉡ ) 것이 효과적이라고 말한다. 작은 성공이 쌓이면 큰 변화로 이어지기 때문이다.",
+        "guidance": "㉠과 ㉡에는 문맥에 맞는 표현을 넣어 문장을 완성하십시오. ㉡에는 '-는' 형태로 이어지는 표현을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "FOUNDATION",
+    "title": "TII-W-52-05-city-tree",
+    "topicTag": "environment",
+    "guidanceNote": "Task 52 environment topic. Blank (ㄱ) completes a benefit-of-trees clause; blank (ㄴ) states the resulting recommendation. Check 뿐만 아니라 and passive/benefit expressions.",
+    "payload": {
+      "writing": {
+        "taskNumber": 52,
+        "prompt": "도시에 나무가 많으면 여러 가지 좋은 점이 있다. 나무는 더운 여름에 그늘을 만들어 주어 사람들이 ( ㉠ ). 뿐만 아니라 나무는 공기 중의 먼지를 줄여 도시의 공기를 깨끗하게 해 준다. 이러한 이유로 최근 많은 도시들이 ( ㉡ ). 나무를 심는 일은 결국 사람의 건강을 지키는 일이기도 하다.",
+        "guidance": "㉠에는 나무 그늘이 주는 이점을, ㉡에는 도시들이 하는 노력을 나타내는 표현을 쓰십시오."
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-01-smartphone-usage",
+    "topicTag": "chart-survey",
+    "guidanceNote": "Task 53 data description, 200-300 chars. Writer must state survey topic, compare two groups, and give the top reason. Grade on chart-description vocabulary (차지하다, 비해, 나타나다) and objective 문어체.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '스마트폰 사용 시간'에 대해 20대와 50대 성인 남녀 500명을 대상으로 조사한 결과이다. 이 내용을 200~300자로 쓰십시오.\n\n[조사 기관] 한국생활문화연구소\n[조사 대상] 20대와 50대 성인 남녀 500명\n\n[하루 평균 스마트폰 사용 시간]\n- 20대: 2018년 3시간 → 2023년 5시간\n- 50대: 2018년 1시간 → 2023년 3시간\n\n[스마트폰을 주로 사용하는 이유 (20대)]\n1위 영상 시청 45%\n2위 친구와 연락 30%\n3위 정보 검색 25%",
+        "guidance": "조사 개요, 두 집단의 변화 비교, 20대의 사용 이유 순위를 모두 포함하여 객관적으로 서술하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-02-library-visitors",
+    "topicTag": "chart-trend",
+    "guidanceNote": "Task 53 trend + reason. Writer describes a 5-year increase and lists two causes. Focus on growth expressions (증가하다, 늘어나다) and cause linking (그 이유로).",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음 자료를 보고 도서관 이용자 수의 변화와 그 이유를 200~300자로 쓰십시오.\n\n[자료 1] ○○시 공공 도서관 연간 이용자 수\n- 2019년: 30만 명\n- 2021년: 45만 명\n- 2023년: 60만 명\n\n[자료 2] 이용자가 늘어난 이유\n- 집 근처에 새 도서관이 많이 생김\n- 책뿐만 아니라 영화, 강연 등 다양한 프로그램이 늘어남",
+        "guidance": "이용자 수가 어떻게 변했는지 구체적인 수치와 함께 설명하고, 두 가지 이유를 자연스럽게 연결하여 쓰십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-03-online-shopping",
+    "topicTag": "chart-comparison",
+    "guidanceNote": "Task 53 comparison of two age groups with pie-style shares. Writer compares preferences and notes a contrast. Grade on 비율 comparison phrasing and balanced coverage.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '물건을 살 때 주로 이용하는 방법'에 대한 조사 결과이다. 이 자료를 보고 200~300자로 쓰십시오.\n\n[조사 대상] 성인 남녀 1,000명\n\n[온라인 구매를 선택한 비율]\n- 30대 이하: 70%\n- 40대 이상: 40%\n\n[온라인 구매를 선호하는 이유]\n- 시간과 장소에 상관없이 살 수 있어서\n- 가격을 쉽게 비교할 수 있어서\n\n[매장 구매를 선호하는 이유]\n- 물건을 직접 보고 확인할 수 있어서",
+        "guidance": "두 연령대의 온라인 구매 비율을 비교하고, 온라인과 매장 구매를 선호하는 이유를 각각 정리하여 서술하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-04-exercise-participation",
+    "topicTag": "chart-survey",
+    "guidanceNote": "Task 53 survey with change + reasons. Writer reports a rise in regular exercise and two motivations. Check percentage phrasing and neutral summarizing conclusion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '규칙적으로 운동을 하는 사람의 비율'에 대한 조사 결과이다. 이 내용을 200~300자로 쓰십시오.\n\n[조사 기관] 국민건강조사원\n[조사 대상] 성인 남녀 2,000명\n\n[규칙적으로 운동하는 사람의 비율]\n- 2013년: 35%\n- 2023년: 58%\n\n[운동을 시작한 이유]\n1위 건강을 지키기 위해서 52%\n2위 스트레스를 풀기 위해서 28%\n3위 다른 사람과 어울리기 위해서 20%",
+        "guidance": "10년 동안의 변화를 수치와 함께 설명하고, 사람들이 운동을 시작한 이유를 순위대로 서술한 뒤 간단히 마무리하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "CORE",
+    "title": "TII-W-53-05-cafe-preference",
+    "topicTag": "chart-reason",
+    "guidanceNote": "Task 53 reason-ranking chart with a gender split. Writer must present overall reasons and one notable difference between men and women. Grade on 반면 contrast and objective tone.",
+    "payload": {
+      "writing": {
+        "taskNumber": 53,
+        "prompt": "다음은 '카페를 자주 찾는 이유'에 대해 성인 남녀 800명을 조사한 결과이다. 이 자료를 200~300자로 쓰십시오.\n\n[전체 응답 순위]\n1위 조용히 쉬기 위해서 40%\n2위 사람을 만나기 위해서 35%\n3위 일이나 공부를 하기 위해서 25%\n\n[남녀 차이]\n- 남성: '일이나 공부를 하기 위해서'라는 응답이 가장 많음\n- 여성: '사람을 만나기 위해서'라는 응답이 가장 많음",
+        "guidance": "전체 응답 순위를 설명한 뒤, 남성과 여성의 응답에서 나타난 차이를 대조하여 객관적으로 서술하십시오.",
+        "charMin": 200,
+        "charMax": 300
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-01-success-meaning",
+    "topicTag": "values",
+    "guidanceNote": "Task 54 argumentative essay, 600-700 chars. Writer defines success, discusses what shapes it, and takes a position. Grade on thesis, three-part structure, and formal essay register (-ㄴ다 declaratives).",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "사람들은 누구나 성공적인 삶을 살고 싶어 한다. 그러나 성공이 무엇인지에 대한 생각은 사람마다 다르다. 아래의 내용을 중심으로 '성공적인 삶이란 무엇인가'에 대한 자신의 생각을 600~700자로 쓰십시오.\n\n· 성공적인 삶이란 어떤 삶이라고 생각하는가?\n· 그렇게 생각하는 이유는 무엇인가?\n· 성공적인 삶을 살기 위해 어떤 노력이 필요한가?",
+        "guidance": "서론-본론-결론의 구성을 갖추고, 자신의 주장을 분명히 밝히며 격식적인 문어체로 쓰십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-02-competition-cooperation",
+    "topicTag": "society",
+    "guidanceNote": "Task 54 essay weighing competition vs cooperation. Writer must present both sides and argue a stance. Grade on balanced argument, concession (물론 ~ 그러나), and cohesive conclusion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "현대 사회에서는 경쟁을 통해 개인과 사회가 발전한다고 말하기도 하고, 협력이 더 중요하다고 말하기도 한다. 아래의 내용을 중심으로 '경쟁과 협력'에 대한 자신의 생각을 600~700자로 쓰십시오.\n\n· 경쟁이 개인과 사회에 주는 긍정적인 영향과 부정적인 영향은 무엇인가?\n· 협력이 필요한 이유는 무엇인가?\n· 경쟁과 협력 중 무엇이 더 중요하다고 생각하는가? 그 이유는 무엇인가?",
+        "guidance": "경쟁과 협력의 양면을 균형 있게 다룬 뒤 자신의 입장을 논리적인 근거와 함께 제시하십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-03-technology-communication",
+    "topicTag": "technology",
+    "guidanceNote": "Task 54 essay on technology's effect on human relationships. Writer weighs pros/cons and proposes healthy use. Grade on abstract vocabulary control and clear position statement.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "스마트폰과 인터넷의 발달로 사람들은 언제 어디서나 쉽게 연락을 주고받을 수 있게 되었다. 그러나 이러한 변화가 사람 사이의 관계에 어떤 영향을 주는지에 대해서는 의견이 나뉜다. 아래의 내용을 중심으로 자신의 생각을 600~700자로 쓰십시오.\n\n· 기술의 발달이 사람들의 관계에 준 긍정적인 변화는 무엇인가?\n· 반대로 어떤 문제가 생길 수 있는가?\n· 기술을 올바르게 사용하기 위해서는 어떤 태도가 필요한가?",
+        "guidance": "긍정적 측면과 부정적 측면을 모두 서술하고, 바람직한 태도에 대한 자신의 견해로 마무리하십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-04-failure-value",
+    "topicTag": "values",
+    "guidanceNote": "Task 54 essay on the value of failure. Writer argues why failure matters and how to face it. Grade on argument development, examples in the abstract, and 결론 that restates thesis.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "많은 사람들이 실패를 두려워하여 새로운 일에 도전하기를 망설인다. 그러나 실패가 반드시 나쁜 것만은 아니라는 의견도 있다. 아래의 내용을 중심으로 '실패의 가치'에 대한 자신의 생각을 600~700자로 쓰십시오.\n\n· 사람들이 실패를 두려워하는 이유는 무엇인가?\n· 실패가 우리에게 주는 긍정적인 점은 무엇인가?\n· 실패를 대하는 바람직한 태도는 무엇인가?",
+        "guidance": "실패에 대한 일반적인 생각을 제시한 뒤, 실패의 긍정적 가치와 바람직한 태도를 논리적으로 서술하십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  },
+  {
+    "taskType": "WRITING",
+    "difficulty": "STRETCH",
+    "title": "TII-W-54-05-environment-responsibility",
+    "topicTag": "environment",
+    "guidanceNote": "Task 54 essay on individual vs collective responsibility for the environment. Writer must argue where responsibility lies and propose action. Grade on thesis clarity and formal argumentative cohesion.",
+    "payload": {
+      "writing": {
+        "taskNumber": 54,
+        "prompt": "환경 문제가 점점 심각해지면서 이를 해결하기 위한 노력이 필요하다는 목소리가 커지고 있다. 그러나 그 책임이 개인에게 있는지, 국가와 기업에 있는지에 대해서는 생각이 다르다. 아래의 내용을 중심으로 자신의 생각을 600~700자로 쓰십시오.\n\n· 환경 문제를 해결하기 위한 개인의 노력에는 어떤 것이 있는가?\n· 국가나 기업이 해야 할 일은 무엇인가?\n· 환경 문제 해결의 책임은 누구에게 더 있다고 생각하는가? 그 이유는 무엇인가?",
+        "guidance": "개인과 국가·기업의 역할을 모두 서술한 뒤, 책임의 주체에 대한 자신의 입장을 근거와 함께 분명히 밝히십시오.",
+        "charMin": 600,
+        "charMax": 700
+      }
+    },
+    "track": "TOPIK_II",
+    "section": "WRITING"
+  }
+]

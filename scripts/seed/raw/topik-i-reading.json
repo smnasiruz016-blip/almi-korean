@@ -1,0 +1,517 @@
+[
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-01-sign-library-hours",
+    "topicTag": "notices",
+    "guidanceNote": "Foundation sign-reading. Learners scan for the opening/closing times and the closed day. Teach them to look for 시 (hour) and 휴관 (closed).",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "행복 도서관\n이용 시간: 오전 9시 ~ 오후 6시\n쉬는 날: 매주 월요일"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 도서관에 대한 설명으로 맞는 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "월요일에 문을 엽니다."},
+            {"id": "b", "text": "오후 여섯 시에 문을 닫습니다."},
+            {"id": "c", "text": "밤에도 이용할 수 있습니다."},
+            {"id": "d", "text": "일요일에 쉽니다."}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-02-message-late",
+    "topicTag": "messages",
+    "guidanceNote": "Foundation short message. The key is 미안해 (sorry) plus 늦어 (late). Learners identify the writer's situation.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "수미 씨, 미안해요. 버스가 안 와서 조금 늦어요. 십 분만 기다려 주세요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 왜 이 글을 썼습니까?",
+          "options": [
+            {"id": "a", "text": "약속을 취소하려고"},
+            {"id": "b", "text": "늦는다고 말하려고"},
+            {"id": "c", "text": "버스표를 사려고"},
+            {"id": "d", "text": "밥을 먹으려고"}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-03-sign-no-photo",
+    "topicTag": "notices",
+    "guidanceNote": "Foundation prohibition sign. 금지 = forbidden. Learners match the picture-free rule to the correct behavior.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "미술관 안에서는 사진을 찍지 마세요. 사진 촬영 금지."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이곳에서 하면 안 되는 것은 무엇입니까?",
+          "options": [
+            {"id": "a", "text": "그림 보기"},
+            {"id": "b", "text": "천천히 걷기"},
+            {"id": "c", "text": "사진 찍기"},
+            {"id": "d", "text": "조용히 하기"}
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-04-cloze-weather-cold",
+    "topicTag": "daily-life",
+    "guidanceNote": "Foundation cloze. Context 겨울 + 눈 signals cold. The blank needs the adjective 춥다. Teach weather adjectives.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "오늘은 겨울이에요. 밖에 눈이 와요. 날씨가 아주 (          )."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "빈칸에 알맞은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "더워요"},
+            {"id": "b", "text": "추워요"},
+            {"id": "c", "text": "맛있어요"},
+            {"id": "d", "text": "바빠요"}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-05-cloze-place-hospital",
+    "topicTag": "daily-life",
+    "guidanceNote": "Foundation cloze on place vocabulary. 아파요 + 의사 point to 병원 (hospital). Learners choose the location.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "머리가 아파요. 그래서 (          )에 가요. 의사 선생님을 만나요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "빈칸에 알맞은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "학교"},
+            {"id": "b", "text": "은행"},
+            {"id": "c", "text": "병원"},
+            {"id": "d", "text": "시장"}
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "FOUNDATION",
+    "title": "TI-R-06-ad-coffee-sale",
+    "topicTag": "advertisements",
+    "guidanceNote": "Foundation ad reading. Learners find the discounted item and its price. Watch numbers and 원.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "행복 카페\n오늘만 커피 한 잔 1,500원!\n아침 8시부터 10시까지."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 광고의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "커피가 오천 원입니다."},
+            {"id": "b", "text": "아침에만 싸게 팝니다."},
+            {"id": "c", "text": "저녁에 문을 엽니다."},
+            {"id": "d", "text": "차를 팝니다."}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-07-para-weekend-plan",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core short paragraph about a weekend. Learners track who does what and when. Distractors swap the day or activity.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "저는 주말에 보통 집에서 쉬어요. 하지만 이번 토요일에는 친구하고 영화를 봐요. 일요일에는 도서관에서 책을 읽어요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 일요일에 무엇을 합니까?",
+          "options": [
+            {"id": "a", "text": "영화를 봅니다."},
+            {"id": "b", "text": "집에서 잡니다."},
+            {"id": "c", "text": "책을 읽습니다."},
+            {"id": "d", "text": "친구를 만납니다."}
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-08-para-family-intro",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core family-introduction paragraph. Count family members and match jobs. Distractors change the number or profession.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "우리 가족은 네 명이에요. 아버지, 어머니, 여동생, 그리고 저예요. 아버지는 회사원이에요. 어머니는 요리사예요. 여동생은 학생이에요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 글의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "가족은 모두 세 명입니다."},
+            {"id": "b", "text": "어머니는 요리사입니다."},
+            {"id": "c", "text": "아버지는 선생님입니다."},
+            {"id": "d", "text": "여동생은 회사원입니다."}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-09-notice-elevator",
+    "topicTag": "notices",
+    "guidanceNote": "Core building notice about a broken elevator. Learners infer that they must use the stairs during repair dates.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "안내문\n엘리베이터를 고칩니다.\n7월 5일부터 7월 7일까지 사용할 수 없습니다.\n계단을 이용해 주세요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내문의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "삼 일 동안 엘리베이터를 못 탑니다."},
+            {"id": "b", "text": "계단을 사용하면 안 됩니다."},
+            {"id": "c", "text": "엘리베이터가 새 것입니다."},
+            {"id": "d", "text": "칠월 팔일까지 못 씁니다."}
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "CLOZE",
+    "difficulty": "CORE",
+    "title": "TI-R-10-cloze-connective-but",
+    "topicTag": "grammar-in-context",
+    "guidanceNote": "Core cloze testing a contrast connective. The two clauses oppose (wanted to go / rained), so 그렇지만 fits. Teach connective adverbs.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "어제 공원에 가고 싶었어요. (          ) 비가 많이 왔어요. 그래서 집에 있었어요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "빈칸에 알맞은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "그리고"},
+            {"id": "b", "text": "그렇지만"},
+            {"id": "c", "text": "그래서"},
+            {"id": "d", "text": "그러면"}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-11-schedule-class",
+    "topicTag": "schedules",
+    "guidanceNote": "Core schedule reading. Learners cross-reference day and subject. Distractors mismatch the day-subject pair.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "한국어 수업 시간표\n월요일: 말하기\n수요일: 읽기\n금요일: 쓰기\n수업은 모두 오후 2시에 시작해요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 시간표의 내용과 같은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "수요일에 쓰기를 배웁니다."},
+            {"id": "b", "text": "수업은 오전에 시작합니다."},
+            {"id": "c", "text": "금요일에 쓰기를 배웁니다."},
+            {"id": "d", "text": "월요일에 읽기를 배웁니다."}
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "CORE",
+    "title": "TI-R-12-email-invite",
+    "topicTag": "messages",
+    "guidanceNote": "Core invitation message. Learners extract the event, date, and requested action (reply). Distractors alter the date or place.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "민수 씨,\n이번 주 토요일 저녁 6시에 우리 집에서 생일 파티를 해요. 시간이 있으면 오세요. 올 수 있는지 답장을 보내 주세요.\n지영 드림"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "지영 씨가 민수 씨에게 부탁한 것은 무엇입니까?",
+          "options": [
+            {"id": "a", "text": "선물을 사는 것"},
+            {"id": "b", "text": "답장을 보내는 것"},
+            {"id": "c", "text": "음식을 만드는 것"},
+            {"id": "d", "text": "집을 청소하는 것"}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "ORDERING",
+    "difficulty": "CORE",
+    "title": "TI-R-13-ordering-morning",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core ordering. Learners arrange a simple morning routine using time clues (일어나다 → 씻다 → 먹다 → 가다). Options list possible orders.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "다음 문장을 자연스러운 순서로 놓으십시오.\n(가) 아침에 일어나요.\n(나) 세수를 하고 밥을 먹어요.\n(다) 가방을 메고 학교에 가요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이야기의 순서로 맞는 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "(가) - (나) - (다)"},
+            {"id": "b", "text": "(나) - (가) - (다)"},
+            {"id": "c", "text": "(다) - (나) - (가)"},
+            {"id": "d", "text": "(가) - (다) - (나)"}
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MATCHING",
+    "difficulty": "CORE",
+    "title": "TI-R-14-matching-place-action",
+    "topicTag": "daily-life",
+    "guidanceNote": "Core matching of place to activity. Learners pick the option where every place-action pair is correct. Distractors swap one pair.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "장소와 하는 일을 알맞게 연결한 것을 고르십시오.\n식당 / 우체국 / 서점\n밥을 먹다 · 편지를 보내다 · 책을 사다"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "장소와 하는 일이 모두 맞는 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "식당 - 편지를 보내다"},
+            {"id": "b", "text": "서점 - 책을 사다"},
+            {"id": "c", "text": "우체국 - 밥을 먹다"},
+            {"id": "d", "text": "서점 - 편지를 보내다"}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-15-para-new-city-inference",
+    "topicTag": "inference",
+    "guidanceNote": "Stretch inference. The writer never says 'lonely' directly; learners infer feelings from 친구가 없어요 and 가족이 보고 싶어요. Push past literal lines.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "저는 두 달 전에 부산에서 서울로 왔어요. 서울은 크고 재미있어요. 하지만 아직 친구가 없어요. 그리고 부산에 있는 가족이 자주 보고 싶어요. 그래서 주말에는 조금 심심해요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람의 지금 기분으로 알맞은 것을 고르십시오.",
+          "options": [
+            {"id": "a", "text": "서울에서 아주 신나고 바쁩니다."},
+            {"id": "b", "text": "친구가 많아서 즐겁습니다."},
+            {"id": "c", "text": "혼자여서 외롭고 심심합니다."},
+            {"id": "d", "text": "부산으로 다시 가고 싶지 않습니다."}
+          ],
+          "answer": "c"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-16-para-cooking-two-questions",
+    "topicTag": "daily-life",
+    "guidanceNote": "Stretch longer paragraph with two questions. Learners must hold multiple details: what was learned, from whom, and the plan. Tests sustained comprehension.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "지난 토요일에 저는 한국 요리 교실에 갔어요. 선생님이 김밥 만드는 방법을 가르쳐 주셨어요. 처음에는 조금 어려웠지만 아주 재미있었어요. 다음 주에는 어머니에게 김밥을 만들어 드리고 싶어요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 요리 교실에서 무엇을 배웠습니까?",
+          "options": [
+            {"id": "a", "text": "김치 만드는 방법"},
+            {"id": "b", "text": "김밥 만드는 방법"},
+            {"id": "c", "text": "빵 만드는 방법"},
+            {"id": "d", "text": "국 만드는 방법"}
+          ],
+          "answer": "b"
+        },
+        {
+          "id": "q2",
+          "stem": "이 사람은 다음 주에 무엇을 하려고 합니까?",
+          "options": [
+            {"id": "a", "text": "어머니에게 김밥을 만들어 주려고 합니다."},
+            {"id": "b", "text": "요리 교실을 그만두려고 합니다."},
+            {"id": "c", "text": "식당에서 김밥을 사려고 합니다."},
+            {"id": "d", "text": "선생님을 집에 초대하려고 합니다."}
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-17-notice-lost-item",
+    "topicTag": "notices",
+    "guidanceNote": "Stretch lost-and-found notice with inference. Learners must work out who should call and why, plus the deadline. Longer text, multiple details.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "분실물 안내\n어제 3층 화장실 앞에서 검은색 우산을 찾았습니다. 우산에 작은 곰 그림이 있습니다. 우산 주인은 1층 사무실로 오세요. 이번 주 금요일까지 아무도 안 오면 우산을 버립니다."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 안내문을 보고 사무실에 가야 하는 사람은 누구입니까?",
+          "options": [
+            {"id": "a", "text": "검은색 우산을 잃어버린 사람"},
+            {"id": "b", "text": "새 우산을 사고 싶은 사람"},
+            {"id": "c", "text": "3층 화장실을 청소하는 사람"},
+            {"id": "d", "text": "곰 그림을 그리고 싶은 사람"}
+          ],
+          "answer": "a"
+        }
+      ]
+    }
+  },
+  {
+    "taskType": "MCQ",
+    "difficulty": "STRETCH",
+    "title": "TI-R-18-para-part-time-inference",
+    "topicTag": "inference",
+    "guidanceNote": "Stretch inference on the writer's opinion. The text lists both a downside (tiring) and upside (kind people, money for books); learners infer the overall attitude is positive.",
+    "payload": {
+      "passages": [
+        {
+          "id": "p1",
+          "body": "저는 한 달 전부터 편의점에서 아르바이트를 해요. 저녁 6시부터 밤 10시까지 일해요. 조금 힘들고 다리가 아파요. 그렇지만 같이 일하는 사람들이 친절해요. 그리고 번 돈으로 읽고 싶은 책을 살 수 있어서 좋아요."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "stem": "이 사람은 아르바이트를 어떻게 생각합니까?",
+          "options": [
+            {"id": "a", "text": "너무 힘들어서 그만두고 싶어 합니다."},
+            {"id": "b", "text": "힘들지만 좋은 점이 있다고 생각합니다."},
+            {"id": "c", "text": "돈을 못 벌어서 싫어합니다."},
+            {"id": "d", "text": "같이 일하는 사람들이 불친절해서 불편해합니다."}
+          ],
+          "answer": "b"
+        }
+      ]
+    }
+  }
+]

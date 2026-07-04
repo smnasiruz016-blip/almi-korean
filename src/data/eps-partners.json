@@ -1,0 +1,19 @@
+[
+{ "slug": "philippines", "name": "Philippines", "iso2": "PH", "mou": true },
+{ "slug": "mongolia", "name": "Mongolia", "iso2": "MN", "mou": true },
+{ "slug": "sri-lanka", "name": "Sri Lanka", "iso2": "LK", "mou": true },
+{ "slug": "vietnam", "name": "Vietnam", "iso2": "VN", "mou": true },
+{ "slug": "thailand", "name": "Thailand", "iso2": "TH", "mou": true },
+{ "slug": "indonesia", "name": "Indonesia", "iso2": "ID", "mou": true },
+{ "slug": "uzbekistan", "name": "Uzbekistan", "iso2": "UZ", "mou": true },
+{ "slug": "pakistan", "name": "Pakistan", "iso2": "PK", "mou": true },
+{ "slug": "cambodia", "name": "Cambodia", "iso2": "KH", "mou": true },
+{ "slug": "china", "name": "China", "iso2": "CN", "mou": true },
+{ "slug": "bangladesh", "name": "Bangladesh", "iso2": "BD", "mou": true },
+{ "slug": "nepal", "name": "Nepal", "iso2": "NP", "mou": true },
+{ "slug": "myanmar", "name": "Myanmar", "iso2": "MM", "mou": true },
+{ "slug": "kyrgyzstan", "name": "Kyrgyzstan", "iso2": "KG", "mou": true },
+{ "slug": "timor-leste", "name": "Timor-Leste", "iso2": "TL", "mou": true },
+{ "slug": "laos", "name": "Laos", "iso2": "LA", "mou": true },
+{ "slug": "tajikistan", "name": "Tajikistan", "iso2": "TJ", "mou": true, "newest": true }
+]

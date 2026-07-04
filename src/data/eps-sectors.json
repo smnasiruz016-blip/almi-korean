@@ -1,0 +1,7 @@
+[
+{ "slug": "manufacturing", "name": "Manufacturing", "nameKo": "제조업" },
+{ "slug": "agriculture-livestock", "name": "Agriculture & Livestock", "nameKo": "농축산업" },
+{ "slug": "fishing", "name": "Fishing", "nameKo": "어업" },
+{ "slug": "construction", "name": "Construction", "nameKo": "건설업" },
+{ "slug": "services", "name": "Services", "nameKo": "서비스업" }
+]

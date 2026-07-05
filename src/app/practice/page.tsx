@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { trackCounts } from "@/lib/items";
+import { getCurrentUser } from "@/lib/auth";
+import { hasPracticeAccess, isInTrial, trialDaysLeft } from "@/lib/access";
 import { canonical } from "@/lib/site";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -19,8 +21,14 @@ const TRACK_SECTIONS: Record<TopikTrack, TopikSkill[]> = {
 const SECTION_LABEL: Record<TopikSkill, string> = { LISTENING: "Listening", READING: "Reading", WRITING: "Writing" };
 const SECTION_SLUG: Record<TopikSkill, string> = { LISTENING: "listening", READING: "reading", WRITING: "writing" };
 
-export default function Page() {
+export default async function Page() {
   const tracks: TopikTrack[] = ["TOPIK_I", "TOPIK_II"];
+  const user = await getCurrentUser();
+  const banner = !user ? null : hasPracticeAccess(user)
+    ? (isInTrial(user)
+        ? `Free trial active — ${trialDaysLeft(user)} day${trialDaysLeft(user) === 1 ? "" : "s"} left. Full TOPIK practice.`
+        : "Subscription active — full TOPIK practice.")
+    : "Your free trial has ended — subscribe to keep practising ($12/month).";
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Practice</p>
@@ -29,6 +37,7 @@ export default function Page() {
         Sit either track directly — TOPIK II does not require TOPIK I first. Listening and Reading are auto-marked; Writing uses a
         live character counter against each task&apos;s band. Your level comes from the total, so a strong section carries a weaker one.
       </p>
+      {banner && <p className="mt-4 rounded-xl border border-almi-line bg-almi-bg-peach/40 px-4 py-2 text-sm text-almi-text">{banner}</p>}
       <div className="mt-8 space-y-4">
         {tracks.map((tk) => {
           const c = trackCounts(tk);

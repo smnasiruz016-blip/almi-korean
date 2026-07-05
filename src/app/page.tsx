@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { scoreTopik, TOPIK_CONFIG } from "@/lib/topik/scoring";
+import { canonical } from "@/lib/site";
+
+export const metadata: Metadata = {
+  // Absolute title bypasses the layout's "%s · AlmiKorean" template (no double-brand).
+  title: { absolute: "AlmiKorean | Practise TOPIK the Honest Way — Levels 1–6" },
+  description:
+    "Practise real TOPIK I & II task formats — Listening, Reading, Writing — with real level cutoffs and honest estimates. Your total decides your level.",
+  alternates: { canonical: canonical("/") },
+};
 
 // Sample rendered from the REAL engine — proves the total-decides-the-level read-out.
 // Listening 72 + Writing 48 (the weaker, AI-estimated section) + Reading 70 = 190 → Level 5.
@@ -12,11 +22,11 @@ const SAMPLE = scoreTopik("TOPIK_II", [
 
 const LEVEL_MATRIX = [
   { track: "TOPIK I", lv: "Level 1", note: "Basic Korean: everyday greetings, self-introduction, and simple daily-life exchanges." },
-  { track: "TOPIK I", lv: "Level 2", note: "Familiar-topic conversation, public-facing language (post office, bank), and simple connected text." },
+  { track: "TOPIK I", lv: "Level 2", note: "Familiar-topic conversation, public-facing situations (post office, bank), and simple connected text." },
   { track: "TOPIK II", lv: "Level 3", note: "Everyday and some social language; managing familiar tasks and reading straightforward paragraphs." },
-  { track: "TOPIK II", lv: "Level 4", note: "The level universities and employers most often reference: news, common workplace and social topics." },
-  { track: "TOPIK II", lv: "Level 5", note: "Social, academic and professional topics; less-familiar themes handled with relative ease." },
-  { track: "TOPIK II", lv: "Level 6", note: "Near-full functional command: specialised, abstract and unfamiliar material read and understood." },
+  { track: "TOPIK II", lv: "Level 4", note: "Following news articles and general social themes; the band universities and employers most often reference." },
+  { track: "TOPIK II", lv: "Level 5", note: "Professional and academic range: discussing less-familiar social and abstract topics with growing precision." },
+  { track: "TOPIK II", lv: "Level 6", note: "Advanced command: handling research-level texts and expressing complex ideas accurately in professional settings." },
 ] as const;
 
 function ScoreCard() {
@@ -76,10 +86,13 @@ export default function HomePage() {
               <Link href="/signup" className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
                 Practise free
               </Link>
-              <p className="mt-3 text-sm text-almi-text-muted">TOPIK I → Levels 1–2 · TOPIK II → Levels 3–6. Sit either track directly.</p>
+              <p className="mt-3 text-sm text-almi-text-muted">
+                TOPIK I → Levels 1–2 · TOPIK II → Levels 3–6 · sit either track directly · below the lowest cutoff no level is
+                awarded — never &quot;failed.&quot;
+              </p>
             </div>
             <p className="mt-4 text-xs text-almi-text-muted">
-              $12/month · 7-day free trial · cancel anytime · generated Korean audio on every listening item · 100% original material, never copied
+              $12/month · 7-day free trial · cancel anytime · clear generated Korean audio on every listening item · 100% original material, never copied
             </p>
           </div>
           <ScoreCard />
@@ -92,13 +105,14 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold text-almi-ink">One total, no floors — where a weak section can&apos;t sink you.</h2>
           <p className="mt-4 text-almi-text">
             Many language tests fail you if a single section dips under a hidden minimum. TOPIK does not. Your level is decided by
-            the total alone — so if your reading is racing ahead while your listening lags, the points still count. We show each
+            the total alone — so if your reading is racing ahead while your listening lags, every point still counts. We show each
             section&apos;s contribution to your total and point you to where the next level&apos;s points are cheapest for you.
           </p>
           <p className="mt-4 text-almi-text">
-            Where a section can&apos;t be point-counted — the TOPIK II Writing tasks, graded by trained human raters on official
-            criteria — we mirror those criteria transparently and label our number an <strong className="text-almi-ink">estimate</strong>,
-            every time. Only NIIED&apos;s official sitting awards a real level, and your TOPIK certificate is valid for two years.
+            Where a section can&apos;t be point-counted — the TOPIK II Writing tasks, graded on the real exam by trained human raters
+            against official criteria — we mirror those criteria transparently and label our number an{" "}
+            <strong className="text-almi-ink">estimate</strong>, every time. Only NIIED&apos;s official sitting awards a real level,
+            and your TOPIK certificate is valid for two years — so time your sitting to your application window.
           </p>
         </div>
       </section>
@@ -113,14 +127,15 @@ export default function HomePage() {
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
-              { t: "Listening", d: "Everyday and level-appropriate audio at natural pace, played once — the single-play discipline of the real test.", tag: "Auto-marked · generated audio" },
-              { t: "Reading", d: "Short to long-form Korean texts matched to your track. Build the reading speed the exam clock demands.", tag: "Auto-marked" },
-              { t: "Writing (TOPIK II)", d: "Tasks 51–54: sentence completion, a 200–300-character piece, and a 600–700-character essay — live character counter, criteria feedback, estimate never presented as official.", tag: "AI criteria estimate" },
+              { t: "Listening", d: "Everyday and level-appropriate dialogues in clear generated Korean audio at a natural pace, played once — the single-play discipline of the real test.", tag: "Auto-marked · played once", m: "TOPIK I: 30 questions /100 · TOPIK II: 50 questions /100" },
+              { t: "Reading", d: "Short to long-form Korean texts matched to your track — from signs and notices to full argumentative passages. Build the reading speed the exam clock demands.", tag: "Auto-marked", m: "TOPIK I: 40 questions /100 · TOPIK II: 50 questions /100" },
+              { t: "Writing (TOPIK II)", d: "Tasks 51–54: sentence completion, a 200–300-character piece, and the 600–700-character essay — live character counter, criteria-family feedback, and a number that is always labelled an estimate, never official.", tag: "Criteria-based estimate", m: "Tasks 51–54 · character-count discipline" },
             ].map((c) => (
               <div key={c.t} className="rounded-2xl border border-almi-line bg-almi-paper p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-almi-coral">{c.tag}</p>
                 <h3 className="mt-2 font-semibold text-almi-ink">{c.t}</h3>
                 <p className="mt-2 text-sm text-almi-text">{c.d}</p>
+                <p className="mt-3 text-xs font-medium text-almi-text-muted">{c.m}</p>
               </div>
             ))}
           </div>
@@ -135,6 +150,11 @@ export default function HomePage() {
             TOPIK I awards Levels 1–2 out of {TOPIK_CONFIG.TOPIK_I.totalMax}; TOPIK II awards Levels 3–6 out of{" "}
             {TOPIK_CONFIG.TOPIK_II.totalMax}. Below the lowest cutoff no level is awarded — there is no &quot;fail&quot; grade, and
             we never use the word.
+          </p>
+          <p className="mt-2 text-sm font-medium text-almi-text-muted">
+            Cutoffs: {TOPIK_CONFIG.TOPIK_I.cutoffs.map((c) => `L${c.level} ${c.min}+`).join(" · ")} (of{" "}
+            {TOPIK_CONFIG.TOPIK_I.totalMax}) — {TOPIK_CONFIG.TOPIK_II.cutoffs.map((c) => `L${c.level} ${c.min}+`).join(" · ")} (of{" "}
+            {TOPIK_CONFIG.TOPIK_II.totalMax}).
           </p>
           <div className="mt-6 space-y-3">
             {LEVEL_MATRIX.map(({ track, lv, note }) => (
@@ -151,27 +171,36 @@ export default function HomePage() {
       {/* 5. Value props */}
       <section className="px-6 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-almi-ink">Honest practice built around how TOPIK actually scores you.</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <h2 className="text-2xl font-bold text-almi-ink">Transparent, level-driven Korean practice.</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-almi-line bg-almi-paper p-6">
-              <h3 className="font-semibold text-almi-ink">Total-based, no section floors</h3>
+              <h3 className="font-semibold text-almi-ink">One-play audio, like the real exam</h3>
               <p className="mt-2 text-sm text-almi-text">
-                Your level is your total against the real cutoffs — a strong section compensates a weak one. We show each
-                section&apos;s contribution and where your next-level points come cheapest. No hidden minimum can fail you.
+                The real TOPIK gives no second chances on audio. Our listening items lock to single-play mode, so your focus trains
+                the way test day demands.
               </p>
             </div>
             <div className="rounded-2xl border border-almi-line bg-almi-paper p-6">
               <h3 className="font-semibold text-almi-ink">100% original study items</h3>
               <p className="mt-2 text-sm text-almi-text">
-                Every listening dialogue, reading passage and writing prompt is written from scratch in Korean. Nothing is taken
-                from NIIED past papers or official materials — ever.
+                Every dialogue, passage and writing prompt is written from scratch. TOPIK past papers are published — copying them
+                is easy, which is exactly why we never do.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-almi-line bg-almi-paper p-6">
+              <h3 className="font-semibold text-almi-ink">Know which test you actually need</h3>
+              <p className="mt-2 text-sm text-almi-text">
+                Standard TOPIK is for study, points visas and residence. The E-9 work route runs on a different test —{" "}
+                <strong className="text-almi-ink">EPS-TOPIK</strong>. Our{" "}
+                <Link href="/topik-vs-eps-topik" className="text-almi-coral hover:underline">honest guide</Link> keeps you from
+                preparing for the wrong exam.
               </p>
             </div>
             <div className="rounded-2xl border border-almi-line bg-almi-paper p-6">
               <h3 className="font-semibold text-almi-ink">25% pledged to the Shamool Foundation</h3>
               <p className="mt-2 text-sm text-almi-text">
-                25% of AlmiWorld&apos;s income supports the Shamool Foundation — a completely free school for children in Lahore,
-                Pakistan. Your practice funds real classrooms.
+                25% of AlmiWorld&apos;s income supports the Shamool Foundation — a completely free school in Lahore, Pakistan,
+                providing education, meals, books and uniforms to over 60 children. Your practice funds real classrooms.
               </p>
             </div>
           </div>
@@ -185,18 +214,21 @@ export default function HomePage() {
           <p className="mt-3 text-lg text-almi-text"><strong className="text-almi-ink">$12/month</strong> — 7-day free trial, cancel anytime.</p>
           <ul className="mx-auto mt-6 max-w-md space-y-2 text-left text-sm text-almi-text">
             {[
-              "Both tracks (TOPIK I and II), full practice and mock access",
-              "Total-based level estimates with per-section contribution",
-              "Timing matched to the real per-section limits",
-              "Writing with live character counter + criteria feedback, labelled estimate",
-              "100% original material — flat monthly price, cancel in one click",
+              "Both tracks (TOPIK I + II), full practice and sequenced mocks",
+              "AI criteria feedback on all TOPIK II Writing tasks (51–54), always labelled an estimate",
+              "Live character counter mapped to each task's real required band",
+              "Unlimited auto-marked Listening and Reading with clear generated Korean audio",
+              "Flat monthly price — cancel in one click from your dashboard",
             ].map((li) => (
               <li key={li} className="flex gap-2"><span className="text-almi-teal">✓</span>{li}</li>
             ))}
           </ul>
           <Link href="/signup" className="mt-7 inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-            Practise free
+            Start practising free
           </Link>
+          <p className="mt-4 text-sm">
+            <Link href="/pricing" className="text-almi-coral hover:underline">See full pricing</Link>
+          </p>
         </div>
       </section>
     </main>

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { itemsFor } from "@/lib/items";
+import { getCurrentUser } from "@/lib/auth";
+import { hasPracticeAccess, isBillingEnabled, isInTrial, trialDaysLeft } from "@/lib/access";
 import { PracticeRunner } from "@/components/PracticeRunner";
 import { WritingComposer } from "@/components/WritingComposer";
+import { PracticeGate } from "@/components/PracticeGate";
 import { canonical } from "@/lib/site";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -45,6 +49,9 @@ export default async function Page({ params }: { params: Promise<{ track: string
   if (!tk || !sec || !isValid(tk, sec)) notFound();
   const items = itemsFor(tk, sec);
 
+  const user = await getCurrentUser();
+  const allowed = hasPracticeAccess(user);
+
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">{TRACK_LABEL[tk]} · {SECTION_LABEL[sec]}</p>
@@ -52,9 +59,21 @@ export default async function Page({ params }: { params: Promise<{ track: string
       <p className="mt-3 text-almi-text">
         This is a practice read-out, not an official result. TOPIK has no section minimums — everything here counts toward your
         track total, and only NIIED&apos;s official sitting awards a level.
+        {user && isInTrial(user) && allowed && <span className="ml-1 text-almi-text-muted">Free trial: {trialDaysLeft(user)} day{trialDaysLeft(user) === 1 ? "" : "s"} left.</span>}
       </p>
 
-      {items.length === 0 ? (
+      {!user ? (
+        <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
+          <h2 className="text-lg font-semibold text-almi-ink">Sign in to practise</h2>
+          <p className="mt-2 text-sm text-almi-text">Create a free account and your 7-day trial starts immediately — full TOPIK practice, no card required.</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Start free trial</Link>
+            <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>
+          </div>
+        </div>
+      ) : !allowed ? (
+        <PracticeGate billingLive={isBillingEnabled()} />
+      ) : items.length === 0 ? (
         <div className="mt-8 rounded-2xl border border-dashed border-almi-line bg-almi-paper p-6 text-almi-text">
           Practice items for this section arrive with Batch 1. The scoring engine and format are already live.
         </div>

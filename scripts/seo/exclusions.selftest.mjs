@@ -12,6 +12,7 @@ const unis = load("kr-universities.json");
 const origins = load("origins.json");
 const eps = load("eps-partners.json");
 const sectors = load("eps-sectors.json");
+const depts = load("kr-departments-wave2.json");
 
 let failed = 0;
 const ok = (cond, msg) => {
@@ -47,9 +48,21 @@ ok(sectors.length === 5, `5 E-9 sectors (got ${sectors.length})`);
 const epsPages = eps.length + sectors.length + 1;
 ok(epsPages < N, `EPS family (${epsPages} pages) is NOT ×196 — deliberate restraint`);
 
-// ---- Locked Wave-1 math (derived, never hardcoded literals in app code) ----
+// ---- Wave 2: department units ----
+const uniSlugs = new Set(unis.map((u) => u.slug));
+ok(depts.length === 13477, `13,477 active department units (got ${depts.length})`);
+ok(depts.every((d) => uniSlugs.has(d.uniSlug)), "every department belongs to a Wave-1 institution (no grad-school / closed-inst depts)");
+ok(new Set(depts.map((d) => `${d.uniSlug}/${d.slug}`)).size === depts.length, "no duplicate {institution, department} pages (day/night merged)");
+const badChar = depts.filter((d) => ["전문기술석사과정", "학석사통합과정", "특별과정"].includes(d.characteristic));
+ok(badChar.length === 0, `0 grad-level/ambiguous units (전문기술석사/학석사통합/특별과정 excluded; got ${badChar.length})`);
+ok(depts.every((d) => Array.isArray(d.dayNight) && d.dayNight.length >= 1), "every department records at least one day/night division");
+const special = depts.filter((d) => d.charClass !== "regular").length;
+console.log(`   → ${depts.length} units · ${special} carry a special-characteristic honest label`);
+
+// ---- Locked Wave-1 + Wave-2 math (derived, never hardcoded literals in app code) ----
 const fam = {
   university: unis.length * N,
+  department: depts.length * N,
   level: 6 * N,
   topikInOrigin: N,
   studyRoute: N,
@@ -57,8 +70,9 @@ const fam = {
 };
 const total = Object.values(fam).reduce((a, b) => a + b, 0);
 ok(fam.university === 75264, `Family 1 = ${fam.university} (384×196)`);
+ok(fam.department === 2641492, `Wave 2 = ${fam.department} (13,477×196)`);
 ok(fam.level === 1176, `Family 2 = ${fam.level} (6×196)`);
-ok(total > 76000 && total < 78000, `Wave-1 total ≈ ${total} (target ~76,900)`);
+ok(total > 2700000 && total < 2730000, `Wave-1+2 total ≈ ${total}`);
 console.log("   families:", JSON.stringify(fam), "→ total", total);
 
 if (failed) { console.error(`\n${failed} assertion(s) FAILED`); process.exit(1); }

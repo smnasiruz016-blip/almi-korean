@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BY_ORIGIN, BY_UNI, isEpsOrigin } from "@/lib/seo/data";
+import { BY_ORIGIN, BY_UNI, DEPTS_BY_UNI, isEpsOrigin } from "@/lib/seo/data";
 import { canonical, nativeLead, KCUE_ATTRIBUTION, SHAMOOL_LINE, REQ_NOT_GUARANTEE, VALIDITY_LINE } from "@/lib/seo/content";
 
 // Pure on-demand ISR: nothing prerendered, each page rendered on first request + cached.
@@ -29,6 +29,8 @@ export default async function Page({ params }: { params: Promise<{ uni: string; 
   const u = BY_UNI.get(uni);
   const o = BY_ORIGIN.get(origin);
   if (!u || !o) notFound();
+
+  const depts = DEPTS_BY_UNI.get(u.slug) ?? [];
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
@@ -63,7 +65,27 @@ export default async function Page({ params }: { params: Promise<{ uni: string; 
         performance against each level&apos;s real cutoff, never a fabricated score. {VALIDITY_LINE}
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-3 text-sm">
+      {depts.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-xl font-semibold text-almi-ink">Departments at {u.nameEnGenerated ? u.nameKo : u.nameEn}</h2>
+          <p className="mt-2 text-sm text-almi-text">
+            {depts.length} active {depts.length === 1 ? "department" : "departments"} from the official course-unit disclosure —
+            TOPIK expectations are set per department, so open one for the honest detail.
+          </p>
+          <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
+            {depts.map((d) => (
+              <li key={d.slug}>
+                <Link href={`/university/${u.slug}/${d.slug}/from/${o.slug}`} className="text-sm text-almi-coral hover:underline">
+                  {d.nameKo}
+                </Link>
+                {d.degree ? <span className="text-xs text-almi-text-muted"> · {d.degree}</span> : null}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <div className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link href="/practice" className="rounded-full bg-almi-coral px-5 py-2 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
           Practise TOPIK
         </Link>

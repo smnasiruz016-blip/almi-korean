@@ -27,6 +27,18 @@ count, or corridor fact is invented. Every count is derived from the datasets be
   because its dataset licence line is not yet confirmed. Where §3 of the page spec listed those
   fields, they are intentionally **omitted** rather than pulled from A1.
 
+## Department units — Wave 2 (`src/data/kr-departments-wave2.json`, 13,477 units)
+- **Source:** same KCUE 교육편제단위 dataset (A2, licence 제한 없음, ref 2024-10-07) — the department rows.
+- **Filter:** active 학과상태 (status not containing 폐) → 28,104 active; joined to the 384 Wave-1
+  institutions by 학교코드 (grad schools auto-excluded) → 14,512; day/night (주야간구분) merged to one
+  unit per {institution, department} → 13,518; minus 41 grad-level/ambiguous units
+  (전문기술석사과정 30 · 학석사통합과정 6 · 특별과정 5) → **13,477**.
+- **Fields published:** department name (hangul primary + flagged romanization), 단과대학 college,
+  대/중/소계열 classification, 학위과정 degree, 수업연한 length, day/night divisions, 소재지 location,
+  and an honest label for special characteristics (계약학과 → contract; 산업체위탁 → industry-commissioned;
+  전공심화 → bachelor's-completion). **Language of instruction is NOT in the dataset — pages never claim it.**
+- Page count = 13,477 × 196 origins = **2,641,492**. Route: `/university/[uni]/[dept]/from/[origin]`.
+
 ## EPS corridor data — Family 5 (`src/data/eps-partners.json`, `eps-sectors.json`)
 - 17 EPS-TOPIK partner countries (17th = Tajikistan, MOU 2024-10-31). 5 main E-9 sectors.
 - **Secondary reporting** pending an official **eps.go.kr / MOEL** lock at build; the 2026 E-9

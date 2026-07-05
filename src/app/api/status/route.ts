@@ -7,7 +7,7 @@
 import { NextResponse } from "next/server";
 import { BANK } from "@/lib/items";
 import { TRACKS } from "@/lib/topik/scoring";
-import { FAMILY_COUNTS, WAVE1_TOTAL } from "@/lib/seo/plan";
+import { FAMILY_COUNTS, WAVE1_TOTAL, WAVE2_TOTAL, GRAND_TOTAL } from "@/lib/seo/plan";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -36,7 +36,7 @@ export async function GET(): Promise<NextResponse> {
       dbItemsActive, // null until Neon is provisioned + the seed has run
       dbError,
       // Phase-3 SEO surface — derived from the same real datasets the sitemap uses.
-      seoPages: { total: WAVE1_TOTAL, families: FAMILY_COUNTS },
+      seoPages: { total: GRAND_TOTAL, wave1: WAVE1_TOTAL, wave2: WAVE2_TOTAL, families: FAMILY_COUNTS },
     },
     { headers: { "Cache-Control": "no-store" } },
   );

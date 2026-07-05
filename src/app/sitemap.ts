@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { ORIGINS, UNIVERSITIES, LEVELS, EPS_PARTNERS, EPS_SECTORS } from "@/lib/seo/data";
+import { ORIGINS, UNIVERSITIES, DEPARTMENTS, LEVELS, EPS_PARTNERS, EPS_SECTORS } from "@/lib/seo/data";
 import { CHUNK, uniChunks, TOTAL_CHUNKS, productSlice } from "@/lib/seo/plan";
 import { SITE } from "@/lib/seo/content";
 
@@ -54,6 +54,12 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
   }
 
   // Chunks 1..uniChunks: Family 1 — university × origin, sliced by global index.
-  const idx = k - 1;
-  return productSlice(UNIVERSITIES, idx * CHUNK, (idx + 1) * CHUNK, (u, o) => `/university/${u.slug}/from/${o.slug}`).map((p) => entry(p));
+  if (k <= uniChunks) {
+    const idx = k - 1;
+    return productSlice(UNIVERSITIES, idx * CHUNK, (idx + 1) * CHUNK, (u, o) => `/university/${u.slug}/from/${o.slug}`).map((p) => entry(p));
+  }
+
+  // Remaining chunks: Wave 2 — department × origin, sliced by global index.
+  const idx = k - uniChunks - 1;
+  return productSlice(DEPARTMENTS, idx * CHUNK, (idx + 1) * CHUNK, (d, o) => `/university/${d.uniSlug}/${d.slug}/from/${o.slug}`).map((p) => entry(p));
 }

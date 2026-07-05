@@ -2,11 +2,12 @@
 // Counts only, no PII. Two independent signals:
 //   * itemBank      — the bundled Batch-1 bank (source of truth BEFORE Neon is provisioned).
 //   * dbItemsActive — live KoreanItem row count; null until the DB exists / seed lands (opportunistic).
-// SEO page counts are added in Phase 3 (derived from the same real data the sitemap uses).
+//   * seoPages      — Phase-3 Wave-1 page-family totals, derived from the same real data the sitemap uses.
 
 import { NextResponse } from "next/server";
 import { BANK } from "@/lib/items";
 import { TRACKS } from "@/lib/topik/scoring";
+import { FAMILY_COUNTS, WAVE1_TOTAL } from "@/lib/seo/plan";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -34,6 +35,8 @@ export async function GET(): Promise<NextResponse> {
       itemBank: { total: BANK.length, byBucket },
       dbItemsActive, // null until Neon is provisioned + the seed has run
       dbError,
+      // Phase-3 SEO surface — derived from the same real datasets the sitemap uses.
+      seoPages: { total: WAVE1_TOTAL, families: FAMILY_COUNTS },
     },
     { headers: { "Cache-Control": "no-store" } },
   );

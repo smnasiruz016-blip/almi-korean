@@ -13,7 +13,9 @@
     "selftest:seo": "node scripts/seo/exclusions.selftest.mjs",
     "build:batch1": "node scripts/seed/build-batch1.mjs",
     "validate:seed": "tsx scripts/validate-seed.ts",
-    "seed:batch1": "tsx --env-file-if-exists=.env scripts/seed/batch1.ts"
+    "seed:batch1": "tsx --env-file-if-exists=.env scripts/seed/batch1.ts",
+    "db:deploy": "prisma migrate deploy",
+    "seed:prod": "tsx scripts/seed/batch1.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

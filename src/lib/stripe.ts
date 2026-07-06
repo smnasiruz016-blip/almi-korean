@@ -36,6 +36,7 @@ export async function createCheckoutSession(user: { id: string; email: string; n
     customer: customerId,
     line_items: [{ price: priceId, quantity: 1 }],
     subscription_data: { trial_period_days: TRIAL_DAYS, metadata: { userId: user.id } },
+    metadata: { product: "almi-korean" }, // routing key for almi-billing-router (checkout.session.completed)
     success_url: `${baseUrl()}/account?checkout=success`,
     cancel_url: `${baseUrl()}/pricing?checkout=cancelled`,
     allow_promotion_codes: true,

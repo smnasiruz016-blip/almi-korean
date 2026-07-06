@@ -1,20 +1,24 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
+import { verifyRouterSignature } from "@/lib/router-auth";
 import { prisma } from "@/lib/prisma";
 
 // Stripe webhook: keep the subscription status in sync so hasPaidAccess() is accurate.
+// Accepts EITHER an almi-billing-router HMAC (a forwarded event) OR a direct Stripe signature.
 export async function POST(req: Request) {
-  const secret = process.env.STRIPE_WEBHOOK_SECRET;
-  if (!secret) return NextResponse.json({ error: "Webhook not configured" }, { status: 503 });
-
-  const sig = req.headers.get("stripe-signature");
   const body = await req.text(); // raw body required for signature verification
   let event: Stripe.Event;
-  try {
-    event = getStripe().webhooks.constructEvent(body, sig ?? "", secret);
-  } catch {
-    return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+  if (verifyRouterSignature(body, req.headers.get("x-almi-router-signature"))) {
+    event = JSON.parse(body) as Stripe.Event; // trusted via the router's per-product HMAC
+  } else {
+    const secret = process.env.STRIPE_WEBHOOK_SECRET;
+    if (!secret) return NextResponse.json({ error: "Webhook not configured" }, { status: 503 });
+    try {
+      event = getStripe().webhooks.constructEvent(body, req.headers.get("stripe-signature") ?? "", secret);
+    } catch {
+      return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+    }
   }
 
   async function syncSubscription(sub: Stripe.Subscription) {

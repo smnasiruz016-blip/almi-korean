@@ -5,10 +5,10 @@ import Link from "next/link";
 export const FAMILY_NAV = [
   { label: "Home", href: "https://almiworld.com/" },
   { label: "eBooks", href: "https://almiworld.com/ebooks-2/" },
-  { label: "Almijobs", href: "https://almijob.almiworld.com/" },
+  { label: "AlmiJob", href: "https://almijob.almiworld.com/" },
   { label: "Salary Checker", href: "https://almisalary.almiworld.com" },
-  { label: "Almi CV", href: "https://almicv.almiworld.com" },
-  { label: "Almistudy", href: "https://almistudy.almiworld.com/" },
+  { label: "AlmiCV", href: "https://almicv.almiworld.com" },
+  { label: "AlmiStudy", href: "https://almistudy.almiworld.com/" },
   { label: "AlmiPrep", href: "https://almiprep.almiworld.com/" },
   { label: "AlmiPTE", href: "https://almipte.almiworld.com/" },
   { label: "AlmiTOEFL", href: "https://almitoefl.almiworld.com/" },
@@ -19,6 +19,7 @@ export const FAMILY_NAV = [
   { label: "AlmiGoethe", href: "https://almigoethe.almiworld.com/" },
   { label: "AlmiSpanish", href: "https://almispanish.almiworld.com/" },
   { label: "AlmiJapanese", href: "https://almijapanese.almiworld.com/" },
+  { label: "AlmiItalian", href: "https://almiitalian.almiworld.com/" },
   { label: "Contact Us", href: "https://almiworld.com/contact-us/" },
   { label: "Shamool Foundation", href: "https://shamoolfoundation.com/" },
 ];
@@ -39,9 +40,9 @@ export function GlobalHeader() {
           </span>
           <span className="text-xl font-semibold tracking-tight text-almi-ink">AlmiKorean</span>
         </Link>
-        <nav aria-label="Family navigation" className="ml-auto flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+        <nav aria-label="Family navigation" className="ml-auto flex flex-wrap items-center gap-x-4 gap-y-1">
           {FAMILY_NAV.map((item) => (
-            <a key={item.href} href={item.href} className="rounded-sm text-almi-text-muted hover:text-almi-coral">
+            <a key={item.href} href={item.href} className="rounded-sm text-base font-semibold text-almi-ink hover:text-almi-coral">
               {item.label}
             </a>
           ))}

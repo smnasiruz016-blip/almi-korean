@@ -26,17 +26,18 @@ export function PracticeGate({ billingLive }: { billingLive: boolean }) {
 
   return (
     <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
-      <h2 className="text-lg font-semibold text-almi-ink">Your 7-day free trial has ended</h2>
+      <h2 className="text-lg font-semibold text-almi-ink">Your free practice has ended</h2>
       <p className="mt-2 text-sm text-almi-text">
         Keep practising both TOPIK tracks — full practice and mock access, 100% original material — for a flat{" "}
-        <strong className="text-almi-ink">$12/month</strong>, cancel anytime.
+        <strong className="text-almi-ink">$12/month</strong>. Start with a 7-day free trial — your card is saved but
+        not charged, and you can cancel anytime before the trial ends and pay nothing.
       </p>
       <button
         onClick={subscribe}
         disabled={busy || !billingLive}
         className="mt-4 inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark disabled:opacity-60"
       >
-        {busy ? "Starting…" : !billingLive ? "Checkout unavailable" : "Subscribe — $12/month"}
+        {busy ? "Starting…" : !billingLive ? "Checkout unavailable" : "Start 7-day free trial"}
       </button>
       {!billingLive && (
         <p className="mt-2 text-xs text-almi-text-muted">Subscriptions are being switched on. Please check back shortly.</p>

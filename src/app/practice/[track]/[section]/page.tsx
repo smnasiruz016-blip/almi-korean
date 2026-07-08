@@ -3,10 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { itemsFor } from "@/lib/items";
 import { getCurrentUser } from "@/lib/auth";
-import { hasPaidAccess, isBillingEnabled } from "@/lib/access";
+import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
 import { PracticeRunner } from "@/components/PracticeRunner";
 import { WritingComposer } from "@/components/WritingComposer";
 import { PracticeGate } from "@/components/PracticeGate";
+import { EmailVerifyBanner } from "@/components/EmailVerifyBanner";
 import { canonical } from "@/lib/site";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -72,7 +73,11 @@ export default async function Page({ params }: { params: Promise<{ track: string
           </div>
         </div>
       ) : needsPaid && !paid ? (
-        <PracticeGate billingLive={isBillingEnabled()} />
+        needsEmailVerification(user) ? (
+          <div className="mt-8"><EmailVerifyBanner email={user.email} /></div>
+        ) : (
+          <PracticeGate billingLive={isBillingEnabled()} />
+        )
       ) : items.length === 0 ? (
         <div className="mt-8 rounded-2xl border border-dashed border-almi-line bg-almi-paper p-6 text-almi-text">
           Practice items for this section arrive with Batch 1. The scoring engine and format are already live.

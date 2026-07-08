@@ -60,6 +60,9 @@ model User {
   locale                       String      @default("en")
   targetTrack                  TopikTrack?
   emailVerifiedAt              DateTime?
+  emailVerificationTokenHash   String?     @unique
+  emailVerificationExpiresAt   DateTime?
+  emailVerificationLastSentAt  DateTime?
   stripeCustomerId             String?
   stripeSubscriptionId         String?
   subscriptionStatus           String? //  Stripe status: trialing | active | canceled | ...

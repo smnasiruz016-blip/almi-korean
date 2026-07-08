@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { hashPassword, createSession } from "@/lib/auth";
+import { issueEmailVerificationToken, verifyUrlFor } from "@/lib/verify";
+import { sendEmailVerification } from "@/lib/email";
 
 const schema = z.object({
   email: z.string().email(),
@@ -21,5 +23,15 @@ export async function POST(req: Request) {
     data: { email: email.toLowerCase(), passwordHash: await hashPassword(password), name: name ?? null },
   });
   await createSession(user.id);
+
+  // Best-effort verification email — never block signup if email send fails
+  // (e.g. RESEND_API_KEY not yet set). The user can resend from their account.
+  try {
+    const token = await issueEmailVerificationToken(user.id);
+    await sendEmailVerification({ to: user.email, verifyUrl: verifyUrlFor(token) });
+  } catch (e) {
+    console.error("[signup] verification email failed:", e);
+  }
+
   return NextResponse.json({ ok: true });
 }

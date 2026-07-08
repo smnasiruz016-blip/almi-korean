@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { hasPaidAccess, isBillingEnabled } from "@/lib/access";
+import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
 import { itemsFor } from "@/lib/items";
 import { MockRunner } from "@/components/MockRunner";
 import { PracticeGate } from "@/components/PracticeGate";
+import { EmailVerifyBanner } from "@/components/EmailVerifyBanner";
 import { canonical } from "@/lib/site";
 import type { TopikTrack } from "@prisma/client";
 
@@ -55,11 +56,15 @@ export default async function Page({ params }: { params: Promise<{ track: string
           </div>
         </div>
       ) : !paid ? (
-        <PracticeGate
-          billingLive={isBillingEnabled()}
-          heading="The sequenced mock is part of AlmiKorean Pro"
-          body="Section practice (Listening and Reading) is free. The full sequenced TOPIK mock — combined scoring and a practice level estimate — is $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing."
-        />
+        needsEmailVerification(user) ? (
+          <div className="mt-8"><EmailVerifyBanner email={user.email} /></div>
+        ) : (
+          <PracticeGate
+            billingLive={isBillingEnabled()}
+            heading="The sequenced mock is part of AlmiKorean Pro"
+            body="Section practice (Listening and Reading) is free. The full sequenced TOPIK mock — combined scoring and a practice level estimate — is $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing."
+          />
+        )
       ) : (
         <div className="mt-8">
           <MockRunner track={tk} bank={bank} />

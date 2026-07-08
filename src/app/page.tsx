@@ -91,8 +91,8 @@ export default function HomePage() {
                 awarded — never &quot;failed.&quot;
               </p>
             </div>
-            <p className="mt-4 text-xs text-almi-text-muted">
-              $12/month · 7-day free trial · cancel anytime · clear generated Korean audio on every listening item · 100% original material, never copied
+            <p className="mt-4 text-sm text-almi-text-muted">
+              $12/month, 7-day free trial, cancel anytime · Both TOPIK tracks (I + II) · 100% original material, never copied
             </p>
           </div>
           <ScoreCard />

@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth";
+import { hasPaidAccess, isBillingEnabled } from "@/lib/access";
 import { itemsFor } from "@/lib/items";
 import { MockRunner } from "@/components/MockRunner";
+import { PracticeGate } from "@/components/PracticeGate";
 import { canonical } from "@/lib/site";
 import type { TopikTrack } from "@prisma/client";
 
 const TRACK_MAP: Record<string, TopikTrack> = { "topik-i": "TOPIK_I", "topik-ii": "TOPIK_II" };
 const TRACK_LABEL: Record<TopikTrack, string> = { TOPIK_I: "TOPIK I", TOPIK_II: "TOPIK II" };
-
-export function generateStaticParams() {
-  return Object.keys(TRACK_MAP).map((track) => ({ track }));
-}
-export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ track: string }> }): Promise<Metadata> {
   const { track } = await params;
@@ -29,6 +28,10 @@ export default async function Page({ params }: { params: Promise<{ track: string
   const tk = TRACK_MAP[track];
   if (!tk) notFound();
 
+  // The sequenced mock is a Pro feature (section practice stays free elsewhere).
+  const user = await getCurrentUser();
+  const paid = hasPaidAccess(user);
+
   const bank = {
     LISTENING: itemsFor(tk, "LISTENING"),
     READING: itemsFor(tk, "READING"),
@@ -42,9 +45,26 @@ export default async function Page({ params }: { params: Promise<{ track: string
         Work through each section in order. Nothing is marked until you finish — then your total decides your practice level
         estimate. There are no section minimums.
       </p>
-      <div className="mt-8">
-        <MockRunner track={tk} bank={bank} />
-      </div>
+      {!user ? (
+        <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
+          <h2 className="text-lg font-semibold text-almi-ink">The sequenced mock is part of AlmiKorean Pro</h2>
+          <p className="mt-2 text-sm text-almi-text">Section practice (Listening and Reading) is free. The full sequenced mock is $12/month — start with a 7-day free trial, card saved but not charged, cancel anytime before it ends.</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Create free account</Link>
+            <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>
+          </div>
+        </div>
+      ) : !paid ? (
+        <PracticeGate
+          billingLive={isBillingEnabled()}
+          heading="The sequenced mock is part of AlmiKorean Pro"
+          body="Section practice (Listening and Reading) is free. The full sequenced TOPIK mock — combined scoring and a practice level estimate — is $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing."
+        />
+      ) : (
+        <div className="mt-8">
+          <MockRunner track={tk} bank={bank} />
+        </div>
+      )}
     </main>
   );
 }

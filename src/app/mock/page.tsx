@@ -23,6 +23,10 @@ export default function Page() {
         Sections run in order, with no marking shown until the end — then your section scores combine into a total and a practice
         level estimate against the real cutoffs. A shorter run than the full exam, built from the practice bank.
       </p>
+      <p className="mt-3 text-sm text-almi-text-muted">
+        The sequenced mock is part of AlmiKorean Pro — $12/month with a 7-day free trial (card saved, not charged). Section
+        practice (Listening and Reading) is free.
+      </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {TRACKS.map((t) => (
           <Link key={t.slug} href={`/mock/${t.slug}`} className="rounded-2xl border border-almi-line bg-almi-paper p-6 hover:border-almi-coral">

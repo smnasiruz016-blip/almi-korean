@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AuthNav } from "./AuthNav";
 
 // AlmiWorld family navigation — complete, current family (all sibling products; the current
 // product, AlmiKorean, is omitted from its own family list).
@@ -24,12 +25,6 @@ export const FAMILY_NAV = [
   { label: "Shamool Foundation", href: "https://shamoolfoundation.com/" },
 ];
 
-const PRODUCT_NAV = [
-  { label: "Practice", href: "/practice" },
-  { label: "Mock test", href: "/mock" },
-  { label: "Log in", href: "/login" },
-];
-
 export function GlobalHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-almi-line bg-almi-bg/95 backdrop-blur">
@@ -47,19 +42,7 @@ export function GlobalHeader() {
             </a>
           ))}
         </nav>
-        <nav aria-label="AlmiKorean" className="flex items-center gap-3 text-sm">
-          {PRODUCT_NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="font-medium text-almi-ink hover:text-almi-coral">
-              {item.label}
-            </Link>
-          ))}
-          <Link
-            href="/signup"
-            className="ml-1 inline-flex min-h-[40px] items-center justify-center rounded-full bg-almi-coral px-5 py-2 text-sm font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark"
-          >
-            Practise free
-          </Link>
-        </nav>
+        <AuthNav />
       </div>
     </header>
   );

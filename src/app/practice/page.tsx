@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { trackCounts } from "@/lib/items";
 import { getCurrentUser } from "@/lib/auth";
-import { hasPracticeAccess, isInTrial, trialDaysLeft } from "@/lib/access";
+import { hasPaidAccess } from "@/lib/access";
 import { canonical } from "@/lib/site";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -24,11 +24,11 @@ const SECTION_SLUG: Record<TopikSkill, string> = { LISTENING: "listening", READI
 export default async function Page() {
   const tracks: TopikTrack[] = ["TOPIK_I", "TOPIK_II"];
   const user = await getCurrentUser();
-  const banner = !user ? null : hasPracticeAccess(user)
-    ? (isInTrial(user)
-        ? `Free trial active — ${trialDaysLeft(user)} day${trialDaysLeft(user) === 1 ? "" : "s"} left. Full TOPIK practice.`
-        : "Subscription active — full TOPIK practice.")
-    : "Your free trial has ended — subscribe to keep practising ($12/month).";
+  const banner = !user
+    ? null
+    : hasPaidAccess(user)
+      ? "AlmiKorean Pro active — Writing feedback included."
+      : "Listening and Reading are free. Writing feedback (TOPIK II) is part of Pro — 7-day free trial (card saved, not charged), then $12/month.";
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Practice</p>

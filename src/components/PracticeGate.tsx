@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-// Shown when a signed-in user's 7-day trial has ended and they have no active subscription.
+// Shown when a signed-in user opens the AI-feedback skill (TOPIK II Writing) without an active
+// subscription. Listening/Reading stay free; this gate only fronts the paid skill.
 // If Stripe isn't wired yet (billingLive=false) the subscribe button shows its honest unavailable
 // state — the fail-closed path — rather than starting a checkout that can't complete.
 export function PracticeGate({ billingLive }: { billingLive: boolean }) {
@@ -26,10 +27,10 @@ export function PracticeGate({ billingLive }: { billingLive: boolean }) {
 
   return (
     <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
-      <h2 className="text-lg font-semibold text-almi-ink">Your free practice has ended</h2>
+      <h2 className="text-lg font-semibold text-almi-ink">Writing feedback is part of AlmiKorean Pro</h2>
       <p className="mt-2 text-sm text-almi-text">
-        Keep practising both TOPIK tracks — full practice and mock access, 100% original material — for a flat{" "}
-        <strong className="text-almi-ink">$12/month</strong>. Start with a 7-day free trial — your card is saved but
+        Listening and Reading are free. AI feedback on TOPIK II Writing — criteria-based, 100% original material — is{" "}
+        <strong className="text-almi-ink">$12/month</strong>. Start with a 7-day free trial: your card is saved but
         not charged, and you can cancel anytime before the trial ends and pay nothing.
       </p>
       <button

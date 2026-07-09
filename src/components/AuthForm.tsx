@@ -24,7 +24,9 @@ export function AuthForm({ mode }: { mode: "signup" | "login" }) {
       body: JSON.stringify(payload),
     });
     if (res.ok) {
-      router.push("/practice");
+      // Land in the app-shell/account world (sidebar + trial CTA), matching the
+      // Goethe/CELPIP journey: signup → account → Start 7-day free trial → checkout.
+      router.push(mode === "signup" ? "/account?welcome=true" : "/account");
       router.refresh();
     } else {
       const data = await res.json().catch(() => ({}));

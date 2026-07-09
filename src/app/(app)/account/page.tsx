@@ -6,7 +6,8 @@ import { BillingButtons } from "@/components/BillingButtons";
 
 export const metadata: Metadata = { title: "Your account", robots: { index: false } };
 
-export default async function Page() {
+export default async function Page({ searchParams }: { searchParams: Promise<{ welcome?: string }> }) {
+  const sp = await searchParams;
   const user = await requireUser();
   const paid = hasPaidAccess(user);
   const billingOn = isBillingEnabled();
@@ -22,6 +23,14 @@ export default async function Page() {
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Account</p>
       <h1 className="mt-3 text-3xl font-bold text-almi-ink">{user.name ?? user.email}</h1>
       <p className="mt-1 text-sm text-almi-text-muted">{user.email}</p>
+
+      {sp.welcome && !paid && (
+        <div className="mt-6 rounded-2xl border border-almi-coral/30 bg-almi-coral/10 p-4">
+          <p className="text-sm text-almi-ink">
+            Welcome — your account is ready. Start your 7-day free trial below to unlock the full timed mock and premium features. Listening and Reading practice are free to use right away.
+          </p>
+        </div>
+      )}
 
       <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
         <p className="text-almi-text">Plan: <strong className="text-almi-ink">{planLabel}</strong></p>

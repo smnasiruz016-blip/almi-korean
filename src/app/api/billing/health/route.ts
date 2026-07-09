@@ -31,6 +31,10 @@ export async function GET() {
     keyPresent: Boolean(key),
     keyMode: mode,
     priceVarsPresent: Object.keys(present),
+    keyLen: key.length,
+    keyClean: key === key.trim() && !/\s/.test(key),
+    keyLast4: key.slice(-4),
+    appUrl: process.env.APP_URL ?? "(unset→fallback)",
   };
   if (!key) {
     out.ok = false;

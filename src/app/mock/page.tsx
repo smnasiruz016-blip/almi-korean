@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth";
+import { hasPaidAccess } from "@/lib/access";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,7 +17,11 @@ const TRACKS = [
   { slug: "topik-ii", label: "TOPIK II mock", sub: "Listening → Writing → Reading · Levels 3–6 · out of 300" },
 ];
 
-export default function Page() {
+export default async function Page() {
+  // FOUNDER GATE (trio): logged-in non-subscribed users see no practice path — funnel to the
+  // trial checkout on /account. Logged-out visitors keep this public SEO surface.
+  const user = await getCurrentUser();
+  if (user && !hasPaidAccess(user)) redirect("/account");
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Mock test</p>
@@ -24,8 +31,8 @@ export default function Page() {
         level estimate against the real cutoffs. A shorter run than the full exam, built from the practice bank.
       </p>
       <p className="mt-3 text-sm text-almi-text-muted">
-        The sequenced mock is part of AlmiKorean Pro — $12/month with a 7-day free trial (card saved, not charged). Section
-        practice (Listening and Reading) is free.
+        The full sequenced mock and all TOPIK practice are part of AlmiKorean Pro — $12/month with a 7-day free trial
+        (card saved, not charged).
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {TRACKS.map((t) => (

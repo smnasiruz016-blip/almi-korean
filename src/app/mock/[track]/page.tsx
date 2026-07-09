@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
 import { itemsFor } from "@/lib/items";
@@ -33,6 +33,11 @@ export default async function Page({ params }: { params: Promise<{ track: string
   const user = await getCurrentUser();
   const paid = hasPaidAccess(user);
 
+  // FOUNDER GATE (trio): the mock is practice — a logged-in non-subscribed user gets no run
+  // pre-checkout; funnel to the trial checkout on /account. Logged-out visitors keep the
+  // public sign-in surface below (SEO untouched). Owner/paid pass through.
+  if (user && !paid) redirect("/account");
+
   const bank = {
     LISTENING: itemsFor(tk, "LISTENING"),
     READING: itemsFor(tk, "READING"),
@@ -49,7 +54,7 @@ export default async function Page({ params }: { params: Promise<{ track: string
       {!user ? (
         <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
           <h2 className="text-lg font-semibold text-almi-ink">The sequenced mock is part of AlmiKorean Pro</h2>
-          <p className="mt-2 text-sm text-almi-text">Section practice (Listening and Reading) is free. The full sequenced mock is $12/month — start with a 7-day free trial, card saved but not charged, cancel anytime before it ends.</p>
+          <p className="mt-2 text-sm text-almi-text">Start with a 7-day free trial — card saved but not charged — to practise, then $12/month. Cancel anytime before the trial ends and pay nothing.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Create free account</Link>
             <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>

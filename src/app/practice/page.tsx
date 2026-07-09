@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { trackCounts } from "@/lib/items";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess } from "@/lib/access";
@@ -24,6 +25,10 @@ const SECTION_SLUG: Record<TopikSkill, string> = { LISTENING: "listening", READI
 export default async function Page() {
   const tracks: TopikTrack[] = ["TOPIK_I", "TOPIK_II"];
   const user = await getCurrentUser();
+  // FOUNDER GATE (trio): a logged-in non-subscribed user gets no practice — funnel to the
+  // single forward path (trial checkout on /account). Logged-out visitors keep the public
+  // SEO surface untouched.
+  if (user && !hasPaidAccess(user)) redirect("/account");
   const banner = !user
     ? null
     : hasPaidAccess(user)

@@ -27,7 +27,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
       {sp.welcome && !paid && (
         <div className="mt-6 rounded-2xl border border-almi-coral/30 bg-almi-coral/10 p-4">
           <p className="text-sm text-almi-ink">
-            Welcome — your account is ready. Start your 7-day free trial below to unlock TOPIK practice and the timed mock.
+            Welcome — your account is ready. Start your 7-day free trial below for full TOPIK practice and the timed mock.
           </p>
         </div>
       )}
@@ -36,7 +36,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
         <p className="text-almi-text">Plan: <strong className="text-almi-ink">{planLabel}</strong></p>
         {!paid && (
           <p className="mt-2 text-sm text-almi-text-muted">
-            Start your 7-day free trial to unlock practice. $12/month after the trial — cancel anytime.
+            Start your 7-day free trial for full practice. $12/month after the trial — cancel anytime.
           </p>
         )}
         {isOwner(user.email) ? (

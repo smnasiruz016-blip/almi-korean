@@ -252,7 +252,7 @@ export default function HomePage() {
               },
               {
                 q: "Do I need an account to start?",
-                a: "Yes — create an account, start your 7-day free trial, and your practice unlocks straight away.",
+                a: "Yes — create an account, start your 7-day free trial, and your practice is ready straight away.",
               },
               {
                 q: "Can I cancel?",

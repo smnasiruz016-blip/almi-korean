@@ -31,7 +31,7 @@ export default function Page() {
         ))}
       </ul>
       <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-        Practise free
+        Start your 7-day free trial
       </Link>
       <p className="text-sm text-almi-text-muted">
         Billing is handled securely at checkout. Prices shown in USD; your bank may convert to your local currency.

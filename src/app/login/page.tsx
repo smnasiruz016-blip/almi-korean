@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Article } from "@/components/Article";
+import { AuthCard } from "@/components/AuthCard";
 import { AuthForm } from "@/components/AuthForm";
 import { canonical } from "@/lib/site";
 
@@ -12,11 +12,19 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Article eyebrow="Log in" title="Welcome back" shamool={false}>
+    <AuthCard
+      heading="Welcome back"
+      sub="Log in to continue."
+      footer={
+        <>
+          New here?{" "}
+          <Link href="/signup" className="font-medium text-almi-coral hover:underline">
+            Create an account
+          </Link>
+        </>
+      }
+    >
       <AuthForm mode="login" />
-      <p className="text-sm text-almi-text-muted">
-        New here? <Link href="/signup" className="text-almi-coral hover:underline">Create an account</Link>.
-      </p>
-    </Article>
+    </AuthCard>
   );
 }

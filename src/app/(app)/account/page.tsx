@@ -27,19 +27,24 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
       {sp.welcome && !paid && (
         <div className="mt-6 rounded-2xl border border-almi-coral/30 bg-almi-coral/10 p-4">
           <p className="text-sm text-almi-ink">
-            Welcome — your account is ready. Start your 7-day free trial below to unlock the full timed mock and premium features. Listening and Reading practice are free to use right away.
+            Welcome — your account is ready. Start your 7-day free trial below to unlock TOPIK practice and the timed mock.
           </p>
         </div>
       )}
 
       <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
         <p className="text-almi-text">Plan: <strong className="text-almi-ink">{planLabel}</strong></p>
-        {!billingOn ? (
+        {!paid && (
           <p className="mt-2 text-sm text-almi-text-muted">
-            Subscriptions open shortly. Meanwhile, free practice is fully available.
+            Start your 7-day free trial to unlock practice. $12/month after the trial — cancel anytime.
           </p>
+        )}
+        {isOwner(user.email) ? (
+          <p className="mt-2 text-sm text-almi-text-muted">Owner access — practice is open.</p>
+        ) : !billingOn ? (
+          <p className="mt-3 text-sm text-almi-text-muted">Checkout opens shortly — hang tight.</p>
         ) : (
-          !isOwner(user.email) && <BillingButtons hasSubscription={Boolean(user.stripeSubscriptionId)} />
+          <BillingButtons hasSubscription={Boolean(user.stripeSubscriptionId)} />
         )}
       </div>
 

@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+const INPUT =
+  "mt-2 w-full rounded-xl border border-almi-ink/15 bg-almi-bg px-4 py-3 text-sm text-almi-ink focus:border-almi-coral focus:outline-none focus:ring-2 focus:ring-almi-coral/20";
+const LABEL = "block text-sm font-medium text-almi-ink";
+
 export function AuthForm({ mode }: { mode: "signup" | "login" }) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
@@ -24,8 +28,9 @@ export function AuthForm({ mode }: { mode: "signup" | "login" }) {
       body: JSON.stringify(payload),
     });
     if (res.ok) {
-      // Land in the app-shell/account world (sidebar + trial CTA), matching the
-      // Goethe/CELPIP journey: signup → account → Start 7-day free trial → checkout.
+      // Land in the app-shell/account world (sidebar + prominent trial CTA),
+      // matching the AlmiPrep journey: signup → account → Start 7-day free
+      // trial → Stripe checkout.
       router.push(mode === "signup" ? "/account?welcome=true" : "/account");
       router.refresh();
     } else {
@@ -36,15 +41,45 @@ export function AuthForm({ mode }: { mode: "signup" | "login" }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-6 max-w-sm space-y-3">
+    <form onSubmit={onSubmit} className="mt-6 space-y-4">
       {mode === "signup" && (
-        <input name="name" placeholder="Name (optional)" className="w-full rounded-lg border border-almi-line bg-almi-paper px-3 py-2" />
+        <div>
+          <label htmlFor="name" className={LABEL}>
+            Name
+          </label>
+          <input id="name" name="name" autoComplete="name" className={INPUT} />
+        </div>
       )}
-      <input name="email" type="email" required placeholder="Email" className="w-full rounded-lg border border-almi-line bg-almi-paper px-3 py-2" />
-      <input name="password" type="password" required minLength={mode === "signup" ? 8 : 1} placeholder={mode === "signup" ? "Password (8+ characters)" : "Password"} className="w-full rounded-lg border border-almi-line bg-almi-paper px-3 py-2" />
+      <div>
+        <label htmlFor="email" className={LABEL}>
+          Email
+        </label>
+        <input id="email" name="email" type="email" required autoComplete="email" className={INPUT} />
+      </div>
+      <div>
+        <label htmlFor="password" className={LABEL}>
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          required
+          minLength={mode === "signup" ? 8 : 1}
+          autoComplete={mode === "signup" ? "new-password" : "current-password"}
+          className={INPUT}
+        />
+        {mode === "signup" && (
+          <p className="mt-2 text-xs text-almi-text-muted">At least 8 characters.</p>
+        )}
+      </div>
       {error && <p className="text-sm text-almi-coral-deep">{error}</p>}
-      <button disabled={busy} className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark disabled:opacity-60">
-        {busy ? "Please wait…" : mode === "signup" ? "Create account & practise" : "Log in"}
+      <button
+        type="submit"
+        disabled={busy}
+        className="inline-flex w-full min-h-[44px] items-center justify-center rounded-full bg-almi-coral px-6 py-3 text-sm font-semibold text-almi-ink transition-colors hover:bg-almi-coral-deep hover:text-almi-on-dark focus:outline-none focus:ring-4 focus:ring-almi-coral/30 disabled:opacity-60"
+      >
+        {busy ? "Please wait…" : mode === "signup" ? "Create account" : "Log in"}
       </button>
     </form>
   );

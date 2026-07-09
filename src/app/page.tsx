@@ -84,7 +84,7 @@ export default function HomePage() {
             </p>
             <div className="mt-7">
               <Link href="/signup" className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-                Practise free
+                Start your 7-day free trial
               </Link>
               <p className="mt-3 text-sm text-almi-text-muted">
                 TOPIK I → Levels 1–2 · TOPIK II → Levels 3–6 · sit either track directly · below the lowest cutoff no level is
@@ -224,11 +224,52 @@ export default function HomePage() {
             ))}
           </ul>
           <Link href="/signup" className="mt-7 inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-            Start practising free
+            Start your 7-day free trial
           </Link>
           <p className="mt-4 text-sm">
             <Link href="/pricing" className="text-almi-coral hover:underline">See full pricing</Link>
           </p>
+        </div>
+      </section>
+
+      {/* 7. Q&A */}
+      <section className="px-6 py-14">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-2xl font-bold text-almi-ink">Questions, answered.</h2>
+          <dl className="mt-8 space-y-6">
+            {[
+              {
+                q: "How much does it cost?",
+                a: "$12/month with a 7-day free trial. Cancel anytime during the trial and you are not charged.",
+              },
+              {
+                q: "Which test do you cover?",
+                a: "TOPIK — both tracks, TOPIK I (Levels 1–2) and TOPIK II (Levels 3–6), with sequenced timed mocks.",
+              },
+              {
+                q: "Is the Writing score official?",
+                a: "No. TOPIK II Writing (Tasks 51–54) is scored as an AI criteria-based estimate to guide you — NIIED alone awards real results.",
+              },
+              {
+                q: "Do I need an account to start?",
+                a: "Yes — create an account, start your 7-day free trial, and your practice unlocks straight away.",
+              },
+              {
+                q: "Can I cancel?",
+                a: "Yes, anytime, from your account. Cancel before the trial ends and you pay nothing.",
+              },
+            ].map((item) => (
+              <div key={item.q} className="rounded-2xl border border-almi-line bg-almi-paper p-6">
+                <dt className="font-semibold text-almi-ink">{item.q}</dt>
+                <dd className="mt-2 text-sm text-almi-text">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-8 text-center">
+            <Link href="/signup" className="rounded-full bg-almi-coral px-7 py-3 text-sm font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
+              Create your account →
+            </Link>
+          </div>
         </div>
       </section>
     </main>

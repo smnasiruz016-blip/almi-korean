@@ -18,6 +18,7 @@ export const FAMILY_NAV = [
   { label: "AlmiCELPIP", href: "https://almicelpip.almiworld.com/" },
   { label: "AlmiFrench", href: "https://almifrench.almiworld.com/" },
   { label: "AlmiGoethe", href: "https://almigoethe.almiworld.com/" },
+  { label: "AlmiPortuguese", href: "https://almiportuguese.almiworld.com/" },
   { label: "AlmiSpanish", href: "https://almispanish.almiworld.com/" },
   { label: "AlmiJapanese", href: "https://almijapanese.almiworld.com/" },
   { label: "AlmiItalian", href: "https://almiitalian.almiworld.com/" },

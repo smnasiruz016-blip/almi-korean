@@ -77,6 +77,7 @@ model User {
   attempts     KoreanAttempt[]
   sessions     KoreanSession[]
   authSessions AuthSession[]
+  reviews      Review[]
 }
 
 // Server-side auth sessions (canonical AlmiWorld pattern: hashed token in a cookie).
@@ -155,4 +156,17 @@ model KoreanSession {
   attempts KoreanAttempt[]
 
   @@index([userId, mode])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating    Int
+  text      String   @db.Text
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([approved, createdAt])
 }

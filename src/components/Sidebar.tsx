@@ -25,6 +25,9 @@ function buildItems(isAdmin: boolean): Item[] {
   ];
   if (isAdmin) {
     items.push({ key: "admin", href: "/admin/accounts", icon: "🛡️", label: "Admin", match: "/admin" });
+    // More specific match than "Admin" (/admin), so the longest-prefix rule in
+    // activeKey lights Reviews — not Admin — on /admin/reviews.
+    items.push({ key: "reviews", href: "/admin/reviews", icon: "⭐", label: "Reviews", match: "/admin/reviews" });
   }
   return items;
 }

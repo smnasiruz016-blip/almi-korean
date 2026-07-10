@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { requireUser } from "@/lib/auth";
 import { hasPaidAccess, isBillingEnabled, isOwner } from "@/lib/access";
 import { BillingButtons } from "@/components/BillingButtons";
+import { ReviewCard } from "@/components/reviews/ReviewCard";
 
 export const metadata: Metadata = { title: "Your account", robots: { index: false } };
 
@@ -46,6 +46,10 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
         ) : (
           <BillingButtons hasSubscription={Boolean(user.stripeSubscriptionId)} />
         )}
+      </div>
+
+      <div className="mt-8">
+        <ReviewCard />
       </div>
 
       <div className="mt-6 flex items-center gap-4 text-sm">

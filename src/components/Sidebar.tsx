@@ -5,7 +5,7 @@
 // md:ml-60). Mobile: collapsed to a hamburger that opens a slide-in drawer
 // with a backdrop; body scroll locks while open.
 //
-// "Choose a Level" is the user-facing label for /practice (TOPIK tracks/levels;
+// "Choose a Test" is the user-facing label for /practice (TOPIK tracks/levels;
 // the URL is unchanged). "My Progress" and "Account" both point to /account —
 // active highlighting is computed centrally so they don't both light up.
 
@@ -16,12 +16,18 @@ import { HamburgerButton } from "@/components/HamburgerButton";
 
 type Item = { key: string; href: string; icon: string; label: string; match: string };
 
-const ITEMS: Item[] = [
-  { key: "home", href: "/", icon: "🏠", label: "Home", match: "/" },
-  { key: "practice", href: "/practice", icon: "✏️", label: "Choose a Level", match: "/practice" },
-  { key: "progress", href: "/account", icon: "📊", label: "My Progress", match: "/account" },
-  { key: "account", href: "/account", icon: "👤", label: "Account", match: "/account" },
-];
+function buildItems(isAdmin: boolean): Item[] {
+  const items: Item[] = [
+    { key: "home", href: "/", icon: "🏠", label: "Home", match: "/" },
+    { key: "practice", href: "/practice", icon: "✏️", label: "Choose a Test", match: "/practice" },
+    { key: "progress", href: "/account", icon: "📊", label: "My Progress", match: "/account" },
+    { key: "account", href: "/account", icon: "👤", label: "Account", match: "/account" },
+  ];
+  if (isAdmin) {
+    items.push({ key: "admin", href: "/admin/accounts", icon: "🛡️", label: "Admin", match: "/admin" });
+  }
+  return items;
+}
 
 // Longest matching prefix wins; ties keep the first item (so "My Progress"
 // owns /account and "Account" stays unhighlighted rather than both lighting).
@@ -86,14 +92,17 @@ function NavBody({
 
 export function Sidebar({
   email,
+  isAdmin,
   logout,
 }: {
   email: string;
+  isAdmin: boolean;
   logout: () => Promise<void>;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const active = activeKey(pathname, ITEMS);
+  const items = buildItems(isAdmin);
+  const active = activeKey(pathname, items);
 
   useEffect(() => {
     if (!open) return;
@@ -117,7 +126,7 @@ export function Sidebar({
           worst-case header — modest at md, opening up at lg+. */}
       <aside className="fixed bottom-0 left-0 top-16 z-30 hidden w-60 flex-col border-r border-almi-bg-peach bg-almi-paper px-3 pb-4 pt-8 md:flex lg:pt-16">
         <p className="px-3 pb-4 text-base font-semibold leading-tight text-almi-ink">AlmiKorean</p>
-        <NavBody items={ITEMS} active={active} email={email} logout={logout} />
+        <NavBody items={items} active={active} email={email} logout={logout} />
       </aside>
 
       {/* Mobile drawer */}
@@ -137,7 +146,7 @@ export function Sidebar({
               </button>
             </div>
             <NavBody
-              items={ITEMS}
+              items={items}
               active={active}
               email={email}
               logout={logout}

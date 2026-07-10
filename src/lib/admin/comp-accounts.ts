@@ -3,12 +3,8 @@
 // Comp-account admin server actions. Every action independently re-gates on
 // ADMIN_EMAILS (isAdmin) — the page guard is defense-in-depth, not the only
 // check. Comp = full Pro access without Stripe, with an expiry. Single grant
-// per user: revoke nulls compProUntil, extend tops it up.
-//
-// Ported from AlmiPrep, adapted to the trio schema which tracks comp with the
-// single `compProUntil` column (no compGrantedAt/By/Reason). Grant/extend/
-// revoke + expiry + days-left work identically; the granted-by/reason audit
-// trail is the only thing dropped (would need a 3-column migration to add).
+// per user: revoke nulls all four columns, extend tops up compProUntil only.
+// (Ported from AlmiPrep; guard uses the trio's @/lib/access isAdmin.)
 
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/lib/auth";
@@ -37,6 +33,7 @@ function validDays(n: number): boolean {
 export async function grantCompPro(input: {
   email: string;
   days?: number;
+  reason?: string;
 }): Promise<ActionResult<{ userId: string }>> {
   const g = await gate();
   if (!g.ok) return g;
@@ -60,7 +57,12 @@ export async function grantCompPro(input: {
   const now = new Date();
   await prisma.user.update({
     where: { id: target.id },
-    data: { compProUntil: new Date(now.getTime() + days * DAY_MS) },
+    data: {
+      compProUntil: new Date(now.getTime() + days * DAY_MS),
+      compGrantedAt: now,
+      compGrantedBy: g.adminEmail,
+      compReason: input.reason?.trim() || null,
+    },
   });
 
   revalidatePath("/admin/comp-accounts");
@@ -76,7 +78,12 @@ export async function revokeCompPro(input: {
 
   await prisma.user.update({
     where: { id: input.userId },
-    data: { compProUntil: null },
+    data: {
+      compProUntil: null,
+      compGrantedAt: null,
+      compGrantedBy: null,
+      compReason: null,
+    },
   });
 
   revalidatePath("/admin/comp-accounts");
@@ -106,6 +113,7 @@ export async function extendCompPro(input: {
       : Date.now();
   await prisma.user.update({
     where: { id: target.id },
+    // Only compProUntil changes — extension is a top-up, not a new grant.
     data: { compProUntil: new Date(base + days * DAY_MS) },
   });
 
@@ -118,6 +126,9 @@ export type CompAccountRow = {
   email: string;
   name: string | null;
   compProUntil: string;
+  compGrantedAt: string | null;
+  compGrantedBy: string | null;
+  compReason: string | null;
   isActive: boolean;
   daysRemaining: number | null;
 };
@@ -135,8 +146,11 @@ export async function listCompAccounts(): Promise<
       email: true,
       name: true,
       compProUntil: true,
+      compGrantedAt: true,
+      compGrantedBy: true,
+      compReason: true,
     },
-    orderBy: { compProUntil: "desc" },
+    orderBy: { compGrantedAt: "desc" },
   });
 
   const now = Date.now();
@@ -148,6 +162,9 @@ export async function listCompAccounts(): Promise<
       email: r.email,
       name: r.name,
       compProUntil: r.compProUntil!.toISOString(),
+      compGrantedAt: r.compGrantedAt?.toISOString() ?? null,
+      compGrantedBy: r.compGrantedBy,
+      compReason: r.compReason,
       isActive,
       daysRemaining: isActive ? Math.ceil((untilMs - now) / DAY_MS) : null,
     };

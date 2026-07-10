@@ -8,7 +8,7 @@
 import { useState, useTransition } from "react";
 import type { CompAccountRow } from "@/lib/admin/comp-accounts";
 
-type GrantInput = { email: string; days?: number };
+type GrantInput = { email: string; days?: number; reason?: string };
 type RevokeInput = { userId: string };
 type ExtendInput = { userId: string; additionalDays: number };
 
@@ -49,6 +49,7 @@ export function CompAccountsClient({
 
   const [email, setEmail] = useState("");
   const [days, setDays] = useState("90");
+  const [reason, setReason] = useState("");
 
   const handleGrant = (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,11 +67,13 @@ export function CompAccountsClient({
       const r = await grantAction({
         email: trimmedEmail,
         days: numDays,
+        reason: reason.trim() || undefined,
       });
       if (r.ok) {
         setNote({ kind: "ok", text: `Granted Pro to ${trimmedEmail} for ${numDays} days` });
         setEmail("");
         setDays("90");
+        setReason("");
       } else {
         setNote({ kind: "error", text: r.error });
       }
@@ -136,7 +139,7 @@ export function CompAccountsClient({
       <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
         <h2 className="text-base font-semibold text-gray-900">Grant new comp account</h2>
         <form onSubmit={handleGrant} className="mt-4 grid gap-3 sm:grid-cols-12">
-          <label className="sm:col-span-8">
+          <label className="sm:col-span-5">
             <span className="block text-xs font-medium text-gray-500">User email</span>
             <input
               type="email"
@@ -147,7 +150,7 @@ export function CompAccountsClient({
               className={inputCls}
             />
           </label>
-          <label className="sm:col-span-4">
+          <label className="sm:col-span-2">
             <span className="block text-xs font-medium text-gray-500">Days</span>
             <input
               type="number"
@@ -155,6 +158,16 @@ export function CompAccountsClient({
               max={1825}
               value={days}
               onChange={(e) => setDays(e.target.value)}
+              className={inputCls}
+            />
+          </label>
+          <label className="sm:col-span-5">
+            <span className="block text-xs font-medium text-gray-500">Reason (optional)</span>
+            <input
+              type="text"
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+              placeholder="Beta tester batch 1"
               className={inputCls}
             />
           </label>
@@ -189,8 +202,11 @@ export function CompAccountsClient({
               <thead>
                 <tr className="border-b border-gray-200 text-xs uppercase tracking-wide text-gray-400">
                   <th className="py-2 pr-3 font-medium">Email</th>
+                  <th className="py-2 pr-3 font-medium">Granted</th>
                   <th className="py-2 pr-3 font-medium">Expires</th>
                   <th className="py-2 pr-3 font-medium">Days left</th>
+                  <th className="py-2 pr-3 font-medium">Reason</th>
+                  <th className="py-2 pr-3 font-medium">Granted by</th>
                   <th className="py-2 pr-0 text-right font-medium">Actions</th>
                 </tr>
               </thead>
@@ -207,6 +223,7 @@ export function CompAccountsClient({
                       <div className="font-medium">{row.email}</div>
                       {row.name && <div className="text-xs text-gray-500">{row.name}</div>}
                     </td>
+                    <td className="py-2 pr-3">{formatDate(row.compGrantedAt)}</td>
                     <td className="py-2 pr-3">{formatDate(row.compProUntil)}</td>
                     <td className="py-2 pr-3">
                       {row.isActive ? (
@@ -217,6 +234,8 @@ export function CompAccountsClient({
                         <span className="text-xs">Expired</span>
                       )}
                     </td>
+                    <td className="py-2 pr-3 text-xs">{row.compReason ?? "—"}</td>
+                    <td className="py-2 pr-3 text-xs">{row.compGrantedBy ?? "—"}</td>
                     <td className="py-2 pr-0 text-right">
                       <div className="inline-flex items-center gap-1">
                         {row.isActive && (

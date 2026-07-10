@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { isAdmin } from "@/lib/access";
+import { canAccessAdmin } from "@/lib/access";
 import {
   listCompAccounts,
   grantCompPro,
@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 
 export default async function CompAccountsPage() {
   const user = await getCurrentUser();
-  if (!user || !isAdmin(user.email)) redirect("/account");
+  if (!user || !canAccessAdmin(user.email)) redirect("/account");
 
   const res = await listCompAccounts();
 

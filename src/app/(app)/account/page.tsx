@@ -49,7 +49,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
       </div>
 
       <div className="mt-6 flex items-center gap-4 text-sm">
-        {paid && <Link href="/practice" className="text-almi-coral hover:underline">Go to practice</Link>}
         <form action="/api/auth/logout" method="post">
           <button type="submit" className="text-almi-text-muted hover:text-almi-coral">Log out</button>
         </form>

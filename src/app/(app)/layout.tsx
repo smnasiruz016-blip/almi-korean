@@ -7,7 +7,7 @@
 
 import { redirect } from "next/navigation";
 import { destroySession, requireUser } from "@/lib/auth";
-import { isAdmin } from "@/lib/access";
+import { canAccessAdmin } from "@/lib/access";
 import { Sidebar } from "@/components/Sidebar";
 import { EmailVerifyBanner } from "@/components/EmailVerifyBanner";
 
@@ -25,7 +25,7 @@ export default async function AppLayout({
   return (
     <div className="bg-almi-bg">
       {!user.emailVerifiedAt && <EmailVerifyBanner email={user.email} />}
-      <Sidebar email={user.email} isAdmin={isAdmin(user.email)} logout={logoutAction} />
+      <Sidebar email={user.email} isAdmin={canAccessAdmin(user.email)} logout={logoutAction} />
       <main className="px-4 py-8 sm:px-6 md:ml-60 md:px-8">
         <div className="mx-auto w-full max-w-5xl">{children}</div>
       </main>

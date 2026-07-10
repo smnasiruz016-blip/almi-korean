@@ -10,6 +10,11 @@ function inList(envVar: string | undefined, email: string | null | undefined): b
 
 export const isOwner = (email: string | null | undefined) => inList(process.env.OWNER_EMAILS, email);
 export const isAdmin = (email: string | null | undefined) => inList(process.env.ADMIN_EMAILS, email);
+// The /admin panel: reachable by ADMIN_EMAILS users and ALWAYS by the owner.
+// The founder is in both lists per the canonical model; gating on this makes
+// the Admin nav link + server guards fire for the owner even if ADMIN_EMAILS
+// happens to be unset/mismatched on a given project.
+export const canAccessAdmin = (email: string | null | undefined) => isOwner(email) || isAdmin(email);
 
 // Billing is OFF until the founder sets the price id + Stripe key. Fail-closed = no paywall
 // gets shown/charged before it is real.

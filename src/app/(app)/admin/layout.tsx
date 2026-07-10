@@ -5,14 +5,14 @@
 
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
-import { isAdmin } from "@/lib/access";
+import { canAccessAdmin } from "@/lib/access";
 import { AdminNav } from "@/components/admin/AdminNav";
 
 export default async function AdminLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const user = await requireUser();
-  if (!isAdmin(user.email)) redirect("/account");
+  if (!canAccessAdmin(user.email)) redirect("/account");
 
   return (
     <div className="space-y-6">

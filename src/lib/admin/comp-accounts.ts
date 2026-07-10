@@ -8,7 +8,7 @@
 
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/lib/auth";
-import { isAdmin } from "@/lib/access";
+import { canAccessAdmin } from "@/lib/access";
 import { prisma } from "@/lib/prisma";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -22,7 +22,7 @@ async function gate(): Promise<
   { ok: true; adminEmail: string } | { ok: false; error: string }
 > {
   const user = await getCurrentUser();
-  if (!user || !isAdmin(user.email)) return { ok: false, error: "Unauthorized" };
+  if (!user || !canAccessAdmin(user.email)) return { ok: false, error: "Unauthorized" };
   return { ok: true, adminEmail: user.email };
 }
 

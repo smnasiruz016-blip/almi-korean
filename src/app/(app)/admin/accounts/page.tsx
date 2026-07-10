@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { isAdmin } from "@/lib/access";
+import { canAccessAdmin } from "@/lib/access";
 import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
@@ -43,7 +43,7 @@ const BADGE_LABEL: Record<Plan, string> = {
 
 export default async function AccountsPage() {
   const user = await getCurrentUser();
-  if (!user || !isAdmin(user.email)) redirect("/account");
+  if (!user || !canAccessAdmin(user.email)) redirect("/account");
 
   const nowDate = new Date();
 

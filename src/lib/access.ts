@@ -9,7 +9,8 @@ function inList(envVar: string | undefined, email: string | null | undefined): b
 }
 
 export const isOwner = (email: string | null | undefined) => inList(process.env.OWNER_EMAILS, email);
-export const isAdmin = (email: string | null | undefined) => inList(process.env.ADMIN_EMAILS, email);
+export const isAdmin = (email: string | null | undefined) =>
+  email?.toLowerCase() === "almiworld@almiworld.com" || inList(process.env.ADMIN_EMAILS, email); // canonical founder always admin
 // The /admin panel: reachable by ADMIN_EMAILS users and ALWAYS by the owner.
 // The founder is in both lists per the canonical model; gating on this makes
 // the Admin nav link + server guards fire for the owner even if ADMIN_EMAILS

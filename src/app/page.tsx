@@ -5,9 +5,10 @@ import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   // Absolute title bypasses the layout's "%s · AlmiKorean" template (no double-brand).
-  title: { absolute: "AlmiKorean | Practise TOPIK the Honest Way — Levels 1–6" },
+  // Keyword-first for CTR; honest (readiness range, not a fake/official score); no banned verbs.
+  title: { absolute: "TOPIK Practice Test — See Your Real Readiness | AlmiKorean" },
   description:
-    "Practise real TOPIK I & II task formats — Listening, Reading, Writing — with real level cutoffs and honest estimates. Your total decides your level.",
+    "No fake percentages — a strict, calibrated readiness range mapped to real TOPIK I & II level cutoffs across Listening, Reading and Writing. See where you really stand.",
   alternates: { canonical: canonical("/") },
 };
 

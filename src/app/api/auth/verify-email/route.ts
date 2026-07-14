@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { sendWelcomeEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -27,7 +28,13 @@ export async function GET(req: Request): Promise<NextResponse> {
 
   const user = await prisma.user.findUnique({
     where: { emailVerificationTokenHash: tokenHash },
-    select: { id: true, emailVerificationExpiresAt: true, emailVerifiedAt: true },
+    select: {
+      id: true,
+      email: true,
+      name: true,
+      emailVerificationExpiresAt: true,
+      emailVerifiedAt: true,
+    },
   });
 
   if (!user) {
@@ -51,6 +58,17 @@ export async function GET(req: Request): Promise<NextResponse> {
       emailVerificationExpiresAt: null,
     },
   });
+
+  // Welcome email — sent once, only on the fresh-verification path (the
+  // already-verified branch above returns early, so this never double-sends).
+  // Fire-and-forget: a mail failure must not break the user's verification.
+  try {
+    await sendWelcomeEmail({ to: user.email, name: user.name });
+  } catch (err) {
+    console.error("[verify-email] welcome send failed", {
+      message: err instanceof Error ? err.message : String(err),
+    });
+  }
 
   return NextResponse.redirect(`${base}/verify-email?status=success`);
 }

@@ -1,36 +1,15 @@
+import { familyStrip } from "@smnasiruz016-blip/almi-data";
 import Link from "next/link";
 import { AuthNav } from "./AuthNav";
 
 // AlmiWorld family navigation — complete, current family (all sibling products; the current
 // product, AlmiKorean, is omitted from its own family list).
-export const FAMILY_NAV = [
-  { label: "Home", href: "https://almiworld.com/" },
-  { label: "eBooks", href: "https://almiworld.com/ebooks-2/" },
-  { label: "AlmiJob", href: "https://almijob.almiworld.com/" },
-  { label: "Salary Checker", href: "https://almisalary.almiworld.com" },
-  { label: "AlmiCV", href: "https://almicv.almiworld.com" },
-  { label: "AlmiStudy", href: "https://almistudy.almiworld.com/" },
-  { label: "AlmiPrep", href: "https://almiprep.almiworld.com/" },
-  { label: "AlmiPTE", href: "https://almipte.almiworld.com/" },
-  { label: "AlmiTOEFL", href: "https://almitoefl.almiworld.com/" },
-  { label: "AlmiOET", href: "https://almioet.almiworld.com/" },
-  { label: "AlmiDET", href: "https://almidet.almiworld.com/" },
-  { label: "AlmiCELPIP", href: "https://almicelpip.almiworld.com/" },
-  { label: "AlmiFrench", href: "https://almifrench.almiworld.com/" },
-  { label: "AlmiGoethe", href: "https://almigoethe.almiworld.com/" },
-  { label: "AlmiPortuguese", href: "https://almiportuguese.almiworld.com/" },
-  { label: "AlmiSpanish", href: "https://almispanish.almiworld.com/" },
-  { label: "AlmiJapanese", href: "https://almijapanese.almiworld.com/" },
-  { label: "AlmiItalian", href: "https://almiitalian.almiworld.com/" },
-  { label: "AlmiDutch", href: "https://almidutch.almiworld.com/" },
-  { label: "AlmiIcelandic", href: "https://almiicelandic.almiworld.com/" },
-  { label: "AlmiDanish", href: "https://almidanish.almiworld.com/" },
-  { label: "AlmiNorwegian", href: "https://alminorwegian.almiworld.com/" },
-  { label: "AlmiSwedish", href: "https://almiswedish.almiworld.com/" },
-  { label: "AlmiSwiss", href: "https://almiswiss.almiworld.com/" },
-  { label: "Contact Us", href: "https://almiworld.com/contact-us/" },
-  { label: "Shamool Foundation", href: "https://shamoolfoundation.com/" },
-];
+// The product list is NOT maintained here — it lives in @smnasiruz016-blip/almi-data,
+// so adding a product is one edit there plus a version bump, not an edit in every
+// repo. Inline is how this array silently fell behind: it stopped at AlmiDanish,
+// because that is who existed on the day this repo was forked.
+// ⚠️ "korean" is an IDENTITY, not a label — it omits THIS product from its own strip.
+export const FAMILY_NAV = familyStrip("korean");
 
 export function GlobalHeader() {
   return (

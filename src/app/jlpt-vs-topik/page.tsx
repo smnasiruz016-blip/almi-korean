@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Article } from "@/components/Article";
 import { canonical } from "@/lib/site";
+// Sister-product cross-link resolved from the SAME sanctioned source the family nav uses
+// (@smnasiruz016-blip/almi-data) rather than a hardcoded <a href> — so the almi-japanese
+// identity lives in the shared package, not this repo's content. Matched by the bare "japanese"
+// key (not the banned slug forms), keeping the fork-hygiene gate clean by construction.
+import { FAMILY_PRODUCTS } from "@smnasiruz016-blip/almi-data";
 
 export const metadata: Metadata = {
   title: "JLPT vs TOPIK — two opposite scoring philosophies",
@@ -11,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const jpSibling = FAMILY_PRODUCTS.find((p) => p.key === "japanese");
   return (
     <Article
       eyebrow="Comparison"
@@ -39,7 +45,7 @@ export default function Page() {
       <p>
         Neither philosophy is &quot;better&quot; — they just reward different study strategies. If you are also preparing for
         Japanese, our sister product{" "}
-        <a href="https://almijapanese.almiworld.com/" className="text-almi-coral hover:underline">AlmiJapanese</a>{" "}
+        <a href={jpSibling?.href} className="text-almi-coral hover:underline">{jpSibling?.name}</a>{" "}
         treats the JLPT&apos;s section-floor rule honestly, the same way we treat TOPIK&apos;s total-only rule here.
       </p>
     </Article>

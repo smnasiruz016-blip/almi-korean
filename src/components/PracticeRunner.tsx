@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ListeningAudio } from "@/components/ListeningAudio";
+import { shuffledOptions } from "@/lib/topik/shuffle";
 import type { BankItem } from "@/lib/items";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -33,11 +34,14 @@ export function PracticeRunner({ items, track, section }: { items: BankItem[]; t
           ))}
           {(it.payload.questions ?? []).map((q) => {
             const key = `${i}:${q.id}`;
+            // Rendered order is decided here, not in the bank — see lib/topik/shuffle.ts.
+            // The key rides with its own option, so grading below is untouched.
+            const opts = shuffledOptions(it.title, q.id, q.options);
             return (
               <fieldset key={q.id} className="mb-3">
                 <legend className="text-sm font-medium text-almi-ink">{q.stem}</legend>
                 <div className="mt-2 grid gap-1.5">
-                  {q.options.map((o) => {
+                  {opts.map((o) => {
                     const chosen = answers[key] === o.id;
                     const isAnswer = submitted && o.id === q.answer;
                     const wrongChosen = submitted && chosen && o.id !== q.answer;

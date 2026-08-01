@@ -446,12 +446,12 @@
     "difficulty": "STRETCH",
     "title": "TII-R-16-ordering-scientific-method",
     "topicTag": "academic",
-    "guidanceNote": "STRETCH sentence ordering in an academic register. Track abstract discourse markers to reconstruct the argument.",
+    "guidanceNote": "STRETCH sentence ordering in an academic register. Track abstract discourse markers to reconstruct the argument. Only (다) opens without an anaphor; (가) needs 그 질문, (라) needs 이렇게 세운 가설, (나) needs 실험 결과.",
     "payload": {
       "passages": [
         {
           "id": "p1",
-          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 이렇게 세운 가설이 옳은지 확인하기 위해 실험을 설계한다.\n(나) 과학적 탐구는 대개 하나의 질문에서 출발한다.\n(다) 실험 결과가 가설과 다르면 처음으로 돌아가 다시 생각한다.\n(라) 그 질문에 대한 잠정적인 답, 즉 가설을 세우는 것이 다음 단계이다."
+          "body": "다음을 순서에 맞게 배열한 것을 고르십시오.\n(가) 그 질문에 대한 잠정적인 답, 즉 가설을 세우는 것이 다음 단계이다.\n(나) 실험 결과가 가설과 다르면 처음으로 돌아가 다시 생각한다.\n(다) 과학적 탐구는 대개 하나의 질문에서 출발한다.\n(라) 이렇게 세운 가설이 옳은지 확인하기 위해 실험을 설계한다."
         }
       ],
       "questions": [
@@ -459,12 +459,12 @@
           "id": "q1",
           "stem": "위 문장을 순서에 맞게 배열한 것을 고르십시오.",
           "options": [
-            { "id": "a", "text": "(나)-(라)-(가)-(다)" },
-            { "id": "b", "text": "(나)-(가)-(라)-(다)" },
-            { "id": "c", "text": "(라)-(나)-(가)-(다)" },
-            { "id": "d", "text": "(나)-(라)-(다)-(가)" }
+            { "id": "a", "text": "(다)-(라)-(가)-(나)" },
+            { "id": "b", "text": "(가)-(다)-(라)-(나)" },
+            { "id": "c", "text": "(다)-(가)-(라)-(나)" },
+            { "id": "d", "text": "(다)-(가)-(나)-(라)" }
           ],
-          "answer": "a"
+          "answer": "c"
         }
       ]
     }

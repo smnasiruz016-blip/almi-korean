@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { scoreTopik, type TopikTrack, type TopikSection } from "@/lib/topik/scoring";
 import { ListeningAudio } from "@/components/ListeningAudio";
+import { shuffledOptions } from "@/lib/topik/shuffle";
 import type { BankItem } from "@/lib/items";
 
 const SECTION_LABEL: Record<TopikSection, string> = { LISTENING: "Listening", READING: "Reading", WRITING: "Writing" };
@@ -112,11 +113,14 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
                       ))}
                       {(it.payload.questions ?? []).map((q) => {
                         const key = `${sec}:${i}:${q.id}`;
+                        // Same seed as the live step above, so review lists the options in the
+                        // exact order the learner answered them.
+                        const opts = shuffledOptions(it.title, q.id, q.options);
                         return (
                           <fieldset key={q.id} className="mb-3">
                             <legend className="text-sm font-medium text-almi-ink">{q.stem}</legend>
                             <div className="mt-2 grid gap-1.5">
-                              {q.options.map((o) => {
+                              {opts.map((o) => {
                                 const chosen = answers[key] === o.id;
                                 const isAnswer = o.id === q.answer;
                                 const wrongChosen = chosen && !isAnswer;
@@ -194,11 +198,12 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
               ))}
               {(it.payload.questions ?? []).map((q) => {
                 const key = `${section}:${i}:${q.id}`;
+                const opts = shuffledOptions(it.title, q.id, q.options);
                 return (
                   <fieldset key={q.id} className="mb-3">
                     <legend className="text-sm font-medium text-almi-ink">{q.stem}</legend>
                     <div className="mt-2 grid gap-1.5">
-                      {q.options.map((o) => {
+                      {opts.map((o) => {
                         const chosen = answers[key] === o.id;
                         return (
                           <label key={o.id} className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-sm ${chosen ? "border-almi-coral" : "border-almi-line"}`}>

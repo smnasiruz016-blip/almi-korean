@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { itemsFor } from "@/lib/items";
+import { itemsFor, toRunnerItem } from "@/lib/items";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
 import { PracticeRunner } from "@/components/PracticeRunner";
@@ -48,7 +48,10 @@ export default async function Page({ params }: { params: Promise<{ track: string
   const tk = TRACK_MAP[track];
   const sec = SECTION_MAP[section];
   if (!tk || !sec || !isValid(tk, sec)) notFound();
-  const items = itemsFor(tk, sec);
+  // toRunnerItem strips the answer key. These combos are prerendered (dynamicParams=false),
+  // so passing the bank through would have baked every key into the CDN artefact — readable
+  // without signing in. Marking now happens at /api/ko/submit against the server's own copy.
+  const items = itemsFor(tk, sec).map(toRunnerItem);
 
   const user = await getCurrentUser();
   const needsPaid = sec === "WRITING"; // AI Writing feedback → paid; Listening/Reading are free

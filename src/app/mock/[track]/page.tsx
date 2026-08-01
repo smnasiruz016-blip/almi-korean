@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
-import { itemsFor } from "@/lib/items";
+import { itemsFor, toRunnerItem } from "@/lib/items";
 import { MockRunner } from "@/components/MockRunner";
 import { PracticeGate } from "@/components/PracticeGate";
 import { EmailVerifyBanner } from "@/components/EmailVerifyBanner";
@@ -38,10 +38,16 @@ export default async function Page({ params }: { params: Promise<{ track: string
   // public sign-in surface below (SEO untouched). Owner/paid pass through.
   if (user && !paid) redirect("/account");
 
+  // toRunnerItem strips the answer key before anything reaches the browser; the mock is
+  // marked by /api/ko/submit when the run finishes.
+  // Every branch goes through toRunnerItem, and the TOPIK_I case is an empty array rather
+  // than a conditional spread: a spread into a served object cannot be proved by inspection
+  // to exclude the key, which is precisely the hole a key would slip back through.
+  // ORDER[TOPIK_I] has no WRITING step, so the empty array is never reached by the runner.
   const bank = {
-    LISTENING: itemsFor(tk, "LISTENING"),
-    READING: itemsFor(tk, "READING"),
-    ...(tk === "TOPIK_II" ? { WRITING: itemsFor(tk, "WRITING") } : {}),
+    LISTENING: itemsFor(tk, "LISTENING").map(toRunnerItem),
+    READING: itemsFor(tk, "READING").map(toRunnerItem),
+    WRITING: tk === "TOPIK_II" ? itemsFor(tk, "WRITING").map(toRunnerItem) : [],
   };
 
   return (

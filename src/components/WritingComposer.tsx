@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { BankItem } from "@/lib/items";
+import type { RunnerItem } from "@/lib/items";
 
 // TOPIK II Writing (Tasks 51–54). Phase 1 = the composer with a LIVE character counter against
 // each task's official band. AI criteria-based grading arrives later; we never present a score as
 // official. Tasks 53 (200–300 자) and 54 (600–700 자) carry a required character band.
-export function WritingComposer({ items }: { items: BankItem[] }) {
+export function WritingComposer({ items }: { items: RunnerItem[] }) {
   const tasks = useMemo(() => items.filter((it) => it.payload.writing).map((it) => it.payload.writing!), [items]);
   const [idx, setIdx] = useState(0);
   const [text, setText] = useState("");

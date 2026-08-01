@@ -3,39 +3,82 @@
 import { useMemo, useState } from "react";
 import { ListeningAudio } from "@/components/ListeningAudio";
 import { shuffledOptions } from "@/lib/topik/shuffle";
-import type { BankItem } from "@/lib/items";
+import type { RunnerItem } from "@/lib/items";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
 const SECTION_LABEL: Record<TopikSkill, string> = { LISTENING: "Listening", READING: "Reading", WRITING: "Writing" };
 const TRACK_LABEL: Record<TopikTrack, string> = { TOPIK_I: "TOPIK I", TOPIK_II: "TOPIK II" };
 
+type Mark = { itemId: string; questionId: string; correct: boolean; correctOptionId: string };
+type Graded = { ok: true; correct: number; total: number; percent: number; marks: Mark[] };
+
 // Objective sections only (Listening / Reading). Writing uses WritingComposer.
-export function PracticeRunner({ items, track, section }: { items: BankItem[]; track: TopikTrack; section: TopikSkill }) {
+export function PracticeRunner({ items, track, section }: { items: RunnerItem[]; track: TopikTrack; section: TopikSkill }) {
   const flat = useMemo(
-    () => items.flatMap((it, i) => (it.payload.questions ?? []).map((q) => ({ key: `${i}:${q.id}`, item: it, q }))),
+    () => items.flatMap((it) => it.payload.questions.map((q) => ({ key: `${it.id}:${q.id}`, item: it, q }))),
     [items]
   );
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [graded, setGraded] = useState<Graded | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const correct = flat.filter((f) => answers[f.key] === f.q.answer).length;
   const total = flat.length;
-  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const submitted = graded !== null;
+  // Correctness is whatever the SERVER said. There is no local copy of the key to compare
+  // against, and nothing here recomputes a mark — that is the whole point of the change.
+  const markOf = (itemId: string, questionId: string) =>
+    graded?.marks.find((m) => m.itemId === itemId && m.questionId === questionId) ?? null;
+
+  async function submit() {
+    if (busy || submitted) return;
+    setBusy(true);
+    setError(null);
+    // Only item ids and the option chosen per question. No key, no score, no track or
+    // section — the server derives all of that from the items it loads.
+    const payload = {
+      items: items.map((it) => ({
+        itemId: it.id,
+        answers: Object.fromEntries(
+          it.payload.questions
+            .map((q) => [q.id, answers[`${it.id}:${q.id}`]] as const)
+            .filter(([, v]) => typeof v === "string")
+        ) as Record<string, string>,
+      })),
+    };
+    try {
+      const res = await fetch("/api/ko/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = (await res.json()) as Graded | { ok: false; error: string };
+      if (!res.ok || data.ok !== true) {
+        setError(("error" in data && data.error) || "Could not mark this set right now.");
+      } else {
+        setGraded(data);
+      }
+    } catch {
+      setError("Could not reach the marking service.");
+    }
+    setBusy(false);
+  }
 
   return (
     <div className="space-y-6">
-      {items.map((it, i) => (
-        <div key={i} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
+      {items.map((it) => (
+        <div key={it.id} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
           {it.payload.audioScript && (
             <div className="mb-3"><ListeningAudio script={it.payload.audioScript} rate={track === "TOPIK_I" ? 0.85 : 0.95} /></div>
           )}
           {it.payload.passages?.map((p) => (
             <p key={p.id} className="mb-3 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{p.body}</p>
           ))}
-          {(it.payload.questions ?? []).map((q) => {
-            const key = `${i}:${q.id}`;
+          {it.payload.questions.map((q) => {
+            const key = `${it.id}:${q.id}`;
+            const mark = markOf(it.id, q.id);
             // Rendered order is decided here, not in the bank — see lib/topik/shuffle.ts.
-            // The key rides with its own option, so grading below is untouched.
+            // The server marks by option id, so any permutation is safe.
             const opts = shuffledOptions(it.title, q.id, q.options);
             return (
               <fieldset key={q.id} className="mb-3">
@@ -43,8 +86,11 @@ export function PracticeRunner({ items, track, section }: { items: BankItem[]; t
                 <div className="mt-2 grid gap-1.5">
                   {opts.map((o) => {
                     const chosen = answers[key] === o.id;
-                    const isAnswer = submitted && o.id === q.answer;
-                    const wrongChosen = submitted && chosen && o.id !== q.answer;
+                    // Both of these used to compare against a key that shipped with the
+                    // question. They now read the server's mark, which exists only after the
+                    // section has been submitted.
+                    const isAnswer = mark !== null && o.id === mark.correctOptionId;
+                    const wrongChosen = mark !== null && chosen && o.id !== mark.correctOptionId;
                     return (
                       <label
                         key={o.id}
@@ -72,12 +118,15 @@ export function PracticeRunner({ items, track, section }: { items: BankItem[]; t
         </div>
       ))}
 
+      {error && <p className="rounded-xl bg-almi-coral/10 px-4 py-3 text-sm text-almi-coral-deep">{error}</p>}
+
       {!submitted ? (
         <button
-          onClick={() => setSubmitted(true)}
-          className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark"
+          onClick={submit}
+          disabled={busy}
+          className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark disabled:opacity-40"
         >
-          Check my answers
+          {busy ? "Marking…" : "Check my answers"}
         </button>
       ) : (
         <div className="rounded-2xl border border-almi-line bg-almi-paper p-6">
@@ -86,14 +135,16 @@ export function PracticeRunner({ items, track, section }: { items: BankItem[]; t
             <span className="rounded-full bg-almi-bg-peach px-3 py-1 text-xs text-almi-text">practice estimate</span>
           </div>
           <p className="mt-3 text-almi-text">
-            Raw: <strong className="text-almi-ink">{correct}/{total}</strong> correct ({pct}%).
+            Raw: <strong className="text-almi-ink">{graded.correct}/{graded.total}</strong> correct ({graded.percent}%).
           </p>
           <p className="mt-3 text-xs text-almi-text-muted">
-            This is a single-section practice read-out. TOPIK has no section minimums — everything you earn here counts toward your
-            track total, and your level is decided by that total alone. Only NIIED&apos;s official sitting awards a level.
+            This is a single-section practice read-out, marked on the server. TOPIK has no section minimums — everything you earn
+            here counts toward your track total, and your level is decided by that total alone. Only NIIED&apos;s official sitting
+            awards a level.
           </p>
         </div>
       )}
+      {!submitted && <p className="text-xs text-almi-text-muted">{total} question{total === 1 ? "" : "s"} · {SECTION_LABEL[section].toLowerCase()}</p>}
     </div>
   );
 }

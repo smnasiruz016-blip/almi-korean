@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/fork-hygiene-gate.mjs && tsx scripts/answer-position-gate.ts && prisma generate && next build",
+    "build": "node scripts/fork-hygiene-gate.mjs && tsx scripts/item-id-collision-gate.ts && tsx scripts/answer-position-gate.ts && prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "next lint",
@@ -17,7 +17,10 @@
     "validate:seed": "tsx scripts/validate-seed.ts",
     "seed:batch1": "tsx --env-file-if-exists=.env scripts/seed/batch1.ts",
     "db:deploy": "prisma migrate deploy",
-    "seed:prod": "tsx scripts/seed/batch1.ts"
+    "seed:prod": "tsx scripts/seed/batch1.ts",
+    "gate:item-id": "tsx scripts/item-id-collision-gate.ts",
+    "gate:item-id:red": "tsx scripts/item-id-collision-gate.ts --red",
+    "proof:grade-integrity": "tsx scripts/grade-integrity-proof.mts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

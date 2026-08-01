@@ -4,6 +4,7 @@ import { useState } from "react";
 import { scoreTopik, type TopikTrack, type TopikSection, type TopikResult } from "@/lib/topik/scoring";
 import { ListeningAudio } from "@/components/ListeningAudio";
 import { shuffledOptions } from "@/lib/topik/shuffle";
+import { asGraded, errorFrom, type Graded } from "@/lib/topik/graded-response";
 import type { RunnerItem } from "@/lib/items";
 
 const SECTION_LABEL: Record<TopikSection, string> = { LISTENING: "Listening", READING: "Reading", WRITING: "Writing" };
@@ -11,8 +12,6 @@ const TRACK_LABEL: Record<TopikTrack, string> = { TOPIK_I: "TOPIK I", TOPIK_II: 
 const ORDER: Record<TopikTrack, TopikSection[]> = { TOPIK_I: ["LISTENING", "READING"], TOPIK_II: ["LISTENING", "WRITING", "READING"] };
 
 type Bank = Partial<Record<TopikSection, RunnerItem[]>>;
-type Mark = { itemId: string; questionId: string; correct: boolean; correctOptionId: string };
-type Graded = { ok: true; correct: number; total: number; percent: number; marks: Mark[] };
 
 // A shorter-than-real practice mock built from the available item bank.
 //
@@ -68,9 +67,11 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
-        const data = (await res.json()) as Graded | { ok: false; error: string };
-        if (!res.ok || data.ok !== true) {
-          setError(("error" in data && data.error) || "Could not mark this mock right now.");
+        // Checked, not cast — see lib/topik/graded-response.ts.
+        const raw: unknown = await res.json();
+        const data = asGraded(raw);
+        if (!res.ok || !data) {
+          setError(errorFrom(raw, "Could not mark this mock right now."));
           setBusy(false);
           return;
         }

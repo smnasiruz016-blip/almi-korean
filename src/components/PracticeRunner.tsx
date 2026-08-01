@@ -3,14 +3,12 @@
 import { useMemo, useState } from "react";
 import { ListeningAudio } from "@/components/ListeningAudio";
 import { shuffledOptions } from "@/lib/topik/shuffle";
+import { asGraded, errorFrom, type Graded } from "@/lib/topik/graded-response";
 import type { RunnerItem } from "@/lib/items";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
 const SECTION_LABEL: Record<TopikSkill, string> = { LISTENING: "Listening", READING: "Reading", WRITING: "Writing" };
 const TRACK_LABEL: Record<TopikTrack, string> = { TOPIK_I: "TOPIK I", TOPIK_II: "TOPIK II" };
-
-type Mark = { itemId: string; questionId: string; correct: boolean; correctOptionId: string };
-type Graded = { ok: true; correct: number; total: number; percent: number; marks: Mark[] };
 
 // Objective sections only (Listening / Reading). Writing uses WritingComposer.
 export function PracticeRunner({ items, track, section }: { items: RunnerItem[]; track: TopikTrack; section: TopikSkill }) {
@@ -52,12 +50,11 @@ export function PracticeRunner({ items, track, section }: { items: RunnerItem[];
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const data = (await res.json()) as Graded | { ok: false; error: string };
-      if (!res.ok || data.ok !== true) {
-        setError(("error" in data && data.error) || "Could not mark this set right now.");
-      } else {
-        setGraded(data);
-      }
+      // Checked, not cast — see lib/topik/graded-response.ts.
+      const raw: unknown = await res.json();
+      const data = asGraded(raw);
+      if (!res.ok || !data) setError(errorFrom(raw, "Could not mark this set right now."));
+      else setGraded(data);
     } catch {
       setError("Could not reach the marking service.");
     }

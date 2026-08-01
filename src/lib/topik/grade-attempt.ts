@@ -118,28 +118,36 @@ export async function gradeAttempt(body: AttemptBody, user: AttemptUser): Promis
   const total = marks.length;
   const percent = Math.round((correct / total) * 100);
 
-  // Persistence, per item. KoreanItem is seeded (92 rows live) and KoreanAttempt.itemId is a
-  // real FK to it, resolved by the same {track, section, title} tuple the stable id hashes.
+  // Persistence. KoreanItem is seeded (92 rows live) and KoreanAttempt.itemId is a real FK to
+  // it, resolved by the same {track, section, title} tuple the stable id hashes.
+  //
+  // TWO round trips for the whole section, not two per item. Track and section are already
+  // proven single-valued above, so one findMany over the posted titles resolves every row —
+  // and a section is ~18 items, so the per-item version was 36 round trips to write one
+  // attempt set, degrading exactly as the bank grows.
+  //
   // A failure here must never cost the learner their marks, so it is caught.
   try {
-    for (const { item, answers } of loaded) {
-      const row = await prisma.koreanItem.findUnique({
-        where: { track_section_title: { track: item.track, section: item.section, title: item.title } },
-        select: { id: true },
-      });
-      if (!row) continue;
-      await prisma.koreanAttempt.create({
-        data: {
-          userId: user.id,
-          itemId: row.id,
-          track: item.track,
-          section: item.section,
-          status: "SUBMITTED",
-          response: { answers } as object,
-          result: { correct, total, percent, section } as object,
-        },
-      });
-    }
+    const rows = await prisma.koreanItem.findMany({
+      where: { track, section, title: { in: loaded.map((l) => l.item.title) } },
+      select: { id: true, title: true },
+    });
+    const idByTitle = new Map(rows.map((r) => [r.title, r.id]));
+    const data = loaded.flatMap(({ item, answers }) => {
+      const itemId = idByTitle.get(item.title);
+      // An unseeded item is skipped, not faked: no row means no FK to point at.
+      if (!itemId) return [];
+      return [{
+        userId: user.id,
+        itemId,
+        track: item.track,
+        section: item.section,
+        status: "SUBMITTED" as const,
+        response: { answers } as object,
+        result: { correct, total, percent, section } as object,
+      }];
+    });
+    if (data.length > 0) await prisma.koreanAttempt.createMany({ data });
   } catch {
     // attempts are best-effort; a persistence fault never changes what the learner is told
   }

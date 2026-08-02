@@ -2,15 +2,21 @@
 
 import { useState } from "react";
 
-// Subscribe gate for a paid surface (TOPIK II Writing feedback, or the sequenced mock).
-// Listening/Reading practice stays free; this only fronts the paid features. Heading/body are
-// overridable so the same gate serves both contexts; defaults describe the Writing skill.
+// Subscribe gate for a paid surface. Heading/body are overridable so the same gate serves both
+// the practice and mock contexts.
+//
+// The default body used to open "Listening and Reading are free." They are not: every practice
+// surface redirects a signed-in non-subscribed user to /account before a section renders, so
+// there is no free tier to point at. Saying so in the one place a learner meets the paywall was
+// the worst place to be wrong — it promised something the very next click disproved. The offer
+// is a 7-day card trial on everything, which is what this now says.
+//
 // If Stripe isn't wired yet (billingLive=false) the subscribe button shows its honest unavailable
 // state — the fail-closed path — rather than starting a checkout that can't complete.
 export function PracticeGate({
   billingLive,
-  heading = "Writing feedback is part of AlmiKorean Pro",
-  body = "Listening and Reading are free. AI feedback on TOPIK II Writing — criteria-based, 100% original material — is $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing.",
+  heading = "Practice is part of AlmiKorean Pro",
+  body = "Both TOPIK tracks — auto-marked Listening and Reading, and criteria-based AI feedback on TOPIK II Writing, 100% original material — are $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing.",
 }: {
   billingLive: boolean;
   heading?: string;

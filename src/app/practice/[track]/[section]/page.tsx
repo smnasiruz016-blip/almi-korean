@@ -54,7 +54,10 @@ export default async function Page({ params }: { params: Promise<{ track: string
   const items = itemsFor(tk, sec).map(toRunnerItem);
 
   const user = await getCurrentUser();
-  const needsPaid = sec === "WRITING"; // AI Writing feedback → paid; Listening/Reading are free
+  // Not "Writing is the paid one" — the redirect below is unconditional, so a non-subscribed
+  // user never reaches any section. Kept as an explicit constant so the gate branch reads
+  // honestly rather than implying a free tier that does not exist. See lib/access.ts.
+  const needsPaid = true;
   const paid = hasPaidAccess(user);
 
   // FOUNDER GATE (trio, screenshot-confirmed): any logged-in non-subscribed user gets no

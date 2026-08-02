@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/fork-hygiene-gate.mjs && tsx scripts/item-id-collision-gate.ts && tsx scripts/answer-position-gate.ts && tsx scripts/audio-coverage-gate.ts && prisma generate && next build",
+    "build": "node scripts/fork-hygiene-gate.mjs && tsx scripts/item-id-collision-gate.ts && tsx scripts/min-items-gate.ts && tsx scripts/answer-position-gate.ts && tsx scripts/audio-coverage-gate.ts && prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "next lint",
@@ -19,24 +19,40 @@
     "db:deploy": "prisma migrate deploy",
     "seed:prod": "tsx scripts/seed/batch1.ts",
     "gate:item-id": "tsx scripts/item-id-collision-gate.ts",
+    "gate:min-items": "tsx scripts/min-items-gate.ts",
+    "gate:min-items:red": "tsx scripts/min-items-gate.ts --red",
     "gate:item-id:red": "tsx scripts/item-id-collision-gate.ts --red",
     "proof:grade-integrity": "tsx scripts/grade-integrity-proof.mts",
+    "proof:writing-grader": "tsx scripts/writing-grader-proof.mts",
     "gate:audio": "tsx scripts/audio-coverage-gate.ts",
     "audio:upload": "tsx scripts/audio/upload-blob.mts",
     "audio:upload:dry": "tsx scripts/audio/upload-blob.mts --dry-run"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
     "@prisma/client": "^6.19.3",
     "@smnasiruz016-blip/almi-data": "^0.5.0",
     "@vercel/blob": "^2.6.1",
     "bcryptjs": "^3.0.3",
-    "next": "16.2.6",
+    "next": "^16.2.12",
     "prisma": "^6.19.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "resend": "^6.17.2",
     "stripe": "^22.1.0",
     "zod": "^4.3.6"
+  },
+  "_overrides_note": [
+    "Cleared 3 HIGH advisories (C6). next 16.2.6 -> 16.2.12 fixed next's own nine GHSAs.",
+    "postcss and sharp are TRANSITIVE deps of next and the upgrade could NOT reach them: next",
+    "16.2.12 still pins postcss 8.4.31 and sharp 0.34.5, both inside their advisory ranges.",
+    "These overrides pull the fixed versions up. Both are non-major (8.5.x, 0.35.x); the build",
+    "and all four content gates are verified green against them. npm audit: 0 vulnerabilities.",
+    "Revisit when next ships versions of these itself, and drop the overrides then."
+  ],
+  "overrides": {
+    "postcss": "^8.5.25",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

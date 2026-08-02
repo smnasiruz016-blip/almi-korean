@@ -41,9 +41,19 @@ function hasActiveSubscription(
 // charged — NOT an app-side timer. (This product previously ran an app-side trial derived
 // from createdAt that opened *everything* for 7 days with no card; that divergence is removed.)
 //
-// Free vs paid is a SKILL split, mirroring Goethe's scoringMode gate:
-//   • Objective, auto-marked skills (Listening/Reading) → free to any signed-in user.
-//   • The AI-feedback skill (TOPIK II Writing) + the sequenced mock → require hasPaidAccess().
+// ⚠️ WHAT IS ACTUALLY SHIPPED — read this before quoting the split below.
+// The design was a SKILL split (objective Listening/Reading free to any signed-in user; the
+// AI-feedback skill and the sequenced mock paid). That is NOT what runs. Every practice
+// surface — /practice, /practice/[track]/[section], /mock, /mock/[track] — ends a signed-in
+// non-subscribed user with `redirect("/account")` before a section renders (the founder gate).
+// So in the shipped product NOTHING is free to a signed-in learner: the offer is a 7-day
+// card-trial on everything, then $12/month.
+//
+// This comment claimed the split was live, and that claim was load-bearing: /api/ko/submit
+// cited it to justify shipping with no paid check, which left objective marking — and the
+// correctOptionId it discloses — reachable without a subscription. Whichever way this is
+// settled, these move TOGETHER: this file, the four page gates, /api/ko/submit,
+// /api/ko/writing, PracticeGate's copy, and the /practice banner.
 //
 // Paid access requires an active subscription AND a verified email (Goethe parity) — owner
 // and comp bypass both. `needsEmailVerification` distinguishes "paid but unverified" so the UI

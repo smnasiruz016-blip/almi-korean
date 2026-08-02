@@ -8,8 +8,14 @@ export const metadata: Metadata = {
 
 const MESSAGES: Record<string, { heading: string; body: string }> = {
   success: {
+    // "unlocked" is on the network's banned-verb list; an active subscription simply gives you
+    // access, and saying so plainly is also more accurate.
     heading: "Email verified",
-    body: "Thanks — your email is confirmed. TOPIK II Writing feedback and the sequenced mock are now unlocked with an active subscription.",
+    body: "Thanks — your email is confirmed. With an active subscription you now have TOPIK II Writing feedback and the sequenced mock.",
+  },
+  throttled: {
+    heading: "Too many attempts from here",
+    body: "Verification links were opened from this connection many times in a short period. Please wait a few minutes and click the link in your email again.",
   },
   expired: {
     heading: "That link has expired",

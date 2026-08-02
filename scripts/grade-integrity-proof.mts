@@ -110,6 +110,21 @@ console.log("\nPART 2 — GREEN (A1): the live route ignores everything the clie
   assert("an unauthenticated caller is refused", res.status === 401 && j.correct === undefined, `HTTP ${res.status} "${j.error}" — no marks of any kind.`);
 }
 {
+  // The paywall the PAGES enforce, now enforced here too. This route was auth-only on the
+  // stated grounds that Listening/Reading are free — but every practice page redirects a
+  // signed-in non-subscribed user to /account, so that free tier does not exist, and the
+  // reply below discloses correctOptionId for every question posted.
+  process.env.PROOF_UNPAID = "1";
+  const res = await POST(req({ items: [{ itemId: victimId, answers: { [vq.id]: trueOpt } }] }));
+  const j = (await res.json()) as { ok: boolean; error?: string; marks?: unknown };
+  delete process.env.PROOF_UNPAID;
+  assert(
+    "a signed-in caller without a subscription cannot harvest the key",
+    res.status === 402 && j.marks === undefined,
+    `HTTP ${res.status} "${j.error}" — no marks, so no correctOptionId to collect.`,
+  );
+}
+{
   const res = await POST(req({}));
   const j = (await res.json()) as { ok: boolean; error?: string };
   assert("a body with no items is refused", res.status === 400 && j.ok === false, `HTTP ${res.status} "${j.error}".`);

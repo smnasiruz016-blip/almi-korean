@@ -2,11 +2,19 @@ import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { sendWelcomeEmail } from "@/lib/email";
+import { consumeEmailVerificationToken } from "@/lib/verify";
+import { rateLimit, clientKey } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const TOKEN_HEX_RE = /^[a-f0-9]{64}$/;
+
+// A 256-bit token is not guessable, so this is not really brute-force defence — it is there so
+// that an unauthenticated endpoint cannot be used to hammer the database with lookups. 30 per
+// 15 minutes is far more than the handful of clicks a real link gets.
+const LIMIT = 30;
+const WINDOW_MS = 15 * 60 * 1000;
 
 function getBaseUrl(req: Request): string {
   return process.env.NEXT_PUBLIC_APP_URL ?? new URL(req.url).origin;
@@ -19,6 +27,13 @@ export async function GET(req: Request): Promise<NextResponse> {
   const url = new URL(req.url);
   const token = url.searchParams.get("token") ?? "";
   const base = getBaseUrl(req);
+
+  // Over the limit is redirected like any other bad link rather than returned as a 429 JSON
+  // body: this endpoint is reached by CLICKING an email, so the user must land on the branded
+  // page either way. Raw JSON here would be a dead end for a person who did nothing wrong.
+  if (!rateLimit(`verify-email:${clientKey(req)}`, LIMIT, WINDOW_MS).ok) {
+    return NextResponse.redirect(`${base}/verify-email?status=throttled`);
+  }
 
   if (!TOKEN_HEX_RE.test(token)) {
     return NextResponse.redirect(`${base}/verify-email?status=invalid`);
@@ -50,14 +65,7 @@ export async function GET(req: Request): Promise<NextResponse> {
     return NextResponse.redirect(`${base}/verify-email?status=expired`);
   }
 
-  await prisma.user.update({
-    where: { id: user.id },
-    data: {
-      emailVerifiedAt: new Date(),
-      emailVerificationTokenHash: null,
-      emailVerificationExpiresAt: null,
-    },
-  });
+  await consumeEmailVerificationToken(user.id);
 
   // Welcome email — sent once, only on the fresh-verification path (the
   // already-verified branch above returns early, so this never double-sends).

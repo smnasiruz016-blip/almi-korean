@@ -111,8 +111,16 @@ export function Sidebar({
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    // Escape closes the drawer. Without this the only way out was the backdrop, which is
+    // aria-hidden and mouse-only — so a keyboard user who opened the menu was stuck inside it
+    // apart from the small × button. ReviewModal already did this; the drawer did not.
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
     };
   }, [open]);
 

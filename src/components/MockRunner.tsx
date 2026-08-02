@@ -220,12 +220,14 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
             <>
               <p className="text-xs font-semibold uppercase tracking-wide text-almi-coral">Task {writingItem.payload.writing.taskNumber}{writingItem.payload.writing.charMin ? ` · ${writingItem.payload.writing.charMin}–${writingItem.payload.writing.charMax}자` : ""}</p>
               <p className="mt-2 whitespace-pre-line text-almi-text">{writingItem.payload.writing.prompt}</p>
-              <textarea value={writingText} onChange={(e) => setWritingText(e.target.value)} rows={10} placeholder="여기에 작성하세요…" className="mt-3 w-full resize-y rounded-lg border border-almi-line bg-almi-bg p-3 text-almi-ink focus:border-almi-coral focus:outline-none" />
+              {/* The visible label is the task prompt above, which is far too long to read out
+                  as an accessible name — hence an explicit short one rather than aria-labelledby. */}
+              <textarea aria-label={`Your response to Writing Task ${writingItem.payload.writing.taskNumber}`} value={writingText} onChange={(e) => setWritingText(e.target.value)} rows={10} placeholder="여기에 작성하세요…" className="mt-3 w-full resize-y rounded-lg border border-almi-line bg-almi-bg p-3 text-almi-ink focus:border-almi-coral focus:outline-none" />
               <p className="mt-1 text-sm tabular-nums text-almi-text-muted">{Array.from(writingText.trim()).length} 자</p>
               <div className="mt-4 rounded-lg bg-almi-bg-peach/30 p-3 text-sm">
                 <p className="text-almi-text">Real Writing is graded by raters on official criteria; we don&apos;t auto-score it. Self-estimate your Writing out of 100 against those criteria to include it in your total:</p>
                 <div className="mt-2 flex items-center gap-3">
-                  <input type="range" min={0} max={100} value={writingEstimate} onChange={(e) => { setWritingEstimate(Number(e.target.value)); setWritingEstimated(true); }} className="flex-1" />
+                  <input type="range" aria-label="Your own estimate for Writing, out of 100" min={0} max={100} value={writingEstimate} onChange={(e) => { setWritingEstimate(Number(e.target.value)); setWritingEstimated(true); }} className="flex-1" />
                   <span className="w-14 text-right tabular-nums font-semibold text-almi-ink">{writingEstimate}/100</span>
                 </div>
                 {!writingEstimated && <p className="mt-1 text-xs text-almi-text-muted">(optional — leave it and Writing counts as 0)</p>}
@@ -270,7 +272,7 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
         </div>
       )}
 
-      {error && <p className="rounded-xl bg-almi-coral/10 px-4 py-3 text-sm text-almi-coral-deep">{error}</p>}
+      {error && <p role="alert" className="rounded-xl bg-almi-coral/10 px-4 py-3 text-sm text-almi-coral-deep">{error}</p>}
 
       <button onClick={advance} disabled={busy} className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark disabled:opacity-40">
         {busy ? "Marking…" : isLast ? "Finish & see my estimate" : `Next section: ${SECTION_LABEL[sections[step + 1]]}`}

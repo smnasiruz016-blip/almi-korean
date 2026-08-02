@@ -29,18 +29,18 @@ export default async function Page() {
   // single forward path (trial checkout on /account). Logged-out visitors keep the public
   // SEO surface untouched.
   if (user && !hasPaidAccess(user)) redirect("/account");
-  const banner = !user
-    ? null
-    : hasPaidAccess(user)
-      ? "AlmiKorean Pro active — Writing feedback included."
-      : "Listening and Reading are free. Writing feedback (TOPIK II) is part of Pro — 7-day free trial (card saved, not charged), then $12/month.";
+  // Only a paid user reaches this line — the redirect above is unconditional for everyone else.
+  // The removed branch offered "Listening and Reading are free" to non-subscribers, which was
+  // both unreachable and untrue.
+  const banner = user ? "AlmiKorean Pro active — Writing feedback included." : null;
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Practice</p>
       <h1 className="mt-3 text-3xl font-bold text-almi-ink">Choose your track</h1>
       <p className="mt-4 text-almi-text">
-        Sit either track directly — TOPIK II does not require TOPIK I first. Listening and Reading are auto-marked; Writing uses a
-        live character counter against each task&apos;s band. Your level comes from the total, so a strong section carries a weaker one.
+        Sit either track directly — TOPIK II does not require TOPIK I first. Listening and Reading are auto-marked; Writing gives
+        you criteria-based feedback and a live character counter against each task&apos;s band. Your level comes from the total, so a
+        strong section carries a weaker one.
       </p>
       {banner && <p className="mt-4 rounded-xl border border-almi-line bg-almi-bg-peach/40 px-4 py-2 text-sm text-almi-text">{banner}</p>}
       <div className="mt-8 space-y-4">

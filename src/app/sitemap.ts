@@ -30,6 +30,7 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
       entry("/mock/topik-i", 0.6),
       entry("/mock/topik-ii", 0.6),
       entry("/about", 0.5),
+      entry("/privacy", 0.3),
       // Core honesty/explainer pages (§5) — high-intent, zero-fabrication.
       entry("/topik/levels", 0.8),
       entry("/topik/how-scoring-works", 0.8),

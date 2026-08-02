@@ -132,11 +132,11 @@ export function ReviewForm({ onSuccess }: { onSuccess?: () => void }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="What worked well? Which part helped most?"
-          className="mt-1 w-full rounded-lg border border-almi-bg-peach bg-almi-paper px-3 py-2 text-sm text-almi-ink outline-none focus:border-almi-coral"
+          className="mt-1 w-full rounded-lg border border-almi-bg-peach bg-almi-paper px-3 py-2 text-sm text-almi-ink outline-none focus:border-almi-coral focus-visible:ring-2 focus-visible:ring-almi-coral/40"
         />
       </div>
 
-      {error && <p className="text-sm text-almi-coral-deep">{error}</p>}
+      {error && <p role="alert" className="text-sm text-almi-coral-deep">{error}</p>}
 
       <div className="flex justify-end">
         <button

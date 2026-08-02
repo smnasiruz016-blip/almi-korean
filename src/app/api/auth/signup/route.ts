@@ -4,6 +4,13 @@ import { prisma } from "@/lib/prisma";
 import { hashPassword, createSession } from "@/lib/auth";
 import { issueEmailVerificationToken, verifyUrlFor } from "@/lib/verify";
 import { sendEmailVerification } from "@/lib/email";
+import { rateLimit, clientKey, tooManyRequests } from "@/lib/rate-limit";
+
+// 5 accounts per hour per source. A real person creates one. This bounds both the account
+// table and the verification emails signup sends — every unthrottled signup was also a free
+// send against the Resend quota, addressed to whatever the caller typed.
+const LIMIT = 5;
+const WINDOW_MS = 60 * 60 * 1000;
 
 const schema = z.object({
   email: z.string().email(),
@@ -12,6 +19,9 @@ const schema = z.object({
 });
 
 export async function POST(req: Request) {
+  const rl = rateLimit(`signup:${clientKey(req)}`, LIMIT, WINDOW_MS);
+  if (!rl.ok) return tooManyRequests("Too many accounts created from here. Please try again later.", rl.retryAfterSec);
+
   const parsed = schema.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "Invalid email or password (min 8 chars)." }, { status: 400 });
   const { email, password, name } = parsed.data;

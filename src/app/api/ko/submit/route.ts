@@ -9,17 +9,27 @@
 // also the only place they are ever disclosed. Because a section is submitted in one call,
 // there is no per-item reveal for a client to harvest before committing its answers.
 //
-// ── WHY AUTH-ONLY, NOT PAID-ONLY ──
-// AlmiKorean's access model is a SKILL split (lib/access.ts): the objective, auto-marked
-// sections — Listening and Reading — are free to any signed-in user, and only TOPIK II
-// Writing and the sequenced mock require hasPaidAccess(). Writing is refused upstream because
-// it has no key. So the only thing this route can mark is already free to a signed-in learner,
-// and adding a 402 here would contradict the product's own stated free tier rather than
-// protect anything. This is a deliberate divergence from the AlmiJapanese route it ports,
-// where every practice skill is paid.
+// ── WHY THIS IS PAID, AND WHY IT SAID OTHERWISE ──
+// This route was auth-only, on the stated grounds that lib/access.ts describes a SKILL split
+// in which Listening and Reading are free to any signed-in user. That comment was reasoning
+// from a doc-comment instead of from the code. Every practice surface — /practice,
+// /practice/[track]/[section], /mock, /mock/[track] — ends a signed-in non-subscribed user
+// with `redirect("/account")` before any section renders. So the free tier the comment
+// protected does not exist: in the shipped product a signed-in learner without a subscription
+// sees no practice of any kind.
+//
+// That made the paywall UI-only for objective marking. The page redirected, this route did
+// not, and its reply DISCLOSES THE CORRECT OPTION for every question posted — so anyone who
+// could name item ids could harvest the answer key without ever holding a subscription. The
+// ids are sha256({track, section, title}) over machine-slug titles, which is an obstacle, not
+// an access control.
+//
+// It now checks the same thing the pages check. If the free tier is ever actually opened, this
+// is one of the places that has to change WITH it — see lib/access.ts.
 
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
+import { hasPaidAccess } from "@/lib/access";
 import { gradeAttempt, type AttemptBody } from "@/lib/topik/grade-attempt";
 
 export const runtime = "nodejs";
@@ -28,6 +38,12 @@ export async function POST(req: Request): Promise<NextResponse> {
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
+  }
+  if (!hasPaidAccess(user)) {
+    return NextResponse.json(
+      { ok: false, error: "Start your free trial to practise." },
+      { status: 402 },
+    );
   }
 
   let body: AttemptBody;

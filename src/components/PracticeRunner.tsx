@@ -117,7 +117,7 @@ export function PracticeRunner({ items, track, section }: { items: RunnerItem[];
         </div>
       ))}
 
-      {error && <p className="rounded-xl bg-almi-coral/10 px-4 py-3 text-sm text-almi-coral-deep">{error}</p>}
+      {error && <p role="alert" className="rounded-xl bg-almi-coral/10 px-4 py-3 text-sm text-almi-coral-deep">{error}</p>}
 
       {!submitted ? (
         <button

@@ -25,8 +25,14 @@ export function GlobalFooter() {
           ))}
         </nav>
 
-        <div className="mt-10 border-t border-white/15 pt-6 text-center text-xs text-white/60">
-          © {new Date().getFullYear()} AlmiWorld. All rights reserved.
+        {/* Product-local links only. FAMILY_NAV above is the shared, single-source family list
+            and is not touched here — a privacy policy belongs to this product, not the family. */}
+        <div className="mt-10 flex flex-col items-center gap-3 border-t border-white/15 pt-6 text-center text-xs text-white/60 sm:flex-row sm:justify-between sm:text-left">
+          <p>© {new Date().getFullYear()} AlmiWorld. All rights reserved.</p>
+          <nav aria-label="Legal" className="flex gap-4">
+            <a href="/privacy" className="transition-colors hover:text-[#D4A24C]">Privacy</a>
+            <a href="/about" className="transition-colors hover:text-[#D4A24C]">About</a>
+          </nav>
         </div>
       </div>
     </footer>

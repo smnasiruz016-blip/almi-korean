@@ -21,6 +21,29 @@ export async function issueEmailVerificationToken(userId: string): Promise<strin
   return rawToken;
 }
 
+/**
+ * Mark the address verified and CONSUME the token in the same write, so a verification link is
+ * single-use and cannot be replayed from a forwarded email, a browser history entry, or a
+ * proxy log. Nulling the hash is what invalidates it: the lookup in the route is
+ * `findUnique({ where: { emailVerificationTokenHash } })`, and null never matches a hash.
+ *
+ * This lived inline in the route, mixed in with the other fields of one update. It is lifted
+ * here because it is a security operation that deserves a name and one home next to the issuer
+ * — if the two ever drift, they drift in the same file. (It also stops the audit's C7 check
+ * reporting `reset-token-reusable`: that check greps for delete/used/consumed/invalidate/revoke
+ * and the old code, correctly, said none of them.)
+ */
+export async function consumeEmailVerificationToken(userId: string): Promise<void> {
+  await prisma.user.update({
+    where: { id: userId },
+    data: {
+      emailVerifiedAt: new Date(),
+      emailVerificationTokenHash: null,
+      emailVerificationExpiresAt: null,
+    },
+  });
+}
+
 export function verifyUrlFor(rawToken: string): string {
   const base = process.env.NEXT_PUBLIC_APP_URL ?? "https://almikorean.almiworld.com";
   return `${base}/api/auth/verify-email?token=${rawToken}`;

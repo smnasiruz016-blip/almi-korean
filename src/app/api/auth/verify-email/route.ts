@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { sendWelcomeEmail } from "@/lib/email";
 import { consumeEmailVerificationToken } from "@/lib/verify";
 import { rateLimit, clientKey } from "@/lib/rate-limit";
+import { logRefusal, logError } from "@/lib/observability";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -32,6 +33,7 @@ export async function GET(req: Request): Promise<NextResponse> {
   // body: this endpoint is reached by CLICKING an email, so the user must land on the branded
   // page either way. Raw JSON here would be a dead end for a person who did nothing wrong.
   if (!rateLimit(`verify-email:${clientKey(req)}`, LIMIT, WINDOW_MS).ok) {
+    logRefusal({ route: "/api/auth/verify-email", status: 429, reason: "rate-limited", req });
     return NextResponse.redirect(`${base}/verify-email?status=throttled`);
   }
 
@@ -73,9 +75,7 @@ export async function GET(req: Request): Promise<NextResponse> {
   try {
     await sendWelcomeEmail({ to: user.email, name: user.name });
   } catch (err) {
-    console.error("[verify-email] welcome send failed", {
-      message: err instanceof Error ? err.message : String(err),
-    });
+    logError({ route: "/api/auth/verify-email", op: "send-welcome-email", error: err, req, userId: user.id });
   }
 
   return NextResponse.redirect(`${base}/verify-email?status=success`);

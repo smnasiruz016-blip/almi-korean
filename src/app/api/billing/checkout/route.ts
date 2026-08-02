@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
+import { logRefusal } from "@/lib/observability";
 import { isBillingEnabled } from "@/lib/access";
 import { createCheckoutSession } from "@/lib/stripe";
 
-export async function POST() {
+export async function POST(req: Request) {
   const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ error: "Please log in first." }, { status: 401 });
+  if (!user) {
+    logRefusal({ route: "/api/billing/checkout", status: 401, reason: "no-session", req });
+    return NextResponse.json({ error: "Please log in first." }, { status: 401 });
+  }
   if (!isBillingEnabled()) return NextResponse.json({ error: "Billing is not enabled yet." }, { status: 503 });
   try {
     const url = await createCheckoutSession({ id: user.id, email: user.email, name: user.name });

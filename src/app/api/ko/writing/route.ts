@@ -21,6 +21,7 @@ import { hasPaidAccess } from "@/lib/access";
 import { getItemByStableId } from "@/lib/items";
 import { isWritingFeedbackEnabled } from "@/lib/ai/anthropic-client";
 import { evaluateWriting } from "@/lib/topik/writing-grader";
+import { logRefusal, logError } from "@/lib/observability";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -43,9 +44,11 @@ export interface WritingBody {
 export async function POST(req: Request): Promise<NextResponse> {
   const user = await getCurrentUser();
   if (!user) {
+    logRefusal({ route: "/api/ko/writing", status: 401, reason: "no-session", req });
     return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
   }
   if (!hasPaidAccess(user)) {
+    logRefusal({ route: "/api/ko/writing", status: 402, reason: "not-paid", req, userId: user.id });
     return NextResponse.json(
       { ok: false, error: "AI Writing feedback is part of the paid plan." },
       { status: 402 },
@@ -72,6 +75,7 @@ export async function POST(req: Request): Promise<NextResponse> {
   if (!itemId) return NextResponse.json({ ok: false, error: "Missing itemId" }, { status: 400 });
   if (!text) return NextResponse.json({ ok: false, error: "Write something first." }, { status: 400 });
   if (Array.from(text).length > MAX_CHARS) {
+    logRefusal({ route: "/api/ko/writing", status: 413, reason: "over-max-chars", req, userId: user.id });
     return NextResponse.json({ ok: false, error: "That response is too long to assess." }, { status: 413 });
   }
 
@@ -91,6 +95,7 @@ export async function POST(req: Request): Promise<NextResponse> {
     where: { userId: user.id, section: "WRITING", status: "SCORED", createdAt: { gte: since } },
   });
   if (recent >= HOURLY_LIMIT) {
+    logRefusal({ route: "/api/ko/writing", status: 429, reason: "hourly-limit", req, userId: user.id });
     return NextResponse.json(
       { ok: false, error: "You've submitted a lot of Writing tasks in the past hour. Try again shortly." },
       { status: 429 },
@@ -105,7 +110,9 @@ export async function POST(req: Request): Promise<NextResponse> {
       text,
     });
   } catch (e) {
-    console.error("[ko/writing] grading failed:", e);
+    // The 400 that took this feature down on its first real call surfaced through exactly
+    // this line. Structured now, so the next one is filterable rather than buried.
+    logError({ route: "/api/ko/writing", op: "grade-writing", error: e, req, userId: user.id });
     return NextResponse.json(
       { ok: false, error: "We couldn't assess that just now. Please try again." },
       { status: 502 },
@@ -143,7 +150,7 @@ export async function POST(req: Request): Promise<NextResponse> {
       });
     }
   } catch (e) {
-    console.error("[ko/writing] persist failed:", e);
+    logError({ route: "/api/ko/writing", op: "persist-attempt", error: e, req, userId: user.id });
   }
 
   return NextResponse.json({

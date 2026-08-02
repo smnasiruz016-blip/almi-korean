@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
+import { logRefusal } from "@/lib/observability";
 import { isBillingEnabled } from "@/lib/access";
 import { createPortalSession } from "@/lib/stripe";
 
-export async function POST() {
+export async function POST(req: Request) {
   const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ error: "Please log in first." }, { status: 401 });
+  if (!user) {
+    logRefusal({ route: "/api/billing/portal", status: 401, reason: "no-session", req });
+    return NextResponse.json({ error: "Please log in first." }, { status: 401 });
+  }
   if (!isBillingEnabled() || !user.stripeCustomerId) {
     return NextResponse.json({ error: "No subscription to manage yet." }, { status: 400 });
   }

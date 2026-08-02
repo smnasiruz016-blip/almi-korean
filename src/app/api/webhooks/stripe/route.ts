@@ -4,6 +4,7 @@ import { getStripe } from "@/lib/stripe";
 import { verifyRouterSignature } from "@/lib/router-auth";
 import { prisma } from "@/lib/prisma";
 import { sendSubscriptionConfirmationEmail } from "@/lib/email";
+import { logRefusal, logError } from "@/lib/observability";
 
 // Stripe webhook: keep the subscription status in sync so hasPaidAccess() is accurate.
 // Accepts EITHER an almi-billing-router HMAC (a forwarded event) OR a direct Stripe signature.
@@ -18,6 +19,9 @@ export async function POST(req: Request) {
     try {
       event = getStripe().webhooks.constructEvent(body, req.headers.get("stripe-signature") ?? "", secret);
     } catch {
+      // A rejected signature is a security event in its own right: either a misrouted sibling
+      // or somebody posting forged billing events at us. It was silent before.
+      logRefusal({ route: "/api/webhooks/stripe", status: 403, reason: "bad-signature", req });
       return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
     }
   }
@@ -62,9 +66,9 @@ export async function POST(req: Request) {
             });
           }
         } catch (err) {
-          console.error("[stripe-webhook] subscription confirmation email failed", {
-            message: err instanceof Error ? err.message : String(err),
-          });
+          // Was a bare console.error: it bypassed the redactor, and a Stripe SDK error can
+          // echo the customer's email straight back in its message.
+          logError({ route: "/api/webhooks/stripe", op: "send-subscription-confirmation", error: err });
         }
       }
       break;

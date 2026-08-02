@@ -24,6 +24,7 @@
     "gate:item-id:red": "tsx scripts/item-id-collision-gate.ts --red",
     "proof:grade-integrity": "tsx scripts/grade-integrity-proof.mts",
     "proof:writing-grader": "tsx scripts/writing-grader-proof.mts",
+    "proof:logging": "tsx scripts/logging-proof.mts",
     "gate:audio": "tsx scripts/audio-coverage-gate.ts",
     "audio:upload": "tsx scripts/audio/upload-blob.mts",
     "audio:upload:dry": "tsx scripts/audio/upload-blob.mts --dry-run"

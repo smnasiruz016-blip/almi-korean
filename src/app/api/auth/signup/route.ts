@@ -5,6 +5,7 @@ import { hashPassword, createSession } from "@/lib/auth";
 import { issueEmailVerificationToken, verifyUrlFor } from "@/lib/verify";
 import { sendEmailVerification } from "@/lib/email";
 import { rateLimit, clientKey, tooManyRequests } from "@/lib/rate-limit";
+import { logRefusal, logError } from "@/lib/observability";
 
 // 5 accounts per hour per source. A real person creates one. This bounds both the account
 // table and the verification emails signup sends — every unthrottled signup was also a free
@@ -20,7 +21,10 @@ const schema = z.object({
 
 export async function POST(req: Request) {
   const rl = rateLimit(`signup:${clientKey(req)}`, LIMIT, WINDOW_MS);
-  if (!rl.ok) return tooManyRequests("Too many accounts created from here. Please try again later.", rl.retryAfterSec);
+  if (!rl.ok) {
+    logRefusal({ route: "/api/auth/signup", status: 429, reason: "rate-limited", req });
+    return tooManyRequests("Too many accounts created from here. Please try again later.", rl.retryAfterSec);
+  }
 
   const parsed = schema.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "Invalid email or password (min 8 chars)." }, { status: 400 });
@@ -40,7 +44,7 @@ export async function POST(req: Request) {
     const token = await issueEmailVerificationToken(user.id);
     await sendEmailVerification({ to: user.email, verifyUrl: verifyUrlFor(token) });
   } catch (e) {
-    console.error("[signup] verification email failed:", e);
+    logError({ route: "/api/auth/signup", op: "send-verification-email", error: e, req, userId: user.id });
   }
 
   return NextResponse.json({ ok: true });

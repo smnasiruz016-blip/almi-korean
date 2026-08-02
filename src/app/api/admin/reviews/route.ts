@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
 import { canAccessAdmin } from "@/lib/access";
+import { logRefusal } from "@/lib/observability";
 
 export const runtime = "nodejs";
 
@@ -13,6 +14,7 @@ type Body = { id?: unknown; approved?: unknown };
 export async function PATCH(req: Request): Promise<NextResponse> {
   const user = await getCurrentUser();
   if (!user || !canAccessAdmin(user.email)) {
+    logRefusal({ route: "/api/admin/reviews", status: 403, reason: "not-admin", req, userId: user?.id });
     return NextResponse.json({ ok: false, error: "Forbidden" }, { status: 403 });
   }
 

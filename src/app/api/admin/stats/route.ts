@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { logRefusal } from "@/lib/observability";
 
 // Owner-only network stats for AlmiWorld HQ. Read-only, this app's OWN DB only.
 // Guarded by ADMIN_API_SECRET (header x-admin-secret) — FAIL-CLOSED: if the
@@ -10,6 +11,9 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   const secret = process.env.ADMIN_API_SECRET;
   if (!secret || req.headers.get("x-admin-secret") !== secret) {
+    // A machine-to-machine endpoint guarded by a shared secret: a refusal here is either a
+    // misconfigured sibling or somebody guessing at it. Either way it should be visible.
+    logRefusal({ route: "/api/admin/stats", status: 401, reason: secret ? "bad-secret" : "secret-unset", req });
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 

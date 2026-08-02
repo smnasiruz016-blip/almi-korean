@@ -31,15 +31,21 @@ import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess } from "@/lib/access";
 import { gradeAttempt, type AttemptBody } from "@/lib/topik/grade-attempt";
+import { logRefusal } from "@/lib/observability";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request): Promise<NextResponse> {
   const user = await getCurrentUser();
+  // Both refusals are logged: this route's reply discloses correctOptionId for every question
+  // posted, so a run of 401s or 402s against it is somebody probing for the answer key, and
+  // that is exactly the pattern that used to leave no trace at all.
   if (!user) {
+    logRefusal({ route: "/api/ko/submit", status: 401, reason: "no-session", req });
     return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
   }
   if (!hasPaidAccess(user)) {
+    logRefusal({ route: "/api/ko/submit", status: 402, reason: "not-paid", req, userId: user.id });
     return NextResponse.json(
       { ok: false, error: "Start your free trial to practise." },
       { status: 402 },

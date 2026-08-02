@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/lib/auth";
 import { issueEmailVerificationToken, verifyUrlFor, RESEND_COOLDOWN_MS } from "@/lib/verify";
 import { sendEmailVerification } from "@/lib/email";
+import { logError } from "@/lib/observability";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,7 +32,7 @@ export async function POST(): Promise<Response> {
   try {
     await sendEmailVerification({ to: user.email, verifyUrl: verifyUrlFor(rawToken) });
   } catch (e) {
-    console.error("[resend-verification] email send failed:", e);
+    logError({ route: "/api/auth/resend-verification", op: "send-verification-email", error: e, userId: user.id });
     return Response.json(
       { ok: false, error: "Email send failed. Try again in a moment." },
       { status: 500 },

@@ -55,6 +55,8 @@ registerHooks({
 });
 
 const { BANK, stableItemId } = await import("../src/lib/items");
+const { lintOutputSchema } = await import("../src/lib/ai/schema-lint");
+const { WRITING_OUTPUT_SCHEMA } = await import("../src/lib/topik/writing-grader");
 const { asWritingGraded } = await import("../src/lib/topik/writing-response");
 const { POST } = await import("../src/app/api/ko/writing/route");
 // The stubs keep their mutable state on globalThis — see the note in anthropic-stub.mts.
@@ -219,8 +221,8 @@ console.log("\nPART 2 — the task is loaded server-side; the client supplies on
   await post({ itemId: stableItemId(t54), text: ko(650) });
   const s54 = anth.__calls()[0].system;
   assert(
-    "Task 51 is told it is a blank completion and to return null for organisation",
-    /BLANK COMPLETION/.test(s51) && /organization: return null/.test(s51) && !/글의 전개 구조/.test(s51),
+    "Task 51 is told it is a blank completion and to return the not-applicable sentinel",
+    /BLANK COMPLETION/.test(s51) && /organization: return "not-applicable"/.test(s51) && !/글의 전개 구조/.test(s51),
     `the 51 prompt names ㉠/㉡ and suppresses the organisation band.`,
   );
   assert(
@@ -270,7 +272,10 @@ console.log("\nPART 3 — the character band is measured and penalised in code, 
 }
 {
   anth.__reset();
-  anth.__setBands({ contentAndTask: "strong", organization: null, languageUse: "limited" });
+  // The WIRE value for "no organisation band" is now the sentinel, not null — see the
+  // NOT_APPLICABLE note in writing-grader.ts. Zod maps it back to null, which is what the
+  // assertion below checks.
+  anth.__setBands({ contentAndTask: "strong", organization: "not-applicable", languageUse: "limited" });
   const r = await post({ itemId: stableItemId(t51), text: "㉠ 가나다\n㉡ 라마바" });
   assert(
     "Tasks 51/52 average TWO criteria, and organisation stays null",
@@ -334,6 +339,79 @@ console.log("\nPART 4 — malformed replies are refused, in both directions");
     "a null organisation is ACCEPTED (Tasks 51/52), not treated as malformed",
     asWritingGraded({ ...valid, taskNumber: 51, band: null, feedback: { ...valid.feedback, organization: null } }) !== null,
     `organisation null is the documented shape for a blank completion.`,
+  );
+}
+
+// ── PART 4b — the schema the API will actually judge ─────────────────────────
+// This part exists because everything above it passed while the feature was dead.
+//
+// The first real call came back 400: "Enum value 'strong' does not match declared type
+// ['string','null']". Schema validation runs BEFORE inference, so it failed identically every
+// time — not flaky, never once working. And the proof could not have caught it: it stubs the
+// network, so the only component that judges the schema was the only component absent.
+//
+// The fix is not to call the real API from a proof (that bills on every run). It is to encode
+// the validator's documented rules and check the REAL exported schema against them.
+console.log("\nPART 4b — the output schema carries nothing known to be rejected");
+{
+  assert(
+    "the live schema lints clean",
+    lintOutputSchema(WRITING_OUTPUT_SCHEMA).length === 0,
+    `0 problems in the schema this module actually sends: ${JSON.stringify(lintOutputSchema(WRITING_OUTPUT_SCHEMA))}`,
+  );
+
+  // SEEN RED — the exact schema that took the feature down, byte for byte.
+  const shipped = {
+    type: "object",
+    properties: {
+      organization: { type: ["string", "null"], enum: ["strong", "adequate", "limited", null] },
+    },
+    required: ["organization"],
+    additionalProperties: false,
+  };
+  // NOTE ON THE API'S MESSAGE. It said "Enum value 'strong' does not match declared type
+  // ['string','null']" — but by JSON Schema that enum IS valid against that union: "strong"
+  // is a string and null is a null. The message names the enum; the rule it is really
+  // enforcing is that the union form of `type` is not supported at all. So the lint reports
+  // the array type, and reporting a second enum problem here would be reproducing the API's
+  // misleading wording rather than the defect.
+  const red = lintOutputSchema(shipped);
+  assert(
+    "SEEN RED — the schema that actually 400'd is caught",
+    red.length === 1 && /type is an array/.test(red[0]),
+    `${red.length} problem: ${red[0]}`,
+  );
+  // …and the enum/type check does fire when the values genuinely do not match.
+  const mismatched = lintOutputSchema({ type: "string", enum: ["strong", 3, null] });
+  assert(
+    "SEEN RED — enum values that really do mismatch the declared type are caught",
+    mismatched.length === 2,
+    `3 (number) and null (null) both reported against type "string".`,
+  );
+
+  // SEEN RED — the constraints the family already learned about the hard way.
+  assert(
+    "SEEN RED — numeric and length constraints are caught",
+    lintOutputSchema({ type: "object", additionalProperties: false, properties: {
+      n: { type: "integer", minimum: 0, maximum: 100 },
+      xs: { type: "array", items: { type: "string" }, minItems: 1, maxItems: 3 },
+    } }).length === 4,
+    `minimum/maximum/minItems/maxItems all reported.`,
+  );
+  assert("SEEN RED — a missing additionalProperties:false is caught",
+    lintOutputSchema({ type: "object", properties: {} }).length === 1, `reported.`);
+  assert("SEEN RED — required naming an undeclared property is caught",
+    lintOutputSchema({ type: "object", additionalProperties: false, properties: { a: { type: "string" } }, required: ["a", "b"] }).length === 1,
+    `"b" is required but never described.`);
+
+  // CONTROL — the documented anyOf form must NOT be flagged. A lint that refuses the correct
+  // alternative would push the next author straight back to the broken one.
+  assert(
+    "the documented anyOf nullable form lints clean",
+    lintOutputSchema({ type: "object", additionalProperties: false, properties: {
+      band: { anyOf: [{ type: "string", enum: ["strong"] }, { type: "null" }] },
+    } }).length === 0,
+    `anyOf is supported by the validator and is not reported.`,
   );
 }
 

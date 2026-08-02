@@ -40,12 +40,37 @@ import type { WritingSpec } from "@/lib/items";
 const BAND = z.enum(["strong", "adequate", "limited"]);
 export type Band = z.infer<typeof BAND>;
 
+// ── HOW "NO ORGANISATION BAND" TRAVELS ON THE WIRE ──────────────────────────
+// Tasks 51/52 have no organisation band. The obvious encoding is JSON null, and the obvious
+// schema for it is what shipped first:
+//
+//     organization: { type: ["string", "null"], enum: ["strong", "adequate", "limited", null] }
+//
+// The API rejected that with a 400 on the FIRST real call — schema validation happens before
+// inference, so it failed identically every time and no learner ever got feedback:
+//
+//     output_config.format.schema: Invalid schema:
+//       Enum value 'strong' does not match declared type '['string', 'null']'
+//
+// The validator checks each enum value against the declared type and does not accept the
+// array form of `type` alongside `enum`. The documented alternative is `anyOf`, which the
+// structured-output docs do list as supported — but this uses a plain string enum with an
+// explicit sentinel instead, because the three sibling properties below have exactly that
+// shape and were accepted by the very request that rejected this one. That is proof against
+// this API, this model and this account, rather than a second guess.
+//
+// The sentinel never escapes this module: Zod maps it straight back to null, so
+// WritingFeedback.organization is still `Band | null` and nothing downstream changed.
+const NOT_APPLICABLE = "not-applicable";
+
 // Zod validates AFTER the model returns. The JSON schema sent to the API stays plainly typed:
 // minimum/maximum/minItems/maxItems are rejected by the structured-output validator, so the
 // shape is enforced there and the bounds are enforced here.
 const feedbackSchema = z.object({
   contentAndTask: BAND,
-  organization: BAND.nullable(),
+  organization: z
+    .union([BAND, z.literal(NOT_APPLICABLE), z.null()])
+    .transform((v) => (v === NOT_APPLICABLE ? null : v)),
   languageUse: BAND,
   strengths: z.array(z.string()),
   improvements: z.array(z.string()),
@@ -58,9 +83,9 @@ const OUTPUT_SCHEMA = {
   properties: {
     contentAndTask: { type: "string", enum: ["strong", "adequate", "limited"] },
     organization: {
-      type: ["string", "null"],
-      enum: ["strong", "adequate", "limited", null],
-      description: "null for Tasks 51 and 52, which have no discourse to organise",
+      type: "string",
+      enum: ["strong", "adequate", "limited", NOT_APPLICABLE],
+      description: `"${NOT_APPLICABLE}" for Tasks 51 and 52, which have no discourse to organise`,
     },
     languageUse: { type: "string", enum: ["strong", "adequate", "limited"] },
     strengths: { type: "array", items: { type: "string" }, description: "one to three, short and specific" },
@@ -70,6 +95,10 @@ const OUTPUT_SCHEMA = {
   required: ["contentAndTask", "organization", "languageUse", "strengths", "improvements", "overallComment"],
   additionalProperties: false,
 } as const;
+
+// Exported so the offline proof can lint the REAL schema this module sends, not a copy of it.
+// A copy would have agreed with itself right through the 400 that took this feature down.
+export const WRITING_OUTPUT_SCHEMA: unknown = OUTPUT_SCHEMA;
 
 const BAND_VALUE: Record<Band, number> = { strong: 1.0, adequate: 0.6, limited: 0.3 };
 
@@ -109,7 +138,7 @@ Rate each criterion "strong", "adequate", or "limited":
 - languageUse (언어사용): grammar, vocabulary range and precision, spelling, and register — including whether the 문어체/격식체 expected by this task is sustained.${
     hasOrganisation
       ? `\n- organization (글의 전개 구조): is the writing organised and connected so it is easy to follow — clear progression, appropriate connectives?`
-      : `\n- organization: return null. Tasks 51 and 52 are short blank completions with no discourse to organise; do not invent a band for it.`
+      : `\n- organization: return "${NOT_APPLICABLE}". Tasks 51 and 52 are short blank completions with no discourse to organise; do not invent a band for it.`
   }
 
 Judge only what the candidate actually wrote. Do not reward intent that is not on the page, and do not penalise the candidate for anything the task did not ask for.

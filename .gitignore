@@ -13,3 +13,9 @@ next-env.d.ts
 /scripts/seed/gen/
 
 .vercel
+
+# Local audio render artefacts — MP3s live in Vercel Blob, not the repo
+.audio-wav/
+.audio-mp3/
+__pycache__/
+*.pyc

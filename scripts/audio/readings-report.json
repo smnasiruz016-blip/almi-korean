@@ -1,0 +1,1328 @@
+{
+  "engine": "MeloTTS KR (MIT)",
+  "male_shift_semitones": 7.0,
+  "bitrate": "48k",
+  "g2p_annotation_reconstruction": {
+    "ok": 194,
+    "total": 194
+  },
+  "items": 36,
+  "total_seconds": 963.0,
+  "total_mp3_bytes": 5796024,
+  "clips": [
+    {
+      "title": "TI-L-01-greeting-morning",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 10.3,
+      "mp3_bytes": 62449,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 13,
+          "f0": 128.6
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 188.3
+        }
+      ]
+    },
+    {
+      "title": "TI-L-02-cafe-order",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 5.7,
+      "mp3_bytes": 34707,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 7,
+          "f0": 190.5
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 149.5
+        }
+      ]
+    },
+    {
+      "title": "TI-L-03-family-count",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 11.2,
+      "mp3_bytes": 67622,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 132.4
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 30,
+          "f0": 188.3
+        }
+      ]
+    },
+    {
+      "title": "TI-L-04-time-meeting",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 6.1,
+      "mp3_bytes": 37058,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 13,
+          "f0": 200.7
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 9,
+          "f0": 126.4
+        }
+      ]
+    },
+    {
+      "title": "TI-L-05-weather-today",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 8.1,
+      "mp3_bytes": 49284,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 132.4
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 204.2
+        }
+      ]
+    },
+    {
+      "title": "TI-L-06-shopping-fruit",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 7.6,
+      "mp3_bytes": 45992,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 15,
+          "f0": 193.8
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 171.7
+        }
+      ]
+    },
+    {
+      "title": "TI-L-07-introduction-job",
+      "track": "TOPIK_I",
+      "turns": 2,
+      "seconds": 8.0,
+      "mp3_bytes": 48814,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 10,
+          "f0": 137.0
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 205.3
+        }
+      ]
+    },
+    {
+      "title": "TI-L-08-restaurant-order",
+      "track": "TOPIK_I",
+      "turns": 3,
+      "seconds": 18.9,
+      "mp3_bytes": 113858,
+      "genders": [
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 194.9
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 29,
+          "f0": 136.3
+        },
+        {
+          "turn": 3,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 23,
+          "f0": 198.9
+        }
+      ]
+    },
+    {
+      "title": "TI-L-09-directions-bank",
+      "track": "TOPIK_I",
+      "turns": 3,
+      "seconds": 17.0,
+      "mp3_bytes": 102417,
+      "genders": [
+        "male",
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 150.8
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 25,
+          "f0": 210.1
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 17,
+          "f0": 125.0
+        }
+      ]
+    },
+    {
+      "title": "TI-L-10-transport-subway",
+      "track": "TOPIK_I",
+      "turns": 3,
+      "seconds": 15.1,
+      "mp3_bytes": 90818,
+      "genders": [
+        "male",
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 170.7
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 29,
+          "f0": 222.6
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 17,
+          "f0": 138.2
+        }
+      ]
+    },
+    {
+      "title": "TI-L-11-hobby-weekend",
+      "track": "TOPIK_I",
+      "turns": 3,
+      "seconds": 13.5,
+      "mp3_bytes": 81571,
+      "genders": [
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 12,
+          "f0": 212.6
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 21,
+          "f0": 161.6
+        },
+        {
+          "turn": 3,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 22,
+          "f0": 207.7
+        }
+      ]
+    },
+    {
+      "title": "TI-L-12-shopping-price",
+      "track": "TOPIK_I",
+      "turns": 4,
+      "seconds": 13.3,
+      "mp3_bytes": 80317,
+      "genders": [
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 9,
+          "f0": 134.7
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 15,
+          "f0": 212.6
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 133.9
+        },
+        {
+          "turn": 4,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 14,
+          "f0": 191.0
+        }
+      ]
+    },
+    {
+      "title": "TI-L-13-phone-appointment",
+      "track": "TOPIK_I",
+      "turns": 3,
+      "seconds": 15.2,
+      "mp3_bytes": 91602,
+      "genders": [
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 201.8
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 21,
+          "f0": 149.0
+        },
+        {
+          "turn": 3,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 16,
+          "f0": 213.8
+        }
+      ]
+    },
+    {
+      "title": "TI-L-14-weather-plan-change",
+      "track": "TOPIK_I",
+      "turns": 4,
+      "seconds": 17.7,
+      "mp3_bytes": 106492,
+      "genders": [
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 12,
+          "f0": 140.7
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 23,
+          "f0": 204.2
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 15,
+          "f0": 135.1
+        },
+        {
+          "turn": 4,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 15,
+          "f0": 187.2
+        }
+      ]
+    },
+    {
+      "title": "TI-L-15-birthday-gift",
+      "track": "TOPIK_I",
+      "turns": 4,
+      "seconds": 20.8,
+      "mp3_bytes": 125143,
+      "genders": [
+        "female",
+        "male",
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 29,
+          "f0": 237.2
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 10,
+          "f0": 144.4
+        },
+        {
+          "turn": 3,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 26,
+          "f0": 255.7
+        },
+        {
+          "turn": 4,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 22,
+          "f0": 155.2
+        }
+      ]
+    },
+    {
+      "title": "TI-L-16-lost-umbrella",
+      "track": "TOPIK_I",
+      "turns": 4,
+      "seconds": 19.6,
+      "mp3_bytes": 118247,
+      "genders": [
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 23,
+          "f0": 128.6
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 20,
+          "f0": 192.7
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 17,
+          "f0": 125.0
+        },
+        {
+          "turn": 4,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 12,
+          "f0": 226.5
+        }
+      ]
+    },
+    {
+      "title": "TI-L-17-hospital-reservation",
+      "track": "TOPIK_I",
+      "turns": 5,
+      "seconds": 19.9,
+      "mp3_bytes": 119658,
+      "genders": [
+        "female",
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 19,
+          "f0": 209.5
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 12,
+          "f0": 127.1
+        },
+        {
+          "turn": 3,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 16,
+          "f0": 216.9
+        },
+        {
+          "turn": 4,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 17,
+          "f0": 131.6
+        },
+        {
+          "turn": 5,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 185.1
+        }
+      ]
+    },
+    {
+      "title": "TI-L-18-restaurant-wait",
+      "track": "TOPIK_I",
+      "turns": 4,
+      "seconds": 22.4,
+      "mp3_bytes": 135018,
+      "genders": [
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 11,
+          "f0": 139.4
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 34,
+          "f0": 210.1
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 15,
+          "f0": 133.9
+        },
+        {
+          "turn": 4,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 26,
+          "f0": 194.9
+        }
+      ]
+    },
+    {
+      "title": "TII-L-01-announcement-library-hours",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 27.6,
+      "mp3_bytes": 166051,
+      "genders": [
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 167,
+          "f0": 208.9
+        }
+      ]
+    },
+    {
+      "title": "TII-L-02-dialogue-lost-item",
+      "track": "TOPIK_II",
+      "turns": 4,
+      "seconds": 32.3,
+      "mp3_bytes": 194577,
+      "genders": [
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 50,
+          "f0": 144.4
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 56,
+          "f0": 215.1
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 17,
+          "f0": 142.7
+        },
+        {
+          "turn": 4,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 60,
+          "f0": 212.6
+        }
+      ]
+    },
+    {
+      "title": "TII-L-03-weather-forecast",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 27.5,
+      "mp3_bytes": 165267,
+      "genders": [
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 166,
+          "f0": 215.1
+        }
+      ]
+    },
+    {
+      "title": "TII-L-04-workplace-meeting-schedule",
+      "track": "TOPIK_II",
+      "turns": 4,
+      "seconds": 35.1,
+      "mp3_bytes": 211034,
+      "genders": [
+        "male",
+        "female",
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 60,
+          "f0": 144.8
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 49,
+          "f0": 211.4
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 57,
+          "f0": 142.7
+        },
+        {
+          "turn": 4,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 35,
+          "f0": 218.8
+        }
+      ]
+    },
+    {
+      "title": "TII-L-05-interview-volunteer",
+      "track": "TOPIK_II",
+      "turns": 2,
+      "seconds": 31.4,
+      "mp3_bytes": 188934,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 54,
+          "f0": 216.3
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 140,
+          "f0": 146.9
+        }
+      ]
+    },
+    {
+      "title": "TII-L-06-radio-interview-farmer",
+      "track": "TOPIK_II",
+      "turns": 2,
+      "seconds": 39.2,
+      "mp3_bytes": 235641,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 60,
+          "f0": 212.6
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 178,
+          "f0": 144.4
+        }
+      ]
+    },
+    {
+      "title": "TII-L-07-lecture-sleep-health",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 31.3,
+      "mp3_bytes": 188464,
+      "genders": [
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 211,
+          "f0": 142.7
+        }
+      ]
+    },
+    {
+      "title": "TII-L-08-discussion-remote-work",
+      "track": "TOPIK_II",
+      "turns": 3,
+      "seconds": 42.4,
+      "mp3_bytes": 255076,
+      "genders": [
+        "male",
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 71,
+          "f0": 145.2
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 152,
+          "f0": 217.6
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 31,
+          "f0": 142.7
+        }
+      ]
+    },
+    {
+      "title": "TII-L-09-news-recycling-policy",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 34.6,
+      "mp3_bytes": 207899,
+      "genders": [
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 228,
+          "f0": 225.2
+        }
+      ]
+    },
+    {
+      "title": "TII-L-10-conversation-complaint-refund",
+      "track": "TOPIK_II",
+      "turns": 4,
+      "seconds": 44.8,
+      "mp3_bytes": 269496,
+      "genders": [
+        "female",
+        "male",
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 80,
+          "f0": 225.2
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 78,
+          "f0": 146.0
+        },
+        {
+          "turn": 3,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 39,
+          "f0": 226.5
+        },
+        {
+          "turn": 4,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 56,
+          "f0": 145.2
+        }
+      ]
+    },
+    {
+      "title": "TII-L-11-documentary-traditional-market",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 29.3,
+      "mp3_bytes": 176552,
+      "genders": [
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 197,
+          "f0": 146.0
+        }
+      ]
+    },
+    {
+      "title": "TII-L-12-announcement-construction",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 32.0,
+      "mp3_bytes": 192226,
+      "genders": [
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 202,
+          "f0": 215.1
+        }
+      ]
+    },
+    {
+      "title": "TII-L-13-lecture-behavioral-economics",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 47.6,
+      "mp3_bytes": 285953,
+      "genders": [
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 317,
+          "f0": 215.1
+        }
+      ]
+    },
+    {
+      "title": "TII-L-14-debate-ai-art",
+      "track": "TOPIK_II",
+      "turns": 2,
+      "seconds": 52.0,
+      "mp3_bytes": 312598,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 63,
+          "f0": 215.1
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 267,
+          "f0": 144.4
+        }
+      ]
+    },
+    {
+      "title": "TII-L-15-interview-architect-urban",
+      "track": "TOPIK_II",
+      "turns": 2,
+      "seconds": 52.6,
+      "mp3_bytes": 315889,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 57,
+          "f0": 149.9
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 250,
+          "f0": 216.3
+        }
+      ]
+    },
+    {
+      "title": "TII-L-16-lecture-language-extinction",
+      "track": "TOPIK_II",
+      "turns": 1,
+      "seconds": 45.9,
+      "mp3_bytes": 276079,
+      "genders": [
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 322,
+          "f0": 146.0
+        }
+      ]
+    },
+    {
+      "title": "TII-L-17-discussion-basic-income",
+      "track": "TOPIK_II",
+      "turns": 3,
+      "seconds": 53.5,
+      "mp3_bytes": 321689,
+      "genders": [
+        "male",
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 108,
+          "f0": 145.6
+        },
+        {
+          "turn": 2,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 167,
+          "f0": 220.1
+        },
+        {
+          "turn": 3,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 56,
+          "f0": 145.2
+        }
+      ]
+    },
+    {
+      "title": "TII-L-18-news-analysis-population",
+      "track": "TOPIK_II",
+      "turns": 2,
+      "seconds": 53.5,
+      "mp3_bytes": 321532,
+      "genders": [
+        "female",
+        "male"
+      ],
+      "gender_source": [
+        "prefix"
+      ],
+      "detail": [
+        {
+          "turn": 1,
+          "role": "여자",
+          "gender": "female",
+          "source": "prefix",
+          "chars": 69,
+          "f0": 230.5
+        },
+        {
+          "turn": 2,
+          "role": "남자",
+          "gender": "male",
+          "source": "prefix",
+          "chars": 258,
+          "f0": 146.0
+        }
+      ]
+    }
+  ]
+}

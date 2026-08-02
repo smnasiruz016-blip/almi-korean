@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/fork-hygiene-gate.mjs && tsx scripts/item-id-collision-gate.ts && tsx scripts/answer-position-gate.ts && prisma generate && next build",
+    "build": "node scripts/fork-hygiene-gate.mjs && tsx scripts/item-id-collision-gate.ts && tsx scripts/answer-position-gate.ts && tsx scripts/audio-coverage-gate.ts && prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "next lint",
@@ -20,10 +20,15 @@
     "seed:prod": "tsx scripts/seed/batch1.ts",
     "gate:item-id": "tsx scripts/item-id-collision-gate.ts",
     "gate:item-id:red": "tsx scripts/item-id-collision-gate.ts --red",
-    "proof:grade-integrity": "tsx scripts/grade-integrity-proof.mts"
+    "proof:grade-integrity": "tsx scripts/grade-integrity-proof.mts",
+    "gate:audio": "tsx scripts/audio-coverage-gate.ts",
+    "audio:upload": "tsx scripts/audio/upload-blob.mts",
+    "audio:upload:dry": "tsx scripts/audio/upload-blob.mts --dry-run"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "@smnasiruz016-blip/almi-data": "^0.5.0",
+    "@vercel/blob": "^2.6.1",
     "bcryptjs": "^3.0.3",
     "next": "16.2.6",
     "prisma": "^6.19.3",
@@ -31,8 +36,7 @@
     "react-dom": "19.2.4",
     "resend": "^6.17.2",
     "stripe": "^22.1.0",
-    "zod": "^4.3.6",
-    "@smnasiruz016-blip/almi-data": "^0.5.0"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -3,6 +3,7 @@
 // Items are bucketed by {track × section}, never by output level (levels are computed by the engine).
 import { createHash } from "node:crypto";
 import bank from "@/data/items-batch1.json";
+import { audioFor } from "@/lib/topik/audio";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
 export type Option = { id: string; text: string };
@@ -117,8 +118,13 @@ export type RunnerItem = {
   guidanceNote?: string;
   payload: {
     passages?: { id: string; body: string }[];
-    /** LISTENING: the script the browser's Web Speech voice reads, and the transcript shown
-     *  when the device has no Korean voice. Content, not a key. */
+    /** LISTENING: the rendered clip, from the audio manifest. Null until it is uploaded — the
+     *  player shows an honest "audio not available yet" state rather than a dead control. */
+    audioUrl?: string;
+    durationSec?: number;
+    /** LISTENING: the script. Carried so the learner can OPT IN to a transcript after the
+     *  clip has played — never rendered by default, because a visible transcript turns a
+     *  listening item into a reading one. */
     audioScript?: string;
     speakers?: Speaker[];
     /** WRITING (Tasks 51–54) has no key to strip — it is not auto-marked at all. */
@@ -129,6 +135,7 @@ export type RunnerItem = {
 
 /** Strip an authored item down to what a learner may receive. */
 export function toRunnerItem(it: BankItem): RunnerItem {
+  const clip = it.section === "LISTENING" ? audioFor(it.title) : null;
   return {
     id: stableItemId(it),
     track: it.track,
@@ -140,6 +147,11 @@ export function toRunnerItem(it: BankItem): RunnerItem {
     guidanceNote: it.guidanceNote,
     payload: {
       passages: it.payload.passages,
+      // Derived from the manifest, not stored in the bank — the bank is authored content and
+      // a Blob URL is infrastructure. Keeping them apart means re-uploading never rewrites
+      // an item, and `npm run build:batch1` cannot clobber the URLs.
+      audioUrl: clip?.url,
+      durationSec: clip?.durationSec,
       audioScript: it.payload.audioScript,
       speakers: it.payload.speakers,
       writing: it.payload.writing,

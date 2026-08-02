@@ -109,6 +109,22 @@ model KoreanItem {
   //  reading:   { passages:[{id, body}], questions:[...] }
   //  writing:   { writing:{ taskNumber(51–54), prompt, charMin?, charMax?, guidance? } }
   payload      Json
+
+  // LISTENING audio — MeloTTS Korean (MIT, rendered offline) → MP3 → Vercel Blob, filled by
+  // scripts/audio/upload-blob.mts. Null for READING/WRITING, which have no clip.
+  //
+  // Pattern B, ported from almi-pte (voice / audioUrl / durationSec on the item row). The
+  // alternative in this network is the French/Spanish/Goethe/TOEFL shape — synthesise per
+  // request from audioScript and store nothing — which costs an OpenAI call on every play.
+  // These clips are fixed content, identical for every learner, so they are rendered once.
+  //
+  // `voice` records HOW the clip was made, not which speaker is in it: MeloTTS ships a single
+  // Korean voice, and male turns are that voice shifted down 7 semitones. A clip with both
+  // genders records the base voice; the per-turn detail lives in scripts/audio/readings-report.json.
+  voice        String?
+  audioUrl     String?
+  durationSec  Int?
+
   createdAt    DateTime        @default(now())
   updatedAt    DateTime        @updatedAt
 

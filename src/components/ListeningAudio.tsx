@@ -1,92 +1,106 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-// Free, client-side Korean listening audio via the Web Speech API (SpeechSynthesis) — no API key,
-// no cost, no Blob (family TTS=browser pattern). Speaks the audioScript line by line, alternating
-// ko-KR voices per speaker where the browser offers more than one. Falls back to the transcript
-// when the browser has no Korean voice. A network TTS can replace this later without changing callers.
+// The rendered TOPIK listening clip.
+//
+// ── WHAT THIS REPLACED, AND WHY ────────────────────────────────────────────────
+// This component used to drive the browser's Web Speech API (SpeechSynthesis, ko-KR). That
+// was free and needed no files, but it had three faults that a listening test cannot carry:
+//
+//   1. NO KOREAN VOICE, NO AUDIO. When the device had no ko-KR voice it printed the full
+//      transcript instead — silently turning a listening item into a reading one. The learner
+//      was not told the construct had changed.
+//   2. EVERY LEARNER HEARD SOMETHING DIFFERENT. The voice came from the device, so a Windows
+//      user, a Mac user and an Android user sat different exams.
+//   3. THE AUTHORED GENDER MAPPING WAS DEAD. payload.speakers[] declared male/female per role
+//      and nothing read it — voices were assigned by order of appearance, so a 여자 line could
+//      be spoken by a male voice, which breaks any question that asks who said what.
+//
+// The clip is now rendered once, offline, by MeloTTS (MIT) and served from Vercel Blob. Same
+// audio for everyone, gender fixed at render time from the line prefix, $0 per play.
+//
+// ── REPLAY IS ALLOWED, ON PURPOSE ──
+// The real TOPIK plays each clip once. An earlier version of the landing copy promised that and
+// the mock enforced it. Enforcing it in a practice tool punishes a slow connection and a
+// misheard first second — neither of which is the skill being examined. Native <audio controls>
+// gives play/pause/seek/replay, and the copy says so.
+//
+// ── THE TRANSCRIPT STAYS SHUT ──
+// It is behind a button and closed by default. Showing it is the same defect as the old
+// fallback: it converts the item into a reading task. It is here because a learner who has
+// already listened has a real reason to check what they missed.
 
-type Line = { role?: string; text: string };
-function parseScript(script: string): Line[] {
-  return script
-    .split(/\n+/)
-    .map((l) => l.trim())
-    .filter(Boolean)
-    .map((l) => {
-      const m = l.match(/^([^:：]{1,14})[:：]\s*(.+)$/);
-      return m ? { role: m[1].trim(), text: m[2].trim() } : { text: l };
-    });
-}
+export function ListeningAudio({
+  url,
+  transcript,
+  durationSec,
+}: {
+  url?: string;
+  transcript?: string;
+  durationSec?: number;
+}) {
+  const [showText, setShowText] = useState(false);
 
-export function ListeningAudio({ script, rate = 0.95, playOnce = false }: { script: string; rate?: number; playOnce?: boolean }) {
-  const [koVoices, setKoVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [supported, setSupported] = useState(true);
-  const [state, setState] = useState<"idle" | "playing" | "done">("idle");
-  const mounted = useRef(true);
-
-  useEffect(() => {
-    mounted.current = true;
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) { setSupported(false); return; }
-    const load = () => {
-      const ko = window.speechSynthesis.getVoices().filter((v) => v.lang?.toLowerCase().startsWith("ko"));
-      if (mounted.current) setKoVoices(ko);
-    };
-    load();
-    window.speechSynthesis.onvoiceschanged = load;
-    return () => {
-      mounted.current = false;
-      window.speechSynthesis.onvoiceschanged = null;
-      window.speechSynthesis.cancel();
-    };
-  }, []);
-
-  const hasKo = koVoices.length > 0;
-
-  const play = () => {
-    if (!hasKo) return;
-    window.speechSynthesis.cancel();
-    const lines = parseScript(script);
-    const roles = [...new Set(lines.map((l) => l.role).filter(Boolean))] as string[];
-    const roleVoice: Record<string, SpeechSynthesisVoice> = {};
-    roles.forEach((r, i) => { roleVoice[r] = koVoices[i % koVoices.length]; });
-
-    setState("playing");
-    lines.forEach((ln, idx) => {
-      const u = new SpeechSynthesisUtterance(ln.text);
-      u.lang = "ko-KR";
-      u.rate = rate;
-      u.voice = (ln.role && roleVoice[ln.role]) || koVoices[0];
-      if (idx === lines.length - 1) u.onend = () => { if (mounted.current) setState("done"); };
-      window.speechSynthesis.speak(u);
-    });
-  };
-
-  const stop = () => { window.speechSynthesis.cancel(); setState(playOnce ? "done" : "idle"); };
-
-  if (!supported || !hasKo) {
+  // Null clip is a real state, not an error: the manifest is filled by the Blob upload, and
+  // before that runs there is genuinely nothing to play. Say that, rather than render a dead
+  // control the learner will press and mistrust.
+  if (!url) {
     return (
-      <div className="rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">
-        <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-almi-text-muted">
-          {supported ? "No Korean voice in this browser — transcript shown" : "Audio not supported here — transcript shown"}
+      <div className="mb-3 rounded-xl border border-dashed border-almi-line bg-almi-bg-peach/30 p-4 text-sm text-almi-text">
+        <p className="font-medium text-almi-ink">Audio for this item isn&apos;t available yet.</p>
+        <p className="mt-1 text-xs text-almi-text-muted">
+          The questions below still work. Use the transcript if you want to attempt it as a reading task —
+          but that is not what this section measures.
         </p>
-        <p className="whitespace-pre-line">{script}</p>
+        {transcript ? (
+          <>
+            <button
+              type="button"
+              onClick={() => setShowText((v) => !v)}
+              className="mt-2 text-sm font-semibold text-almi-coral hover:underline"
+            >
+              {showText ? "Hide transcript" : "Show transcript"}
+            </button>
+            {showText ? <p className="mt-2 whitespace-pre-line text-sm text-almi-text">{transcript}</p> : null}
+          </>
+        ) : null}
       </div>
     );
   }
 
-  const canPlay = state === "idle" || (state === "done" && !playOnce);
+  const mins = durationSec ? `${Math.floor(durationSec / 60)}:${String(durationSec % 60).padStart(2, "0")}` : null;
+
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-almi-line bg-almi-paper p-3">
-      <button
-        onClick={play}
-        disabled={!canPlay}
-        className="rounded-full bg-almi-coral px-4 py-1.5 text-sm font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark disabled:cursor-not-allowed disabled:opacity-40"
-      >
-        {state === "playing" ? "▶ Playing…" : state === "done" ? (playOnce ? "Played" : "🔊 Replay") : "🔊 Play audio"}
-      </button>
-      {state === "playing" && <button onClick={stop} className="text-sm text-almi-text-muted hover:text-almi-coral">Stop</button>}
-      <span className="text-xs text-almi-text-muted">{playOnce ? "Plays once — just like test day." : "Korean audio (your device voice)."}</span>
+    <div className="mb-3 rounded-xl border border-almi-line bg-almi-bg-peach/30 p-4">
+      <div className="flex flex-wrap items-center gap-3">
+        <span aria-hidden className="text-lg">🎧</span>
+        <audio
+          controls
+          preload="none"
+          src={url}
+          className="min-h-[40px] flex-1"
+          aria-label="Listening clip"
+        >
+          Your browser cannot play audio — use the transcript below.
+        </audio>
+        {transcript ? (
+          <button
+            type="button"
+            onClick={() => setShowText((v) => !v)}
+            className="text-sm font-semibold text-almi-coral hover:underline"
+          >
+            {showText ? "Hide transcript" : "Show transcript"}
+          </button>
+        ) : null}
+      </div>
+      <p className="mt-2 text-xs text-almi-text-muted">
+        Replay as often as you like{mins ? ` · ${mins}` : ""}. The real test plays each clip once — the transcript is
+        here for after you have listened, not instead of it.
+      </p>
+      {showText && transcript ? (
+        <p className="mt-3 whitespace-pre-line rounded-lg bg-almi-paper p-3 text-sm text-almi-text">{transcript}</p>
+      ) : null}
     </div>
   );
 }

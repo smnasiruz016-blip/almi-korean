@@ -65,8 +65,10 @@ export function PracticeRunner({ items, track, section }: { items: RunnerItem[];
     <div className="space-y-6">
       {items.map((it) => (
         <div key={it.id} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
-          {it.payload.audioScript && (
-            <div className="mb-3"><ListeningAudio script={it.payload.audioScript} rate={track === "TOPIK_I" ? 0.85 : 0.95} /></div>
+          {/* Guarded on the SECTION, not on the transcript: the clip is the item, and a missing
+              transcript must not make the audio disappear with it. */}
+          {it.section === "LISTENING" && (
+            <ListeningAudio url={it.payload.audioUrl} transcript={it.payload.audioScript} durationSec={it.payload.durationSec} />
           )}
           {it.payload.passages?.map((p) => (
             <p key={p.id} className="mb-3 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{p.body}</p>

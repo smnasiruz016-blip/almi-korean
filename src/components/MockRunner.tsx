@@ -151,11 +151,11 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
                   <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">{SECTION_LABEL[sec]} review</p>
                   {(bank[sec] ?? []).map((it) => (
                     <div key={it.id} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
-                      {it.payload.audioScript && (
-                        <div className="mb-3 rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">
-                          <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-almi-text-muted">Transcript</p>
-                          <p className="whitespace-pre-line">{it.payload.audioScript}</p>
-                        </div>
+                      {/* Review: the same player, so the clip can be re-heard against the marks.
+                          The transcript stays behind its toggle even here — a learner reviewing
+                          one section may still have later listening sections to sit. */}
+                      {it.section === "LISTENING" && (
+                        <ListeningAudio url={it.payload.audioUrl} transcript={it.payload.audioScript} durationSec={it.payload.durationSec} />
                       )}
                       {it.payload.passages?.map((p) => (
                         <p key={p.id} className="mb-3 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{p.body}</p>
@@ -239,10 +239,8 @@ export function MockRunner({ track, bank }: { track: TopikTrack; bank: Bank }) {
         <div className="space-y-4">
           {(bank[section] ?? []).map((it) => (
             <div key={it.id} className="rounded-2xl border border-almi-line bg-almi-paper p-5">
-              {it.payload.audioScript && (
-                <div className="mb-3">
-                  <ListeningAudio script={it.payload.audioScript} playOnce rate={track === "TOPIK_I" ? 0.85 : 0.95} />
-                </div>
+              {it.section === "LISTENING" && (
+                <ListeningAudio url={it.payload.audioUrl} transcript={it.payload.audioScript} durationSec={it.payload.durationSec} />
               )}
               {it.payload.passages?.map((p) => (
                 <p key={p.id} className="mb-3 whitespace-pre-line rounded-lg bg-almi-bg-peach/30 p-3 text-sm text-almi-text">{p.body}</p>

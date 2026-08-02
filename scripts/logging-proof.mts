@@ -139,6 +139,78 @@ console.log("\nPART 3 — nothing personal or secret survives into a log line");
     assert(`SEEN RED — the redactor catches a bare ${what} value`, !__redactMessage(s).includes(s.split(" ")[1]), `replaced.`);
   }
   assert("ordinary text is left alone", __redactMessage("connection reset by peer") === "connection reset by peer", `no over-redaction.`);
+
+  // ── THE BLIND SPOT THIS PROOF USED TO HAVE ────────────────────────────────
+  // Everything above passed 23/23 while the redactor was publishing bearer tokens.
+  //
+  // The reason is visible in the fixtures: every credential-WORD case had a value with no
+  // space in it (`password: hunter2`, `api_key=sk-…`), and the Anthropic/Blob/webhook keys
+  // were caught by the key-SHAPE rule, not by the credential-word rule at all. So the
+  // credential-word rule had only ever been exercised on single-token values, and
+  // `…[:=]\s*\S+` is correct for exactly those.
+  //
+  // `authorization=Bearer <token>` is the common shape whose value CONTAINS A SPACE. `\S+`
+  // matched "Bearer" and stopped, so the emitted line read
+  //     authorization=[redacted] abc.def.ghi
+  // — the scheme redacted, the credential published.
+  const BEARER_TOKEN = "abc.def.ghijklmnop";
+
+  // THE PRECISE CONDITION IS "the value contains a space", not "the value is a credential".
+  // These three leak under the old rule because a scheme word sits between the delimiter and
+  // the secret.
+  const SCHEME_CASES = [
+    ["bearer", `rejected: authorization=Bearer ${BEARER_TOKEN}`],
+    ["basic", `denied: authorization: Basic ${BEARER_TOKEN}`],
+    ["token scheme", `upstream said token: Token ${BEARER_TOKEN}`],
+  ] as const;
+
+  // A cookie with attributes does NOT leak under the old rule — `session=abc…;` has no space
+  // before the secret, so `\S+` swallowed it correctly. It is asserted separately as a
+  // REGRESSION guard rather than as a red case, because claiming the old rule leaked here
+  // would be a false statement about what was wrong, and this proof's whole value is that its
+  // claims are literally true. (Written as a red case first; the proof rejected it.)
+  const alreadyHandled = `cookie=session=${BEARER_TOKEN}; Path=/; HttpOnly`;
+  assert(
+    "a cookie with attributes was already safe, and still is",
+    !__redactMessage(alreadyHandled).includes(BEARER_TOKEN),
+    `now: "${__redactMessage(alreadyHandled)}"`,
+  );
+
+  // THE RED, KEPT IN THE FILE ON PURPOSE. The old pattern is re-created here and shown to
+  // leak, so this is not "a case we added once" but a permanent demonstration of what the
+  // current pattern is protecting against. If someone reverts the fix, the assertion below
+  // that compares them starts failing.
+  const OLD_PATTERN = /\b(password|passwd|token|secret|api[-_]?key|authorization|cookie)\s*[:=]\s*\S+/gi;
+  const redactedByOldRule = (s: string) => s.replace(OLD_PATTERN, "$1=[redacted]");
+
+  for (const [what, input] of SCHEME_CASES) {
+    const old = redactedByOldRule(input);
+    const now = __redactMessage(input);
+    // 1. The old rule must genuinely leak — otherwise this whole section proves nothing.
+    assert(
+      `SEEN RED — the OLD \\S+ rule leaks a ${what} credential`,
+      old.includes(BEARER_TOKEN),
+      `old rule emitted: "${old}"`,
+    );
+    // 2. The current rule must not.
+    assert(
+      `the credential is gone from a ${what} value`,
+      !now.includes(BEARER_TOKEN),
+      `now: "${now}"`,
+    );
+    // 3. …and the line must still say something. A redactor that returns "" is not a redactor.
+    assert(
+      `the ${what} line is still readable after redaction`,
+      now.trim().length > 0 && /redacted/.test(now),
+      `now: "${now}"`,
+    );
+  }
+
+  // A multi-line message must not lose everything after the first credential — `$` has to be
+  // end-of-LINE, which is why the pattern carries `m`.
+  const multi = __redactMessage(`authorization=Bearer ${BEARER_TOKEN}\nrequest id 12345 is fine`);
+  assert("a credential on line 1 does not blank line 2", multi.includes("request id 12345"), `got: ${JSON.stringify(multi)}`);
+  assert("…and the token is still gone from line 1", !multi.includes(BEARER_TOKEN), `got: ${JSON.stringify(multi)}`);
 }
 
 // ── PART 4 — the client id is not an address ─────────────────────────────────

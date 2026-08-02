@@ -46,7 +46,27 @@ function redactMessage(msg: string): string {
   return msg
     .replace(/\b(sk-[A-Za-z0-9_-]{8,}|vercel_blob_rw_[A-Za-z0-9_-]{8,}|whsec_[A-Za-z0-9_-]{8,})/g, "[redacted-key]")
     .replace(/\b[\w.+-]+@[\w-]+\.[\w.]+\b/g, "[redacted-email]")
-    .replace(/\b(password|passwd|token|secret|api[-_]?key|authorization|cookie)\s*[:=]\s*\S+/gi, "$1=[redacted]")
+    // THE VALUE CAN CONTAIN A SPACE, AND `\S+` STOPPED AT IT.
+    //
+    // This was `…[:=]\s*\S+`. Against `authorization=Bearer abc.def.ghi` that matched exactly
+    // "Bearer" — so the line came out as `authorization=[redacted] abc.def.ghi` and PUBLISHED
+    // THE TOKEN, in the one function whose entire job is to stop that.
+    //
+    // Why the proof did not catch it: every credential-word fixture had a space-free value
+    // (`password: hunter2`, `api_key=sk-…`). The Anthropic and Blob keys were caught by the
+    // key-SHAPE rule above, not by this one, so this rule had only ever been exercised on
+    // single-token values. A scheme-prefixed credential — `Bearer`, `Basic`, `token` — is the
+    // one common shape with a space in it, and it was the one shape untested.
+    //
+    // Now: the scheme word is eaten explicitly, then the value, then the REST OF THE LINE. A
+    // credential is the last thing that should be truncated by a cautious quantifier — if this
+    // rule fires at all, everything after the delimiter is suspect. `m` so `$` is end-of-line
+    // rather than end-of-string, or one credential on line 1 would blank a whole multi-line
+    // message.
+    .replace(
+      /\b(password|passwd|token|secret|api[-_]?key|authorization|cookie)\s*[:=]\s*(?:bearer|basic|token)?\s*[^\s,;]+.*$/gim,
+      "$1=[redacted]",
+    )
     .slice(0, 600);
 }
 

@@ -1,5 +1,222 @@
 {
   "engine": "MeloTTS Korean (MIT) — rendered offline, male turns shifted -7 semitones",
   "bitrate": "48k mono",
-  "clips": {}
+  "clips": {
+    "TI-L-01-greeting-morning": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/918c337c9fd26e95.mp3",
+      "durationSec": 10,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 62449
+    },
+    "TI-L-02-cafe-order": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/982223566c2a91e4.mp3",
+      "durationSec": 6,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 34707
+    },
+    "TI-L-03-family-count": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/c2ff86a2aee11873.mp3",
+      "durationSec": 11,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 67622
+    },
+    "TI-L-04-time-meeting": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/2723f5f0188cd55e.mp3",
+      "durationSec": 6,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 37058
+    },
+    "TI-L-05-weather-today": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/33b5ae3f0fcf3317.mp3",
+      "durationSec": 8,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 49284
+    },
+    "TI-L-06-shopping-fruit": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/2f38aaba2e3a9ef9.mp3",
+      "durationSec": 8,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 45992
+    },
+    "TI-L-07-introduction-job": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/ce0aaa9472cc24fa.mp3",
+      "durationSec": 8,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 48814
+    },
+    "TI-L-08-restaurant-order": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/15bd82e7514c42a6.mp3",
+      "durationSec": 19,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 113858
+    },
+    "TI-L-09-directions-bank": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/d81c647f3d7dca0c.mp3",
+      "durationSec": 17,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 102417
+    },
+    "TI-L-10-transport-subway": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/c5d9dc2df6e82000.mp3",
+      "durationSec": 15,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 90818
+    },
+    "TI-L-11-hobby-weekend": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/68f073267807a5d4.mp3",
+      "durationSec": 14,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 81571
+    },
+    "TI-L-12-shopping-price": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/8c681ec6faa5d53a.mp3",
+      "durationSec": 13,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 80317
+    },
+    "TI-L-13-phone-appointment": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/f344e02d01b1f3d9.mp3",
+      "durationSec": 15,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 91602
+    },
+    "TI-L-14-weather-plan-change": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/15742bd296dbf2a3.mp3",
+      "durationSec": 18,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 106492
+    },
+    "TI-L-15-birthday-gift": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/41f74e7c10111b03.mp3",
+      "durationSec": 21,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 125143
+    },
+    "TI-L-16-lost-umbrella": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/9d86a502601600ae.mp3",
+      "durationSec": 20,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 118247
+    },
+    "TI-L-17-hospital-reservation": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/b1a6b1db373274d8.mp3",
+      "durationSec": 20,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 119658
+    },
+    "TI-L-18-restaurant-wait": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/dd2bd3050f1e9ba0.mp3",
+      "durationSec": 22,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 135018
+    },
+    "TII-L-01-announcement-library-hours": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/0e714fcc4cd4d237.mp3",
+      "durationSec": 28,
+      "voice": "melotts-kr",
+      "bytes": 166051
+    },
+    "TII-L-02-dialogue-lost-item": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/0e66d039f790ae97.mp3",
+      "durationSec": 32,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 194577
+    },
+    "TII-L-03-weather-forecast": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/0a96affe6f5197d6.mp3",
+      "durationSec": 28,
+      "voice": "melotts-kr",
+      "bytes": 165267
+    },
+    "TII-L-04-workplace-meeting-schedule": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/8c8333e658872fa3.mp3",
+      "durationSec": 35,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 211034
+    },
+    "TII-L-05-interview-volunteer": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/272a35963e953b24.mp3",
+      "durationSec": 31,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 188934
+    },
+    "TII-L-06-radio-interview-farmer": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/44d10b1b3c2a8749.mp3",
+      "durationSec": 39,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 235641
+    },
+    "TII-L-07-lecture-sleep-health": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/9a9ad58377cd8a3d.mp3",
+      "durationSec": 31,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 188464
+    },
+    "TII-L-08-discussion-remote-work": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/037626d9e228ded7.mp3",
+      "durationSec": 42,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 255076
+    },
+    "TII-L-09-news-recycling-policy": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/a72f1548ec25c57f.mp3",
+      "durationSec": 35,
+      "voice": "melotts-kr",
+      "bytes": 207899
+    },
+    "TII-L-10-conversation-complaint-refund": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/03496554e16dcb33.mp3",
+      "durationSec": 45,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 269496
+    },
+    "TII-L-11-documentary-traditional-market": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/81d5437cfabc5d6f.mp3",
+      "durationSec": 29,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 176552
+    },
+    "TII-L-12-announcement-construction": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/0e2432b0a9d4e9e9.mp3",
+      "durationSec": 32,
+      "voice": "melotts-kr",
+      "bytes": 192226
+    },
+    "TII-L-13-lecture-behavioral-economics": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/bb0495b87ab1d715.mp3",
+      "durationSec": 48,
+      "voice": "melotts-kr",
+      "bytes": 285953
+    },
+    "TII-L-14-debate-ai-art": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/122c618841c46462.mp3",
+      "durationSec": 52,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 312598
+    },
+    "TII-L-15-interview-architect-urban": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/4783c0719979fc02.mp3",
+      "durationSec": 53,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 315889
+    },
+    "TII-L-16-lecture-language-extinction": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/2dffd84e65ee0a6a.mp3",
+      "durationSec": 46,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 276079
+    },
+    "TII-L-17-discussion-basic-income": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/5875c23c0b3d4f86.mp3",
+      "durationSec": 54,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 321689
+    },
+    "TII-L-18-news-analysis-population": {
+      "url": "https://bwc3ybxmsx0nkknk.public.blob.vercel-storage.com/korean-listening/30e5d6c0b96a08c0.mp3",
+      "durationSec": 54,
+      "voice": "melotts-kr+shift-7st",
+      "bytes": 321532
+    }
+  }
 }

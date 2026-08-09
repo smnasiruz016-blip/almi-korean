@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BY_ORIGIN, UNIVERSITIES, isEpsOrigin } from "@/lib/seo/data";
+import { BY_ORIGIN, ORIGINS, UNIVERSITIES, isEpsOrigin } from "@/lib/seo/data";
 import { canonical, nativeLead, KCUE_ATTRIBUTION, REQ_NOT_GUARANTEE, SHAMOOL_LINE } from "@/lib/seo/content";
 
-export const dynamicParams = true;
+// HOLDING 2026-08-09 — keep-set. Bounded origin hub (196), prerendered at build time and served
+// as static HTML: no on-demand rendering, therefore no ISR writes. Unknown origins 404.
+// Reverse by restoring `dynamicParams = true` + `return []`.
+export const dynamicParams = false;
+export const revalidate = false;
 export function generateStaticParams() {
-  return [];
+  return ORIGINS.map((o) => ({ origin: o.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ origin: string }> }): Promise<Metadata> {

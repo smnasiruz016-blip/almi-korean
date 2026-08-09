@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BY_EPS, EPS_SECTORS } from "@/lib/seo/data";
+import { BY_EPS, EPS_PARTNERS, EPS_SECTORS } from "@/lib/seo/data";
 import { canonical, SHAMOOL_LINE } from "@/lib/seo/content";
 
-export const dynamicParams = true;
+// HOLDING 2026-08-09 — keep-set. This tier is bounded (17 EPS partners), so it is prerendered at
+// build time and serves as static HTML: no on-demand rendering, therefore no ISR writes. Any URL
+// outside the 17 404s. Reverse by restoring `dynamicParams = true` + `return []`.
+export const dynamicParams = false;
+export const revalidate = false;
 export function generateStaticParams() {
-  return [];
+  return EPS_PARTNERS.map((p) => ({ country: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ country: string }> }): Promise<Metadata> {

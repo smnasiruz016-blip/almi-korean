@@ -4,7 +4,12 @@ import { notFound } from "next/navigation";
 import { BY_ORIGIN, BY_UNI, BY_DEPT, type Department } from "@/lib/seo/data";
 import { canonical, nativeLead, KCUE_ATTRIBUTION, SHAMOOL_LINE, REQ_NOT_GUARANTEE, VALIDITY_LINE } from "@/lib/seo/content";
 
-export const dynamicParams = true;
+// HOLDING 2026-08-09 — ISR page-generation frozen. Was pure on-demand ISR over 13,477×196 =
+// 2,641,492 URLs — the single largest generation surface in the network. Nothing is prerendered
+// and nothing renders on demand, so every URL here 404s and no ISR write can occur. Data and
+// templates are untouched. Reverse by restoring `dynamicParams = true`.
+export const dynamicParams = false;
+export const revalidate = false;
 export function generateStaticParams() {
   return [];
 }

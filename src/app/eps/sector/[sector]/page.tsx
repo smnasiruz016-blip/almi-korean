@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BY_SECTOR, EPS_PARTNERS } from "@/lib/seo/data";
+import { BY_SECTOR, EPS_PARTNERS, EPS_SECTORS } from "@/lib/seo/data";
 import { canonical, SHAMOOL_LINE } from "@/lib/seo/content";
 
-export const dynamicParams = true;
+// HOLDING 2026-08-09 — keep-set. Bounded tier (5 EPS sectors), prerendered at build time and
+// served as static HTML: no on-demand rendering, therefore no ISR writes. Any other sector 404s.
+// Reverse by restoring `dynamicParams = true` + `return []`.
+export const dynamicParams = false;
+export const revalidate = false;
 export function generateStaticParams() {
-  return [];
+  return EPS_SECTORS.map((s) => ({ sector: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ sector: string }> }): Promise<Metadata> {

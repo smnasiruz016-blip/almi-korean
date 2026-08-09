@@ -4,9 +4,12 @@ import { notFound } from "next/navigation";
 import { BY_ORIGIN, BY_UNI, DEPTS_BY_UNI, isEpsOrigin } from "@/lib/seo/data";
 import { canonical, nativeLead, KCUE_ATTRIBUTION, SHAMOOL_LINE, REQ_NOT_GUARANTEE, VALIDITY_LINE } from "@/lib/seo/content";
 
-// Pure on-demand ISR: nothing prerendered, each page rendered on first request + cached.
-// The sitemap enumerates all 384×196 URLs for crawl. Unknown uni/origin → 404.
-export const dynamicParams = true;
+// HOLDING 2026-08-09 — ISR page-generation frozen. Was pure on-demand ISR over 384×196 = 75,264
+// URLs; each first crawl cost one ISR write. Nothing is prerendered and nothing renders on demand,
+// so every URL here 404s and no ISR write can occur. Data and templates are untouched.
+// Reverse by restoring `dynamicParams = true`.
+export const dynamicParams = false;
+export const revalidate = false;
 export function generateStaticParams() {
   return [];
 }

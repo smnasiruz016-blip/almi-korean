@@ -3,7 +3,7 @@
 // Session-aware product nav for the family header. The header shell stays a
 // static server component (keeps SEO pages static); this small client piece
 // asks /api/me who's logged in and swaps the links:
-//   logged out -> Practice · Log in · [Start free trial CTA]
+//   logged out -> Practice · Log in · [Start 7-day free trial CTA]
 //   logged in  -> Practice · Account
 // First paint (server + first client render) shows the logged-out set, which
 // matches SSR markup (no hydration mismatch) and is correct for the common
@@ -46,7 +46,7 @@ export function AuthNav() {
             href="/signup"
             className="ml-1 inline-flex min-h-[40px] items-center justify-center rounded-full bg-almi-coral px-5 py-2 text-sm font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark"
           >
-            Start free trial
+            Start 7-day free trial
           </Link>
         </>
       )}

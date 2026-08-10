@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <AuthCard
       heading="Create your account"
-      sub="7-day free trial, then $12/month. Cancel anytime."
+      sub="Then $12/month. Cancel anytime."
       footer={
         <>
           Already have an account?{" "}

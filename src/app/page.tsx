@@ -85,7 +85,7 @@ export default function HomePage() {
             </p>
             <div className="mt-7">
               <Link href="/signup" className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-                Start your 7-day free trial
+                Start 7-day free trial
               </Link>
               <p className="mt-3 text-sm text-almi-text-muted">
                 TOPIK I → Levels 1–2 · TOPIK II → Levels 3–6 · sit either track directly · below the lowest cutoff no level is
@@ -225,7 +225,7 @@ export default function HomePage() {
             ))}
           </ul>
           <Link href="/signup" className="mt-7 inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-            Start your 7-day free trial
+            Start 7-day free trial
           </Link>
           <p className="mt-4 text-sm">
             <Link href="/pricing" className="text-almi-coral hover:underline">See full pricing</Link>

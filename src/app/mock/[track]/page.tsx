@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ track: string
           <h2 className="text-lg font-semibold text-almi-ink">The sequenced mock is part of AlmiKorean Pro</h2>
           <p className="mt-2 text-sm text-almi-text">Start with a 7-day free trial — card saved but not charged — to practise, then $12/month. Cancel anytime before the trial ends and pay nothing.</p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Create free account</Link>
+            <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Start 7-day free trial</Link>
             <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default async function Page({ params }: { params: Promise<{ track: string
           <PracticeGate
             billingLive={isBillingEnabled()}
             heading="The sequenced mock is part of AlmiKorean Pro"
-            body="Section practice (Listening and Reading) is free. The full sequenced TOPIK mock — combined scoring and a practice level estimate — is $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing."
+            body="Section practice (Listening and Reading) and the full sequenced TOPIK mock — combined scoring and a practice level estimate — is $12/month. Start with a 7-day free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing."
           />
         )
       ) : (

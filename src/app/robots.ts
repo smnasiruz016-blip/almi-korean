@@ -1,28 +1,22 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/seo/content";
 
-// Deep per-origin long-tail leaves. Origin HUBS (/topik-in/<origin>,
-// /study-in-korea/<origin>, /eps/<country>) stay crawlable; only /from/ leaves
-// are trimmed. "/university/*/from/" covers both /university/[uni]/from/ and
-// /university/[uni]/[dept]/from/ (the wildcard spans path segments).
-// HOLDING 2026-08-09 — these routes no longer render (dynamicParams=false, nothing prerendered),
-// so they are now disallowed for EVERY crawler including Googlebot/Bingbot. Previously Googlebot
-// was allowed full leaf access as the SEO channel; that access is what turned each first crawl
-// into an ISR write. Re-open by moving DEEP_LEAVES back out of the Googlebot/Bingbot rule.
-const DEEP_LEAVES = ["/topik/*/from/", "/university/*/from/"];
-
-const HEAVY_BOTS = [
-  "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "anthropic-ai",
-  "CCBot", "Bytespider", "Amazonbot", "PerplexityBot", "Google-Extended",
-  "AhrefsBot", "SemrushBot", "MJ12bot", "DotBot", "DataForSeoBot", "PetalBot",
-];
+// AI crawlers are NEVER blocked (owner ruling 27 Oct 2026: AI visibility is the product goal).
+// GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, anthropic-ai, PerplexityBot,
+// Google-Extended, CCBot, Amazonbot, Bytespider, Meta-ExternalAgent and the like fall under `*`.
+// Only pure SEO-tool scrapers (no search or AI audience) stay off entirely.
+//
+// The old DEEP_LEAVES disallow (/topik/*/from/, /university/*/from/) is gone too: it covered only
+// the removed programmatic pages, which now answer 410 Gone from src/proxy.ts — crawlers must be
+// able to SEE the 410 to drop those URLs.
+const SEO_TOOL_SCRAPERS = ["AhrefsBot", "SemrushBot", "MJ12bot", "DotBot", "DataForSeoBot"];
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: ["Googlebot", "Bingbot"], allow: "/", disallow: ["/api/", ...DEEP_LEAVES] },
-      { userAgent: "*", allow: "/", disallow: ["/api/", ...DEEP_LEAVES], crawlDelay: 10 },
-      { userAgent: HEAVY_BOTS, disallow: "/" },
+      { userAgent: ["Googlebot", "Bingbot"], allow: "/", disallow: ["/api/"] },
+      { userAgent: "*", allow: "/", disallow: ["/api/"], crawlDelay: 10 },
+      { userAgent: SEO_TOOL_SCRAPERS, disallow: "/" },
     ],
     sitemap: `${SITE}/sitemap-index.xml`,
     host: SITE,

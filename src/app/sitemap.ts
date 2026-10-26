@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { ORIGINS, EPS_PARTNERS, EPS_SECTORS } from "@/lib/seo/data";
 import { SITE } from "@/lib/seo/content";
 
 // HOLDING 2026-08-09 — the sitemap now advertises ONLY the keep-set (statics + the two bounded
@@ -44,16 +43,9 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
     entry("/eps", 0.7),
     entry("/study-in-korea", 0.7),
   ];
-  // Family 3: TOPIK-in-{origin} — prerendered keep-set.
-  for (const o of ORIGINS) out.push(entry(`/topik-in/${o.slug}`, 0.6));
-  // Family 4: study-in-korea/{origin} — prerendered keep-set.
-  for (const o of ORIGINS) out.push(entry(`/study-in-korea/${o.slug}`, 0.6));
-  // Family 5: EPS (17 partners + sectors + overview already above) — NEVER ×196.
-  for (const p of EPS_PARTNERS) out.push(entry(`/eps/${p.slug}`, 0.6));
-  for (const s of EPS_SECTORS) out.push(entry(`/eps/sector/${s.slug}`, 0.5));
-
-  // HOLDING 2026-08-09 — withdrawn until the page factory rebuilds them:
-  //   Family 1 university×origin (75,264) · Family 2 level×origin (1,176) · Wave 2 dept×origin (2,641,492).
-  // Those routes now 404, so advertising them would only burn crawl budget.
+  // COST FIX 26 Oct 2026 — every programmatic family was removed (owner ruling 17 Oct: deleted,
+  // no redirects) and answers 410 Gone from src/proxy.ts: /topik-in/*, /study-in-korea/<origin>,
+  // /eps/<country>, /eps/sector/*, /topik/<level>/from/*, /university/<uni>[/<dept>]/from/*.
+  // The /eps and /study-in-korea overview pages above stay.
   return out;
 }

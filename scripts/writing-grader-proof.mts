@@ -433,5 +433,43 @@ console.log("\nPART 5 — the assessor never ships to the client");
   );
 }
 
+// ── PART 6 — RR-399: every model call is costed, and the "1 free" is atomic ──
+console.log("\nPART 6 — RR-399: the AI cost ledger and the atomic free Writing");
+{
+  const { computeCostCents } = await import("../src/lib/ai/cost");
+  anth.__reset(); db.__reset();
+  const ok = await post({ itemId: stableItemId(t53), text: ko(250) });
+  const rows = db.__ledger();
+  const want = computeCostCents("claude-opus-5", { inputTokens: 100, outputTokens: 50 });
+  assert(
+    "A6 — a scoring writes ONE AICostLedger row with its real tokens and cost",
+    ok.status === 200 && rows.length === 1 && rows[0].userId === "proof-user" && rows[0].inputTokens === 100 && rows[0].outputTokens === 50 && rows[0].costCents === want && want > 0 && rows[0].success === true,
+    `${rows.length} row(s): ${rows[0]?.model} ${rows[0]?.inputTokens} in / ${rows[0]?.outputTokens} out = ${rows[0]?.costCents} units (expected ${want}).`,
+  );
+  db.__reset();
+  anth.__setRaw("not json");
+  const bad = await post({ itemId: stableItemId(t53), text: ko(250) });
+  assert("A6 — a malformed reply was still billed, so it is still costed", bad.status === 502 && db.__ledger().length === 1 && db.__ledger()[0].costCents === want, `HTTP ${bad.status}, ${db.__ledger().length} ledger row(s).`);
+  anth.__reset(); db.__reset();
+}
+{
+  const free = { id: "proof-free-user", createdAt: new Date(Date.now() - 3_600_000), subscriptionStatus: null, stripeSubscriptionId: null, compProUntil: null };
+  anth.__reset(); db.__reset(); db.__setUsers([free]);
+  process.env.PROOF_FREE = "1";
+  try {
+    anth.__setRaw("not json");
+    const failed = await post({ itemId: stableItemId(t53), text: ko(250) });
+    assert("A3 — a free scoring that FAILS gives the free use back", failed.status === 502 && db.__freeUses().length === 0, `HTTP ${failed.status}; reserved free uses after: ${db.__freeUses().length}.`);
+    anth.__reset();
+    const r404 = await post({ itemId: "no-such-item", text: ko(250) });
+    assert("A3 — a refused request (404) gives the free use back", r404.status === 404 && db.__freeUses().length === 0, `HTTP ${r404.status}; reserved: ${db.__freeUses().length}.`);
+    // the count stub keeps saying "0 used" (as two requests at the same moment both see): only the claim can stop the second one
+    const [a, b] = await Promise.all([post({ itemId: stableItemId(t53), text: ko(250) }), post({ itemId: stableItemId(t53), text: ko(250) })]);
+    const statuses = [a.status, b.status].sort();
+    assert("A3 — two free requests at the same moment: ONE is scored, the other is refused as used", statuses[0] === 200 && statuses[1] === 402 && anth.__calls().length === 1, `HTTP ${statuses.join(" + ")}, ${anth.__calls().length} model call(s).`);
+  } finally { delete process.env.PROOF_FREE; }
+  anth.__reset(); db.__reset();
+}
+
 console.log(`\n${failures === 0 ? "✓ ALL GREEN" : "✗ FAILURES"} — ${checks - failures}/${checks} checks passed.`);
 if (failures > 0) process.exit(1);

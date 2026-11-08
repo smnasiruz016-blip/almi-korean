@@ -34,7 +34,9 @@
 // having to derive it.
 
 import { z } from "zod";
-import { getAnthropicClient, MODELS } from "@/lib/ai/anthropic-client";
+import { getAnthropicClient } from "@/lib/ai/anthropic-client";
+import { MODELS } from "@/lib/ai/models";
+import { recordCost } from "@/lib/ai/cost";
 import type { WritingSpec } from "@/lib/items";
 
 const BAND = z.enum(["strong", "adequate", "limited"]);
@@ -146,10 +148,15 @@ Judge only what the candidate actually wrote. Do not reward intent that is not o
 Banned words in your feedback: "weak", "poor", "wrong", "failed". Prefer plain, kind, specific guidance.`;
 }
 
+/** the AICostLedger feature label for this grader */
+export const WRITING_FEATURE = "topik-writing.evaluate";
+
 export async function evaluateWriting(input: {
   spec: WritingSpec;
   guidanceNote?: string;
   text: string;
+  /** whose call this is, for the AICostLedger row (RR-399 A6) */
+  userId?: string | null;
 }): Promise<WritingScore> {
   const { spec, guidanceNote, text } = input;
   const chars = charCount(text);
@@ -176,13 +183,32 @@ Assess it against the criteria and return the JSON object.`;
 
   const client = getAnthropicClient();
   const started = Date.now();
+  // RR-399 A6: every model call writes one AICostLedger row (real tokens, real cost), success or not.
+  const ledger = { userId: input.userId ?? null, feature: WRITING_FEATURE, model: MODELS.OPUS };
 
-  const msg = await client.messages.create({
-    model: MODELS.OPUS,
-    max_tokens: 16000,
-    system: [{ type: "text", text: buildSystem(spec.taskNumber, hasOrganisation), cache_control: { type: "ephemeral" } }],
-    output_config: { format: { type: "json_schema", schema: OUTPUT_SCHEMA } },
-    messages: [{ role: "user", content: userMessage }],
+  let msg;
+  try {
+    msg = await client.messages.create({
+      model: MODELS.OPUS,
+      max_tokens: 16000,
+      system: [{ type: "text", text: buildSystem(spec.taskNumber, hasOrganisation), cache_control: { type: "ephemeral" } }],
+      output_config: { format: { type: "json_schema", schema: OUTPUT_SCHEMA } },
+      messages: [{ role: "user", content: userMessage }],
+    });
+  } catch (e) {
+    await recordCost({ ...ledger, usage: { inputTokens: 0, outputTokens: 0 }, success: false, errorMessage: e instanceof Error ? e.message.slice(0, 300) : "model call failed" });
+    throw e;
+  }
+  // Recorded as soon as the reply exists, BEFORE it is parsed: a reply that is refused or malformed below was still billed.
+  await recordCost({
+    ...ledger,
+    usage: {
+      inputTokens: msg.usage.input_tokens,
+      outputTokens: msg.usage.output_tokens,
+      cacheReadTokens: msg.usage.cache_read_input_tokens ?? 0,
+      cacheWriteTokens: msg.usage.cache_creation_input_tokens ?? 0,
+    },
+    success: true,
   });
 
   // A safety decline is a real outcome, not a parse failure — say so rather than

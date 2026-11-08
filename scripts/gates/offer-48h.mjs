@@ -41,6 +41,17 @@ ok(Boolean(freeAccess) && /tasteMayUseAi/.test(freeAccess[1]) && /freeAiAllowedT
 ok(unguarded.length === 0, `every AI route goes through aiGate() or is marked paid only (${aiRoutes.length} AI routes, ${unguarded.length} unguarded)`);
 for (const [p] of unguarded) console.log(`      unguarded: ${p}`);
 
+/* RR-399 A3: the "1 free" is atomic: the free door reserves it in one INSERT (FreeAiUse, unique userId + kind) before the AI call */
+const SCHEMA = existsSync(join(ROOT, "prisma/schema.prisma")) ? read("prisma/schema.prisma") : "";
+ok(Boolean(freeAccess) && /\bclaimFreeAi\(/.test(strip(freeAccess[1])), "the free door reserves the free AI use atomically (claimFreeAi)");
+ok(/model FreeAiUse \{[^}]*@@unique\(\[userId, kind\]\)/.test(SCHEMA), "schema.prisma has model FreeAiUse with @@unique([userId, kind])");
+/* RR-399 A6: every AI call writes an AICostLedger row, and the daily budget reads the ledger */
+ok(/model AICostLedger \{/.test(SCHEMA) && /aICostLedger\.findMany/.test(budget), "schema.prisma has model AICostLedger and the free-AI budget reads it");
+const aiCallers = code.filter(([, t]) => /\.messages\.create\(|\.transcriptions\.create\(|\.speech\.create\(/.test(strip(t)));
+const uncosted = aiCallers.filter(([, t]) => !/\brecordCost\(/.test(strip(t)));
+ok(uncosted.length === 0, `every AI call writes an AICostLedger row (${aiCallers.length} AI callers, ${uncosted.length} not costed)`);
+for (const [p] of uncosted) console.log(`      not costed: ${p}`);
+
 /* the customer-facing lines: app code and copy under src/ and public/, exam material excluded */
 const COPY_SKIP = /node_modules|\.next|[\\/](seed|seeds|fixtures|generated|__tests__|universities)[\\/]|[\\/]content[\\/](reading|listening|writing|speaking|exam|bank|items|questions|passages|scripts)[\\/]|\.test\./i;
 const BANNED = /\b7[- ]day\b|\bseven[- ]day\b|7 days? free|monthly only|monthly-only|\bno (free )?trial\b|7 day free trial|48[- ]hour (free )?trial|card (is )?not charged during|Try free for 48 hours, then|start your (free )?trial/i;

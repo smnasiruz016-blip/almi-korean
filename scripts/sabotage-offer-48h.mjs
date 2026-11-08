@@ -8,6 +8,9 @@ const pick = (c) => c.find((p) => existsSync(p));
 const PAGE = pick(["src/app/pricing/page.tsx", "src/app/(marketing)/pricing/page.tsx", "src/app/page.tsx"]);
 const gate = () => spawnSync(process.execPath, ["scripts/gates/offer-48h.mjs"], { encoding: "utf8" });
 const test = () => spawnSync(process.platform === "win32" ? "npx.cmd tsx scripts/verify-offer-48h.ts" : "npx tsx scripts/verify-offer-48h.ts", { encoding: "utf8", shell: true });
+/* RR-399: the atomic-claim test, the cost-ledger test and the writing route proof */
+const tsx = (f) => () => spawnSync(`${process.platform === "win32" ? "npx.cmd" : "npx"} tsx ${f}`, { encoding: "utf8", shell: true });
+const claimTest = tsx("scripts/verify-free-ai-claim.ts"), ledgerTest = tsx("scripts/verify-ai-cost-ledger.ts"), writingProof = tsx("scripts/writing-grader-proof.mts");
 /* an AI route that uses aiGate (found at run time) — the case removes the door from it */
 import { readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -21,6 +24,13 @@ const CASES = [
   { name: "the checkout gives a card trial again", file: `${DIR}/stripe.ts`, append: "\nexport const sabotageTrial = { trial_period_days: 2 };\n", run: [gate, test], fail: ["[FAIL] the checkout code names no trial", "FAIL checkout has no trial"] },
   { name: "the free time stops being free after 48 hours", file: `${DIR}/taste.ts`, from: "return end !== null && end.getTime() > now;", to: "return end !== null;", run: [test], fail: ["FAIL after 48 hours the unlock screen appears"] },
   { name: "a page sells a card trial again", file: PAGE, append: "\n// Card not charged during the 48-hour trial\n", run: [gate], fail: ["[FAIL] no customer-facing line"] },
+  /* RR-399 A3: the atomic "1 free" */
+  { name: "a second claim of the free use is let through", file: "src/lib/free-ai-claim.ts", from: 'if (isUniqueViolation(e)) return "USED";', to: 'if (isUniqueViolation(e)) return "RESERVED";', run: [claimTest], fail: ["FAIL two requests at the same moment"] },
+  { name: "the free door stops reserving the free use", file: "src/lib/free-access.ts", from: "await claimFreeAi(user.id, kind)", to: '("UNAVAILABLE" as string)', run: [gate, writingProof], fail: ["[FAIL] the free door reserves the free AI use atomically", "✗ A3 — two free requests at the same moment"] },
+  /* RR-399 A6: the AI cost ledger */
+  { name: "the grader stops writing AICostLedger rows", file: "src/lib/topik/writing-grader.ts", from: "await recordCost(", to: "await (async (..._a: unknown[]) => 0)(", run: [gate, writingProof], fail: ["[FAIL] every AI call writes an AICostLedger row", "✗ A6 — a scoring writes ONE AICostLedger row"] },
+  { name: "the daily budget stops reading the ledger", file: "src/lib/free-ai-budget.ts", from: "rows = await db.aICostLedger.findMany(", to: "rows = []; void db.aICostLedger.findMany(", run: [ledgerTest], fail: ["FAIL the budget reads LEDGER units"] },
+  { name: "Opus 5 output is priced wrong", file: "src/lib/ai/models.ts", from: "output: 25.0,", to: "output: 15.0,", run: [ledgerTest], fail: ["FAIL Opus 5 cost on known token counts"] },
 ];
 const out = [];
 for (const c of CASES) {
@@ -35,7 +45,8 @@ for (const c of CASES) {
 }
 const g = gate(), t = test();
 for (const o of out) console.log(`  [${o.red ? "RED as required" : "STAYED GREEN — BLIND"}] ${o.name}`);
-console.log(`  restored: gate ${g.status === 0 ? "GREEN" : "NOT GREEN"}, test ${t.status === 0 ? "GREEN" : "NOT GREEN"}`);
-const pass = out.every((o) => o.red) && g.status === 0 && t.status === 0;
+const rr399 = { claim: claimTest(), ledger: ledgerTest(), writing: writingProof() };
+console.log(`  restored: gate ${g.status === 0 ? "GREEN" : "NOT GREEN"}, test ${t.status === 0 ? "GREEN" : "NOT GREEN"}, ${Object.entries(rr399).map(([k, r]) => `${k} ${r.status === 0 ? "GREEN" : "NOT GREEN"}`).join(", ")}`);
+const pass = out.every((o) => o.red) && g.status === 0 && t.status === 0 && Object.values(rr399).every((r) => r.status === 0);
 console.log(pass ? `\nSABOTAGE PASS — ${out.length}/${out.length} RED` : "\nSABOTAGE FAIL");
 process.exitCode = pass ? 0 : 1;

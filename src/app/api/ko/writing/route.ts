@@ -55,11 +55,17 @@ export async function POST(req: Request): Promise<NextResponse> {
     logRefusal({ route: "/api/ko/writing", status: 402, reason: `not-paid:${gate.body.reason}`, req, userId: user.id });
     return NextResponse.json(gate.body, { status: gate.status });
   }
+  // RR-399 A3: from here on a free account holds its reserved free scoring. Every answer that is NOT a scoring gives it back
+  // (gate.release(); a no-op for paid users), so a refused or failed request never uses up the learner's one free Writing.
+  const refuse = async (body: unknown, init: { status: number }): Promise<NextResponse> => {
+    await gate.release();
+    return NextResponse.json(body, init);
+  };
   // A free scoring also needs a verified email, as paid access already does here (and as AlmiOET's taste does): checked after
   // the 402 so that stays the first answer, and before the model call so no unverified request costs money.
   if (gate.free && user.emailVerifiedAt === null) {
     logRefusal({ route: "/api/ko/writing", status: 403, reason: "unverified", req, userId: user.id });
-    return NextResponse.json(
+    return refuse(
       { ok: false, error: "Verify your email address before using AI feedback.", verifyUrl: "/account" },
       { status: 403 },
     );
@@ -67,7 +73,7 @@ export async function POST(req: Request): Promise<NextResponse> {
   // No key configured → say so. Never a fabricated band: a made-up "estimate" is worse than
   // no estimate, because the learner cannot tell the difference.
   if (!isWritingFeedbackEnabled()) {
-    return NextResponse.json(
+    return refuse(
       { ok: false, error: "Writing feedback is temporarily unavailable." },
       { status: 503 },
     );
@@ -77,24 +83,24 @@ export async function POST(req: Request): Promise<NextResponse> {
   try {
     body = (await req.json()) as WritingBody;
   } catch {
-    return NextResponse.json({ ok: false, error: "Invalid body" }, { status: 400 });
+    return refuse({ ok: false, error: "Invalid body" }, { status: 400 });
   }
 
   const itemId = typeof body.itemId === "string" ? body.itemId : "";
   const text = typeof body.text === "string" ? body.text.trim() : "";
-  if (!itemId) return NextResponse.json({ ok: false, error: "Missing itemId" }, { status: 400 });
-  if (!text) return NextResponse.json({ ok: false, error: "Write something first." }, { status: 400 });
+  if (!itemId) return refuse({ ok: false, error: "Missing itemId" }, { status: 400 });
+  if (!text) return refuse({ ok: false, error: "Write something first." }, { status: 400 });
   if (Array.from(text).length > MAX_CHARS) {
     logRefusal({ route: "/api/ko/writing", status: 413, reason: "over-max-chars", req, userId: user.id });
-    return NextResponse.json({ ok: false, error: "That response is too long to assess." }, { status: 413 });
+    return refuse({ ok: false, error: "That response is too long to assess." }, { status: 413 });
   }
 
   // An unknown id fails loudly rather than being graded against nothing — same rule as
   // /api/ko/submit, for the same reason.
   const item = getItemByStableId(itemId);
-  if (!item) return NextResponse.json({ ok: false, error: `Unknown item: ${itemId}` }, { status: 404 });
+  if (!item) return refuse({ ok: false, error: `Unknown item: ${itemId}` }, { status: 404 });
   if (item.section !== "WRITING" || !item.payload.writing) {
-    return NextResponse.json(
+    return refuse(
       { ok: false, error: "That item is not a Writing task." },
       { status: 400 },
     );
@@ -106,7 +112,7 @@ export async function POST(req: Request): Promise<NextResponse> {
   });
   if (recent >= HOURLY_LIMIT) {
     logRefusal({ route: "/api/ko/writing", status: 429, reason: "hourly-limit", req, userId: user.id });
-    return NextResponse.json(
+    return refuse(
       { ok: false, error: "You've submitted a lot of Writing tasks in the past hour. Try again shortly." },
       { status: 429 },
     );
@@ -118,12 +124,13 @@ export async function POST(req: Request): Promise<NextResponse> {
       spec: item.payload.writing,
       guidanceNote: item.guidanceNote,
       text,
+      userId: user.id, // RR-399 A6: the AICostLedger row names the account
     });
   } catch (e) {
     // The 400 that took this feature down on its first real call surfaced through exactly
     // this line. Structured now, so the next one is filterable rather than buried.
     logError({ route: "/api/ko/writing", op: "grade-writing", error: e, req, userId: user.id });
-    return NextResponse.json(
+    return refuse(
       { ok: false, error: "We couldn't assess that just now. Please try again." },
       { status: 502 },
     );

@@ -6,10 +6,9 @@
 
 import Anthropic from "@anthropic-ai/sdk";
 
-export const MODELS = {
-  /** TOPIK II Writing assessment. */
-  OPUS: "claude-opus-5",
-} as const;
+// RR-399 A6: the model names and their prices live in ./models.ts (as almi-oet); every call's cost is written to AICostLedger by
+// recordCost() in ./cost.ts, called by the caller so it can attach the userId and a feature label.
+export { MODELS } from "./models";
 
 let client: Anthropic | null = null;
 

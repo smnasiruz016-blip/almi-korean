@@ -193,7 +193,7 @@ export default function HomePage() {
               <p className="mt-2 text-sm text-almi-text">
                 Standard TOPIK is for study, points visas and residence. The E-9 work route runs on a different test —{" "}
                 <strong className="text-almi-ink">EPS-TOPIK</strong>. Our{" "}
-                <Link href="/topik-vs-eps-topik" className="text-almi-coral hover:underline">honest guide</Link> keeps you from
+                <Link href="/topik-vs-eps-topik" className="text-almi-coral underline underline-offset-2">honest guide</Link> keeps you from
                 preparing for the wrong exam.
               </p>
             </div>

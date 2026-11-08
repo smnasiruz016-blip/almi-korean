@@ -36,24 +36,18 @@ function hasActiveSubscription(
   return false;
 }
 
-// NETWORK STANDARD (Goethe/CELPIP), confirmed by the founder 2026-07-08.
-// The 48-hour free trial is STRIPE's own `trialing` status — card saved at checkout, not
-// charged — NOT an app-side timer. (This product previously ran an app-side trial derived
-// from createdAt that opened *everything* for 7 days with no card; that divergence is removed.)
+// PAID ACCESS: the owner, an admin comp, or a Stripe subscription that is `trialing` (a card
+// trial that was already running keeps its own end date) or `active`. Unchanged by RR-397.
 //
-// ⚠️ WHAT IS ACTUALLY SHIPPED — read this before quoting the split below.
-// The design was a SKILL split (objective Listening/Reading free to any signed-in user; the
-// AI-feedback skill and the sequenced mock paid). That is NOT what runs. Every practice
-// surface — /practice, /practice/[track]/[section], /mock, /mock/[track] — ends a signed-in
-// non-subscribed user with `redirect("/account")` before a section renders (the founder gate).
-// So in the shipped product NOTHING is free to a signed-in learner: the offer is a 48-hour
-// card-trial on everything, then $12/month.
-//
-// This comment claimed the split was live, and that claim was load-bearing: /api/ko/submit
-// cited it to justify shipping with no paid check, which left objective marking — and the
-// correctOptionId it discloses — reachable without a subscription. Whichever way this is
-// settled, these move TOGETHER: this file, the four page gates, /api/ko/submit,
-// /api/ko/writing, PracticeGate's copy, and the /practice banner.
+// RR-397 (owner, 8 Nov 2026): the free 48 hours (no card, from sign-up) are NOT decided here.
+// They are a separate, narrower door in ./taste.ts + ./free-access.ts, asked only after this
+// function has said no:
+//   - hasPracticeAccess(): /practice, /practice/[track]/[section], /mock (the list) and
+//     /api/ko/submit (objective marking, no AI);
+//   - aiGate(): /api/ko/writing — ONE AI-scored Writing per free account, within today's
+//     free-AI budget (./free-ai-budget.ts);
+//   - the sequenced mock (/mock/[track]) stays paid only.
+// These move TOGETHER: this file, free-access.ts, the page gates and the two API routes.
 //
 // Paid access requires an active subscription AND a verified email (Goethe parity) — owner
 // and comp bypass both. `needsEmailVerification` distinguishes "paid but unverified" so the UI

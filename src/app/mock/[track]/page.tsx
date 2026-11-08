@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
+import { hasPracticeAccess } from "@/lib/free-access";
 import { itemsFor, toRunnerItem } from "@/lib/items";
 import { MockRunner } from "@/components/MockRunner";
 import { PracticeGate } from "@/components/PracticeGate";
@@ -29,14 +30,14 @@ export default async function Page({ params }: { params: Promise<{ track: string
   const tk = TRACK_MAP[track];
   if (!tk) notFound();
 
-  // The sequenced mock is a Pro feature (section practice stays free elsewhere).
+  // RR-397: paid only. The sequenced mock is never part of the free 48 hours (as AlmiOET's full mock).
   const user = await getCurrentUser();
   const paid = hasPaidAccess(user);
 
-  // FOUNDER GATE (trio): the mock is practice — a logged-in non-subscribed user gets no run
-  // pre-checkout; funnel to the trial checkout on /account. Logged-out visitors keep the
-  // public sign-in surface below (SEO untouched). Owner/paid pass through.
-  if (user && !paid) redirect("/account");
+  // A logged-in user inside the free 48 hours sees the honest "part of AlmiKorean Pro" card below; after the 48 hours a
+  // non-paid user goes to /account ("Your free 48 hours are over"). Logged-out visitors keep the public sign-in surface
+  // below (SEO untouched). Owner/paid pass through.
+  if (user && !paid && !hasPracticeAccess(user)) redirect("/account");
 
   // toRunnerItem strips the answer key before anything reaches the browser; the mock is
   // marked by /api/ko/submit when the run finishes.
@@ -60,7 +61,7 @@ export default async function Page({ params }: { params: Promise<{ track: string
       {!user ? (
         <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
           <h2 className="text-lg font-semibold text-almi-ink">The sequenced mock is part of AlmiKorean Pro</h2>
-          <p className="mt-2 text-sm text-almi-text">Start with a 48-hour free trial — card saved but not charged — to practise, then $12/month. Cancel anytime before the trial ends and pay nothing.</p>
+          <p className="mt-2 text-sm text-almi-text">Try free for 48 hours, no card: section practice and one AI-scored Writing. The mock unlocks for $12/month. Cancel anytime.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Create free account</Link>
             <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>
@@ -73,7 +74,7 @@ export default async function Page({ params }: { params: Promise<{ track: string
           <PracticeGate
             billingLive={isBillingEnabled()}
             heading="The sequenced mock is part of AlmiKorean Pro"
-            body="Section practice (Listening and Reading) is free. The full sequenced TOPIK mock — combined scoring and a practice level estimate — is $12/month. Start with a 48-hour free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing."
+            body="Section practice is open during your free 48 hours (no card). The full sequenced TOPIK mock — combined scoring and a practice level estimate — is part of AlmiKorean Pro: $12 is charged at checkout and then monthly; cancel anytime."
           />
         )
       ) : (

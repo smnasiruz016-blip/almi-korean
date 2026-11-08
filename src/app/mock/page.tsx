@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { hasPaidAccess } from "@/lib/access";
+import { hasPracticeAccess } from "@/lib/free-access";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,10 +18,11 @@ const TRACKS = [
 ];
 
 export default async function Page() {
-  // FOUNDER GATE (trio): logged-in non-subscribed users see no practice path — funnel to the
-  // trial checkout on /account. Logged-out visitors keep this public SEO surface.
+  // RR-397: the mock itself is paid only (/mock/[track] shows a free-48-hours account the "part of Pro" card). This list is
+  // open to paid users and inside the free 48 hours; after them a non-paid user goes to /account. Logged-out visitors keep
+  // this public SEO surface.
   const user = await getCurrentUser();
-  if (user && !hasPaidAccess(user)) redirect("/account");
+  if (user && !hasPracticeAccess(user)) redirect("/account");
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Mock test</p>
@@ -31,8 +32,8 @@ export default async function Page() {
         level estimate against the real cutoffs. A shorter run than the full exam, built from the practice bank.
       </p>
       <p className="mt-3 text-sm text-almi-text-muted">
-        The full sequenced mock and all TOPIK practice are part of AlmiKorean Pro — try free for 48 hours, then $12/month
-        (card saved, not charged).
+        The full sequenced mock is part of AlmiKorean Pro. Try free for 48 hours, no card (section practice and one AI-scored
+        Writing). Then $12/month. Cancel anytime.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {TRACKS.map((t) => (

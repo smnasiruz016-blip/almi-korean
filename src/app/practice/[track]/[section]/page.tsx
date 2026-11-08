@@ -4,6 +4,8 @@ import { notFound, redirect } from "next/navigation";
 import { itemsFor, toRunnerItem } from "@/lib/items";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess, needsEmailVerification, isBillingEnabled } from "@/lib/access";
+import { hasPracticeAccess } from "@/lib/free-access";
+import { FreeTimeBanner } from "@/components/FreeTimeBanner";
 import { PracticeRunner } from "@/components/PracticeRunner";
 import { WritingComposer } from "@/components/WritingComposer";
 import { PracticeGate } from "@/components/PracticeGate";
@@ -54,16 +56,13 @@ export default async function Page({ params }: { params: Promise<{ track: string
   const items = itemsFor(tk, sec).map(toRunnerItem);
 
   const user = await getCurrentUser();
-  // Not "Writing is the paid one" — the redirect below is unconditional, so a non-subscribed
-  // user never reaches any section. Kept as an explicit constant so the gate branch reads
-  // honestly rather than implying a free tier that does not exist. See lib/access.ts.
-  const needsPaid = true;
+  // RR-397: a section opens for a paid user OR inside the free 48 hours (no card). Listening and Reading are auto-marked; the
+  // free 48 hours include ONE AI-scored Writing (enforced at /api/ko/writing). After the 48 hours a non-paid user goes to
+  // /account ("Your free 48 hours are over" + "Unlock for $12/month"). Logged-out visitors keep the public sign-in surface
+  // below (SEO untouched). Owner/paid pass through as before.
   const paid = hasPaidAccess(user);
-
-  // FOUNDER GATE (trio, screenshot-confirmed): any logged-in non-subscribed user gets no
-  // practice of ANY kind pre-checkout — funnel to the trial checkout on /account. Logged-out
-  // visitors keep the public sign-in surface below (SEO untouched). Owner/paid pass through.
-  if (user && !paid) redirect("/account");
+  const open = user ? hasPracticeAccess(user) : false;
+  if (user && !open) redirect("/account");
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
@@ -77,13 +76,13 @@ export default async function Page({ params }: { params: Promise<{ track: string
       {!user ? (
         <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
           <h2 className="text-lg font-semibold text-almi-ink">Sign in to practise</h2>
-          <p className="mt-2 text-sm text-almi-text">Create your account and start a 48-hour free trial — card saved, not charged — to practise TOPIK, then $12/month.</p>
+          <p className="mt-2 text-sm text-almi-text">Create your account to practise TOPIK. Try free for 48 hours, no card. Then $12/month. Cancel anytime.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Create free account</Link>
             <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>
           </div>
         </div>
-      ) : needsPaid && !paid ? (
+      ) : !open ? (
         needsEmailVerification(user) ? (
           <div className="mt-8"><EmailVerifyBanner email={user.email} /></div>
         ) : (
@@ -95,10 +94,13 @@ export default async function Page({ params }: { params: Promise<{ track: string
         </div>
       ) : sec === "WRITING" ? (
         <div className="mt-8">
+          {!paid && <div className="mb-6"><FreeTimeBanner user={user} ai="WRITING" /></div>}
+          {!paid && user.emailVerifiedAt === null && <div className="mb-6"><EmailVerifyBanner email={user.email} /></div>}
           <WritingComposer items={items} />
         </div>
       ) : (
         <div className="mt-8">
+          {!paid && <div className="mb-6"><FreeTimeBanner user={user} /></div>}
           <PracticeRunner items={items} track={tk} section={sec} />
         </div>
       )}

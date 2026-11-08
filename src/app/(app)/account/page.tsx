@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { requireUser } from "@/lib/auth";
+import { FreeTimeBanner } from "@/components/FreeTimeBanner";
 import { hasPaidAccess, isBillingEnabled, isOwner } from "@/lib/access";
 import { BillingButtons } from "@/components/BillingButtons";
 import { ReviewCard } from "@/components/reviews/ReviewCard";
@@ -27,8 +29,15 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
       {sp.welcome && !paid && (
         <div className="mt-6 rounded-2xl border border-almi-coral/30 bg-almi-coral/10 p-4">
           <p className="text-sm text-almi-ink">
-            Welcome — your account is ready. Start your 48-hour free trial below for full TOPIK practice and the timed mock.
+            Welcome — your account is ready. Your free 48 hours have started, with no card:{" "}
+            <Link href="/practice" className="font-medium text-almi-coral-deep hover:underline">start practising</Link>.
           </p>
+        </div>
+      )}
+
+      {!paid && (
+        <div className="mt-6">
+          <FreeTimeBanner user={user} ai="WRITING" />
         </div>
       )}
 
@@ -36,7 +45,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ w
         <p className="text-almi-text">Plan: <strong className="text-almi-ink">{planLabel}</strong></p>
         {!paid && (
           <p className="mt-2 text-sm text-almi-text-muted">
-            Full practice: try free for 48 hours, then $12/month. Cancel anytime.
+            Try free for 48 hours, no card. Then $12/month. Cancel anytime. When you unlock, $12 is charged at checkout and then monthly.
           </p>
         )}
         {isOwner(user.email) ? (

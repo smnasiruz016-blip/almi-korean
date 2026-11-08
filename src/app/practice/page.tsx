@@ -4,6 +4,8 @@ import { redirect } from "next/navigation";
 import { trackCounts } from "@/lib/items";
 import { getCurrentUser } from "@/lib/auth";
 import { hasPaidAccess } from "@/lib/access";
+import { hasPracticeAccess } from "@/lib/free-access";
+import { FreeTimeBanner } from "@/components/FreeTimeBanner";
 import { canonical } from "@/lib/site";
 import type { TopikTrack, TopikSkill } from "@prisma/client";
 
@@ -25,16 +27,14 @@ const SECTION_SLUG: Record<TopikSkill, string> = { LISTENING: "listening", READI
 export default async function Page() {
   const tracks: TopikTrack[] = ["TOPIK_I", "TOPIK_II"];
   const user = await getCurrentUser();
-  // FOUNDER GATE (trio): a logged-in non-subscribed user gets no practice — funnel to the
-  // single forward path (trial checkout on /account). Logged-out visitors keep the public
-  // SEO surface untouched.
-  if (user && !hasPaidAccess(user)) redirect("/account");
-  // Only a paid user reaches this line — the redirect above is unconditional for everyone else.
-  // The removed branch offered "Listening and Reading are free" to non-subscribers, which was
-  // both unreachable and untrue.
-  const banner = user ? "AlmiKorean Pro active — Writing feedback included." : null;
+  // RR-397: a logged-in user practises when paid OR inside the free 48 hours (no card). After the 48 hours a non-paid user goes
+  // to /account ("Your free 48 hours are over" + "Unlock for $12/month"). Logged-out visitors keep the public SEO surface.
+  if (user && !hasPracticeAccess(user)) redirect("/account");
+  const paid = user ? hasPaidAccess(user) : false;
+  const banner = user && paid ? "AlmiKorean Pro active — Writing feedback included." : null;
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      {user && !paid && <div className="mb-6"><FreeTimeBanner user={user} ai="WRITING" /></div>}
       <p className="text-xs font-semibold uppercase tracking-widest text-almi-coral">Practice</p>
       <h1 className="mt-3 text-3xl font-bold text-almi-ink">Choose your track</h1>
       <p className="mt-4 text-almi-text">

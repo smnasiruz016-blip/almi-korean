@@ -1,12 +1,10 @@
 // TOPIK II Writing feedback endpoint (Tasks 51–54).
 //
-// ── THE PAID CHECK ──
-// Nothing in AlmiKorean is free to a signed-in learner: every practice surface redirects a
-// non-subscribed user to /account, and /api/ko/submit now enforces the same thing. So this is
-// not one half of a skill split — it is the same gate the rest of the product applies. Here it
-// carries extra weight, because it is also the only thing standing between an account with no
-// subscription and an unbounded model bill. See lib/access.ts for what the split was meant to
-// be and why the code does something else.
+// ── THE PAID CHECK (RR-397) ──
+// Paid learners as before. A free account (the 48 hours from sign-up, no card) gets ONE AI-scored
+// Writing, and only while today's free-AI budget lasts (lib/free-access.ts aiGate). This gate is
+// the only thing standing between an account with no subscription and a model bill, so it is
+// bounded three ways: the 48 hours, one scoring per account, and the daily budget.
 //
 // ── WHAT THE CLIENT IS ALLOWED TO SEND ──
 // An item id and the learner's own Korean. Not the prompt, not the task number, not the
@@ -17,7 +15,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { hasPaidAccess } from "@/lib/access";
+import { aiGate } from "@/lib/free-access";
 import { getItemByStableId } from "@/lib/items";
 import { isWritingFeedbackEnabled } from "@/lib/ai/anthropic-client";
 import { evaluateWriting } from "@/lib/topik/writing-grader";
@@ -47,11 +45,23 @@ export async function POST(req: Request): Promise<NextResponse> {
     logRefusal({ route: "/api/ko/writing", status: 401, reason: "no-session", req });
     return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
   }
-  if (!hasPaidAccess(user)) {
-    logRefusal({ route: "/api/ko/writing", status: 402, reason: "not-paid", req, userId: user.id });
+  // RR-397: paid users as before (hasPaidAccess() is asked first inside aiGate, unchanged); a free account (48 hours, no card)
+  // gets ONE AI-scored Writing, within today's free-AI budget. "Used" = a Writing attempt this account already received
+  // feedback on (section WRITING, status SCORED), not a click.
+  const gate = await aiGate(user, "WRITING", () =>
+    prisma.koreanAttempt.count({ where: { userId: user.id, section: "WRITING", status: "SCORED" } }),
+  );
+  if (!gate.ok) {
+    logRefusal({ route: "/api/ko/writing", status: 402, reason: `not-paid:${gate.body.reason}`, req, userId: user.id });
+    return NextResponse.json(gate.body, { status: gate.status });
+  }
+  // A free scoring also needs a verified email, as paid access already does here (and as AlmiOET's taste does): checked after
+  // the 402 so that stays the first answer, and before the model call so no unverified request costs money.
+  if (gate.free && user.emailVerifiedAt === null) {
+    logRefusal({ route: "/api/ko/writing", status: 403, reason: "unverified", req, userId: user.id });
     return NextResponse.json(
-      { ok: false, error: "AI Writing feedback is part of the paid plan." },
-      { status: 402 },
+      { ok: false, error: "Verify your email address before using AI feedback.", verifyUrl: "/account" },
+      { status: 403 },
     );
   }
   // No key configured → say so. Never a fabricated band: a made-up "estimate" is worse than

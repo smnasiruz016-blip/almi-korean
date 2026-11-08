@@ -1,7 +1,8 @@
 import Stripe from "stripe";
 import { prisma } from "@/lib/prisma";
 
-const TRIAL_DAYS = 7;
+// RR-394: the trial length lives in ./offer (48 hours for NEW checkouts; running trials keep Stripe's own end date)
+import { TRIAL_PERIOD_DAYS } from "./offer";
 
 let cached: Stripe | null = null;
 export function getStripe(): Stripe {
@@ -35,7 +36,7 @@ export async function createCheckoutSession(user: { id: string; email: string; n
     mode: "subscription",
     customer: customerId,
     line_items: [{ price: priceId, quantity: 1 }],
-    subscription_data: { trial_period_days: TRIAL_DAYS, metadata: { userId: user.id } },
+    subscription_data: { trial_period_days: TRIAL_PERIOD_DAYS, metadata: { userId: user.id } },
     metadata: { product: "almi-korean" }, // routing key for almi-billing-router (checkout.session.completed)
     success_url: `${baseUrl()}/account?checkout=success`,
     cancel_url: `${baseUrl()}/pricing?checkout=cancelled`,

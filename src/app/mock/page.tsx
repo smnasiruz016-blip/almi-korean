@@ -31,7 +31,7 @@ export default async function Page() {
         level estimate against the real cutoffs. A shorter run than the full exam, built from the practice bank.
       </p>
       <p className="mt-3 text-sm text-almi-text-muted">
-        The full sequenced mock and all TOPIK practice are part of AlmiKorean Pro — $12/month with a 7-day free trial
+        The full sequenced mock and all TOPIK practice are part of AlmiKorean Pro — try free for 48 hours, then $12/month
         (card saved, not charged).
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">

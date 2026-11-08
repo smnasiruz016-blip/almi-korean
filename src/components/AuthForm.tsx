@@ -29,7 +29,7 @@ export function AuthForm({ mode }: { mode: "signup" | "login" }) {
     });
     if (res.ok) {
       // Land in the app-shell/account world (sidebar + prominent trial CTA),
-      // matching the AlmiPrep journey: signup → account → Start 7-day free
+      // matching the AlmiPrep journey: signup → account → Start 48-hour free
       // trial → Stripe checkout.
       router.push(mode === "signup" ? "/account?welcome=true" : "/account");
       router.refresh();

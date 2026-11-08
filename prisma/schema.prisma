@@ -186,3 +186,36 @@ model Review {
   @@index([userId])
   @@index([approved, createdAt])
 }
+
+// RR-399 A6: the AI cost ledger, copied exactly from almi-oet (model AICostLedger). Every AI call writes one row with its real
+// token counts and cost (costCents is in 1/100 of a cent); the free-AI daily budget (src/lib/free-ai-budget.ts) reads it.
+model AICostLedger {
+  id               String   @id @default(cuid())
+  timestamp        DateTime @default(now())
+  userId           String? // null for system calls (e.g. seeding, admin)
+  feature          String // e.g. "writing-letter.evaluate"
+  model            String
+  inputTokens      Int
+  outputTokens     Int
+  cacheReadTokens  Int      @default(0)
+  cacheWriteTokens Int      @default(0)
+  costCents        Int // rounded total cost in 1/100 cents
+  success          Boolean  @default(true)
+  errorMessage     String?
+
+  @@index([timestamp(sort: Desc)])
+  @@index([userId, timestamp])
+  @@index([feature, timestamp])
+}
+
+/// RR-399 A3: one free AI scoring per kind per account, reserved atomically BEFORE the AI call (unique userId + kind).
+/// No relation to User on purpose: adding this table changes nothing else in the schema.
+model FreeAiUse {
+  id        String   @id @default(cuid())
+  userId    String
+  kind      String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, kind])
+  @@index([createdAt])
+}

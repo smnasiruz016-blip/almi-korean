@@ -15,6 +15,11 @@
   --color-almi-paper: #ffffff; /*        cards */
   --color-almi-on-dark: #fbf6ef; /*      text on dark hero */
   --color-almi-line: #ece3d6; /*         hairline borders */
+  /* RR-400: darker shades for TEXT only. Coral, sunrise gold and teal are below WCAG AA (4.5:1) as text on cream, white and
+   * peach; these keep the hue and pass on all three (scripts/health-gate.mjs checks it). */
+  --color-almi-coral-text: #b83a2e;
+  --color-almi-sun-text: #975a16;
+  --color-almi-teal-text: #0f766e;
 
   --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-script: var(--font-allura), "Allura", "Dancing Script", cursive;
@@ -24,4 +29,20 @@ html {
   background: var(--color-almi-bg);
   color: var(--color-almi-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* RR-400: coral, gold and teal TEXT uses the darker text shades above. Backgrounds, borders and rings keep the brand tokens.
+ * Written after Tailwind's utilities in the same layer, so it wins over the plain classes; hover: variants still apply. */
+@layer utilities {
+  .text-almi-coral,
+  .text-almi-coral-deep {
+    color: var(--color-almi-coral-text);
+  }
+  .text-almi-sun,
+  .text-almi-sun-deep {
+    color: var(--color-almi-sun-text);
+  }
+  .text-almi-teal {
+    color: var(--color-almi-teal-text);
+  }
 }

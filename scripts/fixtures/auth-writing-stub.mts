@@ -17,5 +17,7 @@ export async function getCurrentUser() {
     subscriptionCurrentPeriodEnd: null,
   };
   if (process.env.PROOF_UNPAID === "1") return { ...base, compProUntil: null };
+  // RR-399: a free account inside its 48 hours (signed up an hour ago, never subscribed, email verified)
+  if (process.env.PROOF_FREE === "1") return { ...base, id: "proof-free-user", createdAt: new Date(Date.now() - 3_600_000), stripeSubscriptionId: null, emailVerifiedAt: new Date(), compProUntil: null };
   return { ...base, compProUntil: new Date(Date.now() + 86_400_000) };
 }

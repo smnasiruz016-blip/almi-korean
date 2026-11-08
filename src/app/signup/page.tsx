@@ -6,7 +6,7 @@ import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Get started with AlmiKorean",
-  description: "Create your AlmiKorean account and start a 7-day free trial of honest TOPIK practice.",
+  description: "Create your AlmiKorean account and start a 48-hour free trial of honest TOPIK practice.",
   alternates: { canonical: canonical("/signup") },
 };
 
@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <AuthCard
       heading="Create your account"
-      sub="7-day free trial, then $12/month. Cancel anytime."
+      sub="Try free for 48 hours, then $12/month. Cancel anytime."
       footer={
         <>
           Already have an account?{" "}

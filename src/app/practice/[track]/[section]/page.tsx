@@ -77,7 +77,7 @@ export default async function Page({ params }: { params: Promise<{ track: string
       {!user ? (
         <div className="mt-8 rounded-2xl border border-almi-line bg-almi-paper p-6">
           <h2 className="text-lg font-semibold text-almi-ink">Sign in to practise</h2>
-          <p className="mt-2 text-sm text-almi-text">Create your account and start a 7-day free trial — card saved, not charged — to practise TOPIK, then $12/month.</p>
+          <p className="mt-2 text-sm text-almi-text">Create your account and start a 48-hour free trial — card saved, not charged — to practise TOPIK, then $12/month.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-6 py-2.5 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">Create free account</Link>
             <Link href="/login" className="inline-flex rounded-full border border-almi-line px-6 py-2.5 font-medium text-almi-ink hover:border-almi-coral">Log in</Link>

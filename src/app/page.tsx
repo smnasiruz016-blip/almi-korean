@@ -85,7 +85,7 @@ export default function HomePage() {
             </p>
             <div className="mt-7">
               <Link href="/signup" className="rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-                Start your 7-day free trial
+                Try free for 48 hours
               </Link>
               <p className="mt-3 text-sm text-almi-text-muted">
                 TOPIK I → Levels 1–2 · TOPIK II → Levels 3–6 · sit either track directly · below the lowest cutoff no level is
@@ -93,7 +93,7 @@ export default function HomePage() {
               </p>
             </div>
             <p className="mt-4 text-sm text-almi-text-muted">
-              $12/month, 7-day free trial, cancel anytime · Both TOPIK tracks (I + II) · 100% original material, never copied
+              Try free for 48 hours, then $12/month. Cancel anytime · Both TOPIK tracks (I + II) · 100% original material, never copied
             </p>
           </div>
           <ScoreCard />
@@ -212,7 +212,7 @@ export default function HomePage() {
       <section className="bg-almi-bg-peach/30 px-6 py-14">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-bold text-almi-ink">Simple, honest pricing.</h2>
-          <p className="mt-3 text-lg text-almi-text"><strong className="text-almi-ink">$12/month</strong> — 7-day free trial, cancel anytime.</p>
+          <p className="mt-3 text-lg text-almi-text">Try free for 48 hours, then <strong className="text-almi-ink">$12/month</strong>. Cancel anytime.</p>
           <ul className="mx-auto mt-6 max-w-md space-y-2 text-left text-sm text-almi-text">
             {[
               "Both tracks (TOPIK I + II), full practice and sequenced mocks",
@@ -225,7 +225,7 @@ export default function HomePage() {
             ))}
           </ul>
           <Link href="/signup" className="mt-7 inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-            Start your 7-day free trial
+            Try free for 48 hours
           </Link>
           <p className="mt-4 text-sm">
             <Link href="/pricing" className="text-almi-coral hover:underline">See full pricing</Link>
@@ -241,7 +241,7 @@ export default function HomePage() {
             {[
               {
                 q: "How much does it cost?",
-                a: "$12/month with a 7-day free trial. Cancel anytime during the trial and you are not charged.",
+                a: "Try free for 48 hours, then $12/month. Cancel anytime during the trial and you are not charged.",
               },
               {
                 q: "Which test do you cover?",
@@ -253,7 +253,7 @@ export default function HomePage() {
               },
               {
                 q: "Do I need an account to start?",
-                a: "Yes — create an account, start your 7-day free trial, and your practice is ready straight away.",
+                a: "Yes — create an account, start your 48-hour free trial, and your practice is ready straight away.",
               },
               {
                 q: "Can I cancel?",

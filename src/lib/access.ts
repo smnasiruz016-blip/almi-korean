@@ -37,7 +37,7 @@ function hasActiveSubscription(
 }
 
 // NETWORK STANDARD (Goethe/CELPIP), confirmed by the founder 2026-07-08.
-// The 7-day free trial is STRIPE's own `trialing` status — card saved at checkout, not
+// The 48-hour free trial is STRIPE's own `trialing` status — card saved at checkout, not
 // charged — NOT an app-side timer. (This product previously ran an app-side trial derived
 // from createdAt that opened *everything* for 7 days with no card; that divergence is removed.)
 //
@@ -46,7 +46,7 @@ function hasActiveSubscription(
 // AI-feedback skill and the sequenced mock paid). That is NOT what runs. Every practice
 // surface — /practice, /practice/[track]/[section], /mock, /mock/[track] — ends a signed-in
 // non-subscribed user with `redirect("/account")` before a section renders (the founder gate).
-// So in the shipped product NOTHING is free to a signed-in learner: the offer is a 7-day
+// So in the shipped product NOTHING is free to a signed-in learner: the offer is a 48-hour
 // card-trial on everything, then $12/month.
 //
 // This comment claimed the split was live, and that claim was load-bearing: /api/ko/submit

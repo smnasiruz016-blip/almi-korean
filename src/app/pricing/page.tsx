@@ -6,7 +6,7 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Pricing — AlmiKorean",
   description:
-    "Simple, honest pricing: try free for 48 hours, then $12/month. Cancel anytime. Both TOPIK tracks, full practice and mock access, and 100% original material.",
+    "Simple, honest pricing: try free for 48 hours, no card. Then $12/month. Cancel anytime. Both TOPIK tracks, full practice and mock access, and 100% original material.",
   alternates: { canonical: canonical("/pricing") },
 };
 
@@ -23,7 +23,7 @@ export default function Page() {
     <Article
       eyebrow="Pricing"
       title="Simple, honest pricing"
-      lede="Try free for 48 hours, then $12/month. Cancel anytime."
+      lede="Try free for 48 hours, no card. Then $12/month. Cancel anytime."
     >
       <ul className="space-y-2">
         {INCLUDED.map((li) => (
@@ -31,9 +31,10 @@ export default function Page() {
         ))}
       </ul>
       <Link href="/signup" className="inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark">
-        Try free for 48 hours
+        Try free for 48 hours, no card
       </Link>
       <p className="text-sm text-almi-text-muted">
+        No card for the free 48 hours. When you unlock, $12 is charged at checkout and then monthly; cancel anytime from your account.
         Billing is handled securely at checkout. Prices shown in USD; your bank may convert to your local currency.
       </p>
     </Article>

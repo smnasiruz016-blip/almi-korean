@@ -24,12 +24,12 @@
 // ids are sha256({track, section, title}) over machine-slug titles, which is an obstacle, not
 // an access control.
 //
-// It now checks the same thing the pages check. If the free tier is ever actually opened, this
-// is one of the places that has to change WITH it — see lib/access.ts.
+// It now checks the same thing the pages check. RR-397: that is hasPracticeAccess() — paid, or
+// inside the free 48 hours (no card) — on the pages and here together.
 
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
-import { hasPaidAccess } from "@/lib/access";
+import { hasPracticeAccess, lockedCopy } from "@/lib/free-access";
 import { gradeAttempt, type AttemptBody } from "@/lib/topik/grade-attempt";
 import { logRefusal } from "@/lib/observability";
 
@@ -44,12 +44,11 @@ export async function POST(req: Request): Promise<NextResponse> {
     logRefusal({ route: "/api/ko/submit", status: 401, reason: "no-session", req });
     return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
   }
-  if (!hasPaidAccess(user)) {
+  // RR-397: objective marking uses no AI, so it is open to paid users and inside the free 48 hours (no card).
+  if (!hasPracticeAccess(user)) {
     logRefusal({ route: "/api/ko/submit", status: 402, reason: "not-paid", req, userId: user.id });
-    return NextResponse.json(
-      { ok: false, error: "Start your free trial to practise." },
-      { status: 402 },
-    );
+    const c = lockedCopy(user);
+    return NextResponse.json({ ok: false, error: `${c.title}. ${c.line}`, upgradeUrl: "/pricing" }, { status: 402 });
   }
 
   let body: AttemptBody;

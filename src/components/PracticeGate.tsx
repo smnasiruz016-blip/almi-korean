@@ -5,18 +5,16 @@ import { useState } from "react";
 // Subscribe gate for a paid surface. Heading/body are overridable so the same gate serves both
 // the practice and mock contexts.
 //
-// The default body used to open "Listening and Reading are free." They are not: every practice
-// surface redirects a signed-in non-subscribed user to /account before a section renders, so
-// there is no free tier to point at. Saying so in the one place a learner meets the paywall was
-// the worst place to be wrong — it promised something the very next click disproved. The offer
-// is a 48-hour card trial on everything, which is what this now says.
+// RR-397: practice is open during the free 48 hours from sign-up (no card); this gate is what a
+// learner meets for a paid-only surface (the sequenced mock). The button unlocks: $12 is charged
+// at checkout, then monthly. It never promises a free tier the next click would disprove.
 //
 // If Stripe isn't wired yet (billingLive=false) the subscribe button shows its honest unavailable
 // state — the fail-closed path — rather than starting a checkout that can't complete.
 export function PracticeGate({
   billingLive,
   heading = "Practice is part of AlmiKorean Pro",
-  body = "Both TOPIK tracks — auto-marked Listening and Reading, and criteria-based AI feedback on TOPIK II Writing, 100% original material — are $12/month. Start with a 48-hour free trial: your card is saved but not charged, and you can cancel anytime before the trial ends and pay nothing.",
+  body = "Both TOPIK tracks — auto-marked Listening and Reading, and criteria-based AI feedback on TOPIK II Writing, 100% original material — are $12/month. $12 is charged at checkout and then monthly; cancel anytime.",
 }: {
   billingLive: boolean;
   heading?: string;
@@ -49,7 +47,7 @@ export function PracticeGate({
         disabled={busy || !billingLive}
         className="mt-4 inline-flex rounded-full bg-almi-coral px-7 py-3 font-semibold text-almi-ink hover:bg-almi-coral-deep hover:text-almi-on-dark disabled:opacity-60"
       >
-        {busy ? "Starting…" : !billingLive ? "Checkout unavailable" : "Try free for 48 hours"}
+        {busy ? "Starting…" : !billingLive ? "Checkout unavailable" : "Unlock for $12/month"}
       </button>
       {!billingLive && (
         <p className="mt-2 text-xs text-almi-text-muted">Subscriptions are being switched on. Please check back shortly.</p>

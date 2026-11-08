@@ -1,8 +1,8 @@
 import Stripe from "stripe";
 import { prisma } from "@/lib/prisma";
 
-// RR-394: the trial length lives in ./offer (48 hours for NEW checkouts; running trials keep Stripe's own end date)
-import { TRIAL_PERIOD_DAYS } from "./offer";
+// RR-397: new checkouts get NO card trial (the free 48 hours start at sign-up, with no card: ./taste.ts); running trials keep Stripe's own end date
+import { trialForNewCheckout } from "./offer";
 
 let cached: Stripe | null = null;
 export function getStripe(): Stripe {
@@ -36,7 +36,8 @@ export async function createCheckoutSession(user: { id: string; email: string; n
     mode: "subscription",
     customer: customerId,
     line_items: [{ price: priceId, quantity: 1 }],
-    subscription_data: { trial_period_days: TRIAL_PERIOD_DAYS, metadata: { userId: user.id } },
+    // RR-397: a new checkout carries nothing about a trial; $12 is charged at checkout, then each month
+    subscription_data: { ...trialForNewCheckout(), metadata: { userId: user.id } },
     metadata: { product: "almi-korean" }, // routing key for almi-billing-router (checkout.session.completed)
     success_url: `${baseUrl()}/account?checkout=success`,
     cancel_url: `${baseUrl()}/pricing?checkout=cancelled`,
